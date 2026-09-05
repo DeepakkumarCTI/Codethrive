@@ -72,92 +72,212 @@ const STACK = [
 ========================================================= */
 
 const SERVICES = [
-  {
-    number: "01",
-    name: "Web Development",
-    desc: "High-performance, accessible, and stunning web applications built on modern architectures. We prioritize speed, SEO, and flawless user experiences across all devices.",
-    tags: [
-      "React / Next.js",
-      "Headless CMS",
-      "WebGL / Three.js",
-      "Serverless",
-      "GraphQL APIs",
-      "Edge Computing",
-    ],
-    image: "/services/web-development.jpg",
-    layout: "text-left",
-  },
+{
+number: "01",
 
-  {
-    number: "02",
-    name: "Mobile Applications",
-    desc: "Native and cross-platform mobile experiences that feel intuitive and responsive. We design for the human hand, ensuring every swipe and tap feels natural.",
-    tags: [
-      "iOS / Swift",
-      "Android / Kotlin",
-      "React Native",
-    ],
-    image: "/services/mobile-applications.jpg",
-    layout: "image-left",
-  },
 
-  {
-    number: "03",
-    name: "UI/UX Design",
-    desc: "Our design philosophy centers on editorial minimalism. We strip away the unnecessary to reveal clear, compelling interfaces that guide users effortlessly through complex workflows.",
-    tags: [
-      "Design Systems",
-      "User Research",
-      "Prototyping",
-      "Interaction Design",
-      "Usability Testing",
-      "Visual Identity",
-    ],
-    image: "/services/ui-ux-design.jpg",
-    layout: "text-left",
-  },
+name: "Healthcare",
 
-  {
-    number: "04",
-    name: "AI & ML",
-    desc: "Integrating intelligent systems to automate processes, generate insights, and create personalized experiences. We build AI solutions that augment human capabilities.",
-    tags: [
-      "Predictive Models",
-      "NLP & LLMs",
-      "Computer Vision",
-    ],
-    image: "/services/ai-ml.jpg",
-    layout: "image-left",
-  },
+desc:
+  "We provide innovative healthcare solutions to hospitals, clinics, and HealthTech startups to improve patient care, streamline workflows, and enhance operational efficiency.",
 
-  {
-    number: "05",
-    name: "Cloud & DevOps",
-    desc: "Scalable, secure infrastructure designed for continuous delivery. We ensure your digital products are resilient, fast, and always available.",
-    tags: [
-      "AWS / GCP / Azure",
-      "CI/CD Pipelines",
-      "Microservices",
-      "Infrastructure as Code",
-      "Monitoring",
-      "Security",
-    ],
-    image: "/services/cloud-devops.jpg",
-    layout: "text-left",
-  },
+tags: [
+  "EHR Systems",
+  "Telemedicine Platforms",
+  "Patient Management Apps",
+  "Hospital Workflow Automation",
+],
 
-  {
-    number: "06",
-    name: "Enterprise Solutions",
-    desc: "Complex business challenges solved through custom software ecosystems. We build platforms that integrate seamlessly with your operations to drive growth.",
-    tags: [
-      "Custom ERP/CRM",
-      "Data Analytics",
-      "API Integrations",
-    ],
-    image: "/services/enterprise-solutions.jpg",
-    layout: "image-left",
-  },
+image: "/services/healthcare.jpg",
+
+layout: "text-left",
+
+
+},
+
+{
+number: "02",
+
+
+name: "Education & EdTech",
+
+desc:
+  "Our solutions help educational institutions and EdTech companies enhance learning experiences, improve student engagement, and streamline academic operations with modern technology.",
+
+tags: [
+  "Learning Management Systems",
+  "Virtual Classrooms",
+  "Online Assessment Platforms",
+  "Educational Mobile Apps",
+],
+
+image: "/services/education-edtech.jpg",
+
+layout: "image-left",
+
+
+},
+
+{
+number: "03",
+
+
+name: "Retail & E-Commerce",
+
+desc:
+  "We enable retail and e-commerce businesses to boost sales, improve customer engagement, and streamline operations through powerful digital commerce solutions.",
+
+tags: [
+  "E-Commerce Websites",
+  "POS Integrations",
+  "Inventory Management Systems",
+  "Customer Loyalty Apps",
+],
+
+image: "/services/retail-ecommerce.jpg",
+
+layout: "text-left",
+
+
+},
+
+{
+number: "04",
+
+
+name: "Enterprise Systems",
+
+desc:
+  "We deliver robust enterprise software solutions that streamline business operations, automate internal workflows, and improve collaboration across organizations.",
+
+tags: [
+  "ERP Solutions",
+  "CRM Systems",
+  "Internal Workflow Automation",
+  "HR Management Tools",
+],
+
+image: "/services/enterprise-systems.jpg",
+
+layout: "image-left",
+
+
+},
+
+{
+number: "05",
+
+
+name: "Startups & SaaS",
+
+desc:
+  "We help startups and SaaS companies launch, scale, and evolve digital products quickly with tailored software development, cloud solutions, and reliable technology infrastructure.",
+
+tags: [
+  "SaaS Platforms",
+  "MVP Development",
+  "Cloud Infrastructure",
+  "API Integrations",
+],
+
+image: "/services/startups-saas.jpg",
+
+layout: "text-left",
+
+
+},
+
+{
+number: "06",
+
+
+name: "Finance & Banking",
+
+desc:
+  "Our secure technology solutions help banking, fintech, insurance, and financial service providers improve operations, protect transactions, and enhance customer experiences.",
+
+tags: [
+  "Banking Apps",
+  "Fintech Platforms",
+  "Payment Gateways",
+  "Fraud Detection Systems",
+],
+
+image: "/services/finance-banking.jpg",
+
+layout: "image-left",
+
+
+},
+
+{
+number: "07",
+
+
+name: "Hotels & Hospitality",
+
+desc:
+  "We help hotels and hospitality businesses deliver better guest experiences while streamlining reservations, property operations, events, and hospitality management.",
+
+tags: [
+  "Property Management Systems",
+  "Booking Engines",
+  "Guest Experience Apps",
+  "Restaurant & Event Management",
+],
+
+image: "/services/hotels-hospitality.jpg",
+
+layout: "text-left",
+
+
+},
+
+{
+number: "08",
+
+
+name: "Manufacturing & Industrial",
+
+desc:
+  "We provide manufacturing and industrial companies with modern software solutions for process automation, production tracking, quality control, and resource management.",
+
+tags: [
+  "Production Management Systems",
+  "Inventory Tracking",
+  "IoT-Enabled Monitoring",
+  "Quality Control Software",
+],
+
+image: "/services/manufacturing-industrial.jpg",
+
+layout: "image-left",
+
+
+},
+
+{
+number: "09",
+
+
+name: "Travel & Tourism",
+
+desc:
+  "We help travel and tourism businesses create seamless booking experiences, manage itineraries efficiently, and deliver personalized customer journeys.",
+
+tags: [
+  "Booking Platforms",
+  "Travel Itinerary Management",
+  "Tourism Mobile Apps",
+  "Customer Loyalty Systems",
+],
+
+image: "/services/travel-tourism.jpg",
+
+layout: "text-left",
+
+
+},
 ];
 
 /* =========================================================
@@ -491,35 +611,36 @@ function ServiceRow({ service, index }) {
         ease: [0.16, 1, 0.3, 1],
       }}
       className="
-        border-t
-        border-hairline
+  border-t
+  border-hairline
 
-        py-6
-        sm:py-8
+  py-6
+  sm:py-8
+  lg:py-12
 
-        lg:py-12
+  pr-4
+  sm:pr-6
+  md:pr-10
+  lg:pr-12
+  xl:pr-16
 
-        flex
-        flex-row
+  flex
+  flex-row
 
-        items-stretch
+  items-stretch
+  lg:items-center
 
-        lg:items-center
+  gap-2
+  sm:gap-3
+  lg:gap-8
 
-        gap-2
-        sm:gap-3
+  overflow-hidden
 
-        lg:gap-8
-
-        overflow-hidden
-
-        transition-all
-        duration-500
-      "
+  transition-all
+  duration-500
+"
     >
-      {/* ===================================================
-          LEFT NUMBER — DESKTOP ONLY
-      =================================================== */}
+      {/* LEFT NUMBER */}
 
       <motion.span
         initial={{
@@ -560,9 +681,7 @@ function ServiceRow({ service, index }) {
         {service.number}
       </motion.span>
 
-      {/* ===================================================
-          IMAGE LEFT / TEXT RIGHT
-      =================================================== */}
+      {/* IMAGE LEFT / TEXT RIGHT */}
 
       {service.layout === "image-left" ? (
         <>
@@ -570,7 +689,7 @@ function ServiceRow({ service, index }) {
 
           {textBlock}
 
-          {/* RIGHT NUMBER — DESKTOP ONLY */}
+          {/* RIGHT NUMBER */}
 
           <span
             className="
@@ -602,7 +721,7 @@ function ServiceRow({ service, index }) {
         </>
       ) : (
         <>
-          {/* LEFT NUMBER — DESKTOP ONLY */}
+          {/* LEFT NUMBER */}
 
           <span
             className="
@@ -682,9 +801,7 @@ function TechnologyCard({ tech, index }) {
         sm:p-3
       "
     >
-      {/* =====================================================
-          LOGO AREA
-      ===================================================== */}
+      {/* LOGO AREA */}
 
       <div
         className="
@@ -731,14 +848,12 @@ function TechnologyCard({ tech, index }) {
         <div
           className="
             absolute
-
             inset-[5px]
 
             rounded-xl
 
             border
             border-dashed
-
             border-emerald-700/20
 
             animate-[spin_8s_linear_infinite_reverse]
@@ -756,7 +871,6 @@ function TechnologyCard({ tech, index }) {
         <div
           className="
             absolute
-
             inset-1
 
             rounded-full
@@ -777,7 +891,7 @@ function TechnologyCard({ tech, index }) {
           "
         />
 
-        {/* REAL TECHNOLOGY LOGO */}
+        {/* TECHNOLOGY LOGO */}
 
         <motion.div
           animate={{
@@ -891,9 +1005,10 @@ export default function Services() {
   return (
     <div
       className="
-        bg-sand
-
         w-full
+        min-h-screen
+
+        bg-sand
 
         overflow-hidden
       "
@@ -907,17 +1022,17 @@ export default function Services() {
 
           items-center
 
-          gap-14
-          sm:gap-20
+          gap-0
 
-          pt-28
-          sm:pt-32
-          lg:pt-36
+          pt-0
 
           pb-16
           sm:pb-24
+
+          w-full
         "
       >
+
         {/* =====================================================
             HERO
         ===================================================== */}
@@ -946,8 +1061,11 @@ export default function Services() {
             py-14
             sm:py-20
             lg:py-24
+
+            m-0
           "
         >
+
           {/* BACKGROUND VIDEO */}
 
           <video
@@ -970,7 +1088,7 @@ export default function Services() {
             "
           >
             <source
-              src="/videos/digital-background1.mp4"
+              src="/videos/work.mp4"
               type="video/mp4"
             />
           </video>
@@ -1084,7 +1202,7 @@ export default function Services() {
             }}
           />
 
-          {/* CONTENT */}
+          {/* HERO CONTENT */}
 
           <div
             className="
@@ -1099,7 +1217,6 @@ export default function Services() {
               grid
 
               grid-cols-1
-
               lg:grid-cols-12
 
               gap-10
@@ -1109,6 +1226,7 @@ export default function Services() {
               items-center
             "
           >
+
             {/* LEFT */}
 
             <motion.div
@@ -1138,6 +1256,7 @@ export default function Services() {
                 min-w-0
               "
             >
+
               {/* LABEL */}
 
               <motion.p
@@ -1316,6 +1435,7 @@ export default function Services() {
                   lg:p-0
                 "
               >
+
                 {/* MOBILE GLASS */}
 
                 <div
@@ -1457,295 +1577,257 @@ export default function Services() {
 
         {/* =====================================================
             SERVICES
+            FULL WIDTH - NO WHITE GAP
         ===================================================== */}
-{/* =====================================================
-    SERVICES
-===================================================== */}
 
-<section
-  className="
-    w-full
-    max-w-[1440px]
-
-    px-2
-    sm:px-6
-    md:px-20
-  "
->
-  <div className="w-full">
-    {SERVICES.map((service, index) => (
-      <div
-        key={service.number}
-        className="
-          relative
-
-          w-full
-          min-w-0
-
-          overflow-hidden
-
-          rounded-2xl
-          sm:rounded-3xl
-
-          p-[1.5px]
-        "
-      >
-        {/* =================================================
-            ROTATING ANIMATED BORDER
-        ================================================= */}
-
-        <div
-          className="
-            absolute
-            inset-0
-
-            rounded-2xl
-            sm:rounded-3xl
-
-bg-[conic-gradient(
-  from_0deg,
-  transparent_0deg,
-  transparent_30deg,
-  rgba(16,185,129,0.04)_60deg,
-  rgba(16,185,129,0.20)_90deg,
-  rgba(52,211,153,0.10)_120deg,
-  transparent_160deg,
-  transparent_360deg
-)]
-            animate-[serviceBorderRotate_4s_linear_infinite]
-          "
-        />
-
-        {/* =================================================
-            SECOND BORDER GLOW
-        ================================================= */}
-
-        <div
-          className="
-            absolute
-            inset-[1px]
-
-            rounded-2xl
-            sm:rounded-3xl
-
-            border
-            border-emerald-500/10
-
-            pointer-events-none
-          "
-        />
-
-        {/* =================================================
-            OUTER CONTINUOUS GLOW
-        ================================================= */}
-
-        <div
-          className="
-            absolute
-
-            -inset-3
-
-            rounded-[30px]
-            sm:rounded-[40px]
-
-            bg-emerald-500/10
-
-            blur-2xl
-
-            opacity-50
-
-            pointer-events-none
-
-            animate-[serviceOuterGlow_3.5s_ease-in-out_infinite]
-          "
-        />
-
-        {/* =================================================
-            MOVING LIGHT EFFECT
-        ================================================= */}
-
-        <div
-          className="
-            absolute
-
-            -top-[2px]
-            left-[-20%]
-
-            w-[20%]
-            h-[3px]
-
-            rounded-full
-
-            bg-emerald-300
-
-            shadow-[0_0_12px_rgba(52,211,153,0.9)]
-
-            pointer-events-none
-
-            animate-[serviceTopLight_4s_linear_infinite]
-          "
-        />
-
-        {/* =================================================
-            MOVING SIDE LIGHT
-        ================================================= */}
-
-        <div
-          className="
-            absolute
-
-            top-[-20%]
-            right:-[2px]
-
-            w-[3px]
-            h-[20%]
-
-            rounded-full
-
-            bg-emerald-300
-
-            shadow-[0_0_12px_rgba(52,211,153,0.9)]
-
-            pointer-events-none
-
-            animate-[serviceSideLight_4s_linear_infinite]
-          "
-        />
-
-        {/* =================================================
-            SERVICE CONTENT
-        ================================================= */}
-
-        <div
+        <section
           className="
             relative
-            z-10
 
             w-full
 
+            m-0
+            p-0
+
+            bg-[#e8f5ef]
+
             overflow-hidden
 
-            rounded-[calc(1rem-1px)]
-            sm:rounded-[calc(1.5rem-1px)]
+            rounded-none
           "
         >
-          <ServiceRow
-            service={service}
-            index={index}
-          />
-        </div>
-      </div>
-    ))}
-  </div>
+          <div
+            className="
+              w-full
+              m-0
+              p-0
+            "
+          >
+            {SERVICES.map((service, index) => (
+              <div
+                key={service.number}
+                className="
+                  relative
 
-  {/* =====================================================
-      BORDER ANIMATIONS
-  ===================================================== */}
+                  w-full
+                  min-w-0
 
-  <style>{`
+                  overflow-hidden
 
-    /* ================================================
-       MAIN ROTATING BORDER
-    ================================================ */
+                  rounded-none
 
-    @keyframes serviceBorderRotate {
+                  p-[1.5px]
+                "
+              >
 
-      0% {
-        transform: rotate(0deg);
-      }
+                {/* ROTATING ANIMATED BORDER */}
 
-      100% {
-        transform: rotate(360deg);
-      }
+                <div
+                  className="
+                    absolute
+                    inset-0
 
-    }
+                    rounded-none
 
+                    bg-[conic-gradient(
+                      from_0deg,
+                      transparent_0deg,
+                      transparent_30deg,
+                      rgba(16,185,129,0.04)_60deg,
+                      rgba(16,185,129,0.20)_90deg,
+                      rgba(52,211,153,0.10)_120deg,
+                      transparent_160deg,
+                      transparent_360deg
+                    )]
 
-    /* ================================================
-       OUTER GLOW
-    ================================================ */
+                    animate-[serviceBorderRotate_4s_linear_infinite]
+                  "
+                />
 
-    @keyframes serviceOuterGlow {
+                {/* SECOND BORDER GLOW */}
 
-      0%,
-      100% {
-        opacity: 0.25;
-        transform: scale(0.995);
-      }
+                <div
+                  className="
+                    absolute
+                    inset-[1px]
 
-      50% {
-        opacity: 0.65;
-        transform: scale(1.01);
-      }
+                    rounded-none
 
-    }
+                    border
+                    border-emerald-500/10
 
+                    pointer-events-none
+                  "
+                />
 
-    /* ================================================
-       TOP BORDER LIGHT
-    ================================================ */
+                {/* OUTER GLOW */}
 
-    @keyframes serviceTopLight {
+                <div
+                  className="
+                    absolute
 
-      0% {
-        left: -20%;
-        opacity: 0;
-      }
+                    -inset-3
 
-      10% {
-        opacity: 1;
-      }
+                    bg-emerald-500/10
 
-      45% {
-        left: 100%;
-        opacity: 1;
-      }
+                    blur-2xl
 
-      50% {
-        opacity: 0;
-      }
+                    opacity-50
 
-      100% {
-        left: 120%;
-        opacity: 0;
-      }
+                    pointer-events-none
 
-    }
+                    animate-[serviceOuterGlow_3.5s_ease-in-out_infinite]
+                  "
+                />
 
+                {/* MOVING TOP LIGHT */}
 
-    /* ================================================
-       RIGHT BORDER LIGHT
-    ================================================ */
+                <div
+                  className="
+                    absolute
 
-    @keyframes serviceSideLight {
+                    -top-[2px]
+                    left-[-20%]
 
-      0% {
-        top: -20%;
-        opacity: 0;
-      }
+                    w-[20%]
+                    h-[3px]
 
-      10% {
-        opacity: 1;
-      }
+                    rounded-full
 
-      45% {
-        top: 100%;
-        opacity: 1;
-      }
+                    bg-emerald-300
 
-      50% {
-        opacity: 0;
-      }
+                    shadow-[0_0_12px_rgba(52,211,153,0.9)]
 
-      100% {
-        top: 120%;
-        opacity: 0;
-      }
+                    pointer-events-none
 
-    }
+                    animate-[serviceTopLight_4s_linear_infinite]
+                  "
+                />
 
-  `}</style>
-</section>
+                {/* MOVING SIDE LIGHT */}
+
+                <div
+                  className="
+                    absolute
+
+                    top-[-20%]
+                    right-[-2px]
+
+                    w-[3px]
+                    h-[20%]
+
+                    rounded-full
+
+                    bg-emerald-300
+
+                    shadow-[0_0_12px_rgba(52,211,153,0.9)]
+
+                    pointer-events-none
+
+                    animate-[serviceSideLight_4s_linear_infinite]
+                  "
+                />
+
+                {/* SERVICE CONTENT */}
+
+                <div
+                  className="
+                    relative
+                    z-10
+
+                    w-full
+
+                    overflow-hidden
+
+                    rounded-none
+                  "
+                >
+                  <ServiceRow
+                    service={service}
+                    index={index}
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* SERVICE ANIMATIONS */}
+
+          <style>{`
+            @keyframes serviceBorderRotate {
+              0% {
+                transform: rotate(0deg);
+              }
+
+              100% {
+                transform: rotate(360deg);
+              }
+            }
+
+            @keyframes serviceOuterGlow {
+              0%,
+              100% {
+                opacity: 0.25;
+                transform: scale(0.995);
+              }
+
+              50% {
+                opacity: 0.65;
+                transform: scale(1.01);
+              }
+            }
+
+            @keyframes serviceTopLight {
+              0% {
+                left: -20%;
+                opacity: 0;
+              }
+
+              10% {
+                opacity: 1;
+              }
+
+              45% {
+                left: 100%;
+                opacity: 1;
+              }
+
+              50% {
+                opacity: 0;
+              }
+
+              100% {
+                left: 120%;
+                opacity: 0;
+              }
+            }
+
+            @keyframes serviceSideLight {
+              0% {
+                top: -20%;
+                opacity: 0;
+              }
+
+              10% {
+                opacity: 1;
+              }
+
+              45% {
+                top: 100%;
+                opacity: 1;
+              }
+
+              50% {
+                opacity: 0;
+              }
+
+              100% {
+                top: 120%;
+                opacity: 0;
+              }
+            }
+          `}</style>
+        </section>
 
         {/* =====================================================
             TECHNOLOGY STACK
@@ -1759,6 +1841,9 @@ bg-[conic-gradient(
             px-3
             sm:px-6
             md:px-20
+
+            mt-14
+            sm:mt-20
           "
         >
           <motion.div
@@ -1809,6 +1894,7 @@ bg-[conic-gradient(
               items-center
             "
           >
+
             {/* TOP GLOW */}
 
             <div
@@ -2015,21 +2101,6 @@ bg-[conic-gradient(
                 </div>
               ))}
             </div>
-
-            {/* TECHNOLOGY ANIMATION */}
-
-            <style>{`
-              @keyframes techPulse {
-                0%,
-                100% {
-                  transform: scale(1);
-                }
-
-                50% {
-                  transform: scale(1.08);
-                }
-              }
-            `}</style>
           </motion.div>
         </section>
 
@@ -2045,6 +2116,9 @@ bg-[conic-gradient(
             px-3
             sm:px-6
             md:px-0
+
+            mt-14
+            sm:mt-20
           "
         >
           <motion.div
@@ -2104,6 +2178,7 @@ bg-[conic-gradient(
               text-center
             "
           >
+
             {/* BACKGROUND GRADIENT */}
 
             <div

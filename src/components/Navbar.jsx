@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUpRight, Sparkles } from "lucide-react";
 import logo from "../assets/logo.png";
@@ -16,10 +16,86 @@ const LINKS = [
 
 export default function Navbar() {
   const { pathname } = useLocation();
+  const navigate = useNavigate();
+
   const [menuOpen, setMenuOpen] = useState(false);
+
+  /* =====================================================
+     CLOSE MOBILE MENU
+  ===================================================== */
 
   const closeMenu = () => {
     setMenuOpen(false);
+  };
+
+  /* =====================================================
+     SCROLL TO HERO
+  ===================================================== */
+
+  const scrollToHero = () => {
+    const hero = document.getElementById("hero");
+
+    if (hero) {
+      hero.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    } else {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  /* =====================================================
+     HOME / LOGO CLICK
+  ===================================================== */
+
+  const handleHomeClick = (e) => {
+    e.preventDefault();
+    closeMenu();
+
+    if (pathname === "/") {
+      scrollToHero();
+    } else {
+      navigate("/");
+    }
+  };
+
+  /* =====================================================
+     ROUTE CHANGE
+     When coming from another page to Home,
+     wait until Home is rendered and then scroll Hero.
+  ===================================================== */
+
+  useEffect(() => {
+    if (pathname === "/") {
+      const timer = setTimeout(() => {
+        scrollToHero();
+      }, 150);
+
+      return () => clearTimeout(timer);
+    }
+
+    // Every other page starts from the top
+    window.scrollTo({
+      top: 0,
+      behavior: "auto",
+    });
+  }, [pathname]);
+
+  /* =====================================================
+     MOBILE NON-HOME LINK
+  ===================================================== */
+
+  const handleMobileLinkClick = () => {
+    closeMenu();
+
+    window.scrollTo({
+      top: 0,
+      behavior: "auto",
+    });
   };
 
   return (
@@ -29,8 +105,14 @@ export default function Navbar() {
       ===================================================== */}
 
       <motion.header
-        initial={{ y: -30, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
+        initial={{
+          y: -30,
+          opacity: 0,
+        }}
+        animate={{
+          y: 0,
+          opacity: 1,
+        }}
         transition={{
           duration: 0.7,
           ease: [0.22, 1, 0.36, 1],
@@ -42,8 +124,8 @@ export default function Navbar() {
           right-0
           z-50
 
+          // bg-[#F3F7F4]
           bg-emerald-100
-          backdrop-blur-[24px]
 
           border-b
           border-[#24332F]/10
@@ -54,7 +136,6 @@ export default function Navbar() {
         <div
           className="
             w-full
-
             flex
             items-center
             justify-between
@@ -71,26 +152,21 @@ export default function Navbar() {
         >
 
           {/* =================================================
-              LOGO / BRAND
+              LOGO
           ================================================= */}
 
           <Link
             to="/"
-            onClick={closeMenu}
+            onClick={handleHomeClick}
             className="
               group
               flex
               items-center
-
               gap-2.5
               sm:gap-3
-
               shrink-0
             "
           >
-
-            {/* Logo Container */}
-
             <div
               className="
                 relative
@@ -123,9 +199,6 @@ export default function Navbar() {
                 shadow-[0px_5px_20px_rgba(15,92,77,0.08)]
               "
             >
-
-              {/* Animated Emerald Glow */}
-
               <motion.div
                 animate={{
                   scale: [1, 1.4, 1],
@@ -138,14 +211,10 @@ export default function Navbar() {
                 }}
                 className="
                   absolute
-
                   w-7
                   h-7
-
                   rounded-full
-
                   bg-[#6FA99B]
-
                   blur-xl
                 "
               />
@@ -168,13 +237,7 @@ export default function Navbar() {
               />
             </div>
 
-
-            {/* =================================================
-                BRAND TEXT
-            ================================================= */}
-
             <div className="flex flex-col">
-
               <span
                 className="
                   font-display
@@ -199,9 +262,6 @@ export default function Navbar() {
                 CodeThrive InfoTech
               </span>
 
-
-              {/* Software Company Label */}
-
               <div
                 className="
                   hidden
@@ -213,7 +273,6 @@ export default function Navbar() {
                   mt-1.5
                 "
               >
-
                 <motion.span
                   animate={{
                     scale: [1, 1.35, 1],
@@ -227,9 +286,7 @@ export default function Navbar() {
                   className="
                     w-1.5
                     h-1.5
-
                     rounded-full
-
                     bg-[#0F5C4D]
                   "
                 />
@@ -237,26 +294,18 @@ export default function Navbar() {
                 <span
                   className="
                     font-body
-
                     text-[8px]
                     lg:text-[9px]
-
                     tracking-[1.5px]
-
                     uppercase
-
                     text-[#687773]
                   "
                 >
                   Software Company
                 </span>
-
               </div>
-
             </div>
-
           </Link>
-
 
           {/* =================================================
               DESKTOP NAVIGATION
@@ -280,43 +329,39 @@ export default function Navbar() {
               xl:mr-6
             "
           >
-
             {LINKS.map((link, index) => {
-
               const isActive = pathname === link.to;
 
               return (
                 <Link
                   key={link.label}
                   to={link.to}
+                  onClick={
+                    link.label === "Home"
+                      ? handleHomeClick
+                      : undefined
+                  }
                   className="
                     group
                     relative
-
                     py-2
-
                     whitespace-nowrap
                   "
                 >
-
-                  {/* Navigation Text */}
-
                   <div
                     className={`
                       flex
                       items-center
-
                       gap-1
 
                       font-body
 
-                      text-[13px]
-                      lg:text-[14px]
-                      xl:text-[14px]
+                      text-[14px]
+                      lg:text-[15px]
+                      xl:text-[15px]
 
-                      font-medium
-
-                      tracking-[-0.15px]
+                      font-semibold
+                      tracking-[-0.1px]
 
                       transition-all
                       duration-300
@@ -324,25 +369,18 @@ export default function Navbar() {
                       ${
                         isActive
                           ? "text-[#0F5C4D]"
-                          : "text-[#687773] hover:text-[#0F5C4D]"
+                          : "text-[#435650] hover:text-[#0F5C4D]"
                       }
                     `}
                   >
-
-                    <span>
-                      {link.label}
-                    </span>
-
-
-                    {/* Navigation Number */}
+                    <span>{link.label}</span>
 
                     <span
                       className="
                         opacity-0
                         -translate-y-1
 
-                        text-[7px]
-
+                        text-[8px]
                         text-[#0F5C4D]
 
                         transition-all
@@ -354,11 +392,9 @@ export default function Navbar() {
                     >
                       0{index + 1}
                     </span>
-
                   </div>
 
-
-                  {/* Active Underline */}
+                  {/* ACTIVE UNDERLINE */}
 
                   <motion.span
                     initial={false}
@@ -370,7 +406,6 @@ export default function Navbar() {
                     }}
                     className="
                       absolute
-
                       left-0
                       -bottom-0.5
 
@@ -382,19 +417,16 @@ export default function Navbar() {
                     "
                   />
 
-
-                  {/* Hover Underline */}
+                  {/* HOVER UNDERLINE */}
 
                   {!isActive && (
                     <span
                       className="
                         absolute
-
                         left-0
                         -bottom-0.5
 
                         h-[2px]
-
                         w-0
 
                         rounded-full
@@ -408,13 +440,10 @@ export default function Navbar() {
                       "
                     />
                   )}
-
                 </Link>
               );
             })}
-
           </nav>
-
 
           {/* =================================================
               RIGHT SIDE
@@ -424,17 +453,13 @@ export default function Navbar() {
             className="
               flex
               items-center
-
               gap-2
               sm:gap-3
-
               shrink-0
             "
           >
 
-            {/* =================================================
-                DESKTOP CTA
-            ================================================= */}
+            {/* DESKTOP CTA */}
 
             <Link
               to="/contact"
@@ -474,7 +499,6 @@ export default function Navbar() {
                 xl:px-6
 
                 py-2.5
-                lg:py-2.5
 
                 transition-all
                 duration-300
@@ -484,9 +508,6 @@ export default function Navbar() {
                 shadow-[0px_8px_25px_rgba(15,92,77,0.20)]
               "
             >
-
-              {/* CTA Shimmer */}
-
               <motion.span
                 animate={{
                   x: ["-120%", "120%"],
@@ -499,13 +520,9 @@ export default function Navbar() {
                 }}
                 className="
                   absolute
-
                   inset-y-0
-
                   w-10
-
                   bg-white/20
-
                   skew-x-[-20deg]
                 "
               />
@@ -527,21 +544,15 @@ export default function Navbar() {
                   group-hover:-translate-y-1
                 "
               />
-
             </Link>
 
-
-            {/* =================================================
-                MOBILE MENU BUTTON
-            ================================================= */}
+            {/* MOBILE BUTTON */}
 
             <button
               type="button"
               onClick={() => setMenuOpen(!menuOpen)}
               aria-label={
-                menuOpen
-                  ? "Close menu"
-                  : "Open menu"
+                menuOpen ? "Close menu" : "Open menu"
               }
               aria-expanded={menuOpen}
               className="
@@ -549,42 +560,51 @@ export default function Navbar() {
 
                 relative
 
+                flex
+                items-center
+                justify-center
+
                 w-10
                 h-10
+
+                sm:w-11
+                sm:h-11
 
                 rounded-full
 
                 bg-white
 
                 border
-                border-[#0F5C4D]/20
+                border-[#0F5C4D]/15
 
-                flex
-                items-center
-                justify-center
+                shadow-sm
 
                 transition-all
                 duration-300
 
                 hover:bg-[#E7F0ED]
-                hover:border-[#0F5C4D]/40
+                hover:border-[#0F5C4D]/30
+                hover:shadow-md
 
-                active:scale-95
+                active:scale-90
+
+                focus:outline-none
+                focus:ring-2
+                focus:ring-[#0F5C4D]/20
               "
             >
-
-              {/* Top / First Line */}
-
               <span
                 className={`
                   absolute
 
                   w-5
+                  sm:w-[22px]
+
                   h-[2px]
 
-                  bg-[#24332F]
-
                   rounded-full
+
+                  bg-[#24332F]
 
                   transition-all
                   duration-300
@@ -597,19 +617,18 @@ export default function Navbar() {
                 `}
               />
 
-
-              {/* Bottom / Second Line */}
-
               <span
                 className={`
                   absolute
 
                   w-5
+                  sm:w-[22px]
+
                   h-[2px]
 
-                  bg-[#24332F]
-
                   rounded-full
+
+                  bg-[#24332F]
 
                   transition-all
                   duration-300
@@ -621,21 +640,13 @@ export default function Navbar() {
                   }
                 `}
               />
-
             </button>
-
           </div>
-
         </div>
       </motion.header>
 
-
       {/* =====================================================
           MOBILE MENU
-          
-          IMPORTANT:
-          No full-screen overlay.
-          This is now a compact floating dropdown.
       ===================================================== */}
 
       <AnimatePresence>
@@ -673,9 +684,7 @@ export default function Navbar() {
 
               md:hidden
 
-              bg-white/98
-
-              backdrop-blur-xl
+              bg-white
 
               rounded-[20px]
 
@@ -687,7 +696,6 @@ export default function Navbar() {
               overflow-hidden
             "
           >
-
             <nav
               className="
                 p-2.5
@@ -695,9 +703,7 @@ export default function Navbar() {
               "
             >
 
-              {/* =================================================
-                  MENU HEADER
-              ================================================= */}
+              {/* MENU HEADER */}
 
               <div
                 className="
@@ -711,16 +717,13 @@ export default function Navbar() {
                   pb-2.5
                 "
               >
-
                 <div
                   className="
                     flex
                     items-center
-
                     gap-2
                   "
                 >
-
                   <motion.span
                     animate={{
                       scale: [1, 1.4, 1],
@@ -732,9 +735,7 @@ export default function Navbar() {
                     className="
                       w-2
                       h-2
-
                       rounded-full
-
                       bg-[#0F5C4D]
                     "
                   />
@@ -754,59 +755,52 @@ export default function Navbar() {
                   >
                     Navigation
                   </p>
-
                 </div>
-
 
                 <Sparkles
                   size={14}
                   className="text-[#0F5C4D]"
                 />
-
               </div>
 
-
-              {/* =================================================
-                  NAVIGATION LINKS
-              ================================================= */}
+              {/* MOBILE LINKS */}
 
               <div
                 className="
                   flex
                   flex-col
-
-                  gap-0.5
+                  gap-1
                 "
               >
-
                 {LINKS.map((link, index) => {
-
                   const isActive =
                     pathname === link.to;
 
                   return (
                     <motion.div
                       key={link.label}
-
                       initial={{
                         opacity: 0,
                         x: -10,
                       }}
-
                       animate={{
                         opacity: 1,
                         x: 0,
                       }}
-
                       transition={{
                         delay: index * 0.035,
                         duration: 0.25,
                       }}
                     >
-
                       <Link
                         to={link.to}
-                        onClick={closeMenu}
+                        onClick={(e) => {
+                          if (link.label === "Home") {
+                            handleHomeClick(e);
+                          } else {
+                            handleMobileLinkClick();
+                          }
+                        }}
                         className={`
                           group
 
@@ -817,36 +811,32 @@ export default function Navbar() {
                           w-full
 
                           px-3.5
-                          py-2.5
+                          py-3
 
                           rounded-xl
 
                           font-display
                           font-semibold
 
-                          text-[15px]
+                          text-[16px]
 
                           tracking-[-0.3px]
 
                           transition-all
                           duration-200
 
+                          active:scale-[0.98]
+
                           ${
                             isActive
                               ? "bg-[#E7F0ED] text-[#0F5C4D]"
-                              : "text-[#24332F] hover:bg-[#F3F7F4] hover:text-[#0F5C4D]"
+                              : "text-[#435650] hover:bg-[#F3F7F4] hover:text-[#0F5C4D]"
                           }
                         `}
                       >
-
-                        {/* Link Name */}
-
                         <span>
                           {link.label}
                         </span>
-
-
-                        {/* Number + Arrow */}
 
                         <span
                           className={`
@@ -863,11 +853,10 @@ export default function Navbar() {
                             ${
                               isActive
                                 ? "text-[#0F5C4D]"
-                                : "text-[#687773]/45 group-hover:text-[#0F5C4D]"
+                                : "text-[#687773]/70 group-hover:text-[#0F5C4D]"
                             }
                           `}
                         >
-
                           0{index + 1}
 
                           <ArrowUpRight
@@ -880,36 +869,24 @@ export default function Navbar() {
                               group-hover:-translate-y-0.5
                             "
                           />
-
                         </span>
-
                       </Link>
-
                     </motion.div>
                   );
                 })}
-
               </div>
 
-
-              {/* =================================================
-                  DIVIDER
-              ================================================= */}
+              {/* DIVIDER */}
 
               <div
                 className="
                   h-px
-
                   bg-[#24332F]/10
-
-                  my-2.5
+                  my-3
                 "
               />
 
-
-              {/* =================================================
-                  MOBILE CTA
-              ================================================= */}
+              {/* MOBILE CTA */}
 
               <Link
                 to="/contact"
@@ -951,7 +928,6 @@ export default function Navbar() {
                   active:scale-[0.98]
                 "
               >
-
                 <span>
                   Let’s Work Together
                 </span>
@@ -966,11 +942,8 @@ export default function Navbar() {
                     group-hover:-translate-y-1
                   "
                 />
-
               </Link>
-
             </nav>
-
           </motion.div>
         )}
       </AnimatePresence>

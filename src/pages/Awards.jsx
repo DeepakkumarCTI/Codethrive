@@ -1107,6 +1107,8 @@ function AwardCard({ award, index }) {
 // =====================================================
 
 export default function Awards() {
+
+  const [activeAward, setActiveAward] = useState(null);
   return (
     <div
       className="
@@ -1120,596 +1122,937 @@ export default function Awards() {
     >
       <Navbar />
 
-      <main
-        className="
-          flex
-          flex-col
-          items-center
+      
+<main
+  className="
+    flex
+    flex-col
+    items-center
 
-          gap-20
-          sm:gap-24
-          md:gap-32
+    gap-0
 
-          pt-20
-          sm:pt-24
-          md:pt-32
+    pt-0
+    pb-0
 
-          pb-16
-          sm:pb-20
-          md:pb-24
-        "
-      >
+    m-0
+    p-0
+  "
+>
+
+
+
+
         {/* =================================================
             HERO
         ================================================= */}
 
-        <motion.section
-          initial="hidden"
-          animate="visible"
-          variants={stagger}
+      
+<motion.section
+  initial="hidden"
+  animate="visible"
+  variants={stagger}
+  className="
+    relative
+    w-full
+    min-h-screen
+    overflow-hidden
+    flex
+    items-center
+    bg-[#071714]
+    m-0
+    p-0
+  "
+>
+  {/* =================================================
+      BACKGROUND VIDEO
+  ================================================= */}
+  <video
+    autoPlay
+    loop
+    muted
+    playsInline
+    preload="auto"
+    className="
+      absolute
+      inset-0
+      w-full
+      h-full
+      object-cover
+      pointer-events-none
+      select-none
+      scale-[1.04]
+      opacity-[0.72]
+    "
+  >
+    <source
+      src="/videos/awards.mp4"
+      type="video/mp4"
+    />
+  </video>
+
+  {/* =================================================
+      DARK OVERLAY
+  ================================================= */}
+  <div
+    className="
+      absolute
+      inset-0
+      pointer-events-none
+      bg-black/30
+    "
+  />
+
+  {/* =================================================
+      LEFT TEXT PROTECTION
+  ================================================= */}
+  <div
+    className="
+      absolute
+      inset-0
+      pointer-events-none
+      bg-gradient-to-r
+      from-[#03110E]/95
+      via-[#03110E]/75
+      via-[55%]
+      to-[#03110E]/10
+    "
+  />
+
+  {/* =================================================
+      BOTTOM DARK GRADIENT
+  ================================================= */}
+  <div
+    className="
+      absolute
+      inset-x-0
+      bottom-0
+      h-[35%]
+      pointer-events-none
+      bg-gradient-to-t
+      from-[#03110E]/75
+      to-transparent
+    "
+  />
+
+  {/* =================================================
+      GREEN ATMOSPHERIC GLOW
+  ================================================= */}
+  <motion.div
+    animate={{
+      scale: [1, 1.12, 1],
+      opacity: [0.15, 0.24, 0.15],
+      x: [0, 20, 0],
+      y: [0, -15, 0],
+    }}
+    transition={{
+      duration: 9,
+      repeat: Infinity,
+      ease: "easeInOut",
+    }}
+    className="
+      absolute
+      right-[-120px]
+      top-[5%]
+      w-[420px]
+      h-[420px]
+      sm:w-[520px]
+      sm:h-[520px]
+      md:w-[700px]
+      md:h-[700px]
+      rounded-full
+      bg-emerald-500/[0.08]
+      blur-[100px]
+      pointer-events-none
+    "
+  />
+
+  {/* =================================================
+      SECOND SOFT GLOW
+  ================================================= */}
+  <motion.div
+    animate={{
+      scale: [1, 1.08, 1],
+      opacity: [0.06, 0.13, 0.06],
+    }}
+    transition={{
+      duration: 7,
+      repeat: Infinity,
+      ease: "easeInOut",
+    }}
+    className="
+      absolute
+      left-[-180px]
+      bottom-[-180px]
+      w-[420px]
+      h-[420px]
+      sm:w-[520px]
+      sm:h-[520px]
+      rounded-full
+      bg-emerald-400/[0.10]
+      blur-[100px]
+      pointer-events-none
+    "
+  />
+
+  {/* =================================================
+      ANIMATED HORIZONTAL LIGHT
+  ================================================= */}
+  <motion.div
+    animate={{
+      x: ["-20%", "120%"],
+      opacity: [0, 0.18, 0],
+    }}
+    transition={{
+      duration: 12,
+      repeat: Infinity,
+      ease: "linear",
+    }}
+    className="
+      absolute
+      top-[28%]
+      left-0
+      w-[240px]
+      sm:w-[360px]
+      md:w-[500px]
+      h-px
+      bg-gradient-to-r
+      from-transparent
+      via-emerald-300/40
+      to-transparent
+      blur-[1px]
+      pointer-events-none
+    "
+  />
+
+  {/* =================================================
+      HERO CONTENT
+  ================================================= */}
+  <div
+    className="
+      relative
+      z-10
+      w-full
+      px-5
+      sm:px-8
+      md:px-12
+      lg:px-16
+      xl:px-20
+      py-16
+      sm:py-20
+      md:py-24
+      lg:py-28
+    "
+  >
+    <div className="max-w-[820px]">
+
+      {/* =================================================
+          EYEBROW
+      ================================================= */}
+      <motion.div
+        variants={fadeUp}
+        className="
+          flex
+          items-center
+          gap-3
+          mb-4
+          sm:mb-5
+          md:mb-6
+        "
+      >
+        <motion.span
+          animate={{
+            scale: [1, 1.35, 1],
+            opacity: [0.6, 1, 0.6],
+          }}
+          transition={{
+            duration: 2.5,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
           className="
-            relative
+            w-2
+            h-2
+            rounded-full
+            bg-emerald-400
+            shadow-[0_0_12px_rgba(52,211,153,0.45)]
+          "
+        />
 
-            w-full
-            max-w-[1440px]
-
-            min-h-[calc(100vh-80px)]
-            sm:min-h-[calc(100vh-88px)]
-            md:min-h-[calc(100vh-96px)]
-
-            overflow-hidden
-
-            flex
-            items-center
-
-            bg-[#071714]
+        <span
+          className="
+            font-body
+            text-emerald-300
+            text-[9px]
+            sm:text-[11px]
+            md:text-xs
+            tracking-[3px]
+            uppercase
           "
         >
-          {/* =================================================
-              BACKGROUND VIDEO
-          ================================================= */}
+          Recognition & Craft
+        </span>
+      </motion.div>
 
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            preload="auto"
-            className="
-              absolute
-              inset-0
+      {/* =================================================
+          HERO HEADING
+      ================================================= */}
+      <motion.h1
+        variants={fadeUp}
+        className="
+          font-display
+          font-bold
+          text-white
+          text-[46px]
+          sm:text-[64px]
+          md:text-[82px]
+          lg:text-[100px]
+          xl:text-[112px]
+          leading-[0.9]
+          tracking-[-2.5px]
+          sm:tracking-[-3px]
+          md:tracking-[-4px]
+          lg:tracking-[-5px]
+        "
+      >
+        <TypeAnimation
+          sequence={[
+            "Work",
+            300,
+            "Work worth",
+            450,
+            "Work worth.",
+            300,
+            "Work worth",
+            250,
+            "Work worth",
+          ]}
+          wrapper="span"
+          speed={45}
+          repeat={0}
+          cursor={false}
+        />
 
-              w-full
-              h-full
+        <br />
 
-              object-cover
+        <motion.span
+          animate={{
+            opacity: [0.72, 1, 0.72],
+          }}
+          transition={{
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="
+            font-normal
+            text-emerald-300
+            drop-shadow-[0_0_25px_rgba(52,211,153,0.12)]
+          "
+        >
+          remembering.
+        </motion.span>
+      </motion.h1>
 
-              pointer-events-none
-              select-none
+      {/* =================================================
+          DESCRIPTION
+      ================================================= */}
+      <motion.p
+        variants={fadeUp}
+        className="
+          mt-6
+          sm:mt-7
+          md:mt-8
+          max-w-[540px]
+          font-body
+          text-white/65
+          text-sm
+          sm:text-base
+          md:text-lg
+          leading-[1.7]
+        "
+      >
+        Awards are not the reason we create.
+        <br className="hidden sm:block" />
 
-              scale-[1.04]
+        They are simply a reflection of the
+        <br className="hidden sm:block" />
 
-              opacity-[0.72]
-            "
-          >
-            <source
-              src="/videos/digital-background1.mp4"
-              type="video/mp4"
-            />
-          </video>
+        care, curiosity and craft we bring to
+        <br className="hidden sm:block" />
 
-          {/* =================================================
-              DARK OVERLAY
-          ================================================= */}
+        every project.
+      </motion.p>
 
-          <div
-            className="
-              absolute
-              inset-0
-
-              pointer-events-none
-
-              bg-black/30
-            "
-          />
-
-          {/* =================================================
-              LEFT TEXT PROTECTION
-          ================================================= */}
-
-          <div
-            className="
-              absolute
-              inset-0
-
-              pointer-events-none
-
-              bg-gradient-to-r
-              from-[#03110E]/95
-              via-[#03110E]/75
-              via-[55%]
-              to-[#03110E]/10
-            "
-          />
-
-          {/* =================================================
-              BOTTOM DARK GRADIENT
-          ================================================= */}
-
-          <div
-            className="
-              absolute
-              inset-x-0
-              bottom-0
-
-              h-[35%]
-
-              pointer-events-none
-
-              bg-gradient-to-t
-              from-[#03110E]/75
-              to-transparent
-            "
-          />
-
-          {/* =================================================
-              GREEN ATMOSPHERIC GLOW
-          ================================================= */}
-
-          <motion.div
+      {/* =================================================
+          EXPLORE
+      ================================================= */}
+      <motion.div
+        variants={fadeUp}
+        className="
+          flex
+          items-center
+          gap-4
+          mt-7
+          sm:mt-9
+          md:mt-10
+        "
+      >
+        <motion.div
+          animate={{
+            y: [0, 7, 0],
+          }}
+          transition={{
+            duration: 2.5,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="
+            relative
+            w-11
+            h-11
+            sm:w-12
+            sm:h-12
+            rounded-full
+            border
+            border-white/20
+            bg-white/[0.06]
+            backdrop-blur-md
+            flex
+            items-center
+            justify-center
+            shadow-[0_0_25px_rgba(52,211,153,0.08)]
+          "
+        >
+          <motion.span
             animate={{
-              scale: [1, 1.12, 1],
-              opacity: [0.15, 0.24, 0.15],
-              x: [0, 20, 0],
-              y: [0, -15, 0],
+              y: [0, 4, 0],
             }}
             transition={{
-              duration: 9,
+              duration: 1.8,
               repeat: Infinity,
               ease: "easeInOut",
             }}
             className="
-              absolute
-
-              right-[-120px]
-              top-[5%]
-
-              w-[420px]
-              h-[420px]
-
-              sm:w-[520px]
-              sm:h-[520px]
-
-              md:w-[700px]
-              md:h-[700px]
-
-              rounded-full
-
-              bg-emerald-500/[0.08]
-
-              blur-[100px]
-
-              pointer-events-none
-            "
-          />
-
-          {/* =================================================
-              SECOND SOFT GLOW
-          ================================================= */}
-
-          <motion.div
-            animate={{
-              scale: [1, 1.08, 1],
-              opacity: [0.06, 0.13, 0.06],
-            }}
-            transition={{
-              duration: 7,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-            className="
-              absolute
-
-              left-[-180px]
-              bottom-[-180px]
-
-              w-[420px]
-              h-[420px]
-
-              sm:w-[520px]
-              sm:h-[520px]
-
-              rounded-full
-
-              bg-emerald-400/[0.10]
-
-              blur-[100px]
-
-              pointer-events-none
-            "
-          />
-
-          {/* =================================================
-              ANIMATED HORIZONTAL LIGHT
-          ================================================= */}
-
-          <motion.div
-            animate={{
-              x: ["-20%", "120%"],
-              opacity: [0, 0.18, 0],
-            }}
-            transition={{
-              duration: 12,
-              repeat: Infinity,
-              ease: "linear",
-            }}
-            className="
-              absolute
-
-              top-[28%]
-              left-0
-
-              w-[240px]
-
-              sm:w-[360px]
-
-              md:w-[500px]
-
-              h-px
-
-              bg-gradient-to-r
-              from-transparent
-              via-emerald-300/40
-              to-transparent
-
-              blur-[1px]
-
-              pointer-events-none
-            "
-          />
-
-          {/* =================================================
-              HERO CONTENT
-          ================================================= */}
-
-          <div
-            className="
-              relative
-              z-10
-
-              w-full
-              max-w-[1440px]
-
-              px-5
-              sm:px-8
-              md:px-12
-              lg:px-20
-              xl:px-24
-
-              py-24
-              sm:py-28
-              md:py-32
-              lg:py-36
+              text-emerald-300
+              text-lg
             "
           >
-            <div
-              className="
-                max-w-[820px]
-              "
-            >
-              {/* =================================================
-                  EYEBROW
-              ================================================= */}
+            ↓
+          </motion.span>
+        </motion.div>
 
-              <motion.div
-                variants={fadeUp}
-                className="
-                  flex
-                  items-center
-                  gap-3
+        <span
+          className="
+            font-body
+            text-white/50
+            text-[9px]
+            sm:text-[10px]
+            md:text-xs
+            tracking-[2px]
+            uppercase
+          "
+        >
+          Explore our recognition
+        </span>
+      </motion.div>
 
-                  mb-5
-                  sm:mb-6
-                  md:mb-8
-                "
-              >
-                <motion.span
-                  animate={{
-                    scale: [1, 1.35, 1],
-                    opacity: [0.6, 1, 0.6],
-                  }}
-                  transition={{
-                    duration: 2.5,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
-                  className="
-                    w-2
-                    h-2
+    </div>
+  </div>
 
-                    rounded-full
+  {/* =================================================
+      TOP RIGHT DECORATIVE RING
+  ================================================= */}
+  <motion.div
+    animate={{
+      rotate: 360,
+    }}
+    transition={{
+      duration: 30,
+      repeat: Infinity,
+      ease: "linear",
+    }}
+    className="
+      absolute
+      right-[-120px]
+      sm:right-[-100px]
+      md:right-[-150px]
+      top-[12%]
+      w-[260px]
+      h-[260px]
+      sm:w-[340px]
+      sm:h-[340px]
+      md:w-[480px]
+      md:h-[480px]
+      rounded-full
+      border
+      border-emerald-300/[0.08]
+      pointer-events-none
+    "
+  >
+    <div
+      className="
+        absolute
+        top-1/2
+        left-0
+        w-2
+        h-2
+        rounded-full
+        bg-emerald-300/40
+        shadow-[0_0_15px_rgba(52,211,153,0.25)]
+      "
+    />
+  </motion.div>
 
-                    bg-emerald-400
+  {/* =================================================
+      FLOATING DOTS
+  ================================================= */}
+  <motion.div
+    animate={{
+      y: [0, -15, 0],
+      opacity: [0.25, 0.6, 0.25],
+    }}
+    transition={{
+      duration: 4,
+      repeat: Infinity,
+      ease: "easeInOut",
+    }}
+    className="
+      absolute
+      right-[12%]
+      bottom-[18%]
+      w-2
+      h-2
+      rounded-full
+      bg-emerald-300/50
+      shadow-[0_0_15px_rgba(52,211,153,0.3)]
+      pointer-events-none
+    "
+  />
 
-                    shadow-[0_0_12px_rgba(52,211,153,0.45)]
-                  "
-                />
+  <motion.div
+    animate={{
+      y: [0, 12, 0],
+      opacity: [0.15, 0.45, 0.15],
+    }}
+    transition={{
+      duration: 5,
+      repeat: Infinity,
+      ease: "easeInOut",
+      delay: 1,
+    }}
+    className="
+      absolute
+      right-[25%]
+      top-[22%]
+      w-1.5
+      h-1.5
+      rounded-full
+      bg-emerald-300/40
+      pointer-events-none
+    "
+  />
 
-                <span
-                  className="
-                    font-body
-                    text-emerald-300
+  {/* =================================================
+      BOTTOM EDGE GLOW
+  ================================================= */}
+  <motion.div
+    animate={{
+      opacity: [0.2, 0.5, 0.2],
+      scaleX: [0.9, 1, 0.9],
+    }}
+    transition={{
+      duration: 5,
+      repeat: Infinity,
+      ease: "easeInOut",
+    }}
+    className="
+      absolute
+      bottom-0
+      left-[8%]
+      right-[8%]
+      h-px
+      bg-gradient-to-r
+      from-transparent
+      via-emerald-400/25
+      to-transparent
+      pointer-events-none
+    "
+  />
+</motion.section>
 
-                    text-[9px]
-                    sm:text-[11px]
-                    md:text-xs
 
-                    tracking-[3px]
 
-                    uppercase
-                  "
-                >
-                  Recognition & Craft
-                </span>
-              </motion.div>
+        {/* =================================================
+            STATS / IMPACT
+        ================================================= */}
+{/* =========================================================
+    IMPACT / STATS SECTION
+========================================================= */}
 
-              {/* =================================================
-                  HERO HEADING
-              ================================================= */}
+<motion.section
+  initial={{
+    opacity: 0,
+  }}
+  whileInView={{
+    opacity: 1,
+  }}
+  viewport={{
+    once: true,
+    amount: 0.1,
+  }}
+  transition={{
+    duration: 0.8,
+  }}
+  className="
+    relative
+    w-full
+    overflow-hidden
 
-              <motion.h1
-                variants={fadeUp}
-                className="
-                  font-display
-                  font-bold
+    py-14
+    sm:py-16
+    md:py-24
 
-                  text-white
+    bg-gradient-to-br
+    from-[#F8FCFA]
+    via-[#EDF7F3]
+    to-[#E2F0EB]
+  "
+>
+  {/* =================================================
+      TOP RIGHT GLOW
+  ================================================= */}
 
-                  text-[46px]
-                  sm:text-[64px]
-                  md:text-[82px]
-                  lg:text-[100px]
-                  xl:text-[112px]
+  <motion.div
+    animate={{
+      x: [0, 25, 0],
+      y: [0, -20, 0],
+      scale: [1, 1.08, 1],
+      opacity: [0.35, 0.55, 0.35],
+    }}
+    transition={{
+      duration: 10,
+      repeat: Infinity,
+      ease: "easeInOut",
+    }}
+    className="
+      absolute
+      pointer-events-none
 
-                  leading-[0.9]
+      -top-40
+      -right-40
 
-                  tracking-[-2.5px]
-                  sm:tracking-[-3px]
-                  md:tracking-[-4px]
-                  lg:tracking-[-5px]
-                "
-              >
-                <TypeAnimation
-                  sequence={[
-                    "Work",
-                    300,
-                    "Work worth",
-                    450,
-                    "Work worth.",
-                    300,
-                    "Work worth",
-                    250,
-                    "Work worth",
-                  ]}
-                  wrapper="span"
-                  speed={45}
-                  repeat={0}
-                  cursor={false}
-                />
+      sm:-top-48
+      sm:-right-48
 
-                <br />
+      md:-top-64
+      md:-right-64
 
-                <motion.span
-                  animate={{
-                    opacity: [0.72, 1, 0.72],
-                  }}
-                  transition={{
-                    duration: 4,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
-                  className="
-                    font-normal
+      w-[300px]
+      h-[300px]
 
-                    text-emerald-300
+      sm:w-[420px]
+      sm:h-[420px]
 
-                    drop-shadow-[0_0_25px_rgba(52,211,153,0.12)]
-                  "
-                >
-                  remembering.
-                </motion.span>
-              </motion.h1>
+      md:w-[600px]
+      md:h-[600px]
 
-              {/* =================================================
-                  DESCRIPTION
-              ================================================= */}
+      rounded-full
 
-              <motion.p
-                variants={fadeUp}
-                className="
-                  mt-7
-                  sm:mt-8
-                  md:mt-10
+      bg-emerald-400/[0.10]
 
-                  max-w-[540px]
+      blur-[100px]
+    "
+  />
 
-                  font-body
+  {/* =================================================
+      BOTTOM LEFT GLOW
+  ================================================= */}
 
-                  text-white/65
+  <motion.div
+    animate={{
+      x: [0, -20, 0],
+      y: [0, 15, 0],
+      scale: [1, 1.08, 1],
+      opacity: [0.25, 0.45, 0.25],
+    }}
+    transition={{
+      duration: 12,
+      repeat: Infinity,
+      ease: "easeInOut",
+    }}
+    className="
+      absolute
+      pointer-events-none
 
-                  text-sm
-                  sm:text-base
-                  md:text-lg
+      -bottom-40
+      -left-40
 
-                  leading-[1.8]
-                "
-              >
-                Awards are not the reason we create.
-                <br className="hidden sm:block" />
+      sm:-bottom-52
+      sm:-left-52
 
-                They are simply a reflection of the
-                <br className="hidden sm:block" />
+      md:-bottom-64
+      md:-left-64
 
-                care, curiosity and craft we bring to
-                <br className="hidden sm:block" />
+      w-[320px]
+      h-[320px]
 
-                every project.
-              </motion.p>
+      sm:w-[440px]
+      sm:h-[440px]
 
-              {/* =================================================
-                  EXPLORE
-              ================================================= */}
+      md:w-[600px]
+      md:h-[600px]
 
-              <motion.div
-                variants={fadeUp}
-                className="
-                  flex
-                  items-center
-                  gap-4
+      rounded-full
 
-                  mt-9
-                  sm:mt-11
-                  md:mt-14
-                "
-              >
-                <motion.div
-                  animate={{
-                    y: [0, 7, 0],
-                  }}
-                  transition={{
-                    duration: 2.5,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
-                  className="
-                    relative
+      bg-teal-400/[0.08]
 
-                    w-11
-                    h-11
+      blur-[110px]
+    "
+  />
 
-                    sm:w-12
-                    sm:h-12
+  {/* =================================================
+      CENTER GLOW
+  ================================================= */}
 
-                    rounded-full
+  <motion.div
+    animate={{
+      scale: [1, 1.15, 1],
+      opacity: [0.08, 0.16, 0.08],
+    }}
+    transition={{
+      duration: 8,
+      repeat: Infinity,
+      ease: "easeInOut",
+    }}
+    className="
+      absolute
+      pointer-events-none
 
-                    border
-                    border-white/20
+      top-[45%]
+      left-1/2
 
-                    bg-white/[0.06]
+      w-[240px]
+      h-[240px]
 
-                    backdrop-blur-md
+      sm:w-[340px]
+      sm:h-[340px]
 
-                    flex
-                    items-center
-                    justify-center
+      md:w-[480px]
+      md:h-[480px]
 
-                    shadow-[0_0_25px_rgba(52,211,153,0.08)]
-                  "
-                >
-                  <motion.span
-                    animate={{
-                      y: [0, 4, 0],
-                    }}
-                    transition={{
-                      duration: 1.8,
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                    }}
-                    className="
-                      text-emerald-300
-                      text-lg
-                    "
-                  >
-                    ↓
-                  </motion.span>
-                </motion.div>
+      rounded-full
 
-                <span
-                  className="
-                    font-body
+      bg-emerald-300/[0.08]
 
-                    text-white/50
+      blur-[100px]
 
-                    text-[9px]
-                    sm:text-[10px]
-                    md:text-xs
+      -translate-x-1/2
+      -translate-y-1/2
+    "
+  />
 
-                    tracking-[2px]
+  {/* =================================================
+      BACKGROUND GRID
+  ================================================= */}
 
-                    uppercase
-                  "
-                >
-                  Explore our recognition
-                </span>
-              </motion.div>
-            </div>
-          </div>
+  <div
+    className="
+      absolute
+      inset-0
 
-          {/* =================================================
-              TOP RIGHT DECORATIVE RING
-          ================================================= */}
+      pointer-events-none
 
-          <motion.div
+      opacity-[0.22]
+
+      bg-[linear-gradient(rgba(6,78,59,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(6,78,59,0.035)_1px,transparent_1px)]
+
+      bg-[size:55px_55px]
+    "
+  />
+
+  {/* =================================================
+      ROTATING CIRCLE
+  ================================================= */}
+
+  <motion.div
+    animate={{
+      rotate: 360,
+    }}
+    transition={{
+      duration: 35,
+      repeat: Infinity,
+      ease: "linear",
+    }}
+    className="
+      absolute
+      pointer-events-none
+
+      right-[-100px]
+      top-[18%]
+
+      w-[220px]
+      h-[220px]
+
+      sm:w-[300px]
+      sm:h-[300px]
+
+      md:w-[420px]
+      md:h-[420px]
+
+      rounded-full
+
+      border
+      border-emerald-800/[0.06]
+    "
+  >
+    <motion.span
+      animate={{
+        scale: [1, 1.4, 1],
+        opacity: [0.2, 0.5, 0.2],
+      }}
+      transition={{
+        duration: 3,
+        repeat: Infinity,
+        ease: "easeInOut",
+      }}
+      className="
+        absolute
+
+        top-[10%]
+        left-1/2
+
+        w-2
+        h-2
+
+        rounded-full
+
+        bg-emerald-700/30
+
+        shadow-[0_0_15px_rgba(6,78,59,0.2)]
+      "
+    />
+  </motion.div>
+
+  {/* =================================================
+      CONTENT CONTAINER
+      Background remains full width,
+      content stays max 1440px.
+  ================================================= */}
+
+  <div
+    className="
+      relative
+      z-20
+
+      w-full
+      max-w-[1440px]
+
+      mx-auto
+
+      px-3
+      sm:px-6
+      md:px-20
+    "
+  >
+    {/* =================================================
+        HEADING
+    ================================================= */}
+
+    <motion.div
+      initial={{
+        opacity: 0,
+        y: 35,
+      }}
+      whileInView={{
+        opacity: 1,
+        y: 0,
+      }}
+      viewport={{
+        once: true,
+        amount: 0.15,
+      }}
+      transition={{
+        duration: 0.8,
+        ease: [0.16, 1, 0.3, 1],
+      }}
+      className="
+        flex
+        flex-col
+
+        md:flex-row
+        md:items-end
+        md:justify-between
+
+        gap-5
+        sm:gap-7
+
+        mb-10
+        sm:mb-14
+        md:mb-16
+      "
+    >
+      <div>
+        {/* LABEL */}
+
+        <motion.p
+          initial={{
+            opacity: 0,
+            x: -20,
+          }}
+          whileInView={{
+            opacity: 1,
+            x: 0,
+          }}
+          viewport={{
+            once: true,
+          }}
+          transition={{
+            duration: 0.6,
+          }}
+          className="
+            font-body
+            text-emerald-800
+
+            text-[10px]
+            sm:text-xs
+            md:text-sm
+
+            tracking-[2px]
+
+            uppercase
+
+            mb-3
+            sm:mb-4
+          "
+        >
+          By The Numbers
+        </motion.p>
+
+        {/* HEADING */}
+
+        <h2
+          className="
+            font-display
+            font-bold
+            text-ink
+
+            text-[38px]
+            sm:text-5xl
+            md:text-6xl
+            lg:text-[78px]
+
+            leading-[0.9]
+
+            tracking-[-2px]
+            sm:tracking-[-3px]
+          "
+        >
+          Impact in
+          <br />
+
+          <motion.span
             animate={{
-              rotate: 360,
-            }}
-            transition={{
-              duration: 30,
-              repeat: Infinity,
-              ease: "linear",
-            }}
-            className="
-              absolute
-
-              right-[-120px]
-              sm:right-[-100px]
-              md:right-[-150px]
-
-              top-[12%]
-
-              w-[260px]
-              h-[260px]
-
-              sm:w-[340px]
-              sm:h-[340px]
-
-              md:w-[480px]
-              md:h-[480px]
-
-              rounded-full
-
-              border
-              border-emerald-300/[0.08]
-
-              pointer-events-none
-            "
-          >
-            <div
-              className="
-                absolute
-                top-1/2
-                left-0
-
-                w-2
-                h-2
-
-                rounded-full
-
-                bg-emerald-300/40
-
-                shadow-[0_0_15px_rgba(52,211,153,0.25)]
-              "
-            />
-          </motion.div>
-
-          {/* =================================================
-              FLOATING DOTS
-          ================================================= */}
-
-          <motion.div
-            animate={{
-              y: [0, -15, 0],
-              opacity: [0.25, 0.6, 0.25],
+              opacity: [0.75, 1, 0.75],
             }}
             transition={{
               duration: 4,
@@ -1717,220 +2060,149 @@ export default function Awards() {
               ease: "easeInOut",
             }}
             className="
-              absolute
-
-              right-[12%]
-              bottom-[18%]
-
-              w-2
-              h-2
-
-              rounded-full
-
-              bg-emerald-300/50
-
-              shadow-[0_0_15px_rgba(52,211,153,0.3)]
-
-              pointer-events-none
+              font-normal
+              text-emerald-800
             "
-          />
+          >
+            numbers.
+          </motion.span>
+        </h2>
+      </div>
 
-          <motion.div
-            animate={{
-              y: [0, 12, 0],
-              opacity: [0.15, 0.45, 0.15],
-            }}
-            transition={{
-              duration: 5,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: 1,
-            }}
-            className="
-              absolute
+      {/* DESCRIPTION */}
 
-              right-[25%]
-              top-[22%]
+      <motion.p
+        initial={{
+          opacity: 0,
+          y: 20,
+        }}
+        whileInView={{
+          opacity: 1,
+          y: 0,
+        }}
+        viewport={{
+          once: true,
+        }}
+        transition={{
+          duration: 0.7,
+          delay: 0.2,
+        }}
+        className="
+          font-body
+          text-clay
 
-              w-1.5
-              h-1.5
+          text-[12px]
+          sm:text-base
+          md:text-lg
 
-              rounded-full
+          max-w-[420px]
 
-              bg-emerald-300/40
+          leading-relaxed
+        "
+      >
+        Every project, recognition and collaboration
+        adds another chapter to the work we create
+        together.
+      </motion.p>
+    </motion.div>
 
-              pointer-events-none
-            "
-          />
+    {/* =================================================
+        STATS
+    ================================================= */}
 
-          {/* =================================================
-              BOTTOM EDGE GLOW
-          ================================================= */}
+    <motion.div
+      initial={{
+        opacity: 0,
+        y: 40,
+      }}
+      whileInView={{
+        opacity: 1,
+        y: 0,
+      }}
+      viewport={{
+        once: true,
+        amount: 0.1,
+      }}
+      transition={{
+        duration: 0.9,
+        delay: 0.15,
+        ease: [0.16, 1, 0.3, 1],
+      }}
+      className="
+        relative
 
-          <motion.div
-            animate={{
-              opacity: [0.2, 0.5, 0.2],
-              scaleX: [0.9, 1, 0.9],
-            }}
-            transition={{
-              duration: 5,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-            className="
-              absolute
+        border-y
+        border-emerald-900/[0.10]
 
-              bottom-0
-              left-[8%]
-              right-[8%]
+        grid
+        grid-cols-2
+        lg:grid-cols-4
 
-              h-px
+        bg-white/[0.28]
 
-              bg-gradient-to-r
-              from-transparent
-              via-emerald-400/25
-              to-transparent
+        backdrop-blur-sm
 
-              pointer-events-none
-            "
-          />
-        </motion.section>
-
-        {/* =================================================
-            STATS / IMPACT
-        ================================================= */}
-
-        <motion.section
+        shadow-[0_20px_60px_rgba(6,78,59,0.05)]
+      "
+    >
+      {STATS.map((stat, index) => (
+        <motion.div
+          key={stat.label}
           initial={{
             opacity: 0,
+            y: 35,
           }}
           whileInView={{
             opacity: 1,
+            y: 0,
           }}
           viewport={{
             once: true,
-            amount: 0.1,
+            amount: 0.2,
           }}
           transition={{
-            duration: 0.8,
+            duration: 0.65,
+            delay: 0.2 + index * 0.12,
+            ease: [0.16, 1, 0.3, 1],
           }}
-          className="
+          whileHover={{
+            y: -5,
+            backgroundColor: "rgba(255,255,255,0.45)",
+          }}
+          className={`
             relative
-
-            w-full
-            max-w-[1440px]
-
             overflow-hidden
+            group
 
-            px-3
-            sm:px-6
-            md:px-20
+            cursor-default
 
-            py-14
-            sm:py-18
-            md:py-24
+            p-5
+            sm:p-7
+            md:p-10
+            lg:p-12
 
-            bg-gradient-to-br
-            from-[#F8FCFA]
-            via-[#EDF7F3]
-            to-[#E2F0EB]
-          "
+            border-emerald-900/[0.08]
+
+            ${index < 3 ? "border-r" : ""}
+
+            ${index < 2
+              ? "border-b lg:border-b-0"
+              : ""}
+
+            ${index === 2
+              ? "border-b lg:border-b-0"
+              : ""}
+
+            ${index === 1
+              ? "lg:border-r"
+              : ""}
+
+            ${index === 3
+              ? "border-r-0"
+              : ""}
+          `}
         >
-          {/* =================================================
-              TOP RIGHT GLOW
-          ================================================= */}
-
-          <motion.div
-            animate={{
-              x: [0, 25, 0],
-              y: [0, -20, 0],
-              scale: [1, 1.08, 1],
-              opacity: [0.35, 0.55, 0.35],
-            }}
-            transition={{
-              duration: 10,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-            className="
-              absolute
-              pointer-events-none
-
-              -top-40
-              -right-40
-
-              sm:-top-48
-              sm:-right-48
-
-              md:-top-64
-              md:-right-64
-
-              w-[300px]
-              h-[300px]
-
-              sm:w-[420px]
-              sm:h-[420px]
-
-              md:w-[600px]
-              md:h-[600px]
-
-              rounded-full
-
-              bg-emerald-400/[0.10]
-
-              blur-[100px]
-            "
-          />
-
-          {/* =================================================
-              BOTTOM LEFT GLOW
-          ================================================= */}
-
-          <motion.div
-            animate={{
-              x: [0, -20, 0],
-              y: [0, 15, 0],
-              scale: [1, 1.08, 1],
-              opacity: [0.25, 0.45, 0.25],
-            }}
-            transition={{
-              duration: 12,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-            className="
-              absolute
-              pointer-events-none
-
-              -bottom-40
-              -left-40
-
-              sm:-bottom-52
-              sm:-left-52
-
-              md:-bottom-64
-              md:-left-64
-
-              w-[320px]
-              h-[320px]
-
-              sm:w-[440px]
-              sm:h-[440px]
-
-              md:w-[600px]
-              md:h-[600px]
-
-              rounded-full
-
-              bg-teal-400/[0.08]
-
-              blur-[110px]
-            "
-          />
-
-          {/* =================================================
-              CENTER GLOW
-          ================================================= */}
+          {/* GLOW */}
 
           <motion.div
             animate={{
@@ -1938,612 +2210,234 @@ export default function Awards() {
               opacity: [0.08, 0.16, 0.08],
             }}
             transition={{
-              duration: 8,
+              duration: 5 + index,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+            className="
+              pointer-events-none
+
+              absolute
+
+              -right-10
+              -top-10
+
+              w-32
+              h-32
+
+              rounded-full
+
+              bg-emerald-400/[0.08]
+
+              blur-3xl
+            "
+          />
+
+          {/* CORNER DOT */}
+
+          <motion.span
+            animate={{
+              scale: [1, 1.5, 1],
+              opacity: [0.2, 0.45, 0.2],
+            }}
+            transition={{
+              duration: 3 + index,
               repeat: Infinity,
               ease: "easeInOut",
             }}
             className="
               absolute
-              pointer-events-none
 
-              top-[45%]
-              left-[50%]
+              top-5
+              right-5
 
-              w-[240px]
-              h-[240px]
-
-              sm:w-[340px]
-              sm:h-[340px]
-
-              md:w-[480px]
-              md:h-[480px]
+              w-1.5
+              h-1.5
 
               rounded-full
 
-              bg-emerald-300/[0.08]
-
-              blur-[100px]
-
-              -translate-x-1/2
-              -translate-y-1/2
+              bg-emerald-700/30
             "
           />
 
-          {/* =================================================
-              GRID
-          ================================================= */}
-
-          <div
-            className="
-              absolute
-              inset-0
-
-              pointer-events-none
-
-              opacity-[0.22]
-
-              bg-[linear-gradient(rgba(6,78,59,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(6,78,59,0.035)_1px,transparent_1px)]
-
-              bg-[size:55px_55px]
-            "
-          />
-
-          {/* =================================================
-              ROTATING CIRCLE
-          ================================================= */}
-
-          <motion.div
-            animate={{
-              rotate: 360,
-            }}
-            transition={{
-              duration: 35,
-              repeat: Infinity,
-              ease: "linear",
-            }}
-            className="
-              absolute
-              pointer-events-none
-
-              right-[-100px]
-              top-[18%]
-
-              w-[220px]
-              h-[220px]
-
-              sm:w-[300px]
-              sm:h-[300px]
-
-              md:w-[420px]
-              md:h-[420px]
-
-              rounded-full
-
-              border
-              border-emerald-800/[0.06]
-            "
-          >
-            <motion.span
-              animate={{
-                scale: [1, 1.4, 1],
-                opacity: [0.2, 0.5, 0.2],
-              }}
-              transition={{
-                duration: 3,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-              className="
-                absolute
-
-                top-[10%]
-                left-1/2
-
-                w-2
-                h-2
-
-                rounded-full
-
-                bg-emerald-700/30
-
-                shadow-[0_0_15px_rgba(6,78,59,0.2)]
-              "
-            />
-          </motion.div>
-
-          {/* =================================================
-              MAIN CONTENT
-          ================================================= */}
+          {/* NUMBER */}
 
           <div
             className="
               relative
-              z-20
-              w-full
+              z-10
             "
           >
-            {/* =================================================
-                HEADING
-            ================================================= */}
+            <p
+              className="
+                font-display
+                font-bold
+                text-ink
+
+                text-[42px]
+                sm:text-6xl
+                md:text-7xl
+                lg:text-[76px]
+
+                leading-none
+
+                tracking-[-2px]
+                sm:tracking-[-3px]
+              "
+            >
+              <AnimatedNumber
+                value={stat.value}
+                index={index}
+              />
+            </p>
+
+            {/* LABEL */}
+
+            <p
+              className="
+                font-body
+                text-emerald-800
+
+                text-[9px]
+                sm:text-xs
+                md:text-sm
+
+                tracking-[1px]
+                sm:tracking-[1.5px]
+
+                uppercase
+
+                mt-4
+                sm:mt-5
+
+                transition-transform
+                duration-300
+
+                group-hover:translate-x-1
+              "
+            >
+              {stat.label}
+            </p>
+
+            {/* LINE */}
 
             <motion.div
               initial={{
-                opacity: 0,
-                y: 35,
+                width: 0,
               }}
               whileInView={{
-                opacity: 1,
-                y: 0,
+                width: "32px",
               }}
               viewport={{
                 once: true,
-                amount: 0.15,
               }}
               transition={{
-                duration: 0.8,
-                ease: [0.16, 1, 0.3, 1],
+                duration: 0.7,
+                delay: 0.45 + index * 0.12,
               }}
               className="
-                flex
-                flex-col
+                h-[2px]
 
-                md:flex-row
-                md:items-end
-                md:justify-between
+                bg-emerald-800/60
 
-                gap-5
-                sm:gap-7
-
-                mb-10
-                sm:mb-14
-                md:mb-16
+                mt-4
+                sm:mt-5
               "
-            >
-              <div>
-                <motion.p
-                  initial={{
-                    opacity: 0,
-                    x: -20,
-                  }}
-                  whileInView={{
-                    opacity: 1,
-                    x: 0,
-                  }}
-                  viewport={{
-                    once: true,
-                  }}
-                  transition={{
-                    duration: 0.6,
-                  }}
-                  className="
-                    font-body
-                    text-emerald-800
-
-                    text-[10px]
-                    sm:text-xs
-                    md:text-sm
-
-                    tracking-[2px]
-
-                    uppercase
-
-                    mb-3
-                    sm:mb-4
-                  "
-                >
-                  By The Numbers
-                </motion.p>
-
-                <h2
-                  className="
-                    font-display
-                    font-bold
-                    text-ink
-
-                    text-[38px]
-                    sm:text-5xl
-                    md:text-6xl
-                    lg:text-[78px]
-
-                    leading-[0.9]
-
-                    tracking-[-2px]
-                    sm:tracking-[-3px]
-                  "
-                >
-                  Impact in
-                  <br />
-
-                  <motion.span
-                    animate={{
-                      opacity: [0.75, 1, 0.75],
-                    }}
-                    transition={{
-                      duration: 4,
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                    }}
-                    className="
-                      font-normal
-                      text-emerald-800
-                    "
-                  >
-                    numbers.
-                  </motion.span>
-                </h2>
-              </div>
-
-              <motion.p
-                initial={{
-                  opacity: 0,
-                  y: 20,
-                }}
-                whileInView={{
-                  opacity: 1,
-                  y: 0,
-                }}
-                viewport={{
-                  once: true,
-                }}
-                transition={{
-                  duration: 0.7,
-                  delay: 0.2,
-                }}
-                className="
-                  font-body
-                  text-clay
-
-                  text-[12px]
-                  sm:text-base
-                  md:text-lg
-
-                  max-w-[420px]
-
-                  leading-relaxed
-                "
-              >
-                Every project, recognition and collaboration
-                adds another chapter to the work we create
-                together.
-              </motion.p>
-            </motion.div>
-
-            {/* =================================================
-                STATS
-            ================================================= */}
-
-            <motion.div
-              initial={{
-                opacity: 0,
-                y: 40,
-              }}
-              whileInView={{
-                opacity: 1,
-                y: 0,
-              }}
-              viewport={{
-                once: true,
-                amount: 0.1,
-              }}
-              transition={{
-                duration: 0.9,
-                delay: 0.15,
-                ease: [0.16, 1, 0.3, 1],
-              }}
-              className="
-                relative
-
-                border-y
-                border-emerald-900/[0.10]
-
-                grid
-                grid-cols-2
-                lg:grid-cols-4
-
-                bg-white/[0.28]
-
-                backdrop-blur-sm
-
-                shadow-[0_20px_60px_rgba(6,78,59,0.05)]
-              "
-            >
-              {STATS.map((stat, index) => (
-                <motion.div
-                  key={stat.label}
-                  initial={{
-                    opacity: 0,
-                    y: 35,
-                  }}
-                  whileInView={{
-                    opacity: 1,
-                    y: 0,
-                  }}
-                  viewport={{
-                    once: true,
-                    amount: 0.2,
-                  }}
-                  transition={{
-                    duration: 0.65,
-                    delay: 0.2 + index * 0.12,
-                    ease: [0.16, 1, 0.3, 1],
-                  }}
-                  whileHover={{
-                    y: -5,
-                    backgroundColor:
-                      "rgba(255,255,255,0.45)",
-                  }}
-                  className={`
-                    relative
-                    overflow-hidden
-                    group
-
-                    cursor-default
-
-                    p-5
-                    sm:p-7
-                    md:p-10
-                    lg:p-12
-
-                    border-emerald-900/[0.08]
-
-                    ${index < 3 ? "border-r" : ""}
-
-                    ${index < 2
-                      ? "border-b lg:border-b-0"
-                      : ""}
-
-                    ${index === 2
-                      ? "border-b lg:border-b-0"
-                      : ""}
-
-                    ${index === 1
-                      ? "lg:border-r"
-                      : ""}
-
-                    ${index === 3
-                      ? "border-r-0"
-                      : ""}
-                  `}
-                >
-                  {/* GLOW */}
-
-                  <motion.div
-                    animate={{
-                      scale: [1, 1.15, 1],
-                      opacity: [0.08, 0.16, 0.08],
-                    }}
-                    transition={{
-                      duration: 5 + index,
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                    }}
-                    className="
-                      pointer-events-none
-
-                      absolute
-
-                      -right-10
-                      -top-10
-
-                      w-32
-                      h-32
-
-                      rounded-full
-
-                      bg-emerald-400/[0.08]
-
-                      blur-3xl
-                    "
-                  />
-
-                  {/* CORNER DOT */}
-
-                  <motion.span
-                    animate={{
-                      scale: [1, 1.5, 1],
-                      opacity: [0.2, 0.45, 0.2],
-                    }}
-                    transition={{
-                      duration: 3 + index,
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                    }}
-                    className="
-                      absolute
-
-                      top-5
-                      right-5
-
-                      w-1.5
-                      h-1.5
-
-                      rounded-full
-
-                      bg-emerald-700/30
-                    "
-                  />
-
-                  {/* NUMBER */}
-
-                  <div
-                    className="
-                      relative
-                      z-10
-                    "
-                  >
-                    <p
-                      className="
-                        font-display
-                        font-bold
-                        text-ink
-
-                        text-[42px]
-                        sm:text-6xl
-                        md:text-7xl
-                        lg:text-[76px]
-
-                        leading-none
-
-                        tracking-[-2px]
-                        sm:tracking-[-3px]
-                      "
-                    >
-                      <AnimatedNumber
-                        value={stat.value}
-                        index={index}
-                      />
-                    </p>
-
-                    {/* LABEL */}
-
-                    <p
-                      className="
-                        font-body
-                        text-emerald-800
-
-                        text-[9px]
-                        sm:text-xs
-                        md:text-sm
-
-                        tracking-[1px]
-                        sm:tracking-[1.5px]
-
-                        uppercase
-
-                        mt-4
-                        sm:mt-5
-
-                        transition-transform
-                        duration-300
-
-                        group-hover:translate-x-1
-                      "
-                    >
-                      {stat.label}
-                    </p>
-
-                    {/* LINE */}
-
-                    <motion.div
-                      initial={{
-                        width: 0,
-                      }}
-                      whileInView={{
-                        width: "32px",
-                      }}
-                      viewport={{
-                        once: true,
-                      }}
-                      transition={{
-                        duration: 0.7,
-                        delay: 0.45 + index * 0.12,
-                      }}
-                      className="
-                        h-[2px]
-
-                        bg-emerald-800/60
-
-                        mt-4
-                        sm:mt-5
-                      "
-                    />
-                  </div>
-
-                  {/* MOVING LIGHT */}
-
-                  <motion.div
-                    animate={{
-                      x: ["-100%", "100%"],
-                    }}
-                    transition={{
-                      duration: 5,
-                      repeat: Infinity,
-                      ease: "linear",
-                      delay: index * 0.5,
-                    }}
-                    className="
-                      absolute
-
-                      bottom-0
-                      left-0
-
-                      w-[80px]
-
-                      h-px
-
-                      bg-gradient-to-r
-                      from-transparent
-                      via-emerald-500/25
-                      to-transparent
-
-                      pointer-events-none
-                    "
-                  />
-                </motion.div>
-              ))}
-            </motion.div>
+            />
           </div>
 
-          {/* =================================================
-              BOTTOM GLOW
-          ================================================= */}
+          {/* MOVING LIGHT */}
 
           <motion.div
             animate={{
-              opacity: [0.15, 0.4, 0.15],
-              scaleX: [0.85, 1, 0.85],
+              x: ["-100%", "100%"],
             }}
             transition={{
-              duration: 6,
+              duration: 5,
               repeat: Infinity,
-              ease: "easeInOut",
+              ease: "linear",
+              delay: index * 0.5,
             }}
             className="
               absolute
 
               bottom-0
-              left-[8%]
-              right-[8%]
+              left-0
+
+              w-[80px]
 
               h-px
 
               bg-gradient-to-r
               from-transparent
-              via-emerald-600/25
+              via-emerald-500/25
               to-transparent
 
               pointer-events-none
             "
           />
-        </motion.section>
+        </motion.div>
+      ))}
+    </motion.div>
+  </div>
 
-        
+  {/* =================================================
+      BOTTOM GLOW
+  ================================================= */}
 
-{/* =================================================AWARDS SECTION================================================= */}
+  <motion.div
+    animate={{
+      opacity: [0.15, 0.4, 0.15],
+      scaleX: [0.85, 1, 0.85],
+    }}
+    transition={{
+      duration: 6,
+      repeat: Infinity,
+      ease: "easeInOut",
+    }}
+    className="
+      absolute
 
-<section className="
+      bottom-0
+      left-[8%]
+      right-[8%]
+
+      h-px
+
+      bg-gradient-to-r
+      from-transparent
+      via-emerald-600/25
+      to-transparent
+
+      pointer-events-none
+    "
+  />
+</motion.section>
+
+
+{/* =========================================================
+    AWARDS / RECOGNITION SECTION
+========================================================= */}
+
+<section
+  className="
     relative
     w-full
-    max-w-[1440px]
-
     overflow-hidden
 
-    px-3
-    sm:px-6
-    md:px-20
-
-    py-12
-    sm:py-18
-    md:py-24
+    py-8
+    sm:py-10
+    md:py-14
+    lg:py-16
 
     bg-gradient-to-br
     from-[#F8FCFA]
-    via-[#EDF6F2]
-    to-[#E4F0EC]
+    via-[#F1F7F4]
+    to-[#E8F1ED]
   "
 >
   {/* =================================================
-      BACKGROUND GLOW
+      TOP RIGHT GLOW
   ================================================= */}
 
   <motion.div
@@ -2551,7 +2445,7 @@ export default function Awards() {
       x: [0, 30, 0],
       y: [0, -20, 0],
       scale: [1, 1.08, 1],
-      opacity: [0.18, 0.30, 0.18],
+      opacity: [0.16, 0.25, 0.16],
     }}
     transition={{
       duration: 10,
@@ -2571,21 +2465,21 @@ export default function Awards() {
       md:-top-60
       md:-right-60
 
-      w-[260px]
-      h-[260px]
+      w-[240px]
+      h-[240px]
 
-      sm:w-[420px]
-      sm:h-[420px]
+      sm:w-[360px]
+      sm:h-[360px]
 
-      md:w-[600px]
-      md:h-[600px]
+      md:w-[500px]
+      md:h-[500px]
 
       rounded-full
 
-      bg-emerald-400/[0.07]
+      bg-emerald-400/[0.06]
 
-      blur-[80px]
-      sm:blur-[100px]
+      blur-[70px]
+      sm:blur-[90px]
     "
   />
 
@@ -2598,7 +2492,7 @@ export default function Awards() {
       x: [0, -20, 0],
       y: [0, 20, 0],
       scale: [1, 1.1, 1],
-      opacity: [0.12, 0.24, 0.12],
+      opacity: [0.10, 0.20, 0.10],
     }}
     transition={{
       duration: 12,
@@ -2612,21 +2506,21 @@ export default function Awards() {
       -bottom-40
       -left-40
 
-      sm:-bottom-52
-      sm:-left-52
+      sm:-bottom-48
+      sm:-left-48
 
-      w-[280px]
-      h-[280px]
+      w-[250px]
+      h-[250px]
 
-      sm:w-[460px]
-      sm:h-[460px]
+      sm:w-[400px]
+      sm:h-[400px]
 
       rounded-full
 
-      bg-teal-400/[0.06]
+      bg-teal-400/[0.05]
 
-      blur-[80px]
-      sm:blur-[100px]
+      blur-[70px]
+      sm:blur-[90px]
     "
   />
 
@@ -2637,7 +2531,7 @@ export default function Awards() {
   <motion.div
     animate={{
       scale: [1, 1.08, 1],
-      opacity: [0.06, 0.12, 0.06],
+      opacity: [0.04, 0.09, 0.04],
     }}
     transition={{
       duration: 9,
@@ -2648,7 +2542,7 @@ export default function Awards() {
       absolute
       pointer-events-none
 
-      top-[38%]
+      top-[42%]
       left-1/2
 
       -translate-x-1/2
@@ -2657,18 +2551,17 @@ export default function Awards() {
       w-[180px]
       h-[180px]
 
-      sm:w-[320px]
-      sm:h-[320px]
+      sm:w-[300px]
+      sm:h-[300px]
 
       md:w-[450px]
       md:h-[450px]
 
       rounded-full
 
-      bg-emerald-300/[0.05]
+      bg-emerald-300/[0.04]
 
       blur-[80px]
-      sm:blur-[100px]
     "
   />
 
@@ -2680,10 +2573,9 @@ export default function Awards() {
     className="
       absolute
       inset-0
-
       pointer-events-none
 
-      opacity-[0.12]
+      opacity-[0.10]
 
       bg-[linear-gradient(rgba(6,78,59,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(6,78,59,0.035)_1px,transparent_1px)]
 
@@ -2693,7 +2585,7 @@ export default function Awards() {
   />
 
   {/* =================================================
-      CONTENT
+      CONTENT CONTAINER
   ================================================= */}
 
   <motion.div
@@ -2713,9 +2605,18 @@ export default function Awards() {
     className="
       relative
       z-10
+
+      w-full
+      max-w-[1440px]
+
+      mx-auto
+
+      px-3
+      sm:px-6
+      md:px-12
+      lg:px-16
     "
   >
-
     {/* =================================================
         SECTION HEADING
     ================================================= */}
@@ -2723,7 +2624,7 @@ export default function Awards() {
     <motion.div
       initial={{
         opacity: 0,
-        y: 30,
+        y: 20,
       }}
       whileInView={{
         opacity: 1,
@@ -2734,13 +2635,13 @@ export default function Awards() {
         amount: 0.15,
       }}
       transition={{
-        duration: 0.8,
+        duration: 0.7,
         ease: [0.16, 1, 0.3, 1],
       }}
       className="
-        mb-8
-        sm:mb-12
-        md:mb-16
+        mb-7
+        sm:mb-9
+        md:mb-11
       "
     >
       {/* SMALL LABEL */}
@@ -2764,16 +2665,13 @@ export default function Awards() {
           flex
           items-center
           gap-2
-
           mb-3
-          sm:mb-4
         "
       >
         <span
           className="
             w-5
-            sm:w-8
-
+            sm:w-7
             h-px
 
             bg-emerald-700/40
@@ -2786,8 +2684,8 @@ export default function Awards() {
             text-emerald-800
 
             text-[8px]
-            sm:text-xs
-            md:text-sm
+            sm:text-[10px]
+            md:text-xs
 
             tracking-[1.5px]
             md:tracking-[2px]
@@ -2799,7 +2697,7 @@ export default function Awards() {
         </span>
       </motion.div>
 
-      {/* MAIN HEADING */}
+      {/* HEADING + DESCRIPTION */}
 
       <div
         className="
@@ -2811,7 +2709,7 @@ export default function Awards() {
           md:justify-between
 
           gap-4
-          md:gap-10
+          md:gap-8
         "
       >
         <h2
@@ -2820,26 +2718,24 @@ export default function Awards() {
             font-bold
             text-ink
 
-            text-[32px]
-            sm:text-5xl
-            md:text-6xl
-            lg:text-[76px]
+            text-[30px]
+            sm:text-4xl
+            md:text-5xl
+            lg:text-6xl
 
             tracking-[-1.5px]
             sm:tracking-[-2px]
-            md:tracking-[-2.5px]
 
             leading-[0.95]
           "
         >
           Recognition
           <br className="sm:hidden" />
+
           <span className="text-emerald-800/80">
             {" "}That Matters.
           </span>
         </h2>
-
-        {/* DESCRIPTION */}
 
         <motion.p
           initial={{
@@ -2862,11 +2758,11 @@ export default function Awards() {
             text-clay
 
             text-[10px]
-            sm:text-sm
-            md:text-base
-            lg:text-lg
+            sm:text-xs
+            md:text-sm
+            lg:text-base
 
-            max-w-[420px]
+            max-w-[390px]
 
             leading-relaxed
           "
@@ -2885,7 +2781,7 @@ export default function Awards() {
           opacity: 0,
         }}
         whileInView={{
-          width: "70px",
+          width: "60px",
           opacity: 1,
         }}
         viewport={{
@@ -2897,8 +2793,8 @@ export default function Awards() {
           ease: [0.16, 1, 0.3, 1],
         }}
         className="
-          mt-5
-          sm:mt-7
+          mt-4
+          sm:mt-5
 
           h-[2px]
 
@@ -2910,12 +2806,8 @@ export default function Awards() {
       />
     </motion.div>
 
-
     {/* =================================================
         AWARDS GRID
-        MOBILE  = 2 COLUMNS
-        TABLET  = 2 COLUMNS
-        DESKTOP = 3 COLUMNS
     ================================================= */}
 
     <div
@@ -2926,323 +2818,733 @@ export default function Awards() {
         sm:grid-cols-2
         lg:grid-cols-3
 
-        gap-2
-        sm:gap-5
-        md:gap-6
+        gap-2.5
+        sm:gap-4
+        md:gap-5
 
         items-stretch
-
-        auto-rows-[205px]
-        sm:auto-rows-auto
-        lg:auto-rows-auto
       "
     >
-      {AWARDS.map((award, index) => (
-        <motion.div
-          key={award.number}
-          initial={{
-            opacity: 0,
-            y: 30,
-            scale: 0.97,
-          }}
-          whileInView={{
-            opacity: 1,
-            y: 0,
-            scale: 1,
-          }}
-          viewport={{
-            once: true,
-            amount: 0.1,
-          }}
-          transition={{
-            duration: 0.7,
-            delay: index * 0.08,
-            ease: [0.16, 1, 0.3, 1],
-          }}
-          className="
-            relative
-            w-full
-            h-full
+      {AWARDS.map((award, index) => {
+        const isActive = activeAward === award.number;
 
-            group
-
-            rounded-xl
-            sm:rounded-2xl
-
-            p-[1px]
-
-            overflow-hidden
-            sm:overflow-visible
-
-            bg-gradient-to-br
-            from-emerald-700/[0.14]
-            via-emerald-500/[0.04]
-            to-teal-500/[0.12]
-
-            shadow-[0_10px_25px_rgba(6,78,59,0.04)]
-
-            sm:shadow-[0_18px_45px_rgba(6,78,59,0.05)]
-
-            transition-shadow
-            duration-500
-
-            hover:shadow-[0_28px_65px_rgba(6,78,59,0.11)]
-          "
-        >
-
-          {/* =================================================
-              CONTINUOUS BORDER LIGHT
-          ================================================= */}
-
+        return (
           <motion.div
-            animate={{
-              rotate: 360,
+            key={award.number}
+            initial={{
+              opacity: 0,
+              y: 20,
+              scale: 0.98,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+              scale: 1,
+            }}
+            viewport={{
+              once: true,
+              amount: 0.1,
             }}
             transition={{
-              duration: 14,
-              repeat: Infinity,
-              ease: "linear",
+              duration: 0.6,
+              delay: index * 0.07,
+              ease: [0.16, 1, 0.3, 1],
             }}
-            className="
-              absolute
-              inset-[-100%]
-
-              pointer-events-none
-
-              rounded-full
-
-              bg-[conic-gradient(from_0deg,transparent_0deg,transparent_105deg,rgba(16,185,129,0.05)_145deg,rgba(52,211,153,0.12)_180deg,transparent_215deg,transparent_360deg)]
-            "
-          />
-
-          {/* =================================================
-              CARD BACKGROUND
-          ================================================= */}
-
-          <div
+            onClick={() =>
+              setActiveAward(
+                isActive ? null : award.number
+              )
+            }
             className="
               relative
-
               w-full
-              h-full
-              min-h-0
+              group
+              cursor-pointer
+
+              rounded-xl
+              sm:rounded-2xl
+
+              p-[1.5px]
 
               overflow-hidden
-              sm:overflow-visible
 
-              rounded-[10px]
-              sm:rounded-[15px]
+              shadow-[0_8px_25px_rgba(6,78,59,0.07)]
 
-              bg-[#EAF4F0]
-
-              transition-colors
+              transition-all
               duration-500
 
-              group-hover:bg-[#E5F1ED]
+              hover:-translate-y-1
+
+              hover:shadow-[0_15px_40px_rgba(6,78,59,0.12)]
             "
           >
-
-            {/* TOP RIGHT GLOW */}
+            {/* =================================================
+                CONTINUOUS ANIMATED BORDER
+            ================================================= */}
 
             <motion.div
               animate={{
-                scale: [1, 1.1, 1],
-                opacity: [0.05, 0.12, 0.05],
+                rotate: 360,
               }}
               transition={{
-                duration: 5 + index,
+                duration: 5,
                 repeat: Infinity,
-                ease: "easeInOut",
+                ease: "linear",
               }}
               className="
                 absolute
-
-                -top-8
-                -right-8
-
-                sm:-top-16
-                sm:-right-16
-
-                w-16
-                h-16
-
-                sm:w-40
-                sm:h-40
-
-                rounded-full
-
-                bg-emerald-400/[0.07]
-
-                blur-[22px]
-                sm:blur-[45px]
+                inset-[-150%]
 
                 pointer-events-none
+
+                bg-[conic-gradient(from_0deg,transparent_0deg,transparent_250deg,rgba(6,78,59,0.08)_275deg,rgba(16,185,129,0.60)_315deg,rgba(45,212,191,1)_335deg,rgba(6,78,59,0.12)_350deg,transparent_360deg)]
               "
             />
 
-            {/* BOTTOM LEFT GLOW */}
+            {/* STATIC BORDER */}
 
             <div
               className="
                 absolute
+                inset-0
 
-                -bottom-8
-                -left-8
+                rounded-xl
+                sm:rounded-2xl
 
-                sm:-bottom-20
-                sm:-left-20
-
-                w-16
-                h-16
-
-                sm:w-40
-                sm:h-40
-
-                rounded-full
-
-                bg-teal-400/[0.035]
-
-                blur-[25px]
-                sm:blur-[50px]
-
-                pointer-events-none
-              "
-            />
-
-            {/* DECORATIVE DOT */}
-
-            <motion.span
-              animate={{
-                opacity: [0.1, 0.3, 0.1],
-                scale: [1, 1.2, 1],
-              }}
-              transition={{
-                duration: 3 + index,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-              className="
-                absolute
-
-                top-2
-                left-2
-
-                sm:top-5
-                sm:left-5
-
-                w-1
-                h-1
-
-                sm:w-1.5
-                sm:h-1.5
-
-                rounded-full
-
-                bg-emerald-700/20
+                border
+                border-emerald-900/15
 
                 pointer-events-none
               "
             />
 
             {/* =================================================
-                AWARD CARD
+                CARD BODY
             ================================================= */}
 
-            <div
+            <motion.div
+              layout
               className="
                 relative
                 z-10
 
                 w-full
-                h-full
-                min-h-0
 
-                [&_svg]:text-emerald-700/70
+                min-h-[165px]
+                sm:min-h-[185px]
+                md:min-h-[205px]
 
-                [&_svg]:transition-all
-                [&_svg]:duration-500
+                rounded-[10px]
+                sm:rounded-[14px]
 
-                group-hover:[&_svg]:text-emerald-600
-                group-hover:[&_svg]:scale-105
+                overflow-hidden
+
+                bg-[#F9FCFA]
+
+                border
+                border-white
+
+                transition-all
+                duration-500
+
+                group-hover:bg-white
               "
             >
-              <AwardCard
-                award={award}
-                index={index}
+              {/* ACTIVE GLOW */}
+
+              <motion.div
+                animate={{
+                  opacity: isActive ? 0.14 : 0.04,
+                  scale: isActive ? 1.15 : 1,
+                }}
+                transition={{
+                  duration: 0.5,
+                }}
+                className="
+                  absolute
+
+                  -top-16
+                  -right-16
+
+                  w-36
+                  h-36
+
+                  rounded-full
+
+                  bg-emerald-400
+
+                  blur-[50px]
+
+                  pointer-events-none
+                "
               />
-            </div>
 
-            {/* =================================================
-                BOTTOM ACCENT
-            ================================================= */}
+              {/* TOP SHINE */}
 
-            <motion.div
-              initial={{
-                width: "18%",
-              }}
-              whileHover={{
-                width: "70%",
-              }}
-              transition={{
-                duration: 0.7,
-                ease: [0.16, 1, 0.3, 1],
-              }}
-              className="
-                absolute
+              <div
+                className="
+                  absolute
+                  top-0
+                  left-0
+                  right-0
 
-                bottom-0
-                left-0
+                  h-px
 
-                h-[1px]
-                sm:h-[2px]
+                  bg-gradient-to-r
+                  from-transparent
+                  via-emerald-500/40
+                  to-transparent
 
-                bg-gradient-to-r
-                from-emerald-700/40
-                via-teal-500/25
-                to-transparent
+                  pointer-events-none
+                "
+              />
 
-                pointer-events-none
-              "
-            />
+              {/* DECORATIVE CORNER */}
 
-            {/* FLOATING DOT */}
+              <div
+                className="
+                  absolute
 
-            <motion.span
-              animate={{
-                y: [0, -5, 0],
-                opacity: [0.1, 0.3, 0.1],
-              }}
-              transition={{
-                duration: 4 + index,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-              className="
-                absolute
+                  top-3
+                  right-3
 
-                bottom-2
-                right-2
+                  sm:top-4
+                  sm:right-4
 
-                sm:bottom-5
-                sm:right-5
+                  w-6
+                  h-6
 
-                w-1
-                h-1
+                  sm:w-7
+                  sm:h-7
 
-                sm:w-1.5
-                sm:h-1.5
+                  border-t
+                  border-r
 
-                rounded-full
+                  border-emerald-700/15
 
-                bg-emerald-700/20
+                  rounded-tr-md
 
-                pointer-events-none
-              "
-            />
+                  pointer-events-none
+                "
+              />
 
-          </div>
-        </motion.div>
-      ))}
+              {/* =================================================
+                  CARD CONTENT
+              ================================================= */}
+
+              <motion.div
+                layout
+                className="
+                  relative
+                  z-20
+
+                  w-full
+
+                  min-h-[165px]
+                  sm:min-h-[185px]
+                  md:min-h-[205px]
+
+                  flex
+                  items-center
+                  justify-center
+
+                  px-3
+                  sm:px-4
+                  md:px-5
+
+                  py-4
+                  sm:py-5
+                "
+              >
+                {/* =================================================
+                    NORMAL CARD
+                ================================================= */}
+
+                {!isActive && (
+                  <motion.div
+                    initial={{
+                      opacity: 0,
+                    }}
+                    animate={{
+                      opacity: 1,
+                    }}
+                    exit={{
+                      opacity: 0,
+                    }}
+                    className="
+                      w-full
+                      text-center
+                    "
+                  >
+                    {/* ICON */}
+
+                    <div
+                      className="
+                        flex
+                        justify-center
+
+                        mb-3
+                        sm:mb-4
+
+                        [&_svg]:w-7
+                        [&_svg]:h-7
+
+                        sm:[&_svg]:w-8
+                        sm:[&_svg]:h-8
+
+                        [&_svg]:text-emerald-700/70
+
+                        [&_svg]:transition-all
+                        [&_svg]:duration-500
+
+                        group-hover:[&_svg]:text-emerald-600
+                        group-hover:[&_svg]:scale-110
+                      "
+                    >
+                      {award.icon}
+                    </div>
+
+                    {/* YEAR */}
+
+                    <div
+                      className="
+                        text-[9px]
+                        sm:text-[10px]
+
+                        font-semibold
+                        tracking-[1.5px]
+
+                        uppercase
+
+                        text-emerald-700/60
+
+                        mb-1
+                      "
+                    >
+                      {award.year}
+                    </div>
+
+                    {/* TITLE */}
+
+                    <h3
+                      className="
+                        font-display
+                        font-bold
+
+                        text-sm
+                        sm:text-base
+                        md:text-lg
+
+                        leading-tight
+
+                        text-ink
+
+                        px-1
+                      "
+                    >
+                      {award.title}
+                    </h3>
+
+                    {/* ORGANIZATION */}
+
+                    <p
+                      className="
+                        font-body
+
+                        text-[9px]
+                        sm:text-[10px]
+                        md:text-xs
+
+                        text-clay
+
+                        mt-1
+                      "
+                    >
+                      {award.organization}
+                    </p>
+
+                    {/* BOTTOM NUMBER */}
+
+                    <div
+                      className="
+                        mt-3
+                        sm:mt-4
+
+                        pt-2
+                        sm:pt-3
+
+                        border-t
+                        border-emerald-900/10
+
+                        flex
+                        items-center
+                        justify-between
+                      "
+                    >
+                      <span
+                        className="
+                          text-[8px]
+                          sm:text-[9px]
+
+                          uppercase
+                          tracking-[1px]
+
+                          text-emerald-700/50
+                        "
+                      >
+                        {award.category}
+                      </span>
+
+                      <span
+                        className="
+                          text-[9px]
+                          sm:text-[10px]
+
+                          font-bold
+
+                          text-emerald-800/35
+                        "
+                      >
+                        {award.number}
+                      </span>
+                    </div>
+                  </motion.div>
+                )}
+
+                {/* =================================================
+                    ACTIVE DETAILS
+                ================================================= */}
+
+                <AnimatePresence mode="wait">
+                  {isActive && (
+                    <motion.div
+                      initial={{
+                        opacity: 0,
+                        y: 10,
+                      }}
+                      animate={{
+                        opacity: 1,
+                        y: 0,
+                      }}
+                      exit={{
+                        opacity: 0,
+                        y: 10,
+                      }}
+                      transition={{
+                        duration: 0.3,
+                      }}
+                      className="
+                        w-full
+                        text-left
+
+                        max-h-[190px]
+                        sm:max-h-[210px]
+                        md:max-h-[230px]
+
+                        overflow-y-auto
+
+                        pr-1
+
+                        scrollbar-thin
+                      "
+                    >
+                      {/* TOP ROW */}
+
+                      <div
+                        className="
+                          flex
+                          items-center
+                          justify-between
+
+                          mb-2
+                        "
+                      >
+                        <span
+                          className="
+                            text-[8px]
+                            sm:text-[9px]
+
+                            font-semibold
+
+                            tracking-[1.5px]
+
+                            uppercase
+
+                            text-emerald-700/70
+                          "
+                        >
+                          Recognition
+                        </span>
+
+                        <span
+                          className="
+                            text-[9px]
+                            sm:text-[10px]
+
+                            font-bold
+
+                            text-emerald-800/40
+                          "
+                        >
+                          {award.number}
+                        </span>
+                      </div>
+
+                      {/* ICON */}
+
+                      <div
+                        className="
+                          mb-2
+
+                          [&_svg]:w-6
+                          [&_svg]:h-6
+
+                          sm:[&_svg]:w-7
+                          sm:[&_svg]:h-7
+
+                          [&_svg]:text-emerald-700
+                        "
+                      >
+                        {award.icon}
+                      </div>
+
+                      {/* TITLE */}
+
+                      <h3
+                        className="
+                          font-display
+                          font-bold
+
+                          text-base
+                          sm:text-lg
+                          md:text-xl
+
+                          leading-tight
+
+                          text-ink
+
+                          mb-1.5
+                        "
+                      >
+                        {award.title}
+                      </h3>
+
+                      {/* ORGANIZATION */}
+
+                      <p
+                        className="
+                          font-body
+
+                          text-[9px]
+                          sm:text-[10px]
+
+                          font-medium
+
+                          text-emerald-700/70
+
+                          mb-2
+                        "
+                      >
+                        {award.organization}
+                      </p>
+
+                      {/* DESCRIPTION */}
+
+                      <p
+                        className="
+                          font-body
+
+                          text-[10px]
+                          sm:text-xs
+
+                          leading-relaxed
+
+                          text-clay
+                        "
+                      >
+                        {award.description ||
+                          "A meaningful milestone that reflects our commitment to quality, thoughtful design, and creating work that makes a lasting impression."}
+                      </p>
+
+                      {/* PROJECT */}
+
+                      {award.project && (
+                        <div className="mt-2">
+                          <span
+                            className="
+                              text-[8px]
+                              uppercase
+                              tracking-[1px]
+
+                              text-emerald-700/50
+                            "
+                          >
+                            Project
+                          </span>
+
+                          <p
+                            className="
+                              text-[9px]
+                              sm:text-[10px]
+
+                              font-medium
+
+                              text-ink
+
+                              mt-0.5
+                            "
+                          >
+                            {award.project}
+                          </p>
+                        </div>
+                      )}
+
+                      {/* LEVEL */}
+
+                      {award.level && (
+                        <div className="mt-2">
+                          <span
+                            className="
+                              text-[8px]
+                              uppercase
+                              tracking-[1px]
+
+                              text-emerald-700/50
+                            "
+                          >
+                            Level
+                          </span>
+
+                          <p
+                            className="
+                              text-[9px]
+                              sm:text-[10px]
+
+                              font-medium
+
+                              text-ink
+
+                              mt-0.5
+                            "
+                          >
+                            {award.level}
+                          </p>
+                        </div>
+                      )}
+
+                      {/* CLOSE */}
+
+                      <div
+                        className="
+                          mt-3
+
+                          flex
+                          items-center
+                          gap-1.5
+
+                          text-[8px]
+                          sm:text-[9px]
+
+                          uppercase
+                          tracking-[1px]
+
+                          text-emerald-700/50
+                        "
+                      >
+                        <span
+                          className="
+                            w-4
+                            h-px
+
+                            bg-emerald-700/30
+                          "
+                        />
+
+                        Click to close
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+
+              {/* =================================================
+                  BOTTOM ACTIVE LINE
+              ================================================= */}
+
+              <motion.div
+                animate={{
+                  width: isActive ? "100%" : "22%",
+                }}
+                transition={{
+                  duration: 0.6,
+                  ease: [0.16, 1, 0.3, 1],
+                }}
+                className="
+                  absolute
+
+                  bottom-0
+                  left-0
+
+                  h-[2px]
+
+                  bg-gradient-to-r
+                  from-emerald-700
+                  via-teal-500
+                  to-transparent
+
+                  pointer-events-none
+                "
+              />
+
+              {/* =================================================
+                  STATUS DOT
+              ================================================= */}
+
+              <motion.span
+                animate={{
+                  opacity: isActive
+                    ? [0.4, 1, 0.4]
+                    : [0.15, 0.4, 0.15],
+
+                  scale: isActive
+                    ? [1, 1.3, 1]
+                    : [1, 1.15, 1],
+                }}
+                transition={{
+                  duration: isActive
+                    ? 1.5
+                    : 3 + index,
+
+                  repeat: Infinity,
+
+                  ease: "easeInOut",
+                }}
+                className="
+                  absolute
+
+                  bottom-3
+                  right-3
+
+                  sm:bottom-4
+                  sm:right-4
+
+                  w-1
+                  h-1
+
+                  sm:w-1.5
+                  sm:h-1.5
+
+                  rounded-full
+
+                  bg-emerald-600
+
+                  pointer-events-none
+                "
+              />
+            </motion.div>
+          </motion.div>
+        );
+      })}
     </div>
   </motion.div>
 
@@ -3252,7 +3554,7 @@ export default function Awards() {
 
   <motion.div
     animate={{
-      opacity: [0.12, 0.32, 0.12],
+      opacity: [0.10, 0.25, 0.10],
       scaleX: [0.85, 1, 0.85],
     }}
     transition={{
@@ -3271,13 +3573,15 @@ export default function Awards() {
 
       bg-gradient-to-r
       from-transparent
-      via-emerald-600/20
+      via-emerald-600/25
       to-transparent
 
       pointer-events-none
     "
   />
 </section>
+
+{/* ==================================Digital experience award section=============================================== */}
 
         <motion.section
           initial="hidden"
@@ -3294,6 +3598,8 @@ export default function Awards() {
             px-3
             sm:px-6
             md:px-20
+            mt-10
+            bg-w-full
           "
         >
           <div
@@ -3651,6 +3957,8 @@ export default function Awards() {
             px-3
             sm:px-6
             md:px-20
+            mb-10
+            pb-10
           "
         >
           <div
@@ -3758,7 +4066,7 @@ export default function Awards() {
             {/* CTA */}
 
             <motion.a
-              href="/"
+              href="/services"
               whileHover={{
                 y: -5,
                 scale: 1.02,

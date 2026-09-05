@@ -1,4 +1,3 @@
-
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Work from "./pages/Work.jsx";
@@ -9,14 +8,12 @@ import Awards from "./pages/Awards.jsx";
 import Main from "./pages/Main.jsx";
 import Contact from "./pages/Contacts.jsx";
 
-// Floating WhatsApp component
 import FloatingWhatsApp from "./components/FloatingWhatsApp.jsx";
+import FloatingPhone from "./components/FloatingPhone.jsx";
 
 export default function App() {
   return (
     <BrowserRouter>
-      
-      {/* All website pages */}
       <Routes>
         <Route path="/work" element={<Work />} />
         <Route path="/about" element={<About />} />
@@ -27,10 +24,9 @@ export default function App() {
         <Route path="/contact" element={<Contact />} />
       </Routes>
 
-      {/* Appears on every page */}
+      {/* Floating Contact Buttons */}
       <FloatingWhatsApp />
-
+      <FloatingPhone />
     </BrowserRouter>
   );
 }
-

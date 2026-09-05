@@ -1,4 +1,3 @@
-
 import Navbar from "../components/Navbar.jsx";
 import Footer from "../components/Footer.jsx";
 
@@ -85,7 +84,6 @@ const STEPS = [
   },
 ];
 
-
 /* =========================================================
    DELIVERABLE CARD
 ========================================================= */
@@ -160,7 +158,6 @@ function DeliverableCard({ label, items, align }) {
   );
 }
 
-
 /* =========================================================
    STEP IMAGE
 ========================================================= */
@@ -211,23 +208,11 @@ function StepImage({ src, alt }) {
   );
 }
 
-
 /* =========================================================
    TIMELINE STEP
 ========================================================= */
 
 function TimelineStep({ step, index, progress }) {
-  /*
-    Each point gets a progress value.
-
-    Example:
-    Step 01 → 0%
-    Step 02 → 25%
-    Step 03 → 50%
-    Step 04 → 75%
-    Step 05 → 100%
-  */
-
   const stepProgress = index / (STEPS.length - 1);
 
   const distance = Math.abs(progress - stepProgress);
@@ -250,14 +235,12 @@ function TimelineStep({ step, index, progress }) {
         md:gap-0
       "
     >
-
       {/* =================================================
           RIGHT SIDE
       ================================================= */}
 
       {step.side === "right" ? (
         <>
-
           {/* TEXT */}
 
           <div
@@ -275,7 +258,6 @@ function TimelineStep({ step, index, progress }) {
               md:text-right
             "
           >
-
             <p
               className="
                 font-display
@@ -335,17 +317,14 @@ function TimelineStep({ step, index, progress }) {
               items={step.list}
               align="right"
             />
-
           </div>
 
-
-          {/* =================================================
-              TIMELINE POINT
-          ================================================= */}
+          {/* TIMELINE POINT */}
 
           <motion.div
             animate={{
               scale: isActive ? 1.45 : 1,
+
               boxShadow: isActive
                 ? "0 0 0 8px rgba(6,78,59,0.12), 0 0 25px rgba(6,78,59,0.30)"
                 : "0 0 0 8px rgba(245,245,240,1)",
@@ -376,7 +355,6 @@ function TimelineStep({ step, index, progress }) {
             "
           />
 
-
           {/* IMAGE */}
 
           <div
@@ -392,16 +370,13 @@ function TimelineStep({ step, index, progress }) {
               alt={step.title}
             />
           </div>
-
         </>
       ) : (
-
         /* =================================================
            LEFT SIDE
         ================================================= */
 
         <>
-
           {/* IMAGE */}
 
           <div
@@ -421,12 +396,12 @@ function TimelineStep({ step, index, progress }) {
             />
           </div>
 
-
           {/* TIMELINE POINT */}
 
           <motion.div
             animate={{
               scale: isActive ? 1.45 : 1,
+
               boxShadow: isActive
                 ? "0 0 0 8px rgba(6,78,59,0.12), 0 0 25px rgba(6,78,59,0.30)"
                 : "0 0 0 8px rgba(245,245,240,1)",
@@ -457,7 +432,6 @@ function TimelineStep({ step, index, progress }) {
             "
           />
 
-
           {/* TEXT */}
 
           <div
@@ -475,7 +449,6 @@ function TimelineStep({ step, index, progress }) {
               gap-4
             "
           >
-
             <p
               className="
                 font-display
@@ -532,48 +505,31 @@ function TimelineStep({ step, index, progress }) {
               items={step.list}
               align="left"
             />
-
           </div>
-
         </>
       )}
     </div>
   );
 }
 
-
 /* =========================================================
-   PROCESS
+   PROCESS PAGE
 ========================================================= */
 
 export default function Process() {
-
   const timelineRef = useRef(null);
-
-  /*
-    Track the timeline section while scrolling.
-
-    progress:
-    0 → top of timeline
-    1 → bottom of timeline
-  */
 
   const { scrollYProgress } = useScroll({
     target: timelineRef,
+
     offset: ["start 30%", "end 70%"],
   });
-
-
-  /*
-    Convert progress into line height.
-  */
 
   const lineHeight = useTransform(
     scrollYProgress,
     [0, 1],
     ["0%", "100%"]
   );
-
 
   return (
     <div
@@ -583,31 +539,28 @@ export default function Process() {
         overflow-hidden
       "
     >
-
       <Navbar />
 
+      {/* =================================================
+          MAIN
+      ================================================= */}
 
-      <main className="pt-32">
-
-
+      <main className="pt-0">
         {/* =================================================
             HERO
         ================================================= */}
 
-<section
+        <section
   className="
     relative
     w-full
-    max-w-[1440px]
-
-    mx-auto
-
-    px-4
-    sm:px-6
-    md:px-20
+    mx-0
+    px-0
+    pt-10
 
     pb-10
     sm:pb-16
+    lg:pt-10
 
     flex
     flex-col
@@ -616,7 +569,6 @@ export default function Process() {
     sm:gap-6
 
     items-start
-
     text-left
 
     overflow-hidden
@@ -648,13 +600,13 @@ export default function Process() {
     "
   >
     <source
-      src="/videos/digital-background1.mp4"
+      src="/videos/process.mp4"
       type="video/mp4"
     />
   </video>
 
   {/* =========================================
-      VIDEO OVERLAY
+      DARK EMERALD VIDEO OVERLAY
   ========================================== */}
 
   <div
@@ -662,9 +614,9 @@ export default function Process() {
       absolute
       inset-0
 
-      bg-[#F5FAF7]/80
-      sm:bg-[#F5FAF7]/76
-      md:bg-[#F5FAF7]/72
+      bg-emerald-950/35
+      sm:bg-emerald-950/30
+      md:bg-emerald-950/25
 
       pointer-events-none
     "
@@ -677,6 +629,7 @@ export default function Process() {
   <div
     className="
       absolute
+
       top-[-120px]
       right-[-100px]
 
@@ -691,9 +644,10 @@ export default function Process() {
 
       rounded-full
 
-      bg-emerald-300/[0.08]
+      bg-emerald-300/[0.10]
 
       blur-[100px]
+    
 
       pointer-events-none
     "
@@ -702,6 +656,7 @@ export default function Process() {
   <div
     className="
       absolute
+
       bottom-[-140px]
       left-[-100px]
 
@@ -716,7 +671,7 @@ export default function Process() {
 
       rounded-full
 
-      bg-emerald-400/[0.06]
+      bg-emerald-400/[0.08]
 
       blur-[110px]
 
@@ -725,15 +680,24 @@ export default function Process() {
   />
 
   {/* =========================================
-      CONTENT
+      HERO CONTENT
   ========================================== */}
 
   <div
     className="
       relative
       z-10
+      mt-10
 
       w-full
+
+      max-w-[1440px]
+
+      mx-auto
+
+      px-4
+      sm:px-6
+      md:px-20
 
       flex
       flex-col
@@ -742,7 +706,6 @@ export default function Process() {
       sm:gap-6
 
       items-start
-
       text-left
     "
   >
@@ -752,7 +715,7 @@ export default function Process() {
       className="
         font-body
 
-        text-emerald-800
+        text-emerald-100
 
         text-[9px]
         sm:text-xs
@@ -773,7 +736,7 @@ export default function Process() {
         font-display
         font-bold
 
-        text-ink
+        text-white
 
         text-[38px]
         sm:text-7xl
@@ -797,7 +760,7 @@ export default function Process() {
       className="
         font-body
 
-        text-clay
+        text-white/85
 
         text-[13px]
         sm:text-lg
@@ -811,24 +774,27 @@ export default function Process() {
         leading-relaxed
       "
     >
-      We don&rsquo;t just build products; we compose experiences. Our
-      process is a fluid journey from abstract ambiguity to absolute
-      precision, treating empty space as a luxury material.
+      We don&rsquo;t just build products; we compose experiences.
+      Our process is a fluid journey from abstract ambiguity to
+      absolute precision, treating empty space as a luxury material.
     </p>
   </div>
 </section>
-{/* =================================================
-    TIMELINE
-================================================= */}
 
+        {/* =================================================
+            TIMELINE
+        ================================================= */}
 
-
-<section
+        <section
   ref={timelineRef}
   className="
     w-full
+
     max-w-[1440px]
+
     mx-auto
+    pt-10
+    
 
     px-3
     sm:px-6
@@ -837,6 +803,9 @@ export default function Process() {
     pb-8
     sm:pb-16
     md:pb-20
+
+    bg-[#F1F5F0]
+    rounded-2xl
   "
 >
   <div
@@ -850,15 +819,12 @@ export default function Process() {
       sm:gap-6
       md:gap-32
 
-      /* MOBILE LEFT TIMELINE SPACE */
       pl-7
       sm:pl-9
 
-      /* DESKTOP ORIGINAL */
       md:pl-0
     "
   >
-
     {/* =================================================
         MOBILE BASE TIMELINE — LEFT
     ================================================= */}
@@ -877,12 +843,11 @@ export default function Process() {
 
         w-[2px]
 
-        bg-emerald-900/10
+        bg-emerald-900/15
 
         z-0
       "
     />
-
 
     {/* =================================================
         MOBILE ANIMATED PROGRESS LINE — LEFT
@@ -918,7 +883,6 @@ export default function Process() {
       "
     />
 
-
     {/* =================================================
         DESKTOP BASE TIMELINE — CENTER
     ================================================= */}
@@ -939,12 +903,11 @@ export default function Process() {
 
         w-[2px]
 
-        bg-emerald-900/10
+        bg-emerald-900/15
 
         z-0
       "
     />
-
 
     {/* =================================================
         DESKTOP ANIMATED PROGRESS LINE — CENTER
@@ -980,7 +943,6 @@ export default function Process() {
       "
     />
 
-
     {/* =================================================
         TIMELINE STEPS
     ================================================= */}
@@ -995,17 +957,14 @@ export default function Process() {
           w-full
           min-w-0
 
-          /* MOBILE */
           scale-[0.84]
           origin-top
 
           -my-6
 
-          /* SMALL TABLET */
           sm:scale-[0.92]
           sm:-my-3
 
-          /* DESKTOP — ORIGINAL */
           md:scale-100
           md:my-0
         "
@@ -1017,20 +976,13 @@ export default function Process() {
         />
       </div>
     ))}
-
   </div>
 </section>
 
 
-
-
-
       </main>
 
-
       <Footer />
-
     </div>
   );
 }
-

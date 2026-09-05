@@ -110,6 +110,7 @@ const stagger = {
 // ============================================================
 
 export default function Contact() {
+  const [activeReview, setActiveReview] = useState(0);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -190,31 +191,27 @@ export default function Contact() {
             HERO SECTION
         ===================================================== */}
 
-        <section
+      <section
   className="
     relative
     min-h-[60vh]
-
     flex
     items-center
-
     overflow-hidden
-
     pt-24
     sm:pt-28
     lg:pt-32
-
     px-5
     sm:px-8
     md:px-12
     lg:px-16
     xl:px-20
+    p-10
   "
 >
   {/* =================================================
       BACKGROUND VIDEO
   ================================================= */}
-
   <video
     autoPlay
     loop
@@ -224,46 +221,53 @@ export default function Contact() {
     className="
       absolute
       inset-0
-
       w-full
       h-full
-
       object-cover
-
       pointer-events-none
       select-none
-
       scale-[1.03]
     "
   >
     <source
-      src="/videos/digital-background1.mp4"
+      src="/videos/contact.mp4"
       type="video/mp4"
     />
   </video>
 
   {/* =================================================
-      VIDEO OVERLAY
-      Keeps the video subtle and text readable
+      PRIMARY GREEN GRADIENT OVERLAY
   ================================================= */}
-
   <div
     className="
       absolute
       inset-0
-
-      bg-[#F3F7F4]/60
-      sm:bg-[#F3F7F4]/78
-      md:bg-[#F3F7F4]/70
-
+      bg-gradient-to-r
+      from-[#0F5C4D]/90
+      via-[#0F5C4D]/60
+      to-transparent
       pointer-events-none
     "
   />
 
   {/* =================================================
-      SOFT GREEN TINT
+      SOFT OVERALL DARK TINT
   ================================================= */}
+  <div
+    className="
+      absolute
+      inset-0
+      bg-gradient-to-b
+      from-black/10
+      via-transparent
+      to-[#0F5C4D]/20
+      pointer-events-none
+    "
+  />
 
+  {/* =================================================
+      SOFT GREEN GLOW
+  ================================================= */}
   <motion.div
     animate={{
       x: [0, 80, 0],
@@ -278,30 +282,22 @@ export default function Contact() {
     }}
     className="
       absolute
-
       top-[10%]
       right-[-100px]
-
       w-[300px]
       h-[300px]
-
       sm:w-[350px]
       sm:h-[350px]
-
       rounded-full
-
-      bg-[#0F5C4D]/10
-
+      bg-[#0F5C4D]/20
       blur-[100px]
-
       pointer-events-none
     "
   />
 
   {/* =================================================
-      SECOND SOFT GLOW
+      SECOND GREEN GLOW
   ================================================= */}
-
   <motion.div
     animate={{
       x: [0, -30, 0],
@@ -316,38 +312,28 @@ export default function Contact() {
     }}
     className="
       absolute
-
       bottom-[-120px]
       left-[-100px]
-
       w-[280px]
       h-[280px]
-
       sm:w-[400px]
       sm:h-[400px]
-
       rounded-full
-
-      bg-emerald-400/10
-
+      bg-emerald-400/15
       blur-[100px]
-
       pointer-events-none
     "
   />
 
   {/* =================================================
-      HERO CONTENT
+      CONTENT
   ================================================= */}
-
   <div
     className="
       relative
       z-10
-
       w-full
       max-w-[1440px]
-
       mx-auto
     "
   >
@@ -355,24 +341,17 @@ export default function Contact() {
       variants={stagger}
       initial="hidden"
       animate="visible"
-
-      className="
-        max-w-[800px]
-      "
+      className="max-w-[800px]"
     >
-
       {/* =================================================
           LABEL
       ================================================= */}
-
       <motion.div
         variants={fadeUp}
-
         className="
           flex
           items-center
           gap-2
-
           mb-6
           sm:mb-8
         "
@@ -390,29 +369,21 @@ export default function Contact() {
           className="
             w-2
             h-2
-
             rounded-full
-
-            bg-[#0F5C4D]
-
-            shadow-[0_0_12px_rgba(15,92,77,0.35)]
+            bg-white
+            shadow-[0_0_12px_rgba(255,255,255,0.5)]
           "
         />
 
         <span
           className="
             font-body
-
             text-xs
             sm:text-sm
-
             uppercase
-
             tracking-[2px]
-
-            text-[#0F5C4D]
-
-            font-medium
+            text-white
+            font-semibold
           "
         >
           Get in Touch
@@ -420,88 +391,73 @@ export default function Contact() {
       </motion.div>
 
       {/* =================================================
-          MAIN HEADING
+          HEADING
       ================================================= */}
-
       <motion.h1
         variants={fadeUp}
-
         className="
           font-display
           font-black
-
-          text-[#24332F]
-
+          text-white
           text-[48px]
           sm:text-[64px]
           md:text-[82px]
           lg:text-[96px]
-
           leading-[0.88]
-
           tracking-[-4px]
           sm:tracking-[-5px]
           lg:tracking-[-6px]
         "
       >
-        Let's start a
-
+        Let's Talk About
         <br />
 
-        <span className="text-[#0F5C4D]">
-          conversation.
+        <span
+          className="
+            text-[#BFE3D8]
+          "
+        >
+          Your Project
         </span>
       </motion.h1>
 
       {/* =================================================
           DESCRIPTION
       ================================================= */}
-
       <motion.p
         variants={fadeUp}
-
         className="
           mt-6
           sm:mt-8
-
           max-w-[620px]
-
           font-body
-
           text-base
           sm:text-lg
           lg:text-xl
-
           leading-relaxed
-
-          text-[#687773]
+          text-white/85
         "
       >
         Have a project in mind? Want to work together? Or just want to
         say hello? We'd love to hear from you.
       </motion.p>
-
     </motion.div>
   </div>
 
   {/* =================================================
-      BOTTOM FADE
+      BOTTOM GRADIENT
   ================================================= */}
-
   <div
     className="
       absolute
       bottom-0
       left-0
       right-0
-
       h-20
       sm:h-28
-
       bg-gradient-to-t
-      from-[#F3F7F4]/50
+      from-[#0F5C4D]/40
       to-transparent
-
       pointer-events-none
     "
   />
@@ -511,1002 +467,643 @@ export default function Contact() {
             CONTACT DETAILS & HOURS
         ===================================================== */}
 
-<section
+ <section
   className="
     relative
     w-full
-
+    overflow-hidden
+    isolation-isolate
     px-3
     sm:px-8
     md:px-12
     lg:px-16
     xl:px-20
-
-    py-10
+    py-12
     sm:py-20
     lg:py-24
-
-    overflow-hidden
+    bg-gradient-to-br
+    from-[#F3FBF7]
+    via-[#D9EEE7]
+    to-[#BFDCD1]
   "
 >
-  {/* =====================================================
-      STRONGER EMERALD ANIMATED BACKGROUND
-  ====================================================== */}
+  {/* ================= BACKGROUND ================= */}
 
-  {/* Base emerald background */}
-  <div
-    className="
-      absolute
-      inset-0
-      -z-20
-
-      bg-gradient-to-br
-      from-[#EEF8F4]
-      via-[#D9EEE7]
-      to-[#C7E4DA]
-    "
-  />
-
-  {/* Soft center light */}
-  <div
-    className="
-      absolute
-      inset-0
-      -z-20
-
-      bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.45),transparent_65%)]
-
-      pointer-events-none
-    "
-  />
-
-  {/* =====================================================
-      MOVING GRID
-  ====================================================== */}
-
+  {/* Center Radial Light */}
   <motion.div
+    className="
+      absolute
+      inset-0
+      -z-10
+      bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.8),transparent_55%)]
+    "
     animate={{
-      backgroundPosition: [
-        "0px 0px",
-        "60px 60px",
-      ],
+      scale: [1, 1.08, 1],
+      opacity: [0.6, 0.9, 0.6],
     }}
     transition={{
-      duration: 14,
+      duration: 8,
+      repeat: Infinity,
+      ease: "easeInOut",
+    }}
+  />
+
+  {/* Moving Grid */}
+  <motion.div
+    className="
+      absolute
+      inset-0
+      -z-10
+      opacity-[0.15]
+      bg-[linear-gradient(rgba(15,92,77,0.25)_1px,transparent_1px),linear-gradient(90deg,rgba(15,92,77,0.25)_1px,transparent_1px)]
+      bg-[size:45px_45px]
+    "
+    animate={{
+      backgroundPosition: ["0px 0px", "45px 45px"],
+    }}
+    transition={{
+      duration: 8,
       repeat: Infinity,
       ease: "linear",
     }}
-    className="
-      absolute
-      inset-0
-      -z-10
-
-      opacity-[0.32]
-
-      bg-[linear-gradient(rgba(6,78,59,0.10)_1px,transparent_1px),linear-gradient(90deg,rgba(6,78,59,0.10)_1px,transparent_1px)]
-
-      bg-[size:45px_45px]
-
-      sm:bg-[size:60px_60px]
-
-      lg:bg-[size:75px_75px]
-
-      pointer-events-none
-    "
   />
 
-  {/* =====================================================
-      TOP LEFT EMERALD GLOW
-  ====================================================== */}
-
+  {/* Top Left Glow */}
   <motion.div
+    className="
+      absolute
+      -top-32
+      -left-32
+      -z-10
+      w-80
+      h-80
+      rounded-full
+      bg-emerald-400/20
+      blur-3xl
+    "
     animate={{
-      x: [0, 60, -25, 0],
-      y: [0, 35, -25, 0],
-      scale: [1, 1.18, 0.92, 1],
-      opacity: [0.45, 0.65, 0.4, 0.45],
+      x: [0, 40, 0],
+      y: [0, 30, 0],
     }}
     transition={{
-      duration: 12,
+      duration: 9,
       repeat: Infinity,
       ease: "easeInOut",
     }}
-    className="
-      absolute
-      -z-10
-
-      top-[-100px]
-      left-[-90px]
-
-      sm:top-[-150px]
-      sm:left-[-140px]
-
-      lg:top-[-200px]
-      lg:left-[-170px]
-
-      w-[280px]
-      h-[280px]
-
-      sm:w-[430px]
-      sm:h-[430px]
-
-      lg:w-[560px]
-      lg:h-[560px]
-
-      rounded-full
-
-      bg-emerald-500/[0.18]
-
-      blur-[70px]
-
-      sm:blur-[100px]
-
-      lg:blur-[130px]
-
-      pointer-events-none
-    "
   />
 
-  {/* =====================================================
-      TOP RIGHT EMERALD GLOW
-  ====================================================== */}
-
+  {/* Top Right Glow */}
   <motion.div
-    animate={{
-      x: [0, -50, 25, 0],
-      y: [0, 35, -25, 0],
-      scale: [1, 0.9, 1.15, 1],
-      opacity: [0.4, 0.6, 0.35, 0.4],
-    }}
-    transition={{
-      duration: 15,
-      repeat: Infinity,
-      ease: "easeInOut",
-    }}
     className="
       absolute
+      -top-32
+      -right-32
       -z-10
-
-      top-[0%]
-      right-[-100px]
-
-      sm:right-[-160px]
-
-      lg:right-[-220px]
-
-      w-[300px]
-      h-[300px]
-
-      sm:w-[460px]
-      sm:h-[460px]
-
-      lg:w-[620px]
-      lg:h-[620px]
-
+      w-96
+      h-96
       rounded-full
-
-      bg-teal-500/[0.16]
-
-      blur-[75px]
-
-      sm:blur-[105px]
-
-      lg:blur-[135px]
-
-      pointer-events-none
+      bg-teal-400/20
+      blur-3xl
     "
-  />
-
-  {/* =====================================================
-      CENTER EMERALD LIGHT
-  ====================================================== */}
-
-  <motion.div
     animate={{
-      x: [-50, 50, -50],
-      y: [0, -20, 0],
-      scale: [1, 1.15, 1],
-      opacity: [0.25, 0.45, 0.25],
+      x: [0, -40, 0],
+      y: [0, 35, 0],
     }}
     transition={{
       duration: 10,
       repeat: Infinity,
       ease: "easeInOut",
     }}
-    className="
-      absolute
-      -z-10
-
-      top-[35%]
-      left-1/2
-      -translate-x-1/2
-
-      w-[320px]
-      h-[220px]
-
-      sm:w-[520px]
-      sm:h-[320px]
-
-      lg:w-[750px]
-      lg:h-[400px]
-
-      rounded-full
-
-      bg-emerald-600/[0.10]
-
-      blur-[80px]
-
-      sm:blur-[110px]
-
-      lg:blur-[140px]
-
-      pointer-events-none
-    "
   />
 
-  {/* =====================================================
-      BOTTOM RIGHT GLOW
-  ====================================================== */}
-
+  {/* Bottom Glow */}
   <motion.div
+    className="
+      absolute
+      -bottom-40
+      right-10
+      -z-10
+      w-96
+      h-96
+      rounded-full
+      bg-emerald-500/15
+      blur-3xl
+    "
     animate={{
-      x: [40, -40, 40],
-      y: [0, -20, 0],
-      scale: [1, 1.1, 1],
-      opacity: [0.3, 0.5, 0.3],
+      x: [0, -50, 0],
+      y: [0, -30, 0],
     }}
     transition={{
-      duration: 13,
+      duration: 11,
       repeat: Infinity,
       ease: "easeInOut",
     }}
-    className="
-      absolute
-      -z-10
-
-      bottom-[-120px]
-      right-[-100px]
-
-      sm:bottom-[-160px]
-      sm:right-[-150px]
-
-      lg:bottom-[-200px]
-      lg:right-[-220px]
-
-      w-[330px]
-      h-[280px]
-
-      sm:w-[500px]
-      sm:h-[380px]
-
-      lg:w-[680px]
-      lg:h-[460px]
-
-      rounded-full
-
-      bg-emerald-400/[0.13]
-
-      blur-[80px]
-
-      sm:blur-[110px]
-
-      lg:blur-[140px]
-
-      pointer-events-none
-    "
   />
 
-  {/* =====================================================
-      LEFT ROTATING RING
-  ====================================================== */}
+  {/* ================= CONTENT ================= */}
 
-  <motion.div
-    animate={{
-      rotate: 360,
-    }}
-    transition={{
-      duration: 35,
-      repeat: Infinity,
-      ease: "linear",
-    }}
-    className="
-      absolute
-      -z-10
+  <div className="relative z-10 w-full max-w-[1440px] mx-auto">
 
-      top-[20%]
-      left-[-170px]
+    {/* ================= SECTION HEADING ================= */}
 
-      sm:left-[-230px]
-
-      lg:left-[-300px]
-
-      w-[360px]
-      h-[360px]
-
-      sm:w-[520px]
-      sm:h-[520px]
-
-      lg:w-[680px]
-      lg:h-[680px]
-
-      rounded-full
-
-      border
-      border-emerald-800/[0.12]
-
-      pointer-events-none
-    "
-  >
-    <div
-      className="
-        absolute
-
-        top-1/2
-        right-0
-
-        w-3
-        h-3
-
-        sm:w-4
-        sm:h-4
-
-        rounded-full
-
-        bg-emerald-700/40
-
-        shadow-[0_0_18px_rgba(15,92,77,0.25)]
-      "
-    />
-  </motion.div>
-
-  {/* =====================================================
-      RIGHT ROTATING RING
-  ====================================================== */}
-
-  <motion.div
-    animate={{
-      rotate: -360,
-    }}
-    transition={{
-      duration: 45,
-      repeat: Infinity,
-      ease: "linear",
-    }}
-    className="
-      absolute
-      -z-10
-
-      top-[10%]
-      right-[-180px]
-
-      sm:right-[-250px]
-
-      lg:right-[-320px]
-
-      w-[380px]
-      h-[380px]
-
-      sm:w-[560px]
-      sm:h-[560px]
-
-      lg:w-[720px]
-      lg:h-[720px]
-
-      rounded-full
-
-      border
-      border-teal-800/[0.10]
-
-      pointer-events-none
-    "
-  >
-    <div
-      className="
-        absolute
-
-        bottom-0
-        left-1/2
-
-        w-3
-        h-3
-
-        sm:w-4
-        sm:h-4
-
-        rounded-full
-
-        bg-teal-700/35
-      "
-    />
-  </motion.div>
-
-  {/* =====================================================
-      FLOATING PARTICLES
-  ====================================================== */}
-
-  <motion.div
-    animate={{
-      x: [0, 20, -10, 0],
-      y: [0, -25, 10, 0],
-      opacity: [0.3, 0.7, 0.25, 0.3],
-      scale: [1, 1.4, 0.9, 1],
-    }}
-    transition={{
-      duration: 7,
-      repeat: Infinity,
-      ease: "easeInOut",
-    }}
-    className="
-      absolute
-      -z-10
-
-      top-[22%]
-      left-[32%]
-
-      w-2
-      h-2
-
-      sm:w-3
-      sm:h-3
-
-      rounded-full
-
-      bg-emerald-700/40
-
-      shadow-[0_0_14px_rgba(15,92,77,0.20)]
-
-      pointer-events-none
-    "
-  />
-
-  <motion.div
-    animate={{
-      x: [0, -18, 12, 0],
-      y: [0, 20, -12, 0],
-      opacity: [0.2, 0.6, 0.2, 0.2],
-    }}
-    transition={{
-      duration: 9,
-      repeat: Infinity,
-      ease: "easeInOut",
-      delay: 1,
-    }}
-    className="
-      absolute
-      -z-10
-
-      top-[68%]
-      left-[68%]
-
-      w-2
-      h-2
-
-      sm:w-3
-      sm:h-3
-
-      rounded-full
-
-      bg-teal-700/35
-
-      pointer-events-none
-    "
-  />
-
-  <motion.div
-    animate={{
-      y: [0, -20, 0],
-      opacity: [0.2, 0.5, 0.2],
-    }}
-    transition={{
-      duration: 8,
-      repeat: Infinity,
-      ease: "easeInOut",
-      delay: 2,
-    }}
-    className="
-      absolute
-      -z-10
-
-      top-[48%]
-      right-[30%]
-
-      w-2
-      h-2
-
-      sm:w-3
-      sm:h-3
-
-      rounded-full
-
-      bg-emerald-800/30
-
-      pointer-events-none
-    "
-  />
-
-  {/* =====================================================
-      CONTENT
-  ====================================================== */}
-
-  <div className="relative z-10 max-w-[1440px] mx-auto">
-    <div
-      className="
-        grid
-
-        grid-cols-3
-        md:grid-cols-2
-        lg:grid-cols-4
-
-        gap-2
-        sm:gap-6
-        lg:gap-8
-      "
+    <motion.div
+      className="text-center mb-10 sm:mb-14 lg:mb-16"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ duration: 0.7 }}
     >
-      {/* ========================================= */}
-      {/* CONTACT INFO */}
-      {/* ========================================= */}
-
-      {CONTACT_INFO.map((item, index) => {
-        const Icon = item.icon;
-
-        return (
-          <motion.a
-            key={item.label}
-            href={item.href}
-
-            animate={{
-              y: [0, -5, 0, 4, 0],
-              rotate: [0, -0.4, 0.4, -0.3, 0],
-            }}
-
-            transition={{
-              duration: 5 + index * 0.4,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: index * 0.4,
-            }}
-
-            whileHover={{
-              scale: 1.03,
-              y: -8,
-              rotate: 0,
-            }}
-
-            whileTap={{
-              scale: 0.97,
-            }}
-
-            className="
-              group
-              relative
-
-              rounded-xl
-              sm:rounded-[1.5rem]
-
-              overflow-hidden
-
-              bg-[#F7FBF9]/55
-              backdrop-blur-sm
-
-              border
-              border-[#0F5C4D]/15
-
-              shadow-[0px_8px_25px_rgba(15,92,77,0.08)]
-
-              hover:shadow-[0px_15px_40px_rgba(15,92,77,0.16)]
-
-              transition-shadow
-              duration-300
-            "
-          >
-            <div
-              className="
-                relative
-                z-10
-                h-full
-
-                p-3
-                sm:p-8
-
-                rounded-xl
-                sm:rounded-[1.5rem]
-
-                bg-[#F7FBF9]/45
-
-                backdrop-blur-[3px]
-
-                overflow-hidden
-              "
-            >
-              {/* CARD GLOW */}
-
-              <motion.div
-                className="
-                  absolute
-
-                  -top-12
-                  -right-12
-
-                  sm:-top-20
-                  sm:-right-20
-
-                  w-24
-                  h-24
-
-                  sm:w-40
-                  sm:h-40
-
-                  rounded-full
-
-                  bg-emerald-500/15
-
-                  blur-3xl
-
-                  pointer-events-none
-                "
-                animate={{
-                  scale: [1, 1.2, 1],
-                  opacity: [0.3, 0.55, 0.3],
-                  x: [0, 8, 0],
-                  y: [0, -8, 0],
-                }}
-                transition={{
-                  duration: 6,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: index * 0.5,
-                }}
-              />
-
-              {/* ICON */}
-
-              <motion.div
-                className="
-                  relative
-                  z-10
-
-                  w-8
-                  h-8
-
-                  sm:w-12
-                  sm:h-12
-
-                  rounded-full
-
-                  bg-[#D1E9E0]
-
-                  flex
-                  items-center
-                  justify-center
-
-                  mb-2
-                  sm:mb-4
-
-                  text-[#0F5C4D]
-
-                  group-hover:bg-[#0F5C4D]
-                  group-hover:text-white
-
-                  transition-all
-                  duration-300
-                "
-                animate={{
-                  y: [0, -2, 0, 2, 0],
-                  rotate: [0, -2, 2, -1, 0],
-                }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: index * 0.25,
-                }}
-              >
-                <Icon
-                  size={16}
-                  className="
-                    sm:w-6
-                    sm:h-6
-                  "
-                />
-              </motion.div>
-
-              {/* LABEL */}
-
-              <p
-                className="
-                  relative
-                  z-10
-
-                  font-body
-                  text-[#0F5C4D]
-
-                  text-[7px]
-                  sm:text-xs
-
-                  uppercase
-
-                  tracking-[0.8px]
-                  sm:tracking-[1.5px]
-
-                  mb-1
-                  sm:mb-2
-                "
-              >
-                {item.label}
-              </p>
-
-              {/* VALUE */}
-
-              <p
-                className="
-                  relative
-                  z-10
-
-                  font-display
-                  font-bold
-
-                  text-[#24332F]
-
-                  text-[10px]
-                  sm:text-xl
-
-                  tracking-[-0.3px]
-                  sm:tracking-[-0.5px]
-
-                  leading-tight
-                "
-              >
-                {item.value}
-              </p>
-
-              {/* BOTTOM LINE */}
-
-              <motion.div
-                className="
-                  absolute
-                  bottom-0
-                  left-0
-
-                  h-[2px]
-
-                  bg-[#0F5C4D]
-
-                  rounded-full
-                "
-                animate={{
-                  width: ["0%", "100%", "0%"],
-                }}
-                transition={{
-                  duration: 5,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: index * 0.6,
-                }}
-              />
-            </div>
-          </motion.a>
-        );
-      })}
-
-      {/* ========================================= */}
-      {/* OFFICE HOURS */}
-      {/* ========================================= */}
-
+      {/* Small Label */}
       <motion.div
-        animate={{
-          y: [0, -4, 0, 3, 0],
-          rotate: [0, 0.25, -0.25, 0],
-        }}
-        transition={{
-          duration: 6,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
         className="
-          relative
-
-          col-span-full
-
-          md:col-span-2
-          lg:col-span-4
-
-          rounded-xl
-          sm:rounded-[1.5rem]
-
-          overflow-hidden
-
-          bg-[#CFE6DD]/75
-
-          backdrop-blur-sm
-
+          inline-flex
+          items-center
+          gap-2
+          mb-3
+          sm:mb-4
+          px-4
+          py-2
+          rounded-full
+          bg-white/60
           border
-          border-[#0F5C4D]/15
-
-          shadow-[0px_8px_25px_rgba(15,92,77,0.08)]
+          border-emerald-700/10
+          backdrop-blur-md
+          shadow-sm
         "
+        initial={{ opacity: 0, scale: 0.8 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
       >
-        <div
+        <span className="w-2 h-2 rounded-full bg-[#0F5C4D] animate-pulse" />
+
+        <span
           className="
-            relative
-            z-10
-
-            p-4
-            sm:p-8
-
-            rounded-xl
-            sm:rounded-[1.5rem]
-
-            bg-[#D7ECE4]/65
-
-            backdrop-blur-[3px]
-
-            overflow-hidden
+            text-[10px]
+            sm:text-xs
+            font-bold
+            tracking-[0.2em]
+            uppercase
+            text-[#0F5C4D]
           "
         >
-          {/* OFFICE GLOW */}
-
-          <motion.div
-            className="
-              absolute
-
-              -right-14
-              -top-14
-
-              sm:-right-20
-              sm:-top-20
-
-              w-40
-              h-40
-
-              sm:w-56
-              sm:h-56
-
-              rounded-full
-
-              bg-emerald-500/15
-
-              blur-3xl
-
-              pointer-events-none
-            "
-            animate={{
-              scale: [1, 1.2, 1],
-              opacity: [0.3, 0.5, 0.3],
-              x: [0, 10, 0],
-              y: [0, 8, 0],
-            }}
-            transition={{
-              duration: 6,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-
-          {/* HEADING */}
-
-          <motion.p
-            className="
-              relative
-              z-10
-
-              font-body
-              text-[#0F5C4D]
-
-              text-[9px]
-              sm:text-xs
-
-              uppercase
-
-              tracking-[1px]
-              sm:tracking-[1.5px]
-
-              mb-3
-              sm:mb-4
-            "
-            animate={{
-              letterSpacing: [
-                "1.5px",
-                "2px",
-                "1.5px",
-              ],
-            }}
-            transition={{
-              duration: 4,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          >
-            Office Hours
-          </motion.p>
-
-          {/* HOURS */}
-
-          <div
-            className="
-              relative
-              z-10
-
-              space-y-2
-              sm:space-y-3
-            "
-          >
-            {OFFICE_HOURS.map((hours, index) => (
-              <motion.div
-                key={index}
-                className="
-                  flex
-                  justify-between
-                  items-center
-
-                  gap-3
-                "
-                animate={{
-                  x: [0, 2, 0, -2, 0],
-                }}
-                transition={{
-                  duration: 4 + index * 0.3,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: index * 0.2,
-                }}
-              >
-                <p
-                  className="
-                    font-body
-
-                    text-[10px]
-                    sm:text-sm
-
-                    text-[#24332F]
-                  "
-                >
-                  {hours.day}
-                </p>
-
-                <p
-                  className="
-                    font-body
-
-                    text-[10px]
-                    sm:text-sm
-
-                    text-[#50635D]
-
-                    text-right
-                  "
-                >
-                  {hours.time}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-
-          {/* BOTTOM LINE */}
-
-          <motion.div
-            className="
-              absolute
-              bottom-0
-              left-0
-
-              h-[2px]
-
-              bg-[#0F5C4D]
-
-              rounded-full
-            "
-            animate={{
-              width: ["0%", "100%", "0%"],
-            }}
-            transition={{
-              duration: 5,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-        </div>
+          Get In Touch
+        </span>
       </motion.div>
-    </div>
+
+      {/* Main Heading */}
+      <motion.h2
+        className="
+          text-3xl
+          sm:text-4xl
+          md:text-5xl
+          lg:text-6xl
+          font-black
+          tracking-tight
+          text-[#24332F]
+        "
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.7, delay: 0.1 }}
+      >
+        We'd Love to Hear{" "}
+        <span className="text-[#0F5C4D]">
+          From You
+        </span>
+      </motion.h2>
+
+      {/* Description */}
+      <motion.p
+        className="
+          max-w-2xl
+          mx-auto
+          mt-4
+          text-sm
+          sm:text-base
+          md:text-lg
+          leading-relaxed
+          text-[#24332F]/65
+        "
+        initial={{ opacity: 0, y: 15 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+      >
+        Have a project in mind? Reach out to us and let's
+        discuss how we can bring your ideas to life with
+        precision and creativity.
+      </motion.p>
+
+      {/* Decorative Line */}
+      <motion.div
+        className="flex items-center justify-center gap-3 mt-6"
+        initial={{ opacity: 0, scaleX: 0 }}
+        whileInView={{ opacity: 1, scaleX: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.7, delay: 0.3 }}
+      >
+        <span className="w-10 sm:w-16 h-[2px] bg-[#0F5C4D]/30 rounded-full" />
+
+        <span className="w-2.5 h-2.5 rounded-full bg-[#0F5C4D]" />
+
+        <span className="w-10 sm:w-16 h-[2px] bg-[#0F5C4D]/30 rounded-full" />
+      </motion.div>
+    </motion.div>
+
+    {/* ================= CONTACT CARDS ================= */}
+
+    
+
+<div
+  className="
+    grid
+    grid-cols-3
+    md:grid-cols-2
+    lg:grid-cols-4
+    gap-2
+    sm:gap-4
+    lg:gap-6
+  "
+>
+  {CONTACT_INFO.map((item, index) => (
+    <motion.a
+      key={item.label}
+      href={item.href}
+      className="
+        group
+        relative
+        overflow-hidden
+        rounded-xl
+        sm:rounded-2xl
+        lg:rounded-3xl
+        p-2
+        sm:p-4
+        lg:p-6
+        bg-white/55
+        backdrop-blur-xl
+        border
+        border-white/70
+        shadow-lg
+        shadow-[#0F5C4D]/5
+        transition-all
+        duration-500
+      "
+      initial={{
+        opacity: 0,
+        y: 40,
+      }}
+      whileInView={{
+        opacity: 1,
+        y: 0,
+      }}
+      viewport={{
+        once: true,
+        amount: 0.2,
+      }}
+      transition={{
+        duration: 0.6,
+        delay: index * 0.12,
+      }}
+      whileHover={{
+        y: -6,
+        scale: 1.02,
+      }}
+    >
+      {/* Hover Glow */}
+      <motion.div
+        className="
+          absolute
+          -inset-10
+          rounded-full
+          bg-emerald-400/10
+          blur-3xl
+          opacity-0
+          group-hover:opacity-100
+          transition-opacity
+          duration-500
+        "
+      />
+
+      {/* Moving Shine */}
+      <motion.div
+        className="
+          absolute
+          top-0
+          bottom-0
+          w-10
+          sm:w-16
+          lg:w-20
+          bg-white/30
+          blur-xl
+          -skew-x-12
+          opacity-0
+          group-hover:opacity-100
+        "
+        animate={{
+          x: ["-150%", "250%"],
+        }}
+        transition={{
+          duration: 1.4,
+          repeat: Infinity,
+          repeatDelay: 2,
+          ease: "easeInOut",
+        }}
+      />
+
+      <div className="relative z-10">
+
+        {/* Icon */}
+        <motion.div
+          className="
+            w-8
+            h-8
+            sm:w-11
+            sm:h-11
+            lg:w-14
+            lg:h-14
+            rounded-lg
+            sm:rounded-xl
+            lg:rounded-2xl
+            bg-[#0F5C4D]
+            flex
+            items-center
+            justify-center
+            text-white
+            shadow-lg
+            shadow-[#0F5C4D]/20
+            mb-2
+            sm:mb-3
+            lg:mb-4
+          "
+          whileHover={{
+            rotate: 8,
+            scale: 1.1,
+          }}
+          transition={{
+            type: "spring",
+            stiffness: 300,
+          }}
+        >
+          <item.icon
+            className="
+              w-3.5
+              h-3.5
+              sm:w-5
+              sm:h-5
+              lg:w-6
+              lg:h-6
+            "
+          />
+        </motion.div>
+
+        {/* Label */}
+        <p
+          className="
+            text-[7px]
+            sm:text-[10px]
+            lg:text-xs
+            uppercase
+            tracking-[0.08em]
+            sm:tracking-[0.12em]
+            lg:tracking-[0.15em]
+            font-bold
+            text-[#0F5C4D]/70
+            truncate
+          "
+        >
+          {item.label}
+        </p>
+
+        {/* Value */}
+        <p
+          className="
+            mt-1
+            text-[8px]
+            sm:text-xs
+            lg:text-sm
+            font-bold
+            text-[#24332F]
+            break-words
+            leading-tight
+          "
+        >
+          {item.value}
+        </p>
+
+        {/* Bottom Animated Line */}
+        <motion.div
+          className="
+            mt-2
+            sm:mt-3
+            lg:mt-4
+            h-[2px]
+            rounded-full
+            bg-gradient-to-r
+            from-[#0F5C4D]
+            to-emerald-300
+            origin-left
+          "
+          initial={{ scaleX: 0 }}
+          whileInView={{ scaleX: 1 }}
+          viewport={{ once: true }}
+          transition={{
+            duration: 0.8,
+            delay: 0.3 + index * 0.1,
+          }}
+        />
+      </div>
+    </motion.a>
+  ))}
+</div>
+
+    {/* ================= OFFICE HOURS ================= */}
+
+    <motion.div
+      className="
+        relative
+        mt-5
+        sm:mt-6
+        overflow-hidden
+        rounded-2xl
+        sm:rounded-3xl
+        bg-white/50
+        backdrop-blur-xl
+        border
+        border-white/70
+        shadow-lg
+        shadow-[#0F5C4D]/5
+      "
+      initial={{
+        opacity: 0,
+        y: 40,
+      }}
+      whileInView={{
+        opacity: 1,
+        y: 0,
+      }}
+      viewport={{
+        once: true,
+        amount: 0.2,
+      }}
+      transition={{
+        duration: 0.7,
+        delay: 0.4,
+      }}
+      whileHover={{
+        y: -4,
+      }}
+    >
+      {/* Top Glow */}
+      <motion.div
+        className="
+          absolute
+          -top-20
+          left-1/2
+          -translate-x-1/2
+          w-64
+          h-32
+          bg-emerald-400/10
+          blur-3xl
+        "
+        animate={{
+          scale: [1, 1.2, 1],
+          opacity: [0.4, 0.8, 0.4],
+        }}
+        transition={{
+          duration: 5,
+          repeat: Infinity,
+        }}
+      />
+
+      <div className="relative z-10 p-5 sm:p-7">
+
+        {/* Heading */}
+        <div className="flex items-center gap-3 mb-5">
+          <motion.div
+            className="
+              w-2
+              h-8
+              rounded-full
+              bg-[#0F5C4D]
+            "
+            animate={{
+              height: [32, 42, 32],
+            }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+
+          <div>
+            <h3
+              className="
+                text-lg
+                sm:text-xl
+                md:text-2xl
+                font-black
+                text-[#24332F]
+              "
+            >
+              Office Hours
+            </h3>
+
+            <p
+              className="
+                text-xs
+                sm:text-sm
+                text-[#24332F]/55
+              "
+            >
+              We're available to assist you
+            </p>
+          </div>
+        </div>
+
+        {/* Hours */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-3">
+          {OFFICE_HOURS.map((hour, index) => (
+            <motion.div
+              key={hour.day}
+              className="
+                group
+                flex
+                items-center
+                justify-between
+                gap-3
+                px-4
+                py-3
+                rounded-xl
+                bg-white/40
+                border
+                border-white/50
+                hover:bg-white/70
+                transition-all
+                duration-300
+              "
+              initial={{
+                opacity: 0,
+                x: -20,
+              }}
+              whileInView={{
+                opacity: 1,
+                x: 0,
+              }}
+              viewport={{
+                once: true,
+              }}
+              transition={{
+                delay: index * 0.08,
+              }}
+            >
+              <span
+                className="
+                  text-xs
+                  sm:text-sm
+                  font-semibold
+                  text-[#24332F]
+                "
+              >
+                {hour.day}
+              </span>
+
+              <span
+                className="
+                  text-[10px]
+                  sm:text-xs
+                  font-bold
+                  text-[#0F5C4D]
+                "
+              >
+                {hour.time}
+              </span>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Bottom Line */}
+        <motion.div
+          className="
+            mt-5
+            h-[2px]
+            rounded-full
+            bg-gradient-to-r
+            from-transparent
+            via-[#0F5C4D]/40
+            to-transparent
+          "
+          animate={{
+            opacity: [0.3, 0.8, 0.3],
+          }}
+          transition={{
+            duration: 3,
+            repeat: Infinity,
+          }}
+        />
+      </div>
+    </motion.div>
   </div>
 </section>
         {/* =====================================================
@@ -1518,112 +1115,115 @@ export default function Contact() {
   className="
     relative
     overflow-hidden
-
     px-3
     sm:px-8
     md:px-12
     lg:px-16
     xl:px-20
-
     py-10
     sm:py-20
     lg:py-24
-
-    bg-white/40
+    bg-gradient-to-br
+    from-[#F7FCFA]
+    via-[#EAF5F1]
+    to-[#DDEEE8]
   "
 >
   {/* ========================================= */}
-  {/* BACKGROUND DECORATIVE GLOW */}
+  {/* BACKGROUND */}
   {/* ========================================= */}
 
+  {/* Soft Top Glow */}
   <motion.div
     className="
       absolute
-      -top-24
-      -left-24
-      sm:-top-32
-      sm:-left-32
-
-      w-[280px]
-      h-[280px]
-      sm:w-[400px]
-      sm:h-[400px]
-
+      -top-32
+      -left-32
+      w-[350px]
+      h-[350px]
+      sm:w-[500px]
+      sm:h-[500px]
       rounded-full
-
       bg-[#0F5C4D]/10
-
-      blur-[80px]
-      sm:blur-[100px]
-
+      blur-[100px]
       pointer-events-none
     "
     animate={{
-      x: [0, 80, 0],
-      y: [0, 60, 0],
-      scale: [1, 1.15, 1],
+      x: [0, 60, 0],
+      y: [0, 40, 0],
       opacity: [0.4, 0.7, 0.4],
     }}
     transition={{
-      duration: 8,
+      duration: 9,
       repeat: Infinity,
       ease: "easeInOut",
     }}
   />
 
+  {/* Soft Bottom Glow */}
   <motion.div
     className="
       absolute
-      -bottom-28
-      -right-28
-      sm:-bottom-40
-      sm:-right-40
-
-      w-[300px]
-      h-[300px]
-      sm:w-[450px]
-      sm:h-[450px]
-
+      -bottom-40
+      -right-40
+      w-[400px]
+      h-[400px]
+      sm:w-[550px]
+      sm:h-[550px]
       rounded-full
-
-      bg-[#9AC8BC]/20
-
-      blur-[90px]
-      sm:blur-[110px]
-
+      bg-[#9AC8BC]/25
+      blur-[110px]
       pointer-events-none
     "
     animate={{
-      x: [0, -70, 0],
-      y: [0, -50, 0],
-      scale: [1, 1.2, 1],
+      x: [0, -50, 0],
+      y: [0, -40, 0],
+      opacity: [0.35, 0.6, 0.35],
     }}
     transition={{
-      duration: 10,
+      duration: 11,
       repeat: Infinity,
       ease: "easeInOut",
     }}
   />
 
+  {/* Subtle Grid */}
+  <div
+    className="
+      absolute
+      inset-0
+      opacity-[0.12]
+      pointer-events-none
+      bg-[linear-gradient(rgba(15,92,77,0.15)_1px,transparent_1px),linear-gradient(90deg,rgba(15,92,77,0.15)_1px,transparent_1px)]
+      bg-[size:45px_45px]
+    "
+  />
+
+  {/* ========================================= */}
+  {/* MAIN CONTENT */}
+  {/* ========================================= */}
+
   <div className="relative z-10 max-w-[1440px] mx-auto">
+
     <div
       className="
         grid
         lg:grid-cols-2
-
         gap-8
         sm:gap-12
         lg:gap-16
+        items-center
       "
     >
+
       {/* ========================================= */}
-      {/* LEFT - IMAGE */}
+      {/* LEFT - MODERN IMAGE CARD */}
       {/* ========================================= */}
 
       <motion.div
         initial={{
           opacity: 0,
-          x: -60,
+          x: -50,
         }}
         whileInView={{
           opacity: 1,
@@ -1634,106 +1234,80 @@ export default function Contact() {
           amount: 0.2,
         }}
         transition={{
-          duration: 0.9,
+          duration: 0.8,
           ease: [0.22, 1, 0.36, 1],
         }}
         className="
           hidden
           lg:flex
-
           items-center
           justify-center
         "
       >
-        {/* IMAGE OUTER GLOW */}
 
         <motion.div
           className="
             relative
             w-full
-            max-w-[650px]
+            max-w-[620px]
           "
-          animate={{
-            y: [0, -10, 0, 8, 0],
+          whileHover={{
+            y: -8,
           }}
           transition={{
-            duration: 6,
-            repeat: Infinity,
-            ease: "easeInOut",
+            duration: 0.4,
           }}
         >
-          {/* Rotating Glow Ring */}
 
-          <motion.div
+          {/* Soft Shadow */}
+          <div
             className="
               absolute
-              -inset-2
-
-              rounded-[2.2rem]
-
-              bg-[conic-gradient(from_0deg,#0F5C4D,#9AC8BC,#E7F0ED,#0F5C4D)]
-
-              opacity-50
-
-              blur-[8px]
+              inset-6
+              rounded-[2.5rem]
+              bg-[#0F5C4D]/15
+              blur-[45px]
             "
-            animate={{
-              rotate: 360,
-            }}
-            transition={{
-              duration: 12,
-              repeat: Infinity,
-              ease: "linear",
-            }}
           />
 
-          {/* Image Card */}
-
+          {/* Main Glass Container */}
           <div
             className="
               relative
-
-              w-full
-
               aspect-square
-
-              rounded-[2rem]
-
+              rounded-[2.5rem]
               overflow-hidden
 
-              bg-[#E7F0ED]
+              bg-white/55
+              backdrop-blur-xl
 
               border
-              border-white/70
+              border-white/80
 
-              shadow-[0px_25px_70px_rgba(15,92,77,0.12)]
+              shadow-[0_30px_80px_rgba(15,92,77,0.14)]
             "
           >
-            {/* Animated Inner Glow */}
+
+            {/* ================================= */}
+            {/* MOVING LIGHT */}
+            {/* ================================= */}
 
             <motion.div
               className="
                 absolute
-                -top-24
-                -right-24
-
-                w-72
-                h-72
-
+                -top-32
+                -right-32
+                w-80
+                h-80
                 rounded-full
-
-                bg-[#0F5C4D]/15
-
+                bg-[#0F5C4D]/10
                 blur-[70px]
-
-                pointer-events-none
-
                 z-10
               "
               animate={{
-                x: [0, -50, 0],
-                y: [0, 40, 0],
-                scale: [1, 1.3, 1],
+                x: [0, -70, 0],
+                y: [0, 60, 0],
+                scale: [1, 1.2, 1],
               }}
               transition={{
                 duration: 7,
@@ -1742,7 +1316,9 @@ export default function Contact() {
               }}
             />
 
-            {/* Image */}
+            {/* ================================= */}
+            {/* IMAGE */}
+            {/* ================================= */}
 
             <motion.img
               src={contactimage}
@@ -1750,67 +1326,114 @@ export default function Contact() {
               className="
                 absolute
                 inset-0
-
                 w-full
                 h-full
-
                 object-contain
-
-                p-16
-
+                p-14
+                xl:p-20
                 z-20
               "
-              animate={{
-                scale: [1, 1.025, 1],
+              whileHover={{
+                scale: 1.06,
               }}
               transition={{
-                duration: 5,
+                duration: 0.7,
+                ease: "easeOut",
+              }}
+            />
+
+            {/* ================================= */}
+            {/* BOTTOM GRADIENT */}
+            {/* ================================= */}
+
+            <div
+              className="
+                absolute
+                inset-x-0
+                bottom-0
+                h-1/3
+                bg-gradient-to-t
+                from-[#0F5C4D]/10
+                to-transparent
+                z-30
+                pointer-events-none
+              "
+            />
+
+            {/* ================================= */}
+            {/* FLOATING DOT 1 */}
+            {/* ================================= */}
+
+            <motion.div
+              className="
+                absolute
+                top-10
+                left-10
+                w-3
+                h-3
+                rounded-full
+                bg-[#0F5C4D]
+                shadow-[0_0_25px_rgba(15,92,77,0.5)]
+                z-40
+              "
+              animate={{
+                y: [0, -12, 0],
+                opacity: [0.5, 1, 0.5],
+              }}
+              transition={{
+                duration: 3,
                 repeat: Infinity,
                 ease: "easeInOut",
               }}
             />
 
-            {/* Gradient */}
-
-            <div
-              className="
-                absolute
-                inset-0
-
-                bg-gradient-to-t
-                from-[#0F5C4D]/15
-                via-transparent
-                to-transparent
-
-                pointer-events-none
-
-                z-30
-              "
-            />
-
-            {/* Floating Decorative Circle */}
+            {/* ================================= */}
+            {/* FLOATING DOT 2 */}
+            {/* ================================= */}
 
             <motion.div
               className="
                 absolute
-
-                top-8
-                left-8
-
-                w-3
-                h-3
-
+                bottom-14
+                right-12
+                w-2
+                h-2
                 rounded-full
-
                 bg-[#0F5C4D]
-
-                shadow-[0_0_20px_rgba(15,92,77,0.6)]
-
+                shadow-[0_0_18px_rgba(15,92,77,0.5)]
                 z-40
               "
               animate={{
-                y: [0, -15, 0, 15, 0],
-                opacity: [0.5, 1, 0.5],
+                y: [0, 10, 0],
+                opacity: [0.4, 1, 0.4],
+              }}
+              transition={{
+                duration: 3.5,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 0.8,
+              }}
+            />
+
+            {/* ================================= */}
+            {/* SMALL CORNER ACCENT */}
+            {/* ================================= */}
+
+            <motion.div
+              className="
+                absolute
+                bottom-8
+                left-8
+                w-12
+                h-12
+                rounded-2xl
+                border
+                border-[#0F5C4D]/20
+                z-40
+              "
+              animate={{
+                y: [0, -6, 0],
+                rotate: [0, 3, 0],
               }}
               transition={{
                 duration: 4,
@@ -1819,38 +1442,63 @@ export default function Contact() {
               }}
             />
 
-            <motion.div
+            {/* ================================= */}
+            {/* TOP ACCENT */}
+            {/* ================================= */}
+
+            <div
               className="
                 absolute
-
-                bottom-10
-                right-10
-
-                w-2
-                h-2
-
+                top-8
+                right-8
+                flex
+                items-center
+                gap-2
+                px-3
+                py-2
                 rounded-full
-
-                bg-[#0F5C4D]
-
-                shadow-[0_0_15px_rgba(15,92,77,0.7)]
-
+                bg-white/65
+                backdrop-blur-md
+                border
+                border-white/80
+                shadow-sm
                 z-40
               "
-              animate={{
-                y: [0, 12, 0, -12, 0],
-                opacity: [0.4, 1, 0.4],
-              }}
-              transition={{
-                duration: 3.5,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: 1,
-              }}
-            />
+            >
+              <motion.span
+                className="
+                  w-2
+                  h-2
+                  rounded-full
+                  bg-[#0F5C4D]
+                "
+                animate={{
+                  scale: [1, 1.4, 1],
+                  opacity: [0.6, 1, 0.6],
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                }}
+              />
+
+              <span
+                className="
+                  text-[9px]
+                  font-bold
+                  uppercase
+                  tracking-[0.15em]
+                  text-[#24332F]
+                "
+              >
+                Let's Connect
+              </span>
+            </div>
+
           </div>
         </motion.div>
       </motion.div>
+
 
       {/* ========================================= */}
       {/* RIGHT - FORM */}
@@ -1859,7 +1507,7 @@ export default function Contact() {
       <motion.div
         initial={{
           opacity: 0,
-          x: 60,
+          x: 50,
         }}
         whileInView={{
           opacity: 1,
@@ -1870,7 +1518,7 @@ export default function Contact() {
           amount: 0.2,
         }}
         transition={{
-          duration: 0.9,
+          duration: 0.8,
           ease: [0.22, 1, 0.36, 1],
         }}
         className="
@@ -1878,64 +1526,12 @@ export default function Contact() {
           min-w-0
         "
       >
-        {/* Small Label */}
 
-        <motion.p
-          className="
-            font-body
+        {/* ================================= */}
+        {/* FORM HEADER */}
+        {/* ================================= */}
 
-            text-[#0F5C4D]
-
-            text-[10px]
-            sm:text-xs
-
-            uppercase
-
-            tracking-[1.5px]
-            sm:tracking-[2px]
-
-            mb-2
-            sm:mb-4
-          "
-          initial={{
-            opacity: 0,
-            y: 15,
-          }}
-          whileInView={{
-            opacity: 1,
-            y: 0,
-          }}
-          viewport={{
-            once: true,
-          }}
-          transition={{
-            delay: 0.2,
-            duration: 0.5,
-          }}
-        >
-          Get in Touch
-        </motion.p>
-
-        {/* Heading */}
-
-        <motion.h2
-          className="
-            font-display
-            font-bold
-
-            text-[#24332F]
-
-            text-[30px]
-            sm:text-5xl
-
-            leading-[0.95]
-
-            tracking-[-1.5px]
-            sm:tracking-[-2px]
-
-            mb-6
-            sm:mb-8
-          "
+        <motion.div
           initial={{
             opacity: 0,
             y: 20,
@@ -1948,30 +1544,113 @@ export default function Contact() {
             once: true,
           }}
           transition={{
-            delay: 0.3,
-            duration: 0.7,
+            duration: 0.6,
           }}
         >
-          Send us a message
-        </motion.h2>
 
-        {/* ========================================= */}
+          {/* Label */}
+
+          <div
+            className="
+              flex
+              items-center
+              gap-2
+              mb-3
+              sm:mb-4
+            "
+          >
+            <span
+              className="
+                w-8
+                sm:w-10
+                h-[2px]
+                bg-[#0F5C4D]
+                rounded-full
+              "
+            />
+
+            <p
+              className="
+                font-body
+                text-[#0F5C4D]
+                text-[10px]
+                sm:text-xs
+                uppercase
+                tracking-[1.5px]
+                sm:tracking-[2px]
+                font-semibold
+              "
+            >
+              Get in Touch
+            </p>
+          </div>
+
+          {/* Heading */}
+
+          <h2
+            className="
+              font-display
+              font-bold
+              text-[#24332F]
+
+              text-[30px]
+              sm:text-5xl
+              lg:text-[52px]
+
+              leading-[0.95]
+
+              tracking-[-1.5px]
+              sm:tracking-[-2.5px]
+
+              mb-3
+              sm:mb-4
+            "
+          >
+            Let's create
+            <br />
+
+            <span className="text-[#0F5C4D]">
+              something great.
+            </span>
+          </h2>
+
+          {/* Description */}
+
+          <p
+            className="
+              max-w-xl
+              text-xs
+              sm:text-sm
+              md:text-base
+              leading-relaxed
+              text-[#24332F]/60
+              mb-6
+              sm:mb-8
+            "
+          >
+            Tell us about your project, ideas or requirements.
+            Our team will get back to you and discuss the best
+            way to bring your vision to life.
+          </p>
+
+        </motion.div>
+
+
+        {/* ================================= */}
         {/* FORM */}
-        {/* ========================================= */}
+        {/* ================================= */}
 
         <form
           onSubmit={handleSubmit}
-          className="
-            space-y-4
-            sm:space-y-5
-          "
+          className="space-y-4 sm:space-y-5"
         >
+
           {/* NAME */}
 
           <motion.div
             initial={{
               opacity: 0,
-              y: 20,
+              y: 15,
             }}
             whileInView={{
               opacity: 1,
@@ -1981,7 +1660,7 @@ export default function Contact() {
               once: true,
             }}
             transition={{
-              delay: 0.35,
+              delay: 0.1,
               duration: 0.5,
             }}
           >
@@ -1989,14 +1668,11 @@ export default function Contact() {
               htmlFor="name"
               className="
                 block
-
                 font-body
-
                 text-[11px]
                 sm:text-sm
-
+                font-medium
                 text-[#24332F]
-
                 mb-1.5
                 sm:mb-2
               "
@@ -2013,40 +1689,36 @@ export default function Contact() {
               required
               whileFocus={{
                 scale: 1.01,
-                x: 2,
-              }}
-              transition={{
-                duration: 0.2,
               }}
               className="
                 w-full
-
                 px-3
                 sm:px-4
+                py-3
+                sm:py-3.5
 
-                py-2.5
-                sm:py-3
+                rounded-xl
 
-                rounded-lg
-
-                bg-white
+                bg-white/75
+                backdrop-blur-sm
 
                 border
-                border-[#24332F]/15
+                border-[#24332F]/10
 
                 font-body
-
                 text-xs
                 sm:text-sm
 
                 text-[#24332F]
 
-                placeholder-[#687773]
+                placeholder-[#687773]/70
+
+                shadow-sm
 
                 focus:outline-none
-                focus:border-[#0F5C4D]
-                focus:ring-2
-                focus:ring-[#0F5C4D]/20
+                focus:border-[#0F5C4D]/60
+                focus:ring-4
+                focus:ring-[#0F5C4D]/10
 
                 transition-all
                 duration-300
@@ -2055,12 +1727,13 @@ export default function Contact() {
             />
           </motion.div>
 
+
           {/* EMAIL */}
 
           <motion.div
             initial={{
               opacity: 0,
-              y: 20,
+              y: 15,
             }}
             whileInView={{
               opacity: 1,
@@ -2070,7 +1743,7 @@ export default function Contact() {
               once: true,
             }}
             transition={{
-              delay: 0.42,
+              delay: 0.15,
               duration: 0.5,
             }}
           >
@@ -2078,14 +1751,11 @@ export default function Contact() {
               htmlFor="email"
               className="
                 block
-
                 font-body
-
                 text-[11px]
                 sm:text-sm
-
+                font-medium
                 text-[#24332F]
-
                 mb-1.5
                 sm:mb-2
               "
@@ -2102,40 +1772,36 @@ export default function Contact() {
               required
               whileFocus={{
                 scale: 1.01,
-                x: 2,
-              }}
-              transition={{
-                duration: 0.2,
               }}
               className="
                 w-full
-
                 px-3
                 sm:px-4
+                py-3
+                sm:py-3.5
 
-                py-2.5
-                sm:py-3
+                rounded-xl
 
-                rounded-lg
-
-                bg-white
+                bg-white/75
+                backdrop-blur-sm
 
                 border
-                border-[#24332F]/15
+                border-[#24332F]/10
 
                 font-body
-
                 text-xs
                 sm:text-sm
 
                 text-[#24332F]
 
-                placeholder-[#687773]
+                placeholder-[#687773]/70
+
+                shadow-sm
 
                 focus:outline-none
-                focus:border-[#0F5C4D]
-                focus:ring-2
-                focus:ring-[#0F5C4D]/20
+                focus:border-[#0F5C4D]/60
+                focus:ring-4
+                focus:ring-[#0F5C4D]/10
 
                 transition-all
                 duration-300
@@ -2144,183 +1810,191 @@ export default function Contact() {
             />
           </motion.div>
 
-          {/* PHONE */}
 
-          <motion.div
-            initial={{
-              opacity: 0,
-              y: 20,
-            }}
-            whileInView={{
-              opacity: 1,
-              y: 0,
-            }}
-            viewport={{
-              once: true,
-            }}
-            transition={{
-              delay: 0.49,
-              duration: 0.5,
-            }}
+          {/* PHONE + SUBJECT */}
+
+          <div
+            className="
+              grid
+              sm:grid-cols-2
+              gap-4
+              sm:gap-5
+            "
           >
-            <label
-              htmlFor="phone"
-              className="
-                block
 
-                font-body
+            {/* PHONE */}
 
-                text-[11px]
-                sm:text-sm
-
-                text-[#24332F]
-
-                mb-1.5
-                sm:mb-2
-              "
-            >
-              Phone Number
-            </label>
-
-            <motion.input
-              type="tel"
-              id="phone"
-              name="phone"
-              value={formData.phone}
-              onChange={handleChange}
-              whileFocus={{
-                scale: 1.01,
-                x: 2,
+            <motion.div
+              initial={{
+                opacity: 0,
+                y: 15,
               }}
-              className="
-                w-full
-
-                px-3
-                sm:px-4
-
-                py-2.5
-                sm:py-3
-
-                rounded-lg
-
-                bg-white
-
-                border
-                border-[#24332F]/15
-
-                font-body
-
-                text-xs
-                sm:text-sm
-
-                text-[#24332F]
-
-                placeholder-[#687773]
-
-                focus:outline-none
-                focus:border-[#0F5C4D]
-                focus:ring-2
-                focus:ring-[#0F5C4D]/20
-
-                transition-all
-                duration-300
-              "
-              placeholder="+91 9087654321"
-            />
-          </motion.div>
-
-          {/* SUBJECT */}
-
-          <motion.div
-            initial={{
-              opacity: 0,
-              y: 20,
-            }}
-            whileInView={{
-              opacity: 1,
-              y: 0,
-            }}
-            viewport={{
-              once: true,
-            }}
-            transition={{
-              delay: 0.56,
-              duration: 0.5,
-            }}
-          >
-            <label
-              htmlFor="subject"
-              className="
-                block
-
-                font-body
-
-                text-[11px]
-                sm:text-sm
-
-                text-[#24332F]
-
-                mb-1.5
-                sm:mb-2
-              "
-            >
-              Subject *
-            </label>
-
-            <motion.input
-              type="text"
-              id="subject"
-              name="subject"
-              value={formData.subject}
-              onChange={handleChange}
-              required
-              whileFocus={{
-                scale: 1.01,
-                x: 2,
+              whileInView={{
+                opacity: 1,
+                y: 0,
               }}
-              className="
-                w-full
+              viewport={{
+                once: true,
+              }}
+              transition={{
+                delay: 0.2,
+                duration: 0.5,
+              }}
+            >
+              <label
+                htmlFor="phone"
+                className="
+                  block
+                  font-body
+                  text-[11px]
+                  sm:text-sm
+                  font-medium
+                  text-[#24332F]
+                  mb-1.5
+                  sm:mb-2
+                "
+              >
+                Phone Number
+              </label>
 
-                px-3
-                sm:px-4
+              <motion.input
+                type="tel"
+                id="phone"
+                name="phone"
+                value={formData.phone}
+                onChange={handleChange}
+                whileFocus={{
+                  scale: 1.01,
+                }}
+                className="
+                  w-full
+                  px-3
+                  sm:px-4
+                  py-3
+                  sm:py-3.5
 
-                py-2.5
-                sm:py-3
+                  rounded-xl
 
-                rounded-lg
+                  bg-white/75
+                  backdrop-blur-sm
 
-                bg-white
+                  border
+                  border-[#24332F]/10
 
-                border
-                border-[#24332F]/15
+                  font-body
+                  text-xs
+                  sm:text-sm
 
-                font-body
+                  text-[#24332F]
 
-                text-xs
-                sm:text-sm
+                  placeholder-[#687773]/70
 
-                text-[#24332F]
+                  shadow-sm
 
-                placeholder-[#687773]
+                  focus:outline-none
+                  focus:border-[#0F5C4D]/60
+                  focus:ring-4
+                  focus:ring-[#0F5C4D]/10
 
-                focus:outline-none
-                focus:border-[#0F5C4D]
-                focus:ring-2
-                focus:ring-[#0F5C4D]/20
+                  transition-all
+                  duration-300
+                "
+                placeholder="+91 9087654321"
+              />
+            </motion.div>
 
-                transition-all
-                duration-300
-              "
-              placeholder="What's this about?"
-            />
-          </motion.div>
+
+            {/* SUBJECT */}
+
+            <motion.div
+              initial={{
+                opacity: 0,
+                y: 15,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+              }}
+              viewport={{
+                once: true,
+              }}
+              transition={{
+                delay: 0.25,
+                duration: 0.5,
+              }}
+            >
+              <label
+                htmlFor="subject"
+                className="
+                  block
+                  font-body
+                  text-[11px]
+                  sm:text-sm
+                  font-medium
+                  text-[#24332F]
+                  mb-1.5
+                  sm:mb-2
+                "
+              >
+                Subject *
+              </label>
+
+              <motion.input
+                type="text"
+                id="subject"
+                name="subject"
+                value={formData.subject}
+                onChange={handleChange}
+                required
+                whileFocus={{
+                  scale: 1.01,
+                }}
+                className="
+                  w-full
+                  px-3
+                  sm:px-4
+                  py-3
+                  sm:py-3.5
+
+                  rounded-xl
+
+                  bg-white/75
+                  backdrop-blur-sm
+
+                  border
+                  border-[#24332F]/10
+
+                  font-body
+                  text-xs
+                  sm:text-sm
+
+                  text-[#24332F]
+
+                  placeholder-[#687773]/70
+
+                  shadow-sm
+
+                  focus:outline-none
+                  focus:border-[#0F5C4D]/60
+                  focus:ring-4
+                  focus:ring-[#0F5C4D]/10
+
+                  transition-all
+                  duration-300
+                "
+                placeholder="What's this about?"
+              />
+            </motion.div>
+
+          </div>
+
 
           {/* MESSAGE */}
 
           <motion.div
             initial={{
               opacity: 0,
-              y: 20,
+              y: 15,
             }}
             whileInView={{
               opacity: 1,
@@ -2330,7 +2004,7 @@ export default function Contact() {
               once: true,
             }}
             transition={{
-              delay: 0.63,
+              delay: 0.3,
               duration: 0.5,
             }}
           >
@@ -2338,14 +2012,11 @@ export default function Contact() {
               htmlFor="message"
               className="
                 block
-
                 font-body
-
                 text-[11px]
                 sm:text-sm
-
+                font-medium
                 text-[#24332F]
-
                 mb-1.5
                 sm:mb-2
               "
@@ -2362,7 +2033,6 @@ export default function Contact() {
               rows={4}
               whileFocus={{
                 scale: 1.01,
-                x: 2,
               }}
               className="
                 w-full
@@ -2370,15 +2040,16 @@ export default function Contact() {
                 px-3
                 sm:px-4
 
-                py-2.5
-                sm:py-3
+                py-3
+                sm:py-3.5
 
-                rounded-lg
+                rounded-xl
 
-                bg-white
+                bg-white/75
+                backdrop-blur-sm
 
                 border
-                border-[#24332F]/15
+                border-[#24332F]/10
 
                 font-body
 
@@ -2387,14 +2058,16 @@ export default function Contact() {
 
                 text-[#24332F]
 
-                placeholder-[#687773]
+                placeholder-[#687773]/70
 
                 resize-none
 
+                shadow-sm
+
                 focus:outline-none
-                focus:border-[#0F5C4D]
-                focus:ring-2
-                focus:ring-[#0F5C4D]/20
+                focus:border-[#0F5C4D]/60
+                focus:ring-4
+                focus:ring-[#0F5C4D]/10
 
                 transition-all
                 duration-300
@@ -2403,38 +2076,31 @@ export default function Contact() {
             />
           </motion.div>
 
-          {/* ========================================= */}
+
+          {/* ================================= */}
           {/* STATUS */}
-          {/* ========================================= */}
+          {/* ================================= */}
 
           {submitStatus === "success" && (
             <motion.div
               initial={{
                 opacity: 0,
                 y: -10,
-                scale: 0.95,
               }}
               animate={{
                 opacity: 1,
                 y: 0,
-                scale: 1,
               }}
               className="
                 p-3
                 sm:p-4
-
-                rounded-lg
-
+                rounded-xl
                 bg-[#0F5C4D]/10
-
                 border
-                border-[#0F5C4D]/30
-
+                border-[#0F5C4D]/20
                 text-[11px]
                 sm:text-sm
-
                 text-[#0F5C4D]
-
                 font-body
               "
             >
@@ -2447,29 +2113,21 @@ export default function Contact() {
               initial={{
                 opacity: 0,
                 y: -10,
-                scale: 0.95,
               }}
               animate={{
                 opacity: 1,
                 y: 0,
-                scale: 1,
               }}
               className="
                 p-3
                 sm:p-4
-
-                rounded-lg
-
+                rounded-xl
                 bg-red-500/10
-
                 border
-                border-red-500/30
-
+                border-red-500/20
                 text-[11px]
                 sm:text-sm
-
                 text-red-600
-
                 font-body
               "
             >
@@ -2477,39 +2135,23 @@ export default function Contact() {
             </motion.div>
           )}
 
-          {/* ========================================= */}
+
+          {/* ================================= */}
           {/* SUBMIT BUTTON */}
-          {/* ========================================= */}
+          {/* ================================= */}
 
           <motion.button
             whileHover={{
               y: -3,
-              scale: 1.01,
             }}
             whileTap={{
               scale: 0.97,
-            }}
-            animate={{
-              boxShadow: [
-                "0px 8px 25px rgba(15,92,77,0.16)",
-                "0px 12px 35px rgba(15,92,77,0.30)",
-                "0px 8px 25px rgba(15,92,77,0.16)",
-              ],
-            }}
-            transition={{
-              boxShadow: {
-                duration: 2.5,
-                repeat: Infinity,
-                ease: "easeInOut",
-              },
             }}
             type="submit"
             disabled={isSubmitting}
             className="
               group
-
               relative
-
               w-full
 
               flex
@@ -2520,7 +2162,6 @@ export default function Contact() {
               overflow-hidden
 
               bg-[#0F5C4D]
-
               hover:bg-[#0B4A3E]
 
               disabled:opacity-70
@@ -2528,13 +2169,13 @@ export default function Contact() {
 
               text-white
 
-              rounded-lg
+              rounded-xl
 
               px-5
               sm:px-6
 
-              py-3
-              sm:py-3.5
+              py-3.5
+              sm:py-4
 
               font-body
               font-semibold
@@ -2542,30 +2183,29 @@ export default function Contact() {
               text-xs
               sm:text-sm
 
+              shadow-[0_10px_30px_rgba(15,92,77,0.18)]
+
               transition-all
               duration-300
             "
           >
-            {/* Button Shine */}
+
+            {/* Button Light Sweep */}
 
             <motion.span
               className="
                 absolute
-                top-0
+                inset-y-0
                 -left-[100%]
-
                 w-[60%]
-                h-full
-
                 bg-gradient-to-r
                 from-transparent
                 via-white/20
                 to-transparent
-
                 skew-x-[-20deg]
               "
               animate={{
-                left: ["-100%", "150%"],
+                left: ["-100%", "160%"],
               }}
               transition={{
                 duration: 3,
@@ -2584,15 +2224,15 @@ export default function Contact() {
               className="
                 relative
                 z-10
-
                 transition-transform
                 duration-300
-
                 group-hover:translate-x-1
                 group-hover:-translate-y-0.5
               "
             />
+
           </motion.button>
+
         </form>
       </motion.div>
     </div>
@@ -3280,7 +2920,7 @@ export default function Contact() {
             MAP SECTION
         ===================================================== */}
 
-        <section
+<section
   className="
     px-5
     sm:px-8
@@ -3295,6 +2935,191 @@ export default function Contact() {
 >
   <div className="max-w-[1440px] mx-auto">
 
+    {/* Section Heading */}
+    <motion.div
+      initial={{
+        opacity: 0,
+        y: 30,
+      }}
+      whileInView={{
+        opacity: 1,
+        y: 0,
+      }}
+      viewport={{
+        once: true,
+        amount: 0.2,
+      }}
+      transition={{
+        duration: 0.7,
+        ease: [0.22, 1, 0.36, 1],
+      }}
+      className="
+        text-center
+        mb-10
+        sm:mb-12
+        lg:mb-14
+      "
+    >
+
+      {/* Small Label */}
+      <div
+        className="
+          flex
+          items-center
+          justify-center
+          gap-3
+          mb-4
+        "
+      >
+        <motion.span
+          initial={{ width: 0 }}
+          whileInView={{ width: 45 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="
+            h-[2px]
+            bg-[#0F5C4D]
+            rounded-full
+          "
+        />
+
+        <span
+          className="
+            text-[#0F5C4D]
+            text-xs
+            sm:text-sm
+            font-semibold
+            uppercase
+            tracking-[0.25em]
+          "
+        >
+          Find Us
+        </span>
+
+        <motion.span
+          initial={{ width: 0 }}
+          whileInView={{ width: 45 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="
+            h-[2px]
+            bg-[#0F5C4D]
+            rounded-full
+          "
+        />
+      </div>
+
+      {/* Main Heading */}
+      <h2
+        className="
+          text-3xl
+          sm:text-4xl
+          lg:text-5xl
+          font-bold
+          tracking-tight
+          text-[#24332F]
+        "
+      >
+        Visit Our{" "}
+        <span className="text-[#0F5C4D]">
+          Office
+        </span>
+      </h2>
+
+      {/* Description */}
+      <p
+        className="
+          mt-4
+          max-w-2xl
+          mx-auto
+          text-sm
+          sm:text-base
+          lg:text-lg
+          leading-relaxed
+          text-[#24332F]/65
+        "
+      >
+        Have a project in mind? Visit our office and
+        let's discuss your ideas, requirements and
+        plans with our team.
+      </p>
+
+      {/* Location Badge */}
+      <motion.div
+        initial={{
+          opacity: 0,
+          scale: 0.9,
+        }}
+        whileInView={{
+          opacity: 1,
+          scale: 1,
+        }}
+        viewport={{
+          once: true,
+        }}
+        transition={{
+          delay: 0.2,
+          duration: 0.5,
+        }}
+        className="
+          inline-flex
+          items-center
+          gap-2
+          mt-5
+          px-4
+          py-2
+          rounded-full
+
+          bg-[#0F5C4D]/8
+          border
+          border-[#0F5C4D]/15
+
+          text-[#0F5C4D]
+          text-xs
+          sm:text-sm
+          font-medium
+        "
+      >
+        <span
+          className="
+            relative
+            flex
+            h-2
+            w-2
+          "
+        >
+          <span
+            className="
+              absolute
+              inline-flex
+              h-full
+              w-full
+              rounded-full
+              bg-[#0F5C4D]
+              opacity-60
+              animate-ping
+            "
+          />
+
+          <span
+            className="
+              relative
+              inline-flex
+              h-2
+              w-2
+              rounded-full
+              bg-[#0F5C4D]
+            "
+          />
+        </span>
+
+        Our Location
+      </motion.div>
+
+    </motion.div>
+
+
+    {/* Map */}
     <motion.div
       initial={{
         opacity: 0,
@@ -3314,13 +3139,9 @@ export default function Contact() {
       }}
       className="
         relative
-
+        group
         rounded-[2rem]
-
         overflow-hidden
-
-        border
-        border-[#24332F]/10
 
         h-[300px]
         sm:h-[400px]
@@ -3332,23 +3153,101 @@ export default function Contact() {
       "
     >
 
-      {/* Google Maps */}
-
-      <iframe
-        src="https://www.google.com/maps?q=YOUR_OFFICE_LOCATION&output=embed"
-        width="100%"
-        height="100%"
-        style={{
-          border: 0,
-        }}
-        allowFullScreen=""
-        loading="lazy"
-        referrerPolicy="no-referrer-when-downgrade"
-        title="CodeThrive InfoTech Office Location"
+      {/* Animated Glow Border */}
+      <motion.div
         className="
-          w-full
-          h-full
+          absolute
+          -inset-[2px]
+          rounded-[2rem]
+          pointer-events-none
+          z-10
+
+          bg-gradient-to-r
+          from-[#0F5C4D]
+          via-[#9AC8BC]
+          to-[#0F5C4D]
+
+          opacity-70
+          blur-[2px]
         "
+        animate={{
+          opacity: [0.45, 0.9, 0.45],
+          scale: [1, 1.005, 1],
+        }}
+        transition={{
+          duration: 3,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+      />
+
+      {/* Inner Map Container */}
+      <div
+        className="
+          absolute
+          inset-[2px]
+          rounded-[2rem]
+          overflow-hidden
+          z-20
+          bg-[#E7F0ED]
+        "
+      >
+
+        {/* Google Maps */}
+        <iframe
+          src="https://www.google.com/maps?q=10.9949924,76.984602&z=17&output=embed"
+          width="100%"
+          height="100%"
+          style={{
+            border: 0,
+          }}
+          allowFullScreen=""
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          title="CodeThrive InfoTech Office Location"
+          className="
+            w-full
+            h-full
+          "
+        />
+
+        {/* Subtle Map Overlay */}
+        <div
+          className="
+            absolute
+            inset-0
+            pointer-events-none
+
+            bg-gradient-to-t
+            from-[#0F5C4D]/10
+            via-transparent
+            to-transparent
+          "
+        />
+
+      </div>
+
+      {/* Outer Glow */}
+      <motion.div
+        className="
+          absolute
+          -inset-3
+          rounded-[2.2rem]
+          pointer-events-none
+          -z-10
+
+          bg-[#0F5C4D]/20
+          blur-2xl
+        "
+        animate={{
+          opacity: [0.3, 0.65, 0.3],
+          scale: [0.98, 1.02, 0.98],
+        }}
+        transition={{
+          duration: 4,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
       />
 
     </motion.div>
