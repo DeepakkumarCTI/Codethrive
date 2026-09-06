@@ -422,7 +422,7 @@ export default function Footer({ tagline }) {
                       break-all
                     "
                   >
-                    contactus@codethrive.com
+                    info@codethriveinfotech.com
                   </span>
                 </a>
 

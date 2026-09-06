@@ -23,7 +23,7 @@ const STEPS = [
       "Competitive Landscape Analysis",
       "Strategic Foundation Document",
     ],
-    image: stepDiscover,
+    image: "/process/discover.jpg",
     side: "right",
   },
 
@@ -37,7 +37,7 @@ const STEPS = [
       "Wireframes & User Flows",
       "Design System Architecture",
     ],
-    image: stepDefine,
+    image:"/process/define.jpg",
     side: "left",
   },
 
@@ -51,7 +51,7 @@ const STEPS = [
       "Interactive Prototypes",
       "Micro-interaction Specs",
     ],
-    image: stepDesign,
+    image: "/process/design.jpg",
     side: "right",
   },
 
@@ -65,7 +65,7 @@ const STEPS = [
       "Component Libraries",
       "Performance Optimization",
     ],
-    image: stepDevelop,
+    image:"/process/develop.jpg",
     side: "left",
   },
 
@@ -79,7 +79,7 @@ const STEPS = [
       "Analytics Setup",
       "Post-Launch Support",
     ],
-    image: stepLaunch,
+    image: "/process/deploy.jpg",
     side: "right",
   },
 ];
