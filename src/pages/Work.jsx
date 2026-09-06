@@ -28,11 +28,11 @@ import {
 
 const STATS = [
   {
-    value: "50+",
+    value: "12+",
     label: "Projects",
   },
   {
-    value: "30+",
+    value: "15+",
     label: "Clients",
   },
   {

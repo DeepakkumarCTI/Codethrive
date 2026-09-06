@@ -21,8 +21,9 @@ import Footer from "../components/Footer";
 // IMAGES
 // ============================================================
 
-import projectImage1 from "../assets/digital.jpg";
-import projectImage2 from "../assets/healthcare.jpg";
+import projectImage1 from "../assets/restaurent.jpg";
+import projectImage2 from "../assets/gym.jpg";
+import projectImage3 from "../assets/cake.jpg"
 import arun from "../assets/arun.jpg";
 import priya from "../assets/priya.jpg";
 import rahul from "../assets/rahul.jpg";
@@ -61,7 +62,7 @@ const PROJECTS = [
     category: "Bakery Website",
     description:
       "A beautiful and inviting bakery website created to showcase cakes, pastries, custom orders, and delicious bakery collections.",
-    image: webImage,
+    image: projectImage3,
   },
 ];
 

@@ -102,7 +102,7 @@ const STATS = [
     label: "Years Creating",
   },
   {
-    value: "04",
+    value: "10",
     label: "Industries",
   },
 ];

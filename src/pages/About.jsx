@@ -1466,178 +1466,180 @@ export default function About() {
         {/* THE MINDS BEHIND */}
         {/* ================================================= */}
 
-        <section
+       <section
+  className="
+    w-full
+    max-w-[1440px]
+
+    px-3
+    sm:px-6
+    md:px-10
+    lg:px-14
+
+    flex
+    flex-col
+
+    gap-4
+    sm:gap-6
+    md:gap-9
+  "
+>
+  {/* Heading */}
+
+  <motion.div
+    initial="hidden"
+    whileInView="visible"
+    viewport={{
+      once: true,
+      amount: 0.05,
+      margin: "0px 0px -30px 0px",
+    }}
+    variants={fadeUp}
+    className="
+      flex
+      flex-col
+
+      gap-2
+      sm:gap-4
+    "
+  >
+    <div className="flex items-end justify-between">
+      <div>
+        <p
           className="
-            w-full
-            max-w-[1440px]
+            font-body
+            text-emerald-800
 
-            px-3
-            sm:px-6
-            md:px-10
-            lg:px-14
+            text-[9px]
+            sm:text-xs
 
-            flex
-            flex-col
+            tracking-[1px]
+            sm:tracking-[1.5px]
 
-            gap-4
-            sm:gap-6
-            md:gap-9
+            uppercase
+
+            mb-1
+            sm:mb-2
           "
         >
-          {/* Heading */}
+          Our People
+        </p>
 
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{
-              once: true,
-              amount: 0.2,
-            }}
-            variants={fadeUp}
-            className="
-              flex
-              flex-col
+        <h2
+          className="
+            font-display
+            font-bold
 
-              gap-2
-              sm:gap-4
-            "
-          >
-            <div className="flex items-end justify-between">
-              <div>
-                <p
-                  className="
-                    font-body
-                    text-emerald-800
+            text-ink
 
-                    text-[9px]
-                    sm:text-xs
+            text-[30px]
+            sm:text-5xl
+            md:text-6xl
+            lg:text-[76px]
 
-                    tracking-[1px]
-                    sm:tracking-[1.5px]
+            leading-[0.92]
 
-                    uppercase
+            tracking-[-1.5px]
+            sm:tracking-[-2px]
+          "
+        >
+          The Minds Behind
+        </h2>
+      </div>
 
-                    mb-1
-                    sm:mb-2
-                  "
-                >
-                  Our People
-                </p>
+      <motion.div
+        animate={{
+          y: [0, 7, 0],
+        }}
+        transition={{
+          duration: 2,
+          repeat: Infinity,
+        }}
+        className="hidden md:flex"
+      >
+        <ArrowDown
+          size={26}
+          className="text-emerald-800"
+        />
+      </motion.div>
+    </div>
 
-                <h2
-                  className="
-                    font-display
-                    font-bold
+    <div
+      className="
+        w-14
+        sm:w-20
 
-                    text-ink
+        h-0.5
+        sm:h-1
 
-                    text-[30px]
-                    sm:text-5xl
-                    md:text-6xl
-                    lg:text-[76px]
+        bg-emerald-800
+      "
+    />
 
-                    leading-[0.92]
+    <p
+      className="
+        font-body
+        text-clay
 
-                    tracking-[-1.5px]
-                    sm:tracking-[-2px]
-                  "
-                >
-                  The Minds Behind
-                </h2>
-              </div>
+        text-xs
+        sm:text-sm
+        md:text-base
+        lg:text-lg
 
-              <motion.div
-                animate={{
-                  y: [0, 7, 0],
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                }}
-                className="hidden md:flex"
-              >
-                <ArrowDown
-                  size={26}
-                  className="text-emerald-800"
-                />
-              </motion.div>
-            </div>
+        max-w-[650px]
 
-            <div
-              className="
-                w-14
-                sm:w-20
+        leading-relaxed
+      "
+    >
+      Different disciplines. One shared obsession — creating
+      digital experiences that are useful, beautiful and built
+      to last.
+    </p>
+  </motion.div>
 
-                h-0.5
-                sm:h-1
+  {/* Team */}
 
-                bg-emerald-800
-              "
-            />
+  <motion.div
+    initial="hidden"
+    whileInView="visible"
+    viewport={{
+      once: true,
+      amount: 0.01,
+      margin: "0px 0px -20px 0px",
+    }}
+    variants={staggerContainer}
+    className="
+      grid
 
-            <p
-              className="
-                font-body
-                text-clay
+      grid-cols-2
+      md:grid-cols-3
 
-                text-xs
-                sm:text-sm
-                md:text-base
-                lg:text-lg
+      gap-3
+      sm:gap-5
+      md:gap-6
+      lg:gap-7
 
-                max-w-[650px]
-
-                leading-relaxed
-              "
-            >
-              Different disciplines. One shared obsession — creating
-              digital experiences that are useful, beautiful and built
-              to last.
-            </p>
-          </motion.div>
-
-          {/* Team */}
-
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{
-              once: true,
-              amount: 0.1,
-            }}
-            variants={staggerContainer}
-            className="
-              grid
-
-              grid-cols-2
-              md:grid-cols-3
-
-              gap-3
-              sm:gap-5
-              md:gap-6
-              lg:gap-7
-
-              items-start
-            "
-          >
-            {TEAM.map((person, index) => (
-              <motion.div
-                key={person.name + index}
-                variants={fadeUp}
-                className="
-                  relative
-                  min-w-0
-                "
-              >
-                <TeamCard
-                  person={person}
-                  index={index}
-                />
-              </motion.div>
-            ))}
-          </motion.div>
-        </section>
-
+      items-start
+    "
+  >
+    {TEAM.map((person, index) => (
+      <motion.div
+        key={person.name + index}
+        variants={fadeUp}
+        className="
+          group
+          relative
+          min-w-0
+        "
+      >
+        <TeamCard
+          person={person}
+          index={index}
+        />
+      </motion.div>
+    ))}
+  </motion.div>
+</section>
         {/* ================================================= */}
         {/* HOW WE THINK */}
         {/* ================================================= */}
