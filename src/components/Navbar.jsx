@@ -10,27 +10,18 @@ const LINKS = [
   { label: "Work", to: "/work" },
   { label: "Services", to: "/services" },
   { label: "Process", to: "/process" },
-  { label: "Awards", to: "/awards" },
+  { label: "Gallery", to: "/awards" },
   { label: "Contact", to: "/contact" },
 ];
 
 export default function Navbar() {
   const { pathname } = useLocation();
   const navigate = useNavigate();
-
   const [menuOpen, setMenuOpen] = useState(false);
-
-  /* =====================================================
-     CLOSE MOBILE MENU
-  ===================================================== */
 
   const closeMenu = () => {
     setMenuOpen(false);
   };
-
-  /* =====================================================
-     SCROLL TO HERO
-  ===================================================== */
 
   const scrollToHero = () => {
     const hero = document.getElementById("hero");
@@ -48,10 +39,6 @@ export default function Navbar() {
     }
   };
 
-  /* =====================================================
-     HOME / LOGO CLICK
-  ===================================================== */
-
   const handleHomeClick = (e) => {
     e.preventDefault();
     closeMenu();
@@ -63,12 +50,6 @@ export default function Navbar() {
     }
   };
 
-  /* =====================================================
-     ROUTE CHANGE
-     When coming from another page to Home,
-     wait until Home is rendered and then scroll Hero.
-  ===================================================== */
-
   useEffect(() => {
     if (pathname === "/") {
       const timer = setTimeout(() => {
@@ -78,16 +59,11 @@ export default function Navbar() {
       return () => clearTimeout(timer);
     }
 
-    // Every other page starts from the top
     window.scrollTo({
       top: 0,
       behavior: "auto",
     });
   }, [pathname]);
-
-  /* =====================================================
-     MOBILE NON-HOME LINK
-  ===================================================== */
 
   const handleMobileLinkClick = () => {
     closeMenu();
@@ -100,19 +76,12 @@ export default function Navbar() {
 
   return (
     <>
-      {/* =====================================================
+      {/* =========================================================
           NAVBAR
-      ===================================================== */}
-
+      ========================================================= */}
       <motion.header
-        initial={{
-          y: -30,
-          opacity: 0,
-        }}
-        animate={{
-          y: 0,
-          opacity: 1,
-        }}
+        initial={{ y: -30, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
         transition={{
           duration: 0.7,
           ease: [0.22, 1, 0.36, 1],
@@ -123,14 +92,13 @@ export default function Navbar() {
           left-0
           right-0
           z-50
-
-          // bg-[#F3F7F4]
-          bg-emerald-100
-
+          bg-gradient-to-r
+          from-[#00002F]
+          via-[#000080]
+          to-[#1D4ED8]
           border-b
-          border-[#24332F]/10
-
-          shadow-[0px_15px_50px_rgba(15,92,77,0.08)]
+          border-white/15
+          shadow-[0px_10px_35px_rgba(0,0,80,0.35)]
         "
       >
         <div
@@ -139,22 +107,16 @@ export default function Navbar() {
             flex
             items-center
             justify-between
-
             px-3
             sm:px-5
             md:px-7
             lg:px-8
             xl:px-10
-
             py-2.5
             sm:py-3
           "
         >
-
-          {/* =================================================
-              LOGO
-          ================================================= */}
-
+          {/* LOGO */}
           <Link
             to="/"
             onClick={handleHomeClick}
@@ -170,33 +132,25 @@ export default function Navbar() {
             <div
               className="
                 relative
-
                 w-10
                 h-10
-
                 sm:w-11
                 sm:h-11
-
                 flex
                 items-center
                 justify-center
-
                 rounded-xl
-
-                bg-white
-
+                bg-gradient-to-br
+                from-[#00005C]
+                to-[#1D4ED8]
                 border
-                border-[#0F5C4D]/15
-
+                border-white/20
                 overflow-hidden
-
                 transition-all
                 duration-500
-
                 group-hover:scale-105
-                group-hover:border-[#0F5C4D]/40
-
-                shadow-[0px_5px_20px_rgba(15,92,77,0.08)]
+                group-hover:border-white/40
+                shadow-[0px_5px_20px_rgba(0,0,0,0.25)]
               "
             >
               <motion.div
@@ -214,7 +168,7 @@ export default function Navbar() {
                   w-7
                   h-7
                   rounded-full
-                  bg-[#6FA99B]
+                  bg-[#60A5FA]
                   blur-xl
                 "
               />
@@ -225,13 +179,10 @@ export default function Navbar() {
                 className="
                   relative
                   z-10
-
                   w-8
                   h-8
-
                   sm:w-9
                   sm:h-9
-
                   object-contain
                 "
               />
@@ -242,88 +193,57 @@ export default function Navbar() {
                 className="
                   font-display
                   font-black
-
-                  text-[#24332F]
-
-                  text-[16px]
+                  text-white
+                  text-[19px]
                   sm:text-[18px]
                   lg:text-[19px]
-
                   tracking-[-0.8px]
-
                   leading-none
-
                   transition-colors
                   duration-300
-
-                  group-hover:text-[#0F5C4D]
+                  group-hover:text-[#BFDBFE]
                 "
               >
-                CodeThrive InfoTech
+                CodeThrive Infotech
               </span>
 
               <div
                 className="
                   hidden
                   sm:flex
-
                   items-center
                   gap-1.5
-
                   mt-1.5
                 "
               >
-                <motion.span
-                  animate={{
-                    scale: [1, 1.35, 1],
-                    opacity: [0.5, 1, 0.5],
-                  }}
-                  transition={{
-                    duration: 2,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
-                  className="
-                    w-1.5
-                    h-1.5
-                    rounded-full
-                    bg-[#0F5C4D]
-                  "
-                />
-
-                <span
+                
+                  <span
                   className="
                     font-body
                     text-[8px]
                     lg:text-[9px]
                     tracking-[1.5px]
                     uppercase
-                    text-[#687773]
+                    text-[#BFDBFE]
                   "
                 >
-                  Software Company
+                  Progress | Cultivate | Innovate
                 </span>
+                
               </div>
             </div>
           </Link>
 
-          {/* =================================================
-              DESKTOP NAVIGATION
-          ================================================= */}
-
+          {/* DESKTOP NAVIGATION */}
           <nav
             className="
               hidden
               md:flex
-
               items-center
-
               gap-3
               lg:gap-4
               xl:gap-5
-
               ml-auto
-
               mr-4
               lg:mr-5
               xl:mr-6
@@ -353,23 +273,18 @@ export default function Navbar() {
                       flex
                       items-center
                       gap-1
-
                       font-body
-
                       text-[14px]
                       lg:text-[15px]
                       xl:text-[15px]
-
                       font-semibold
                       tracking-[-0.1px]
-
                       transition-all
                       duration-300
-
                       ${
                         isActive
-                          ? "text-[#0F5C4D]"
-                          : "text-[#435650] hover:text-[#0F5C4D]"
+                          ? "text-white"
+                          : "text-white/90 hover:text-white"
                       }
                     `}
                   >
@@ -379,13 +294,10 @@ export default function Navbar() {
                       className="
                         opacity-0
                         -translate-y-1
-
                         text-[8px]
-                        text-[#0F5C4D]
-
+                        text-[#93C5FD]
                         transition-all
                         duration-300
-
                         group-hover:opacity-100
                         group-hover:translate-y-0
                       "
@@ -395,47 +307,35 @@ export default function Navbar() {
                   </div>
 
                   {/* ACTIVE UNDERLINE */}
-
                   <motion.span
                     initial={false}
                     animate={{
                       width: isActive ? "100%" : "0%",
                     }}
-                    transition={{
-                      duration: 0.3,
-                    }}
+                    transition={{ duration: 0.3 }}
                     className="
                       absolute
                       left-0
                       -bottom-0.5
-
                       h-[2px]
-
                       rounded-full
-
-                      bg-[#0F5C4D]
+                      bg-[#60A5FA]
                     "
                   />
 
                   {/* HOVER UNDERLINE */}
-
                   {!isActive && (
                     <span
                       className="
                         absolute
                         left-0
                         -bottom-0.5
-
                         h-[2px]
                         w-0
-
                         rounded-full
-
-                        bg-[#0F5C4D]
-
+                        bg-[#60A5FA]
                         transition-all
                         duration-300
-
                         group-hover:w-full
                       "
                     />
@@ -445,10 +345,7 @@ export default function Navbar() {
             })}
           </nav>
 
-          {/* =================================================
-              RIGHT SIDE
-          ================================================= */}
-
+          {/* RIGHT SIDE */}
           <div
             className="
               flex
@@ -458,60 +355,40 @@ export default function Navbar() {
               shrink-0
             "
           >
-
             {/* DESKTOP CTA */}
-
             <Link
               to="/contact"
               className="
                 hidden
                 md:flex
-
                 group
                 relative
-
                 items-center
                 justify-center
-
                 gap-2
-
                 overflow-hidden
-
-                bg-[#0F5C4D]
-
-                hover:bg-[#0B4A3E]
-
-                text-white
-
+                bg-white
+                hover:bg-[#DBEAFE]
+                text-[#000080]
                 font-body
                 font-semibold
-
                 text-[11px]
                 lg:text-[12px]
                 xl:text-[13px]
-
                 tracking-[0.4px]
-
                 rounded-full
-
                 px-4
                 lg:px-5
                 xl:px-6
-
                 py-2.5
-
                 transition-all
                 duration-300
-
                 hover:-translate-y-0.5
-
-                shadow-[0px_8px_25px_rgba(15,92,77,0.20)]
+                shadow-[0px_8px_25px_rgba(0,0,0,0.20)]
               "
             >
               <motion.span
-                animate={{
-                  x: ["-120%", "120%"],
-                }}
+                animate={{ x: ["-120%", "120%"] }}
                 transition={{
                   duration: 2.8,
                   repeat: Infinity,
@@ -522,7 +399,7 @@ export default function Navbar() {
                   absolute
                   inset-y-0
                   w-10
-                  bg-white/20
+                  bg-[#2563EB]/10
                   skew-x-[-20deg]
                 "
               />
@@ -536,10 +413,8 @@ export default function Navbar() {
                 className="
                   relative
                   z-10
-
                   transition-transform
                   duration-300
-
                   group-hover:translate-x-1
                   group-hover:-translate-y-1
                 "
@@ -547,68 +422,47 @@ export default function Navbar() {
             </Link>
 
             {/* MOBILE BUTTON */}
-
             <button
               type="button"
               onClick={() => setMenuOpen(!menuOpen)}
-              aria-label={
-                menuOpen ? "Close menu" : "Open menu"
-              }
+              aria-label={menuOpen ? "Close menu" : "Open menu"}
               aria-expanded={menuOpen}
               className="
                 md:hidden
-
                 relative
-
                 flex
                 items-center
                 justify-center
-
                 w-10
                 h-10
-
                 sm:w-11
                 sm:h-11
-
                 rounded-full
-
-                bg-white
-
+                bg-white/15
                 border
-                border-[#0F5C4D]/15
-
+                border-white/30
                 shadow-sm
-
                 transition-all
                 duration-300
-
-                hover:bg-[#E7F0ED]
-                hover:border-[#0F5C4D]/30
+                hover:bg-white/25
+                hover:border-white/50
                 hover:shadow-md
-
                 active:scale-90
-
                 focus:outline-none
                 focus:ring-2
-                focus:ring-[#0F5C4D]/20
+                focus:ring-white/40
               "
             >
               <span
                 className={`
                   absolute
-
                   w-5
                   sm:w-[22px]
-
                   h-[2px]
-
                   rounded-full
-
-                  bg-[#24332F]
-
+                  bg-white
                   transition-all
                   duration-300
-
                   ${
                     menuOpen
                       ? "rotate-45"
@@ -620,19 +474,13 @@ export default function Navbar() {
               <span
                 className={`
                   absolute
-
                   w-5
                   sm:w-[22px]
-
                   h-[2px]
-
                   rounded-full
-
-                  bg-[#24332F]
-
+                  bg-white
                   transition-all
                   duration-300
-
                   ${
                     menuOpen
                       ? "-rotate-45"
@@ -645,10 +493,9 @@ export default function Navbar() {
         </div>
       </motion.header>
 
-      {/* =====================================================
+      {/* =========================================================
           MOBILE MENU
-      ===================================================== */}
-
+      ========================================================= */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div
@@ -673,61 +520,38 @@ export default function Navbar() {
             }}
             className="
               fixed
-
               top-[66px]
               sm:top-[72px]
-
               left-2.5
               right-2.5
-
               z-[60]
-
               md:hidden
-
-              bg-white
-
+              bg-gradient-to-br
+              from-[#00002F]
+              via-[#000080]
+              to-[#1D4ED8]
               rounded-[20px]
-
               border
-              border-[#24332F]/10
-
-              shadow-[0px_18px_55px_rgba(15,92,77,0.18)]
-
+              border-white/20
+              shadow-[0px_18px_55px_rgba(0,0,80,0.35)]
               overflow-hidden
             "
           >
-            <nav
-              className="
-                p-2.5
-                sm:p-3
-              "
-            >
-
+            <nav className="p-2.5 sm:p-3">
               {/* MENU HEADER */}
-
               <div
                 className="
                   flex
                   items-center
                   justify-between
-
                   px-3
-
                   pt-1
                   pb-2.5
                 "
               >
-                <div
-                  className="
-                    flex
-                    items-center
-                    gap-2
-                  "
-                >
+                <div className="flex items-center gap-2">
                   <motion.span
-                    animate={{
-                      scale: [1, 1.4, 1],
-                    }}
+                    animate={{ scale: [1, 1.4, 1] }}
                     transition={{
                       duration: 2,
                       repeat: Infinity,
@@ -736,21 +560,17 @@ export default function Navbar() {
                       w-2
                       h-2
                       rounded-full
-                      bg-[#0F5C4D]
+                      bg-[#60A5FA]
                     "
                   />
 
                   <p
                     className="
                       font-body
-
                       text-[9px]
-
                       tracking-[2px]
-
                       uppercase
-
-                      text-[#0F5C4D]
+                      text-[#BFDBFE]
                     "
                   >
                     Navigation
@@ -759,22 +579,14 @@ export default function Navbar() {
 
                 <Sparkles
                   size={14}
-                  className="text-[#0F5C4D]"
+                  className="text-[#93C5FD]"
                 />
               </div>
 
               {/* MOBILE LINKS */}
-
-              <div
-                className="
-                  flex
-                  flex-col
-                  gap-1
-                "
-              >
+              <div className="flex flex-col gap-1">
                 {LINKS.map((link, index) => {
-                  const isActive =
-                    pathname === link.to;
+                  const isActive = pathname === link.to;
 
                   return (
                     <motion.div
@@ -803,57 +615,41 @@ export default function Navbar() {
                         }}
                         className={`
                           group
-
                           flex
                           items-center
                           justify-between
-
                           w-full
-
                           px-3.5
                           py-3
-
                           rounded-xl
-
                           font-display
                           font-semibold
-
                           text-[16px]
-
                           tracking-[-0.3px]
-
                           transition-all
                           duration-200
-
                           active:scale-[0.98]
-
                           ${
                             isActive
-                              ? "bg-[#E7F0ED] text-[#0F5C4D]"
-                              : "text-[#435650] hover:bg-[#F3F7F4] hover:text-[#0F5C4D]"
+                              ? "bg-[#1D4ED8] text-white"
+                              : "text-white/95 hover:bg-[#1D4ED8] hover:text-white"
                           }
                         `}
                       >
-                        <span>
-                          {link.label}
-                        </span>
+                        <span>{link.label}</span>
 
                         <span
                           className={`
                             flex
                             items-center
-
                             gap-1.5
-
                             text-[10px]
-
                             transition-all
                             duration-300
-
                             ${
                               isActive
-                                ? "text-[#0F5C4D]"
-                                : "text-[#687773]/70 group-hover:text-[#0F5C4D]"
+                                ? "text-[#DBEAFE]"
+                                : "text-[#93C5FD] group-hover:text-white"
                             }
                           `}
                         >
@@ -864,7 +660,6 @@ export default function Navbar() {
                             className="
                               transition-transform
                               duration-300
-
                               group-hover:translate-x-0.5
                               group-hover:-translate-y-0.5
                             "
@@ -877,67 +672,42 @@ export default function Navbar() {
               </div>
 
               {/* DIVIDER */}
-
-              <div
-                className="
-                  h-px
-                  bg-[#24332F]/10
-                  my-3
-                "
-              />
+              <div className="h-px bg-white/20 my-3" />
 
               {/* MOBILE CTA */}
-
               <Link
                 to="/contact"
                 onClick={closeMenu}
                 className="
                   group
-
                   flex
                   items-center
                   justify-center
-
                   gap-2
-
                   w-full
-
-                  bg-[#0F5C4D]
-
-                  hover:bg-[#0B4A3E]
-
-                  text-white
-
+                  bg-white
+                  hover:bg-[#DBEAFE]
+                  text-[#000080]
                   font-body
                   font-semibold
-
                   text-[11px]
                   sm:text-[12px]
-
                   tracking-[0.5px]
-
                   rounded-xl
-
                   py-3
-
                   transition-all
                   duration-300
-
-                  shadow-[0px_8px_20px_rgba(15,92,77,0.18)]
-
+                  shadow-[0px_8px_20px_rgba(0,0,0,0.20)]
                   active:scale-[0.98]
                 "
               >
-                <span>
-                  Let’s Work Together
-                </span>
+                <span>Let’s Work Together</span>
 
                 <ArrowUpRight
                   size={15}
                   className="
                     transition-transform
                     duration-300
-
                     group-hover:translate-x-1
                     group-hover:-translate-y-1
                   "

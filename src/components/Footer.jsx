@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import logo from "../assets/logo.png";
 
 import {
   ArrowUpRight,
@@ -9,10 +10,8 @@ import {
   X,
   Lock,
   Database,
-  UserCheck,
   FileText,
   ChevronRight,
-  Sparkles,
 } from "lucide-react";
 
 import {
@@ -20,8 +19,10 @@ import {
   FaInstagram,
   FaLinkedinIn,
   FaFacebookF,
-  FaGithub,
-  FaTwitter,
+  FaMobileAlt,
+  FaSms,
+  FaYoutube,
+  FaGlobe,
 } from "react-icons/fa";
 
 import { useState, useEffect } from "react";
@@ -33,42 +34,67 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const SOCIAL = [
   {
-    name: "WhatsApp",
-    icon: FaWhatsapp,
-    href: "https://wa.me/9051781685",
-    primary: true,
+    name: "SMS",
+    icon: FaSms,
+    href: "sms:+919051781685",
+    color: "#60A5FA",
+    bg: "#DBEAFE",
   },
   {
-    name: "Instagram",
-    icon: FaInstagram,
-    href: "https://instagram.com/",
+    name: "WhatsApp",
+    icon: FaWhatsapp,
+    href: "https://wa.me/919051781685",
+    color: "#16A34A",
+    bg: "#DCFCE7",
+    primary: true,
   },
   {
     name: "LinkedIn",
     icon: FaLinkedinIn,
-    href: "https://linkedin.com/in/codethrive-infitech-5b6361402",
+    href: "https://www.linkedin.com/in/codethrive-infotech-5b6361402",
+    color: "#0A66C2",
+    bg: "#DBEAFE",
+  },
+  {
+    name: "Website",
+    icon: FaGlobe,
+    href: "https://codethriveinfotech.in",
+    color: "#7C3AED",
+    bg: "#EDE9FE",
+  },
+  {
+    name: "YouTube",
+    icon: FaYoutube,
+    href: "https://www.youtube.com/@CodeThriveInfotech",
+    color: "#DC2626",
+    bg: "#FEE2E2",
   },
   {
     name: "Facebook",
     icon: FaFacebookF,
-    href: "https://facebook.com/YOUR_PAGE",
+    href: "https://www.facebook.com/share/18pBfimAcw/",
+    color: "#1877F2",
+    bg: "#DBEAFE",
   },
   {
-    name: "X",
-    icon: FaTwitter,
-    href: "https://x.com/YOUR_USERNAME",
+    name: "Instagram",
+    icon: FaInstagram,
+    href: "https://www.instagram.com/codethriveinfotech_official?igsh=MTIzZXA5MXF5dXRlaQ==",
+    color: "#DB2777",
+    bg: "#FCE7F3",
   },
   {
-    name: "GitHub",
-    icon: FaGithub,
-    href: "https://github.com/YOUR_USERNAME",
-  },
-  {
-    name: "Email",
-    icon: Mail,
-    href: "mailto:info@codethriveinfotech.in",
+    name: "Mobile",
+    icon: FaMobileAlt,
+    href: "tel:+919051781685",
+    color: "#EA580C",
+    bg: "#FFEDD5",
   },
 ];
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
 
 const NAVIGATION = [
   { label: "Home", to: "/" },
@@ -76,9 +102,13 @@ const NAVIGATION = [
   { label: "Work", to: "/work" },
   { label: "Services", to: "/services" },
   { label: "Process", to: "/process" },
-  { label: "Awards", to: "/awards" },
+  { label: "Gallery", to: "/awards" },
   { label: "Contact", to: "/contact" },
 ];
+
+/* =========================================================
+   LEGAL
+========================================================= */
 
 const LEGAL = [
   "Privacy Policy",
@@ -89,6 +119,10 @@ const LEGAL = [
 export default function Footer({ tagline }) {
   const [privacyOpen, setPrivacyOpen] = useState(false);
 
+  /* =========================================================
+     BACK TO TOP
+  ========================================================= */
+
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -97,7 +131,7 @@ export default function Footer({ tagline }) {
   };
 
   /* =========================================================
-     CLOSE MODAL WITH ESCAPE KEY
+     ESCAPE KEY + BODY SCROLL LOCK
   ========================================================= */
 
   useEffect(() => {
@@ -129,27 +163,26 @@ export default function Footer({ tagline }) {
           relative
           w-full
           overflow-hidden
-          bg-emerald-200
           border-t
-          border-[#24332F]/10
+          border-white/20
+          bg-gradient-to-br
+          from-[#00002F]
+          via-[#000080]
+          to-[#1D4ED8]
         "
       >
-        {/* =====================================================
-            DECORATIVE GLOWS
-        ===================================================== */}
+        {/* Decorative Blue Glows */}
 
         <div
           className="
             pointer-events-none
             absolute
-            -top-24
-            -right-24
-            w-[160px]
-            h-[160px]
-            sm:w-[220px]
-            sm:h-[220px]
+            -right-16
+            -top-16
+            h-[180px]
+            w-[180px]
             rounded-full
-            bg-[#0F5C4D]/8
+            bg-[#93C5FD]/25
             blur-[65px]
           "
         />
@@ -158,75 +191,74 @@ export default function Footer({ tagline }) {
           className="
             pointer-events-none
             absolute
-            -bottom-24
-            -left-24
-            w-[150px]
+            -bottom-20
+            -left-16
+            h-[170px]
+            w-[170px]
+            rounded-full
+            bg-[#60A5FA]/20
+            blur-[65px]
+          "
+        />
+
+        <div
+          className="
+            pointer-events-none
+            absolute
+            bottom-0
+            right-[25%]
             h-[150px]
-            sm:w-[200px]
-            sm:h-[200px]
+            w-[150px]
             rounded-full
-            bg-[#0F5C4D]/8
-            blur-[65px]
+            bg-[#BFDBFE]/15
+            blur-[60px]
           "
         />
 
-        {/* =====================================================
-            MAIN CONTAINER
-        ===================================================== */}
+        {/* Main Container */}
 
         <div
           className="
             relative
-            max-w-[1440px]
+            z-10
             mx-auto
+            w-full
+            max-w-[1440px]
             px-4
+            py-2
             sm:px-8
+            sm:py-3
             md:px-12
             lg:px-16
             xl:px-20
-            pt-4
-            sm:pt-5
-            lg:pt-5
-            pb-3
-            sm:pb-4
-            lg:pb-3
           "
         >
-          {/* =================================================
-              CTA
-          ================================================= */}
+          {/* CTA Section */}
 
           <div
             className="
               flex
               flex-col
-              lg:flex-row
-              lg:items-center
-              lg:justify-between
-              gap-3
-              sm:gap-4
-              lg:gap-5
-              pb-4
-              sm:pb-5
-              lg:pb-4
+              gap-2
               border-b
-              border-[#24332F]/10
+              border-white/20
+              pb-3
+              sm:flex-row
+              sm:items-center
+              sm:justify-between
             "
           >
-            {/* CTA TEXT */}
-
             <div className="min-w-0">
               <p
                 className="
-                  font-body
-                  text-[#0F5C4D]
-                  text-[9px]
-                  sm:text-[10px]
-                  tracking-[1.4px]
-                  sm:tracking-[1.8px]
-                  uppercase
                   mb-1
-                  sm:mb-1.5
+                  font-body
+                  text-[8px]
+                  font-bold
+                  uppercase
+                  tracking-[1.6px]
+                  text-[#BFDBFE]
+                  sm:text-[9px]
                 "
               >
                 Have a project in mind?
@@ -234,97 +266,97 @@ export default function Footer({ tagline }) {
 
               <h2
                 className="
-                  font-display
-                  font-bold
-                  text-[#24332F]
-                  text-[21px]
-                  sm:text-[28px]
-                  md:text-[32px]
-                  lg:text-[36px]
-                  leading-[1.08]
-                  tracking-[-0.7px]
-                  sm:tracking-[-1.2px]
                   max-w-[650px]
+                  font-display
+                  text-[22px]
+                  font-bold
+                  leading-tight
+                  tracking-[-0.8px]
+                  text-white
+                  sm:text-[27px]
+                  md:text-[31px]
                 "
               >
                 Let's build{" "}
-                <span className="text-[#0F5C4D]">
+                <span className="text-[#BFDBFE]">
                   something great.
                 </span>
               </h2>
+
+              <p
+                className="
+                  mt-1
+                  max-w-[600px]
+                  font-body
+                  text-[10px]
+                  leading-4
+                  text-[#DBEAFE]
+                  sm:text-[12px]
+                  sm:leading-5
+                "
+              >
+                Transforming ideas into meaningful digital experiences
+                with creativity, technology, and purpose.
+              </p>
             </div>
 
-            {/* CTA BUTTON */}
-
             <Link
-              to="/contact"
+              to="/contact#contact-form"
               className="
                 group
                 inline-flex
+                w-fit
+                shrink-0
                 items-center
                 justify-center
-                gap-2
-                w-full
-                sm:w-fit
-                shrink-0
-                bg-[#0F5C4D]
-                hover:bg-[#0B4A3E]
-                text-white
-                font-body
-                font-semibold
-                text-[11px]
-                sm:text-xs
-                tracking-[0.4px]
+                gap-1.5
                 rounded-full
-                px-5
-                sm:px-6
+                bg-white
+                px-4
                 py-2.5
-                sm:py-3
+                font-body
+                text-[10px]
+                font-bold
+                text-[#000080]
+                shadow-[0_6px_16px_rgba(0,0,40,0.30)]
                 transition-all
                 duration-300
-                hover:-translate-y-0.5
-                shadow-[0px_8px_25px_rgba(15,92,77,0.16)]
+                hover:-translate-y-1
+                hover:bg-[#DBEAFE]
+                sm:px-5
+                sm:py-3
+                sm:text-[11px]
               "
             >
               <span>Start a Conversation</span>
 
               <ArrowUpRight
-                size={14}
+                size={13}
                 className="
-                  shrink-0
                   transition-transform
                   duration-300
-                  group-hover:translate-x-1
                   group-hover:-translate-y-1
+                  group-hover:translate-x-1
                 "
               />
             </Link>
           </div>
 
-          {/* =================================================
-              MAIN FOOTER - 4 COLUMNS
-          ================================================= */}
+          {/* Main Footer Content */}
 
           <div
             className="
               grid
               grid-cols-1
+              gap-x-7
+              gap-y-4
+              py-3
               sm:grid-cols-2
               lg:grid-cols-[1.5fr_0.8fr_0.8fr_1.15fr]
-              gap-x-7
-              sm:gap-x-9
-              lg:gap-x-10
-              gap-y-5
-              sm:gap-y-6
               lg:gap-y-0
-              py-4
-              sm:py-5
-              lg:py-4
             "
           >
-            {/* =================================================
-                COLUMN 1
-            ================================================= */}
+            {/* Company Column */}
 
             <div
               className="
@@ -333,82 +365,109 @@ export default function Footer({ tagline }) {
                 lg:col-span-1
               "
             >
-              <h3
-                className="
-                  font-display
-                  font-bold
-                  text-[#24332F]
-                  text-[17px]
-                  sm:text-xl
-                  tracking-[-0.6px]
-                  mb-0.5
-                "
-              >
-                CodeThrive InfoTech
-              </h3>
+              <div className="mb-2 flex items-center gap-2">
+                {/* Updated Logo Image */}
 
-              <h4
+                <div
+                  className="
+                    flex
+                    h-10
+                    w-10
+                    shrink-0
+                    items-center
+                    justify-center
+                    overflow-hidden
+                    rounded-lg
+                    border
+                    border-[#60A5FA]/30
+                    bg-[#000080]
+                    p-1
+                    shadow-sm
+                  "
+                >
+                  <img
+                    src={logo}
+                    alt="CodeThrive InfoTech logo"
+                    className="h-full w-full object-contain"
+                  />
+                </div>
+
+                <div>
+                  <h3
+                    className="
+                      font-display
+                      text-[16px]
+                      font-bold
+                      tracking-[-0.5px]
+                      text-white
+                      sm:text-[18px]
+                    "
+                  >
+                    CodeThrive InfoTech
+                  </h3>
+
+                  <p
+                    className="
+                      font-body
+                      text-[8px]
+                      font-bold
+                      uppercase
+                      tracking-[1.1px]
+                      text-[#BFDBFE]
+                    "
+                  >
+                    Digital Innovation Studio
+                  </p>
+                </div>
+              </div>
+
+              <p
                 className="
+                  max-w-[390px]
                   font-body
-                  text-[#687773]
-                  text-[10px]
-                  sm:text-sm
-                  leading-relaxed
-                  max-w-[380px]
+                  text-[11px]
+                  leading-4
+                  text-[#DBEAFE]
+                  sm:text-[12px]
+                  sm:leading-5
                 "
               >
                 {tagline ||
-                  "Architecture for the digital age."}
-              </h4>
+                  "Architecture for the digital age. We create powerful digital solutions that help brands grow and thrive."}
+              </p>
 
-              {/* CONTACT DETAILS */}
+              {/* Contact Details */}
 
-              <div
-                className="
-                  flex
-                  flex-col
-                  gap-2
-                  sm:gap-2.5
-                  mt-2.5
-                  sm:mt-3
-                "
-              >
-                {/* EMAIL */}
-
+              <div className="mt-3 flex flex-col gap-2">
                 <a
-                  href="mailto:contactus@codethrive.com"
+                  href="mailto:codethriveinfotech@gmail.com"
                   className="
                     group
                     flex
+                    min-w-0
                     items-center
                     gap-2
-                    min-w-0
-                    max-w-full
-                    text-[#687773]
-                    hover:text-[#0F5C4D]
+                    text-[#DBEAFE]
                     transition-colors
                     duration-300
+                    hover:text-white
                   "
                 >
                   <span
                     className="
                       flex
+                      h-7
+                      w-7
+                      shrink-0
                       items-center
                       justify-center
-                      w-6
-                      h-6
-                      sm:w-7
-                      sm:h-7
-                      shrink-0
                       rounded-full
-                      border
-                      border-[#24332F]/10
-                      bg-white/70
+                      bg-[#DBEAFE]
+                      text-[#1D4ED8]
                       transition-all
                       duration-300
-                      group-hover:bg-[#0F5C4D]
+                      group-hover:bg-[#60A5FA]
                       group-hover:text-white
-                      group-hover:border-[#0F5C4D]
                     "
                   >
                     <Mail size={12} />
@@ -416,40 +475,35 @@ export default function Footer({ tagline }) {
 
                   <span
                     className="
+                      break-all
                       font-body
                       text-[11px]
-                      sm:text-[15px]
-                      break-all
+                      sm:text-[12px]
                     "
                   >
-                    info@codethriveinfotech.com
+                    codethriveinfotech@gmail.com
                   </span>
                 </a>
-
-                {/* ADDRESS */}
 
                 <div
                   className="
                     flex
                     items-start
                     gap-2
-                    text-[#687773]
+                    text-[#DBEAFE]
                   "
                 >
                   <span
                     className="
                       flex
+                      h-7
+                      w-7
+                      shrink-0
                       items-center
                       justify-center
-                      w-6
-                      h-6
-                      sm:w-7
-                      sm:h-7
-                      shrink-0
                       rounded-full
-                      border
-                      border-[#24332F]/10
-                      bg-white/70
+                      bg-[#DBEAFE]
+                      text-[#2563EB]
                     "
                   >
                     <MapPin size={12} />
@@ -458,14 +512,13 @@ export default function Footer({ tagline }) {
                   <span
                     className="
                       font-body
-                      text-[10px]
-                      sm:text-[15px]
-                      leading-[1.4]
-                      sm:leading-relaxed
-                      max-w-[360px]
+                      text-[11px]
+                      leading-4
+                      sm:text-[12px]
+                      sm:leading-5
                     "
                   >
-                    1,Srihari Nivas, Sungam, Indira Nagar,
+                    1, Srihari Nivas, Sungam, Indira Nagar,
                     <br />
                     Coimbatore, Tamil Nadu – 641045,
                     <br />
@@ -474,34 +527,24 @@ export default function Footer({ tagline }) {
                 </div>
               </div>
 
-              {/* CONNECT WITH US */}
+              {/* Social Links */}
 
-              <div className="mt-4 sm:mt-5">
+              <div className="mt-3">
                 <p
                   className="
-                    mb-2
+                    mb-1.5
                     font-body
-                    font-semibold
-                    text-[#24332F]
-                    text-[10px]
-                    sm:text-[15px]
-                    tracking-[0.08em]
+                    text-[9px]
+                    font-bold
                     uppercase
+                    tracking-[1.4px]
+                    text-white
                   "
                 >
                   Connect With Us
                 </p>
 
-                <div
-                  className="
-                    flex
-                    flex-wrap
-                    items-center
-                    gap-1.5
-                    sm:gap-2
-                    max-w-[420px]
-                  "
-                >
+                <div className="flex flex-wrap items-center gap-1.5">
                   {SOCIAL.map((item) => {
                     const Icon = item.icon;
 
@@ -510,34 +553,61 @@ export default function Footer({ tagline }) {
                         key={item.name}
                         href={item.href}
                         target={
-                          item.name === "Email"
+                          item.name === "SMS" ||
+                          item.name === "Mobile"
                             ? undefined
                             : "_blank"
                         }
                         rel={
-                          item.name === "Email"
+                          item.name === "SMS" ||
+                          item.name === "Mobile"
                             ? undefined
                             : "noopener noreferrer"
                         }
                         aria-label={item.name}
+                        title={item.name}
                         whileHover={{
                           y: -3,
-                          scale: 1.05,
+                          scale: 1.08,
                         }}
                         whileTap={{
-                          scale: 0.94,
+                          scale: 0.92,
                         }}
-                        className={`group relative flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 shrink-0 rounded-full border bg-white/70 transition-all duration-300 ${
-                          item.primary
-                            ? "border-[#0F5C4D]/30 text-[#0F5C4D] shadow-[0_4px_15px_rgba(15,92,77,0.10)]"
-                            : "border-[#24332F]/10 text-[#687773]"
-                        } hover:bg-[#0F5C4D] hover:text-white hover:border-[#0F5C4D] hover:shadow-[0_8px_25px_rgba(15,92,77,0.22)]`}
+                        style={{
+                          color: item.color,
+                          backgroundColor: item.bg,
+                          borderColor: `${item.color}55`,
+                        }}
+                        className="
+                          group
+                          relative
+                          flex
+                          h-8
+                          w-8
+                          shrink-0
+                          items-center
+                          justify-center
+                          rounded-full
+                          border
+                          shadow-sm
+                          transition-all
+                          duration-300
+                          hover:text-white
+                        "
+                        onMouseEnter={(event) => {
+                          event.currentTarget.style.backgroundColor =
+                            item.color;
+                        }}
+                        onMouseLeave={(event) => {
+                          event.currentTarget.style.backgroundColor =
+                            item.bg;
+                        }}
                       >
                         {item.primary && (
                           <motion.span
                             animate={{
                               scale: [1, 1.3, 1],
-                              opacity: [0.25, 0, 0.25],
+                              opacity: [0.3, 0, 0.3],
                             }}
                             transition={{
                               duration: 2.2,
@@ -549,8 +619,8 @@ export default function Footer({ tagline }) {
                               absolute
                               inset-0
                               rounded-full
-                              border
-                              border-[#0F5C4D]/30
+                              border-2
+                              border-[#16A34A]/50
                             "
                           />
                         )}
@@ -559,8 +629,7 @@ export default function Footer({ tagline }) {
                           className="
                             relative
                             z-10
-                            text-[15px]
-                            sm:text-[18px]
+                            text-[13px]
                             transition-transform
                             duration-300
                             group-hover:scale-110
@@ -573,35 +642,25 @@ export default function Footer({ tagline }) {
               </div>
             </div>
 
-            {/* =================================================
-                COLUMN 2
-            ================================================= */}
+            {/* Navigation Column */}
 
             <div className="min-w-0">
               <h3
                 className="
-                  font-body
-                  text-[#0F5C4D]
-                  text-[10px]
-                  sm:text-[15px]
-                  tracking-[1.2px]
-                  sm:tracking-[1.5px]
-                  uppercase
                   mb-2
-                  sm:mb-2.5
+                  font-body
+                  text-[9px]
+                  font-bold
+                  uppercase
+                  tracking-[1.5px]
+                  text-[#BFDBFE]
+                  sm:text-[10px]
                 "
               >
                 Navigation
               </h3>
 
-              <div
-                className="
-                  flex
-                  flex-col
-                  gap-1
-                  sm:gap-1.5
-                "
-              >
+              <div className="flex flex-col gap-1">
                 {NAVIGATION.map((item) => (
                   <Link
                     key={item.label}
@@ -609,31 +668,29 @@ export default function Footer({ tagline }) {
                     className="
                       group
                       flex
-                      items-center
-                      gap-1.5
                       w-fit
+                      items-center
+                      gap-1
                       font-body
-                      text-[11px]
-                      sm:text-[16px]
-                      text-[#687773]
-                      hover:text-[#0F5C4D]
-                      transition-colors
+                      text-[12px]
+                      text-[#DBEAFE]
+                      transition-all
                       duration-300
+                      hover:translate-x-1
+                      hover:text-white
+                      sm:text-[13px]
                     "
                   >
                     <span>{item.label}</span>
 
                     <ArrowUpRight
-                      size={11}
+                      size={10}
                       className="
                         opacity-0
-                        -translate-x-1
-                        translate-y-1
                         transition-all
                         duration-300
+                        group-hover:translate-x-0.5
                         group-hover:opacity-100
-                        group-hover:translate-x-0
-                        group-hover:translate-y-0
                       "
                     />
                   </Link>
@@ -641,35 +698,25 @@ export default function Footer({ tagline }) {
               </div>
             </div>
 
-            {/* =================================================
-                COLUMN 3
-            ================================================= */}
+            {/* Legal Column */}
 
             <div className="min-w-0">
-              <p
+              <h3
                 className="
-                  font-body
-                  text-[#0F5C4D]
-                  text-[10px]
-                  sm:text-[15px]
-                  tracking-[1.2px]
-                  sm:tracking-[1.5px]
-                  uppercase
                   mb-2
-                  sm:mb-2.5
+                  font-body
+                  text-[9px]
+                  font-bold
+                  uppercase
+                  tracking-[1.5px]
+                  text-[#BFDBFE]
+                  sm:text-[10px]
                 "
               >
                 Legal
-              </p>
+              </h3>
 
-              <div
-                className="
-                  flex
-                  flex-col
-                  gap-1
-                  sm:gap-1.5
-                "
-              >
+              <div className="flex flex-col gap-1">
                 {LEGAL.map((item) => (
                   <button
                     key={item}
@@ -683,45 +730,118 @@ export default function Footer({ tagline }) {
                       w-fit
                       text-left
                       font-body
-                      text-[11px]
-                      sm:text-[16px]
-                      text-[#687773]
-                      hover:text-[#0F5C4D]
-                      transition-colors
+                      text-[12px]
+                      text-[#DBEAFE]
+                      transition-all
                       duration-300
+                      hover:translate-x-1
+                      hover:text-white
+                      sm:text-[13px]
                     "
                   >
                     {item}
                   </button>
                 ))}
               </div>
+
+              <div
+                className="
+                  mt-3
+                  flex
+                  items-center
+                  gap-1.5
+                  rounded-lg
+                  border
+                  border-[#60A5FA]/30
+                  bg-[#DBEAFE]/15
+                  px-2.5
+                  py-1.5
+                "
+              >
+                <ShieldCheck
+                  size={14}
+                  className="shrink-0 text-[#BFDBFE]"
+                />
+
+                <span
+                  className="
+                    font-body
+                    text-[9px]
+                    font-semibold
+                    text-[#DBEAFE]
+                  "
+                >
+                  Secure and trusted
+                </span>
+              </div>
             </div>
 
-            {/* =================================================
-                COLUMN 4
-            ================================================= */}
+            {/* Image Column */}
 
-            <div
+            <motion.div
+              initial={{
+                opacity: 0,
+                y: 12,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+              }}
+              viewport={{
+                once: true,
+                amount: 0.2,
+              }}
+              transition={{
+                duration: 0.5,
+                ease: "easeOut",
+              }}
               className="
+                group
                 relative
-                flex
-                items-center
-                justify-center
-                min-h-[110px]
-                sm:min-h-[140px]
-                lg:min-h-[190px]
+                h-[125px]
+                w-full
+                min-w-0
                 overflow-hidden
-                rounded-[24px]
-                bg-[#0F5C4D]
-                shadow-[0_15px_40px_rgba(15,92,77,0.18)]
+                rounded-[17px]
+                border
+                border-[#60A5FA]/30
+                bg-[#00005C]
+                shadow-[0_10px_24px_rgba(0,0,80,0.35)]
+                sm:h-[140px]
+                lg:h-[125px]
               "
             >
-              {/* BACKGROUND GLOW */}
+              <img
+                src="/images/footer-technology.jpg"
+                alt="Digital technology and software development"
+                className="
+                  absolute
+                  inset-0
+                  h-full
+                  w-full
+                  object-cover
+                  object-center
+                  transition-transform
+                  duration-700
+                  group-hover:scale-110
+                "
+              />
+
+              <div
+                className="
+                  absolute
+                  inset-0
+                  bg-gradient-to-br
+                  from-[#00002F]/95
+                  via-[#000080]/65
+                  to-[#1D4ED8]/85
+                "
+              />
 
               <motion.div
                 animate={{
-                  scale: [1, 1.3, 1],
-                  opacity: [0.15, 0.3, 0.15],
+                  opacity: [0.15, 0.35, 0.15],
+                  scale: [1, 1.12, 1],
                 }}
                 transition={{
                   duration: 4,
@@ -729,345 +849,163 @@ export default function Footer({ tagline }) {
                   ease: "easeInOut",
                 }}
                 className="
+                  pointer-events-none
                   absolute
-                  w-40
-                  h-40
+                  -right-8
+                  -top-8
+                  h-24
+                  w-24
                   rounded-full
-                  bg-emerald-300
+                  bg-[#60A5FA]
                   blur-3xl
                 "
               />
 
-              {/* OUTER ROTATING RING */}
-
-              <motion.div
-                animate={{
-                  rotate: 360,
-                }}
-                transition={{
-                  duration: 12,
-                  repeat: Infinity,
-                  ease: "linear",
-                }}
+              <div
                 className="
+                  pointer-events-none
                   absolute
-                  w-[125px]
-                  h-[125px]
-                  rounded-full
+                  inset-1.5
+                  rounded-[14px]
                   border
-                  border-dashed
-                  border-emerald-300/50
-                "
-              >
-                <span
-                  className="
-                    absolute
-                    -top-1
-                    left-1/2
-                    -translate-x-1/2
-                    w-3
-                    h-3
-                    rounded-full
-                    bg-emerald-300
-                    shadow-[0_0_18px_rgba(167,243,208,0.8)]
-                  "
-                />
-
-                <span
-                  className="
-                    absolute
-                    -bottom-1
-                    left-1/2
-                    -translate-x-1/2
-                    w-2.5
-                    h-2.5
-                    rounded-full
-                    bg-emerald-200
-                  "
-                />
-              </motion.div>
-
-              {/* INNER ROTATING RING */}
-
-              <motion.div
-                animate={{
-                  rotate: -360,
-                }}
-                transition={{
-                  duration: 8,
-                  repeat: Infinity,
-                  ease: "linear",
-                }}
-                className="
-                  absolute
-                  w-[85px]
-                  h-[85px]
-                  rounded-full
-                  border-2
-                  border-emerald-200/30
-                "
-              >
-                <span
-                  className="
-                    absolute
-                    top-1/2
-                    -right-1
-                    -translate-y-1/2
-                    w-2.5
-                    h-2.5
-                    rounded-full
-                    bg-emerald-200
-                    shadow-[0_0_15px_rgba(167,243,208,0.8)]
-                  "
-                />
-              </motion.div>
-
-              {/* CENTER */}
-
-              <motion.div
-                animate={{
-                  y: [0, -8, 0],
-                  scale: [1, 1.08, 1],
-                }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                className="
-                  relative
-                  z-10
-                  flex
-                  items-center
-                  justify-center
-                  w-[58px]
-                  h-[58px]
-                  rounded-full
-                  bg-emerald-200
-                  shadow-[0_0_35px_rgba(167,243,208,0.35)]
-                "
-              >
-                <motion.div
-                  animate={{
-                    rotate: [0, 15, -15, 0],
-                  }}
-                  transition={{
-                    duration: 2.5,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
-                >
-                  <Sparkles
-                    size={24}
-                    className="text-[#0F5C4D]"
-                  />
-                </motion.div>
-              </motion.div>
-
-              {/* FLOATING DOTS */}
-
-              <motion.span
-                animate={{
-                  y: [0, -15, 0],
-                  opacity: [0.3, 1, 0.3],
-                }}
-                transition={{
-                  duration: 2.5,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                className="
-                  absolute
-                  left-5
-                  top-6
-                  w-2
-                  h-2
-                  rounded-full
-                  bg-emerald-200
+                  border-white/25
                 "
               />
-
-              <motion.span
-                animate={{
-                  y: [0, 12, 0],
-                  opacity: [0.3, 1, 0.3],
-                }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                className="
-                  absolute
-                  right-6
-                  top-8
-                  w-2.5
-                  h-2.5
-                  rounded-full
-                  bg-emerald-300
-                "
-              />
-
-              <motion.span
-                animate={{
-                  scale: [1, 1.5, 1],
-                  opacity: [0.3, 1, 0.3],
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                className="
-                  absolute
-                  bottom-8
-                  left-8
-                  w-2
-                  h-2
-                  rounded-full
-                  bg-emerald-300
-                "
-              />
-
-              <motion.span
-                animate={{
-                  scale: [1, 1.5, 1],
-                  opacity: [0.3, 1, 0.3],
-                }}
-                transition={{
-                  duration: 2.8,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                className="
-                  absolute
-                  bottom-7
-                  right-8
-                  w-2
-                  h-2
-                  rounded-full
-                  bg-emerald-200
-                "
-              />
-
-              {/* TEXT */}
 
               <div
                 className="
                   absolute
-                  bottom-4
-                  left-4
-                  right-4
-                  text-center
+                  inset-x-0
+                  bottom-0
+                  z-10
+                  p-3
                 "
               >
-                <p
+                <div className="mb-1 flex items-center gap-1.5">
+                  <span
+                    className="
+                      h-1.5
+                      w-1.5
+                      rounded-full
+                      bg-[#BFDBFE]
+                      shadow-[0_0_10px_rgba(191,219,254,0.9)]
+                    "
+                  />
+
+                  <span
+                    className="
+                      font-body
+                      text-[7px]
+                      font-bold
+                      uppercase
+                      tracking-[1.5px]
+                      text-[#DBEAFE]
+                    "
+                  >
+                    Digital Innovation
+                  </span>
+                </div>
+
+                <h3
                   className="
                     font-display
+                    text-[16px]
                     font-bold
-                    text-sm
+                    leading-tight
                     text-white
+                    sm:text-[19px]
                   "
                 >
                   Think. Create. Thrive.
-                </p>
+                </h3>
 
                 <p
                   className="
                     mt-0.5
                     font-body
-                    text-[9px]
-                    tracking-[0.15em]
+                    text-[7px]
                     uppercase
-                    text-emerald-100/70
+                    tracking-[1px]
+                    text-white/75
+                    sm:text-[8px]
                   "
                 >
-                  Ideas in motion
+                  Ideas into digital experiences
                 </p>
               </div>
-            </div>
+            </motion.div>
 
-            {/* =================================================
-                BACK TO TOP
-            ================================================= */}
+            {/* Back To Top */}
 
             <div
               className="
-                sm:col-span-2
-                lg:col-span-4
                 flex
                 justify-start
+                sm:col-span-2
                 sm:justify-end
-                mt-0
-                sm:mt-0
-                lg:mt-2
+                lg:col-span-4
               "
             >
               <button
+                type="button"
                 onClick={scrollToTop}
                 className="
                   group
                   flex
                   items-center
-                  gap-2
+                  gap-1.5
                   font-body
-                  text-[8px]
-                  sm:text-[10px]
-                  tracking-[1.1px]
+                  text-[9px]
+                  font-bold
                   uppercase
-                  text-[#687773]
-                  hover:text-[#0F5C4D]
+                  tracking-[1.3px]
+                  text-[#DBEAFE]
                   transition-colors
                   duration-300
+                  hover:text-white
                 "
               >
-                Back to top
+                <span>Back to top</span>
 
                 <span
                   className="
                     flex
+                    h-6
+                    w-6
                     items-center
                     justify-center
-                    w-6
-                    h-6
-                    sm:w-7
-                    sm:h-7
                     rounded-full
                     border
-                    border-[#24332F]/10
-                    bg-white
+                    border-[#60A5FA]/40
+                    bg-[#DBEAFE]
+                    text-[#1D4ED8]
                     transition-all
                     duration-300
-                    group-hover:bg-[#0F5C4D]
-                    group-hover:text-white
-                    group-hover:border-[#0F5C4D]
                     group-hover:-translate-y-1
+                    group-hover:bg-[#60A5FA]
+                    group-hover:text-white
                   "
                 >
-                  <ArrowUp size={11} />
+                  <ArrowUp size={10} />
                 </span>
               </button>
             </div>
           </div>
 
-          {/* =================================================
-              BOTTOM BAR
-          ================================================= */}
+          {/* Bottom Bar */}
 
           <div
             className="
-              pt-2.5
-              sm:pt-3
-              border-t
-              border-[#24332F]/10
               flex
               flex-col
-              sm:flex-row
               items-center
               justify-between
-              gap-1.5
-              sm:gap-1
+              gap-1
+              border-t
+              border-white/20
+              pt-2
               text-center
+              sm:flex-row
               sm:text-left
             "
           >
@@ -1075,11 +1013,11 @@ export default function Footer({ tagline }) {
               className="
                 font-body
                 text-[8px]
-                sm:text-[10px]
-                text-[#687773]
+                text-[#BFDBFE]
+                sm:text-[9px]
               "
             >
-              ©2026 CodeThrive InfoTech. All rights reserved.
+              © 2026 CodeThrive InfoTech. All rights reserved.
             </p>
 
             <motion.button
@@ -1092,32 +1030,29 @@ export default function Footer({ tagline }) {
                 relative
                 flex
                 items-center
-                justify-center
-                gap-1.5
+                gap-1
                 font-body
-                text-[9px]
-                sm:text-[10px]
-                text-[#687773]
+                text-[8px]
+                font-semibold
+                text-[#DBEAFE]
                 transition-colors
                 duration-300
-                hover:text-[#0F5C4D]
+                hover:text-white
+                sm:text-[9px]
               "
             >
-              <ShieldCheck
-                size={12}
-                strokeWidth={1.8}
-              />
+              <ShieldCheck size={11} />
 
               <span>Privacy Policy</span>
 
               <span
                 className="
                   absolute
-                  -bottom-1
+                  -bottom-0.5
                   left-0
                   h-[1px]
                   w-0
-                  bg-[#0F5C4D]
+                  bg-[#60A5FA]
                   transition-all
                   duration-300
                   group-hover:w-full
@@ -1129,8 +1064,8 @@ export default function Footer({ tagline }) {
               className="
                 font-body
                 text-[8px]
-                sm:text-[10px]
-                text-[#687773]
+                text-[#BFDBFE]
+                sm:text-[9px]
               "
             >
               Designed & built with intention.
@@ -1139,9 +1074,7 @@ export default function Footer({ tagline }) {
         </div>
       </footer>
 
-      {/* =====================================================
-          PRIVACY POLICY MODAL
-      ===================================================== */}
+      {/* Privacy Policy Modal */}
 
       <AnimatePresence>
         {privacyOpen && (
@@ -1158,16 +1091,12 @@ export default function Footer({ tagline }) {
               flex
               items-center
               justify-center
-              bg-[#24332F]/45
+              bg-[#00002F]/75
+              p-2
               backdrop-blur-md
-              p-2.5
-              sm:p-6
+              sm:p-4
             "
           >
-            {/* =================================================
-                MODAL CONTAINER
-            ================================================= */}
-
             <motion.div
               initial={{
                 opacity: 0,
@@ -1188,25 +1117,22 @@ export default function Footer({ tagline }) {
                 duration: 0.3,
                 ease: "easeOut",
               }}
-              onClick={(e) => e.stopPropagation()}
+              onClick={(event) => event.stopPropagation()}
               className="
                 relative
+                max-h-[94vh]
                 w-full
                 max-w-[850px]
-                max-h-[94vh]
-                sm:max-h-[85vh]
                 overflow-hidden
-                rounded-[18px]
-                sm:rounded-[28px]
+                rounded-[20px]
                 border
-                border-[#DDEBE6]
-                bg-[#F3F7F4]
-                shadow-[0_30px_100px_rgba(36,51,47,0.25)]
+                border-[#60A5FA]/30
+                bg-[#F8FAFC]
+                shadow-[0_30px_100px_rgba(0,0,80,0.35)]
+                sm:rounded-[28px]
               "
             >
-              {/* =================================================
-                  MODAL HEADER
-              ================================================= */}
+              {/* Modal Header */}
 
               <div
                 className="
@@ -1216,51 +1142,46 @@ export default function Footer({ tagline }) {
                   justify-between
                   gap-3
                   border-b
-                  border-[#DDEBE6]
-                  bg-white/80
+                  border-[#60A5FA]/25
+                  bg-gradient-to-r
+                  from-[#DBEAFE]
+                  to-[#BFDBFE]
                   px-3
                   py-3
-                  sm:px-6
+                  sm:px-7
                   sm:py-5
                 "
               >
-                <div className="flex items-center gap-2.5 sm:gap-4">
+                <div className="flex items-center gap-2.5 sm:gap-3">
                   <div
                     className="
                       flex
                       h-9
                       w-9
-                      sm:h-12
-                      sm:w-12
                       shrink-0
                       items-center
                       justify-center
                       rounded-xl
-                      sm:rounded-2xl
-                      bg-[#DDEBE6]
-                      text-[#0F5C4D]
+                      bg-[#2563EB]
+                      text-white
+                      shadow-md
+                      sm:h-12
+                      sm:w-12
                     "
                   >
-                    <ShieldCheck
-                      size={18}
-                      className="sm:hidden"
-                    />
-
-                    <ShieldCheck
-                      size={23}
-                      className="hidden sm:block"
-                    />
+                    <ShieldCheck size={20} />
                   </div>
 
-                  <div className="min-w-0">
+                  <div>
                     <p
                       className="
                         font-body
                         text-[8px]
-                        sm:text-[10px]
+                        font-bold
                         uppercase
-                        tracking-[0.16em]
-                        text-[#0F5C4D]
+                        tracking-[1.5px]
+                        text-[#1D4ED8]
+                        sm:text-[10px]
                       "
                     >
                       Your Privacy Matters
@@ -1270,19 +1191,17 @@ export default function Footer({ tagline }) {
                       className="
                         mt-0.5
                         font-display
-                        text-[17px]
-                        sm:text-[24px]
+                        text-[18px]
                         font-bold
                         leading-tight
-                        text-[#24332F]
+                        text-[#00005C]
+                        sm:text-[25px]
                       "
                     >
                       Privacy Policy
                     </h2>
                   </div>
                 </div>
-
-                {/* CLOSE BUTTON */}
 
                 <button
                   type="button"
@@ -1292,148 +1211,82 @@ export default function Footer({ tagline }) {
                     flex
                     h-8
                     w-8
-                    sm:h-10
-                    sm:w-10
                     shrink-0
                     items-center
                     justify-center
                     rounded-full
                     border
-                    border-[#24332F]/10
+                    border-[#000080]/20
                     bg-white
-                    text-[#687773]
+                    text-[#000080]
                     transition-all
                     duration-300
-                    hover:bg-[#0F5C4D]
-                    hover:text-white
-                    hover:border-[#0F5C4D]
                     hover:rotate-90
+                    hover:border-[#2563EB]
+                    hover:bg-[#2563EB]
+                    hover:text-white
+                    sm:h-9
+                    sm:w-9
                   "
                 >
                   <X size={16} />
                 </button>
-
-                {/* HEADER GLOW */}
-
-                <motion.div
-                  animate={{
-                    x: [0, 30, 0],
-                    opacity: [0.2, 0.4, 0.2],
-                  }}
-                  transition={{
-                    duration: 5,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
-                  className="
-                    pointer-events-none
-                    absolute
-                    -top-16
-                    right-20
-                    h-32
-                    w-32
-                    rounded-full
-                    bg-emerald-200/60
-                    blur-3xl
-                  "
-                />
               </div>
 
-              {/* =================================================
-                  MODAL SCROLL CONTENT
-              ================================================= */}
+              {/* Modal Content */}
 
               <div
                 className="
-                  relative
-                  max-h-[calc(94vh-65px)]
-                  sm:max-h-[calc(85vh-105px)]
+                  max-h-[calc(94vh-70px)]
                   overflow-y-auto
-                  overscroll-contain
                   px-3
                   py-4
+                  sm:max-h-[calc(85vh-105px)]
                   sm:px-8
                   sm:py-8
                 "
               >
-                {/* =================================================
-                    INTRODUCTION
-                ================================================= */}
+                {/* Introduction */}
 
-                <motion.div
-                  initial={{
-                    opacity: 0,
-                    y: 15,
-                  }}
-                  animate={{
-                    opacity: 1,
-                    y: 0,
-                  }}
-                  transition={{
-                    delay: 0.15,
-                    duration: 0.4,
-                  }}
+                <div
                   className="
-                    mb-4
-                    sm:mb-6
-                    rounded-xl
-                    sm:rounded-2xl
+                    mb-5
+                    rounded-2xl
                     border
-                    border-[#DDEBE6]
-                    bg-white/80
+                    border-[#60A5FA]/25
+                    bg-[#DBEAFE]/60
                     p-3
+                    sm:mb-6
                     sm:p-6
                   "
                 >
-                  <div className="flex gap-2.5 sm:gap-4">
-                    <motion.div
-                      initial={{
-                        scale: 0,
-                        rotate: -20,
-                      }}
-                      animate={{
-                        scale: 1,
-                        rotate: 0,
-                      }}
-                      transition={{
-                        delay: 0.2,
-                        type: "spring",
-                        stiffness: 180,
-                      }}
+                  <div className="flex gap-3 sm:gap-4">
+                    <div
                       className="
                         flex
                         h-8
                         w-8
-                        sm:h-11
-                        sm:w-11
                         shrink-0
                         items-center
                         justify-center
-                        rounded-lg
-                        sm:rounded-xl
-                        bg-[#DDEBE6]
-                        text-[#0F5C4D]
+                        rounded-xl
+                        bg-[#2563EB]
+                        text-white
+                        sm:h-11
+                        sm:w-11
                       "
                     >
-                      <Lock
-                        size={15}
-                        className="sm:hidden"
-                      />
+                      <Lock size={16} />
+                    </div>
 
-                      <Lock
-                        size={19}
-                        className="hidden sm:block"
-                      />
-                    </motion.div>
-
-                    <div className="min-w-0">
+                    <div>
                       <h3
                         className="
                           font-display
-                          text-[14px]
-                          sm:text-[18px]
+                          text-[15px]
                           font-semibold
-                          text-[#24332F]
+                          text-[#00005C]
+                          sm:text-[19px]
                         "
                       >
                         Introduction
@@ -1442,13 +1295,13 @@ export default function Footer({ tagline }) {
                       <p
                         className="
                           mt-1.5
-                          sm:mt-2
                           font-body
-                          text-[10.5px]
+                          text-[11px]
+                          leading-5
+                          text-[#475569]
+                          sm:mt-2
                           sm:text-[14px]
-                          leading-[1.55]
                           sm:leading-6
-                          text-[#687773]
                         "
                       >
                         Welcome to CodeThrive. We respect your privacy
@@ -1460,97 +1313,70 @@ export default function Footer({ tagline }) {
                       </p>
                     </div>
                   </div>
-                </motion.div>
+                </div>
 
-                {/* =================================================
-                    01 - DATA WE COLLECT
-                ================================================= */}
+                {/* Data We Collect */}
 
-                <motion.div
-                  initial={{
-                    opacity: 0,
-                    x: -20,
-                  }}
-                  animate={{
-                    opacity: 1,
-                    x: 0,
-                  }}
-                  transition={{
-                    delay: 0.25,
-                    duration: 0.45,
-                  }}
+                <div
                   className="
-                    group
-                    rounded-xl
-                    sm:rounded-2xl
+                    rounded-2xl
                     border
                     border-transparent
-                    p-1.5
-                    sm:p-3
+                    p-1
                     transition-all
                     duration-300
-                    hover:border-[#DDEBE6]
-                    hover:bg-white/60
+                    hover:border-[#60A5FA]/25
+                    hover:bg-[#DBEAFE]/30
+                    sm:p-3
                   "
                 >
-                  <div className="flex gap-2.5 sm:gap-4">
-                    <motion.div
-                      whileHover={{
-                        scale: 1.08,
-                        rotate: 5,
-                      }}
+                  <div className="flex gap-3 sm:gap-4">
+                    <div
                       className="
                         flex
-                        h-8
-                        w-8
-                        sm:h-10
-                        sm:w-10
+                        h-9
+                        w-9
                         shrink-0
                         items-center
                         justify-center
-                        rounded-lg
-                        sm:rounded-xl
-                        bg-[#DDEBE6]
-                        text-[#0F5C4D]
-                        transition-all
-                        duration-300
-                        group-hover:bg-[#0F5C4D]
-                        group-hover:text-white
+                        rounded-xl
+                        bg-[#DBEAFE]
+                        text-[#2563EB]
+                        sm:h-10
+                        sm:w-10
                       "
                     >
-                      <Database size={15} />
-                    </motion.div>
+                      <Database size={17} />
+                    </div>
 
                     <div className="min-w-0 flex-1">
                       <h3
                         className="
                           flex
                           items-center
-                          gap-1
-                          sm:gap-2
+                          gap-1.5
                           font-display
-                          text-[13px]
-                          sm:text-[17px]
+                          text-[15px]
                           font-semibold
-                          leading-tight
-                          text-[#24332F]
+                          text-[#00005C]
+                          sm:gap-2
+                          sm:text-[18px]
                         "
                       >
                         1. Data We Collect
-
-                        <ChevronRight size={12} />
+                        <ChevronRight size={13} />
                       </h3>
 
                       <p
                         className="
-                          mt-1
-                          sm:mt-2
+                          mt-1.5
                           font-body
-                          text-[10px]
+                          text-[11px]
+                          leading-5
+                          text-[#475569]
+                          sm:mt-2
                           sm:text-[14px]
-                          leading-[1.55]
                           sm:leading-6
-                          text-[#687773]
                         "
                       >
                         We may collect, use, store and transfer
@@ -1558,47 +1384,43 @@ export default function Footer({ tagline }) {
                         which we have grouped together as follows:
                       </p>
 
-                      {/* IDENTITY DATA */}
-
-                      <div className="mt-3 sm:mt-4">
-                        <h4
-                          className="
-                            font-display
-                            text-[11px]
-                            sm:text-[15px]
-                            font-semibold
-                            text-[#24332F]
-                          "
-                        >
-                          ✓ Identity Data
-                        </h4>
-
-                        <p
-                          className="
-                            mt-1
-                            font-body
-                            text-[10px]
-                            sm:text-[13px]
-                            leading-[1.55]
-                            sm:leading-6
-                            text-[#687773]
-                          "
-                        >
-                          includes first name, last name.
-                        </p>
-                      </div>
-
-                      {/* ADDITIONAL DATA TYPES */}
-
-                      <div className="mt-4 space-y-3">
+                      <div className="mt-3 space-y-3 sm:mt-4 sm:space-y-4">
                         <div>
                           <h4
                             className="
                               font-display
-                              text-[11px]
-                              sm:text-[15px]
+                              text-[13px]
                               font-semibold
-                              text-[#24332F]
+                              text-[#00005C]
+                              sm:text-[16px]
+                            "
+                          >
+                            ✓ Identity Data
+                          </h4>
+
+                          <p
+                            className="
+                              mt-1
+                              font-body
+                              text-[11px]
+                              leading-5
+                              text-[#475569]
+                              sm:text-[13px]
+                              sm:leading-6
+                            "
+                          >
+                            Includes first name and last name.
+                          </p>
+                        </div>
+
+                        <div>
+                          <h4
+                            className="
+                              font-display
+                              text-[13px]
+                              font-semibold
+                              text-[#00005C]
+                              sm:text-[16px]
                             "
                           >
                             ✓ Contact Data
@@ -1608,11 +1430,11 @@ export default function Footer({ tagline }) {
                             className="
                               mt-1
                               font-body
-                              text-[10px]
+                              text-[11px]
+                              leading-5
+                              text-[#475569]
                               sm:text-[13px]
-                              leading-[1.55]
                               sm:leading-6
-                              text-[#687773]
                             "
                           >
                             Includes email address, phone number,
@@ -1625,10 +1447,10 @@ export default function Footer({ tagline }) {
                           <h4
                             className="
                               font-display
-                              text-[11px]
-                              sm:text-[15px]
+                              text-[13px]
                               font-semibold
-                              text-[#24332F]
+                              text-[#00005C]
+                              sm:text-[16px]
                             "
                           >
                             ✓ Technical Data
@@ -1638,11 +1460,11 @@ export default function Footer({ tagline }) {
                             className="
                               mt-1
                               font-body
-                              text-[10px]
+                              text-[11px]
+                              leading-5
+                              text-[#475569]
                               sm:text-[13px]
-                              leading-[1.55]
                               sm:leading-6
-                              text-[#687773]
                             "
                           >
                             Information about the device, browser,
@@ -1654,54 +1476,36 @@ export default function Footer({ tagline }) {
                       </div>
                     </div>
                   </div>
-                </motion.div>
+                </div>
 
-                {/* =================================================
-                    IMPORTANT NOTICE
-                ================================================= */}
+                {/* Important Notice */}
 
-                <motion.div
-                  initial={{
-                    opacity: 0,
-                    y: 10,
-                  }}
-                  animate={{
-                    opacity: 1,
-                    y: 0,
-                  }}
-                  transition={{
-                    delay: 0.4,
-                  }}
+                <div
                   className="
-                    mt-4
-                    sm:mt-6
-                    rounded-xl
-                    sm:rounded-2xl
+                    mt-5
+                    rounded-2xl
                     border
-                    border-[#DDEBE6]
-                    bg-white/70
-                    p-3.5
+                    border-[#60A5FA]/25
+                    bg-[#DBEAFE]/60
+                    p-3
+                    sm:mt-6
                     sm:p-5
                   "
                 >
                   <div className="flex items-start gap-3">
                     <FileText
                       size={18}
-                      className="
-                        mt-0.5
-                        shrink-0
-                        text-[#0F5C4D]
-                      "
+                      className="mt-0.5 shrink-0 text-[#2563EB]"
                     />
 
                     <div>
                       <h4
                         className="
                           font-display
-                          text-[12px]
-                          sm:text-[15px]
+                          text-[14px]
                           font-semibold
-                          text-[#24332F]
+                          text-[#00005C]
+                          sm:text-[17px]
                         "
                       >
                         Privacy Information
@@ -1711,11 +1515,10 @@ export default function Footer({ tagline }) {
                         className="
                           mt-1
                           font-body
-                          text-[9.5px]
-                          sm:text-[12px]
-                          leading-[1.5]
-                          sm:leading-5
-                          text-[#687773]
+                          text-[10px]
+                          leading-5
+                          text-[#475569]
+                          sm:text-[13px]
                         "
                       >
                         The information displayed above reflects
@@ -1726,58 +1529,37 @@ export default function Footer({ tagline }) {
                       </p>
                     </div>
                   </div>
-                </motion.div>
+                </div>
 
-                {/* =================================================
-                    BOTTOM NOTE
-                ================================================= */}
+                {/* Bottom Note */}
 
-                <motion.div
-                  initial={{
-                    opacity: 0,
-                    y: 15,
-                  }}
-                  animate={{
-                    opacity: 1,
-                    y: 0,
-                  }}
-                  transition={{
-                    delay: 0.5,
-                  }}
+                <div
                   className="
                     mt-5
-                    sm:mt-7
-                    rounded-xl
-                    sm:rounded-2xl
-                    bg-[#0F5C4D]
-                    p-3.5
-                    sm:p-5
+                    rounded-2xl
+                    bg-gradient-to-br
+                    from-[#00002F]
+                    via-[#000080]
+                    to-[#1D4ED8]
+                    p-3
                     text-white
+                    sm:mt-6
+                    sm:p-5
                   "
                 >
-                  <div
-                    className="
-                      flex
-                      items-start
-                      gap-2.5
-                      sm:gap-3
-                    "
-                  >
+                  <div className="flex items-start gap-3">
                     <ShieldCheck
-                      size={17}
-                      className="
-                        mt-0.5
-                        shrink-0
-                      "
+                      size={18}
+                      className="mt-0.5 shrink-0"
                     />
 
-                    <div className="min-w-0">
+                    <div>
                       <h4
                         className="
                           font-display
-                          text-[12px]
-                          sm:text-[15px]
+                          text-[14px]
                           font-semibold
+                          sm:text-[17px]
                         "
                       >
                         Your privacy matters to CodeThrive.
@@ -1787,11 +1569,10 @@ export default function Footer({ tagline }) {
                         className="
                           mt-1
                           font-body
-                          text-[9.5px]
-                          sm:text-[12px]
-                          leading-[1.5]
-                          sm:leading-5
+                          text-[10px]
+                          leading-5
                           text-white/75
+                          sm:text-[13px]
                         "
                       >
                         We are committed to protecting your
@@ -1803,29 +1584,29 @@ export default function Footer({ tagline }) {
 
                   <div
                     className="
-                      mt-2.5
-                      sm:mt-4
+                      mt-3
                       border-t
-                      border-white/15
+                      border-white/20
                       pt-2.5
+                      sm:mt-4
                       sm:pt-3
                     "
                   >
                     <p
                       className="
                         font-body
-                        text-[7.5px]
-                        sm:text-[9px]
+                        text-[7px]
                         uppercase
-                        tracking-[0.1em]
-                        sm:tracking-[0.15em]
+                        tracking-[1.2px]
                         text-white/60
+                        sm:text-[9px]
+                        sm:tracking-[1.5px]
                       "
                     >
                       Last updated · September 2026
                     </p>
                   </div>
-                </motion.div>
+                </div>
               </div>
             </motion.div>
           </motion.div>

@@ -1038,542 +1038,556 @@ export default function Services() {
         ===================================================== */}
 
         <section
+  className="
+    relative
+    overflow-hidden
+    w-full
+    min-h-[520px]
+    sm:min-h-[620px]
+    md:min-h-[680px]
+    lg:min-h-[720px]
+    flex
+    items-center
+    px-4
+    sm:px-8
+    md:px-12
+    lg:px-16
+    xl:px-20
+    py-14
+    sm:py-20
+    lg:py-24
+    m-0
+    bg-gradient-to-br
+    from-[#07111F]
+    via-[#172554]
+    to-[#052E2B]
+  "
+>
+  {/* BACKGROUND VIDEO */}
+
+  <video
+    autoPlay
+    loop
+    muted
+    playsInline
+    preload="auto"
+    className="
+      absolute
+      inset-0
+      w-full
+      h-full
+      object-cover
+      pointer-events-none
+      select-none
+    "
+  >
+    <source
+      src="/videos/work.mp4"
+      type="video/mp4"
+    />
+  </video>
+
+  {/* DARK NEON OVERLAY */}
+
+  <div
+    className="
+      absolute
+      inset-0
+      bg-[#050816]/75
+      sm:bg-[#050816]/65
+      lg:bg-[#050816]/55
+      pointer-events-none
+    "
+  />
+
+  {/* MULTI-COLOR GRADIENT OVERLAY */}
+
+  <div
+    className="
+      absolute
+      inset-0
+      bg-gradient-to-r
+      from-[#020617]/95
+      via-[#312E81]/45
+      to-[#064E3B]/55
+      pointer-events-none
+    "
+  />
+
+  {/* TOP RIGHT PINK GLOW */}
+
+  <motion.div
+    className="
+      absolute
+      pointer-events-none
+      -top-24
+      -right-24
+      sm:-top-32
+      sm:-right-32
+      w-56
+      h-56
+      sm:w-80
+      sm:h-80
+      rounded-full
+      bg-fuchsia-500/25
+      blur-3xl
+    "
+    animate={{
+      scale: [1, 1.25, 1],
+      opacity: [0.25, 0.65, 0.25],
+      x: [0, -20, 0],
+      y: [0, 20, 0],
+    }}
+    transition={{
+      duration: 6,
+      repeat: Infinity,
+      ease: "easeInOut",
+    }}
+  />
+
+  {/* BOTTOM LEFT LIME GLOW */}
+
+  <motion.div
+    className="
+      absolute
+      pointer-events-none
+      -bottom-28
+      -left-28
+      sm:-bottom-40
+      sm:-left-40
+      w-64
+      h-64
+      sm:w-96
+      sm:h-96
+      rounded-full
+      bg-lime-400/20
+      blur-3xl
+    "
+    animate={{
+      scale: [1, 1.2, 1],
+      opacity: [0.2, 0.55, 0.2],
+      x: [0, 25, 0],
+      y: [0, -15, 0],
+    }}
+    transition={{
+      duration: 7,
+      repeat: Infinity,
+      ease: "easeInOut",
+    }}
+  />
+
+  {/* CENTER CYAN GLOW */}
+
+  <motion.div
+    className="
+      absolute
+      pointer-events-none
+      top-1/2
+      left-1/2
+      -translate-x-1/2
+      -translate-y-1/2
+      w-72
+      h-72
+      sm:w-[460px]
+      sm:h-[460px]
+      rounded-full
+      bg-cyan-400/10
+      blur-[110px]
+    "
+    animate={{
+      scale: [1, 1.15, 1],
+      opacity: [0.2, 0.5, 0.2],
+    }}
+    transition={{
+      duration: 8,
+      repeat: Infinity,
+      ease: "easeInOut",
+    }}
+  />
+
+  {/* FLOATING NEON ORBS */}
+
+  <motion.div
+    className="
+      absolute
+      top-[18%]
+      left-[8%]
+      w-2
+      h-2
+      sm:w-4
+      sm:h-4
+      rounded-full
+      bg-yellow-300
+      shadow-[0_0_22px_7px_rgba(253,224,71,0.65)]
+      pointer-events-none
+    "
+    animate={{
+      y: [0, -20, 0],
+      opacity: [0.35, 1, 0.35],
+      scale: [0.8, 1.3, 0.8],
+    }}
+    transition={{
+      duration: 3,
+      repeat: Infinity,
+      ease: "easeInOut",
+    }}
+  />
+
+  <motion.div
+    className="
+      absolute
+      bottom-[20%]
+      right-[10%]
+      w-2
+      h-2
+      sm:w-4
+      sm:h-4
+      rounded-full
+      bg-green-300
+      shadow-[0_0_22px_7px_rgba(134,239,172,0.65)]
+      pointer-events-none
+    "
+    animate={{
+      y: [0, 20, 0],
+      opacity: [0.35, 1, 0.35],
+      scale: [0.8, 1.3, 0.8],
+    }}
+    transition={{
+      duration: 3.5,
+      repeat: Infinity,
+      ease: "easeInOut",
+    }}
+  />
+
+  {/* HERO CONTENT */}
+
+  <div
+    className="
+      relative
+      z-10
+      w-full
+      max-w-[1440px]
+      mx-auto
+      grid
+      grid-cols-1
+      lg:grid-cols-12
+      gap-10
+      sm:gap-12
+      lg:gap-10
+      items-center
+    "
+  >
+    {/* LEFT */}
+
+    <motion.div
+      initial={{
+        opacity: 0,
+        y: 60,
+      }}
+      animate={{
+        opacity: 1,
+        y: 0,
+      }}
+      transition={{
+        duration: 0.9,
+        ease: [0.16, 1, 0.3, 1],
+      }}
+      className="
+        col-span-1
+        lg:col-span-8
+        flex
+        flex-col
+        gap-3
+        sm:gap-5
+        lg:gap-6
+        min-w-0
+      "
+    >
+      {/* LABEL */}
+
+      <motion.p
+        animate={{
+          opacity: [0.65, 1, 0.65],
+          textShadow: [
+            "0 0 0px rgba(253,224,71,0)",
+            "0 0 14px rgba(253,224,71,0.85)",
+            "0 0 0px rgba(253,224,71,0)",
+          ],
+        }}
+        transition={{
+          duration: 3,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+        className="
+          font-body
+          font-semibold
+          text-yellow-300
+          text-[9px]
+          sm:text-xs
+          tracking-[1.8px]
+          sm:tracking-[3px]
+          uppercase
+          mb-1
+          sm:mb-2
+        "
+      >
+        Our Expertise
+      </motion.p>
+
+      {/* HEADING */}
+
+      <h1
+        className="
+          font-display
+          text-[48px]
+          sm:text-[76px]
+          md:text-[100px]
+          lg:text-[140px]
+          leading-[0.86]
+          tracking-[-2.5px]
+          sm:tracking-[-4px]
+          lg:tracking-[-7px]
+        "
+      >
+        <motion.span
+          initial={{
+            opacity: 0,
+            x: -40,
+          }}
+          animate={{
+            opacity: 1,
+            x: 0,
+          }}
+          transition={{
+            duration: 0.9,
+            ease: [0.16, 1, 0.3, 1],
+          }}
           className="
-            relative
-            overflow-hidden
-
-            w-full
-
-            min-h-[520px]
-            sm:min-h-[620px]
-            md:min-h-[680px]
-            lg:min-h-[720px]
-
-            flex
-            items-center
-
-            px-4
-            sm:px-8
-            md:px-12
-            lg:px-16
-            xl:px-20
-
-            py-14
-            sm:py-20
-            lg:py-24
-
-            m-0
+            block
+            font-bold
+            text-white
+            drop-shadow-[0_5px_25px_rgba(0,0,0,0.35)]
           "
         >
-
-          {/* BACKGROUND VIDEO */}
-
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            preload="auto"
-            className="
-              absolute
-              inset-0
-
-              w-full
-              h-full
-
-              object-cover
-
-              pointer-events-none
-              select-none
-            "
-          >
-            <source
-              src="/videos/work.mp4"
-              type="video/mp4"
-            />
-          </video>
-
-          {/* DARK OVERLAY */}
-
-          <div
-            className="
-              absolute
-              inset-0
-
-              bg-[#061A16]/65
-
-              sm:bg-[#061A16]/60
-
-              lg:bg-[#061A16]/55
-
-              pointer-events-none
-            "
-          />
-
-          {/* EXTRA GRADIENT */}
-
-          <div
-            className="
-              absolute
-              inset-0
-
-              bg-gradient-to-r
-
-              from-[#061A16]/80
-              via-[#061A16]/45
-              to-[#061A16]/30
-
-              pointer-events-none
-            "
-          />
-
-          {/* TOP RIGHT GLOW */}
-
-          <motion.div
-            className="
-              absolute
-              pointer-events-none
-
-              -top-24
-              -right-24
-
-              sm:-top-32
-              sm:-right-32
-
-              w-56
-              h-56
-
-              sm:w-80
-              sm:h-80
-
-              rounded-full
-
-              bg-emerald-400/20
-
-              blur-3xl
-            "
-            animate={{
-              scale: [1, 1.25, 1],
-              opacity: [0.25, 0.55, 0.25],
-              x: [0, -20, 0],
-              y: [0, 20, 0],
-            }}
-            transition={{
-              duration: 6,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-
-          {/* BOTTOM LEFT GLOW */}
-
-          <motion.div
-            className="
-              absolute
-              pointer-events-none
-
-              -bottom-28
-              -left-28
-
-              sm:-bottom-40
-              sm:-left-40
-
-              w-64
-              h-64
-
-              sm:w-96
-              sm:h-96
-
-              rounded-full
-
-              bg-emerald-500/15
-
-              blur-3xl
-            "
-            animate={{
-              scale: [1, 1.2, 1],
-              opacity: [0.15, 0.4, 0.15],
-              x: [0, 25, 0],
-            }}
-            transition={{
-              duration: 7,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-
-          {/* HERO CONTENT */}
-
-          <div
-            className="
-              relative
-              z-10
-
-              w-full
-              max-w-[1440px]
-
-              mx-auto
-
-              grid
-
-              grid-cols-1
-              lg:grid-cols-12
-
-              gap-10
-              sm:gap-12
-              lg:gap-10
-
-              items-center
-            "
-          >
-
-            {/* LEFT */}
-
-            <motion.div
-              initial={{
-                opacity: 0,
-                y: 60,
-              }}
-              animate={{
-                opacity: 1,
-                y: 0,
-              }}
-              transition={{
-                duration: 0.9,
-                ease: [0.16, 1, 0.3, 1],
-              }}
-              className="
-                col-span-1
-                lg:col-span-8
-
-                flex
-                flex-col
-
-                gap-3
-                sm:gap-5
-                lg:gap-6
-
-                min-w-0
-              "
-            >
-
-              {/* LABEL */}
-
-              <motion.p
-                animate={{
-                  opacity: [0.65, 1, 0.65],
-                  textShadow: [
-                    "0 0 0px rgba(52,211,153,0)",
-                    "0 0 12px rgba(52,211,153,0.6)",
-                    "0 0 0px rgba(52,211,153,0)",
-                  ],
-                }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                className="
-                  font-body
-                  font-semibold
-
-                  text-emerald-300
-
-                  text-[9px]
-                  sm:text-xs
-
-                  tracking-[1.8px]
-                  sm:tracking-[3px]
-
-                  uppercase
-
-                  mb-1
-                  sm:mb-2
-                "
-              >
-                Our Expertise
-              </motion.p>
-
-              {/* HEADING */}
-
-              <h1
-                className="
-                  font-display
-
-                  text-[48px]
-                  sm:text-[76px]
-                  md:text-[100px]
-                  lg:text-[140px]
-
-                  leading-[0.86]
-
-                  tracking-[-2.5px]
-                  sm:tracking-[-4px]
-                  lg:tracking-[-7px]
-                "
-              >
-                <motion.span
-                  initial={{
-                    opacity: 0,
-                    x: -40,
-                  }}
-                  animate={{
-                    opacity: 1,
-                    x: 0,
-                  }}
-                  transition={{
-                    duration: 0.9,
-                    ease: [0.16, 1, 0.3, 1],
-                  }}
-                  className="
-                    block
-
-                    font-bold
-
-                    text-white
-
-                    drop-shadow-[0_5px_25px_rgba(0,0,0,0.35)]
-                  "
-                >
-                  Digital
-                </motion.span>
-
-                <motion.span
-                  initial={{
-                    opacity: 0,
-                    x: -40,
-                  }}
-                  animate={{
-                    opacity: 1,
-                    x: 0,
-                  }}
-                  transition={{
-                    duration: 0.9,
-                    delay: 0.18,
-                    ease: [0.16, 1, 0.3, 1],
-                  }}
-                  className="
-                    block
-
-                    font-light
-
-                    text-emerald-300
-
-                    transition-all
-                    duration-500
-
-                    hover:text-white
-
-                    drop-shadow-[0_5px_25px_rgba(16,185,129,0.35)]
-                  "
-                >
-                  Craft.
-                </motion.span>
-              </h1>
-
-              {/* ACCENT */}
-
-              <motion.div
-                animate={{
-                  width: [40, 85, 40],
-                  opacity: [0.4, 1, 0.4],
-                }}
-                transition={{
-                  duration: 2.5,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                className="
-                  h-[2px]
-
-                  bg-emerald-300
-
-                  rounded-full
-
-                  shadow-[0_0_16px_rgba(52,211,153,0.8)]
-
-                  mt-1
-                "
-              />
-            </motion.div>
-
-            {/* RIGHT */}
-
-            <motion.div
-              initial={{
-                opacity: 0,
-                y: 35,
-              }}
-              animate={{
-                opacity: 1,
-                y: 0,
-              }}
-              transition={{
-                duration: 0.8,
-                delay: 0.35,
-                ease: [0.16, 1, 0.3, 1],
-              }}
-              className="
-                col-span-1
-                lg:col-span-4
-
-                flex
-                items-center
-
-                min-w-0
-              "
-            >
-              <div
-                className="
-                  relative
-
-                  w-full
-                  max-w-[520px]
-
-                  p-4
-                  sm:p-5
-                  lg:p-0
-                "
-              >
-
-                {/* MOBILE GLASS */}
-
-                <div
-                  className="
-                    absolute
-                    inset-0
-
-                    rounded-2xl
-
-                    bg-black/10
-
-                    border
-                    border-white/10
-
-                    backdrop-blur-[2px]
-
-                    lg:hidden
-                  "
-                />
-
-                {/* DESCRIPTION */}
-
-                <p
-                  className="
-                    relative
-
-                    font-body
-
-                    text-white/85
-
-                    text-[12px]
-                    sm:text-sm
-                    md:text-lg
-                    lg:text-xl
-
-                    leading-[1.65]
-                    sm:leading-[1.7]
-
-                    max-w-[500px]
-                  "
-                >
-                  We don&rsquo;t just build software. We engineer premium
-                  digital experiences that elevate brands and drive
-                  enterprise transformation. Our approach combines
-                  meticulous design with robust, scalable architecture.
-                </p>
-
-                {/* DESCRIPTION ACCENT */}
-
-                <motion.div
-                  animate={{
-                    width: [30, 65, 30],
-                    opacity: [0.35, 1, 0.35],
-                  }}
-                  transition={{
-                    duration: 2.8,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
-                  className="
-                    mt-4
-                    sm:mt-5
-
-                    h-[2px]
-
-                    bg-emerald-300
-
-                    rounded-full
-
-                    shadow-[0_0_14px_rgba(52,211,153,0.8)]
-                  "
-                />
-              </div>
-            </motion.div>
-          </div>
-
-          {/* BOTTOM LIGHT */}
-
-          <motion.div
-            className="
-              absolute
-
-              bottom-0
-              left-0
-
-              h-[1px]
-
-              bg-emerald-300
-
-              shadow-[0_0_18px_rgba(52,211,153,0.8)]
-
-              pointer-events-none
-            "
-            animate={{
-              width: ["0%", "100%", "0%"],
-              opacity: [0, 1, 0],
-            }}
-            transition={{
-              duration: 5,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-
-          {/* CORNER LIGHT */}
-
-          <motion.div
-            className="
-              absolute
-
-              bottom-5
-              right-5
-
-              sm:bottom-8
-              sm:right-8
-
-              w-2
-              h-2
-
-              rounded-full
-
-              bg-emerald-300
-
-              shadow-[0_0_15px_rgba(52,211,153,0.9)]
-
-              pointer-events-none
-            "
-            animate={{
-              opacity: [0.3, 1, 0.3],
-              scale: [0.8, 1.3, 0.8],
-            }}
-            transition={{
-              duration: 2,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-        </section>
+          Digital
+        </motion.span>
+
+        <motion.span
+          initial={{
+            opacity: 0,
+            x: -40,
+          }}
+          animate={{
+            opacity: 1,
+            x: 0,
+          }}
+          transition={{
+            duration: 0.9,
+            delay: 0.18,
+            ease: [0.16, 1, 0.3, 1],
+          }}
+          className="
+            block
+            font-light
+            bg-gradient-to-r
+            from-yellow-300
+            via-lime-300
+            to-cyan-300
+            bg-clip-text
+            text-transparent
+            transition-all
+            duration-500
+            hover:from-fuchsia-400
+            hover:via-yellow-300
+            hover:to-cyan-300
+            drop-shadow-[0_5px_25px_rgba(163,230,53,0.4)]
+          "
+        >
+          Craft.
+        </motion.span>
+      </h1>
+
+      {/* ACCENT */}
+
+      <motion.div
+        animate={{
+          width: [40, 100, 40],
+          opacity: [0.4, 1, 0.4],
+        }}
+        transition={{
+          duration: 2.5,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+        className="
+          h-[3px]
+          bg-gradient-to-r
+          from-yellow-300
+          via-lime-300
+          to-cyan-300
+          rounded-full
+          shadow-[0_0_18px_rgba(190,242,100,0.9)]
+          mt-1
+        "
+      />
+    </motion.div>
+
+    {/* RIGHT */}
+
+    <motion.div
+      initial={{
+        opacity: 0,
+        y: 35,
+      }}
+      animate={{
+        opacity: 1,
+        y: 0,
+      }}
+      transition={{
+        duration: 0.8,
+        delay: 0.35,
+        ease: [0.16, 1, 0.3, 1],
+      }}
+      className="
+        col-span-1
+        lg:col-span-4
+        flex
+        items-center
+        min-w-0
+      "
+    >
+      <div
+        className="
+          relative
+          w-full
+          max-w-[520px]
+          p-4
+          sm:p-5
+          lg:p-0
+        "
+      >
+        {/* MOBILE GLASS */}
+
+        <div
+          className="
+            absolute
+            inset-0
+            rounded-2xl
+            bg-gradient-to-br
+            from-fuchsia-500/10
+            via-cyan-400/10
+            to-lime-300/10
+            border
+            border-yellow-300/20
+            backdrop-blur-[3px]
+            lg:hidden
+          "
+        />
+
+        {/* DESCRIPTION */}
+
+        <p
+          className="
+            relative
+            font-body
+            text-white/85
+            text-[12px]
+            sm:text-sm
+            md:text-lg
+            lg:text-xl
+            leading-[1.65]
+            sm:leading-[1.7]
+            max-w-[500px]
+          "
+        >
+          We don&rsquo;t just build software. We engineer premium digital
+          experiences that elevate brands and drive enterprise transformation.
+          Our approach combines meticulous design with robust, scalable
+          architecture.
+        </p>
+
+        {/* DESCRIPTION ACCENT */}
+
+        <motion.div
+          animate={{
+            width: [30, 75, 30],
+            opacity: [0.35, 1, 0.35],
+          }}
+          transition={{
+            duration: 2.8,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="
+            mt-4
+            sm:mt-5
+            h-[3px]
+            bg-gradient-to-r
+            from-fuchsia-400
+            via-yellow-300
+            to-lime-300
+            rounded-full
+            shadow-[0_0_16px_rgba(250,204,21,0.9)]
+          "
+        />
+      </div>
+    </motion.div>
+  </div>
+
+  {/* BOTTOM LIGHT */}
+
+  <motion.div
+    className="
+      absolute
+      bottom-0
+      left-0
+      h-[2px]
+      bg-gradient-to-r
+      from-fuchsia-400
+      via-yellow-300
+      to-cyan-300
+      shadow-[0_0_20px_rgba(253,224,71,0.9)]
+      pointer-events-none
+    "
+    animate={{
+      width: ["0%", "100%", "0%"],
+      opacity: [0, 1, 0],
+    }}
+    transition={{
+      duration: 5,
+      repeat: Infinity,
+      ease: "easeInOut",
+    }}
+  />
+
+  {/* CORNER LIGHT */}
+
+  <motion.div
+    className="
+      absolute
+      bottom-5
+      right-5
+      sm:bottom-8
+      sm:right-8
+      w-2
+      h-2
+      rounded-full
+      bg-yellow-300
+      shadow-[0_0_18px_rgba(253,224,71,1)]
+      pointer-events-none
+    "
+    animate={{
+      opacity: [0.3, 1, 0.3],
+      scale: [0.8, 1.3, 0.8],
+    }}
+    transition={{
+      duration: 2,
+      repeat: Infinity,
+      ease: "easeInOut",
+    }}
+  />
+</section>
 
         {/* =====================================================
             SERVICES
@@ -1581,804 +1595,1036 @@ export default function Services() {
         ===================================================== */}
 
         <section
+  className="
+    relative
+    w-full
+    m-0
+    p-0
+    overflow-hidden
+    rounded-none
+    bg-[#050816]
+  "
+>
+  <div className="w-full m-0 p-0">
+    {SERVICES.map((service, index) => {
+      const serviceStyles = [
+        {
+          border: "rgba(232,121,249,0.9)",
+          glow: "rgba(217,70,239,0.35)",
+          accent: "#F0ABFC",
+          accentShadow: "rgba(232,121,249,0.95)",
+        },
+        {
+          border: "rgba(103,232,249,0.9)",
+          glow: "rgba(34,211,238,0.35)",
+          accent: "#A5F3FC",
+          accentShadow: "rgba(103,232,249,0.95)",
+        },
+        {
+          border: "rgba(253,224,71,0.95)",
+          glow: "rgba(250,204,21,0.35)",
+          accent: "#FEF08A",
+          accentShadow: "rgba(253,224,71,0.95)",
+        },
+        {
+          border: "rgba(190,242,100,0.95)",
+          glow: "rgba(163,230,53,0.35)",
+          accent: "#D9F99D",
+          accentShadow: "rgba(190,242,100,0.95)",
+        },
+      ];
+
+      const color = serviceStyles[index % serviceStyles.length];
+
+      return (
+        <div
+          key={service.number}
           className="
             relative
-
             w-full
-
-            m-0
-            p-0
-
-            bg-[#e8f5ef]
-
+            min-w-0
             overflow-hidden
-
             rounded-none
+            p-[2px]
           "
         >
+          {/* ROTATING NEON BORDER */}
           <div
             className="
-              w-full
-              m-0
-              p-0
+              absolute
+              inset-0
+              rounded-none
+              animate-[serviceBorderRotate_4s_linear_infinite]
             "
+            style={{
+              background: `conic-gradient(
+                from 0deg,
+                transparent 0deg,
+                transparent 25deg,
+                ${color.border} 65deg,
+                ${color.accent} 90deg,
+                ${color.glow} 125deg,
+                transparent 165deg,
+                transparent 360deg
+              )`,
+            }}
+          />
+
+          {/* OUTER GLOW */}
+          <div
+            className="
+              absolute
+              -inset-3
+              blur-2xl
+              opacity-70
+              pointer-events-none
+              animate-[serviceOuterGlow_3.5s_ease-in-out_infinite]
+            "
+            style={{
+              background: color.glow,
+            }}
+          />
+
+          {/* INNER BORDER */}
+          <div
+            className="absolute inset-[1px] rounded-none pointer-events-none"
+            style={{
+              border: `1px solid ${color.border}`,
+              boxShadow: `inset 0 0 30px ${color.glow}`,
+            }}
+          />
+
+          {/* MOVING TOP LIGHT */}
+          <div
+            className="
+              absolute
+              -top-[2px]
+              left-[-20%]
+              w-[20%]
+              h-[3px]
+              rounded-full
+              pointer-events-none
+              animate-[serviceTopLight_4s_linear_infinite]
+            "
+            style={{
+              background: color.accent,
+              boxShadow: `0 0 16px 3px ${color.accentShadow}`,
+            }}
+          />
+
+          {/* MOVING SIDE LIGHT */}
+          <div
+            className="
+              absolute
+              top-[-20%]
+              right-[-2px]
+              w-[3px]
+              h-[20%]
+              rounded-full
+              pointer-events-none
+              animate-[serviceSideLight_4s_linear_infinite]
+            "
+            style={{
+              background: color.accent,
+              boxShadow: `0 0 16px 3px ${color.accentShadow}`,
+            }}
+          />
+
+          {/* SERVICE CONTENT */}
+          <div
+            className="service-visible-content relative z-10 w-full overflow-hidden rounded-none bg-[#080D20]"
+            style={{
+              boxShadow: `inset 0 0 45px ${color.glow}`,
+            }}
           >
-            {SERVICES.map((service, index) => (
-              <div
-                key={service.number}
-                className="
-                  relative
-
-                  w-full
-                  min-w-0
-
-                  overflow-hidden
-
-                  rounded-none
-
-                  p-[1.5px]
-                "
-              >
-
-                {/* ROTATING ANIMATED BORDER */}
-
-                <div
-                  className="
-                    absolute
-                    inset-0
-
-                    rounded-none
-
-                    bg-[conic-gradient(
-                      from_0deg,
-                      transparent_0deg,
-                      transparent_30deg,
-                      rgba(16,185,129,0.04)_60deg,
-                      rgba(16,185,129,0.20)_90deg,
-                      rgba(52,211,153,0.10)_120deg,
-                      transparent_160deg,
-                      transparent_360deg
-                    )]
-
-                    animate-[serviceBorderRotate_4s_linear_infinite]
-                  "
-                />
-
-                {/* SECOND BORDER GLOW */}
-
-                <div
-                  className="
-                    absolute
-                    inset-[1px]
-
-                    rounded-none
-
-                    border
-                    border-emerald-500/10
-
-                    pointer-events-none
-                  "
-                />
-
-                {/* OUTER GLOW */}
-
-                <div
-                  className="
-                    absolute
-
-                    -inset-3
-
-                    bg-emerald-500/10
-
-                    blur-2xl
-
-                    opacity-50
-
-                    pointer-events-none
-
-                    animate-[serviceOuterGlow_3.5s_ease-in-out_infinite]
-                  "
-                />
-
-                {/* MOVING TOP LIGHT */}
-
-                <div
-                  className="
-                    absolute
-
-                    -top-[2px]
-                    left-[-20%]
-
-                    w-[20%]
-                    h-[3px]
-
-                    rounded-full
-
-                    bg-emerald-300
-
-                    shadow-[0_0_12px_rgba(52,211,153,0.9)]
-
-                    pointer-events-none
-
-                    animate-[serviceTopLight_4s_linear_infinite]
-                  "
-                />
-
-                {/* MOVING SIDE LIGHT */}
-
-                <div
-                  className="
-                    absolute
-
-                    top-[-20%]
-                    right-[-2px]
-
-                    w-[3px]
-                    h-[20%]
-
-                    rounded-full
-
-                    bg-emerald-300
-
-                    shadow-[0_0_12px_rgba(52,211,153,0.9)]
-
-                    pointer-events-none
-
-                    animate-[serviceSideLight_4s_linear_infinite]
-                  "
-                />
-
-                {/* SERVICE CONTENT */}
-
-                <div
-                  className="
-                    relative
-                    z-10
-
-                    w-full
-
-                    overflow-hidden
-
-                    rounded-none
-                  "
-                >
-                  <ServiceRow
-                    service={service}
-                    index={index}
-                  />
-                </div>
-              </div>
-            ))}
+            <ServiceRow
+              service={service}
+              index={index}
+            />
           </div>
+        </div>
+      );
+    })}
+  </div>
 
-          {/* SERVICE ANIMATIONS */}
+  <style>{`
+    @keyframes serviceBorderRotate {
+      0% {
+        transform: rotate(0deg);
+      }
 
-          <style>{`
-            @keyframes serviceBorderRotate {
-              0% {
-                transform: rotate(0deg);
-              }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
 
-              100% {
-                transform: rotate(360deg);
-              }
-            }
+    @keyframes serviceOuterGlow {
+      0%,
+      100% {
+        opacity: 0.25;
+        transform: scale(0.995);
+      }
 
-            @keyframes serviceOuterGlow {
-              0%,
-              100% {
-                opacity: 0.25;
-                transform: scale(0.995);
-              }
+      50% {
+        opacity: 0.75;
+        transform: scale(1.01);
+      }
+    }
 
-              50% {
-                opacity: 0.65;
-                transform: scale(1.01);
-              }
-            }
+    @keyframes serviceTopLight {
+      0% {
+        left: -20%;
+        opacity: 0;
+      }
 
-            @keyframes serviceTopLight {
-              0% {
-                left: -20%;
-                opacity: 0;
-              }
+      10% {
+        opacity: 1;
+      }
 
-              10% {
-                opacity: 1;
-              }
+      45% {
+        left: 100%;
+        opacity: 1;
+      }
 
-              45% {
-                left: 100%;
-                opacity: 1;
-              }
+      50% {
+        opacity: 0;
+      }
 
-              50% {
-                opacity: 0;
-              }
+      100% {
+        left: 120%;
+        opacity: 0;
+      }
+    }
 
-              100% {
-                left: 120%;
-                opacity: 0;
-              }
-            }
+    @keyframes serviceSideLight {
+      0% {
+        top: -20%;
+        opacity: 0;
+      }
 
-            @keyframes serviceSideLight {
-              0% {
-                top: -20%;
-                opacity: 0;
-              }
+      10% {
+        opacity: 1;
+      }
 
-              10% {
-                opacity: 1;
-              }
+      45% {
+        top: 100%;
+        opacity: 1;
+      }
 
-              45% {
-                top: 100%;
-                opacity: 1;
-              }
+      50% {
+        opacity: 0;
+      }
 
-              50% {
-                opacity: 0;
-              }
+      100% {
+        top: 120%;
+        opacity: 0;
+      }
+    }
 
-              100% {
-                top: 120%;
-                opacity: 0;
-              }
-            }
-          `}</style>
-        </section>
+    /*
+      FORCE ALL SERVICE TEXT TO BE CLEAR
+    */
+    .service-visible-content,
+    .service-visible-content *,
+    .service-visible-content h1,
+    .service-visible-content h2,
+    .service-visible-content h3,
+    .service-visible-content h4,
+    .service-visible-content h5,
+    .service-visible-content h6,
+    .service-visible-content p,
+    .service-visible-content span,
+    .service-visible-content div,
+    .service-visible-content a,
+    .service-visible-content li,
+    .service-visible-content strong,
+    .service-visible-content small,
+    .service-visible-content label {
+      color: #FFFFFF !important;
+      opacity: 1 !important;
+      -webkit-text-fill-color: #FFFFFF !important;
+      text-shadow: 0 1px 8px rgba(0, 0, 0, 0.95) !important;
+    }
 
+    /*
+      MAKE HEADINGS EXTRA BRIGHT
+    */
+    .service-visible-content h1,
+    .service-visible-content h2,
+    .service-visible-content h3,
+    .service-visible-content h4,
+    .service-visible-content h5,
+    .service-visible-content h6 {
+      color: #FFFFFF !important;
+      -webkit-text-fill-color: #FFFFFF !important;
+      font-weight: 800 !important;
+      text-shadow:
+        0 0 5px rgba(255, 255, 255, 0.45),
+        0 2px 10px rgba(0, 0, 0, 0.95) !important;
+    }
+
+    /*
+      MAKE DESCRIPTION TEXT READABLE
+    */
+    .service-visible-content p,
+    .service-visible-content li,
+    .service-visible-content span {
+      color: #F8FAFC !important;
+      -webkit-text-fill-color: #F8FAFC !important;
+      font-weight: 500 !important;
+      line-height: 1.65 !important;
+    }
+
+    /*
+      KEEP ICONS VISIBLE
+    */
+    .service-visible-content svg {
+      color: #FFFFFF !important;
+      fill: currentColor !important;
+      stroke: currentColor !important;
+      opacity: 1 !important;
+      -webkit-text-fill-color: initial !important;
+      text-shadow: none !important;
+    }
+
+    /*
+      PREVENT DARK TEXT CLASSES FROM OVERRIDING VISIBILITY
+    */
+    .service-visible-content [class*="text-black"],
+    .service-visible-content [class*="text-gray"],
+    .service-visible-content [class*="text-slate"],
+    .service-visible-content [class*="text-zinc"],
+    .service-visible-content [class*="text-neutral"],
+    .service-visible-content [class*="text-muted"] {
+      color: #FFFFFF !important;
+      -webkit-text-fill-color: #FFFFFF !important;
+    }
+  `}</style>
+</section>
         {/* =====================================================
             TECHNOLOGY STACK
         ===================================================== */}
 
-        <section
+      <section
+  className="
+    w-full
+    max-w-[1440px]
+
+    px-3
+    sm:px-6
+    md:px-20
+
+    mt-14
+    sm:mt-20
+  "
+>
+  <motion.div
+    initial={{
+      opacity: 0,
+      y: 60,
+    }}
+    whileInView={{
+      opacity: 1,
+      y: 0,
+    }}
+    viewport={{
+      once: true,
+      amount: 0.15,
+    }}
+    transition={{
+      duration: 0.9,
+      ease: [0.16, 1, 0.3, 1],
+    }}
+    className="
+      relative
+      overflow-hidden
+
+      rounded-2xl
+      sm:rounded-3xl
+
+      bg-gradient-to-br
+      from-[#050816]
+      via-[#111B3D]
+      to-[#190B35]
+
+      border
+      border-cyan-400/30
+
+      shadow-[0_0_80px_rgba(34,211,238,0.12),inset_0_0_80px_rgba(139,92,246,0.08)]
+
+      px-3
+      sm:px-6
+      md:px-20
+
+      py-8
+      sm:py-12
+      md:py-24
+
+      flex
+      flex-col
+
+      gap-7
+      sm:gap-10
+      md:gap-12
+
+      items-center
+    "
+  >
+    {/* TOP PURPLE NEON GLOW */}
+    <div
+      className="
+        pointer-events-none
+        absolute
+        -top-14
+        -right-14
+
+        w-36
+        h-36
+
+        sm:-top-24
+        sm:-right-24
+        sm:w-64
+        sm:h-64
+
+        rounded-full
+        bg-fuchsia-500/20
+
+        blur-[55px]
+        sm:blur-[90px]
+
+        animate-pulse
+      "
+    />
+
+    {/* BOTTOM CYAN NEON GLOW */}
+    <div
+      className="
+        pointer-events-none
+        absolute
+        -bottom-16
+        -left-14
+
+        w-40
+        h-40
+
+        sm:-bottom-32
+        sm:-left-24
+        sm:w-72
+        sm:h-72
+
+        rounded-full
+        bg-cyan-400/20
+
+        blur-[65px]
+        sm:blur-[100px]
+
+        animate-pulse
+      "
+    />
+
+    {/* CENTER BLUE GLOW */}
+    <div
+      className="
+        pointer-events-none
+        absolute
+        top-1/2
+        left-1/2
+        -translate-x-1/2
+        -translate-y-1/2
+
+        w-48
+        h-48
+
+        sm:w-80
+        sm:h-80
+
+        rounded-full
+        bg-violet-600/10
+
+        blur-[80px]
+        sm:blur-[120px]
+      "
+    />
+
+    {/* TOP NEON LINE */}
+    <div
+      className="
+        pointer-events-none
+        absolute
+        top-0
+        left-1/2
+        -translate-x-1/2
+
+        w-2/3
+        h-px
+
+        bg-gradient-to-r
+        from-transparent
+        via-cyan-300
+        to-transparent
+
+        opacity-80
+      "
+    />
+
+    {/* BOTTOM NEON LINE */}
+    <div
+      className="
+        pointer-events-none
+        absolute
+        bottom-0
+        left-1/2
+        -translate-x-1/2
+
+        w-2/3
+        h-px
+
+        bg-gradient-to-r
+        from-transparent
+        via-fuchsia-400
+        to-transparent
+
+        opacity-80
+      "
+    />
+
+    {/* HEADING */}
+    <motion.div
+      initial={{
+        opacity: 0,
+        y: 30,
+      }}
+      whileInView={{
+        opacity: 1,
+        y: 0,
+      }}
+      viewport={{
+        once: true,
+      }}
+      transition={{
+        duration: 0.7,
+      }}
+      className="
+        relative
+        z-10
+
+        flex
+        flex-col
+        items-center
+        text-center
+
+        gap-2
+        sm:gap-4
+      "
+    >
+      <p
+        className="
+          font-body
+          font-bold
+          uppercase
+
+          text-[9px]
+          sm:text-xs
+
+          tracking-[1.5px]
+          sm:tracking-[2px]
+
+          !text-cyan-200
+
+          drop-shadow-[0_0_8px_rgba(103,232,249,0.95)]
+        "
+      >
+        The Foundation
+      </p>
+
+      <h2
+        className="
+          font-display
+          font-bold
+          leading-none
+
+          !text-white
+
+          text-[27px]
+          sm:text-4xl
+          md:text-6xl
+          lg:text-[80px]
+
+          tracking-[-1.5px]
+          sm:tracking-[-2px]
+          lg:tracking-[-4px]
+
+          drop-shadow-[0_0_6px_rgba(255,255,255,1)]
+          drop-shadow-[0_0_20px_rgba(34,211,238,0.9)]
+        "
+      >
+        Technology Stack
+      </h2>
+
+      <motion.div
+        initial={{
+          width: 0,
+        }}
+        whileInView={{
+          width: 50,
+        }}
+        viewport={{
+          once: true,
+        }}
+        transition={{
+          duration: 0.7,
+          delay: 0.2,
+        }}
+        className="
+          h-[2px]
+          w-[50px]
+          sm:w-[70px]
+
+          rounded-full
+
+          bg-cyan-300
+
+          shadow-[0_0_8px_rgba(255,255,255,1),0_0_18px_rgba(34,211,238,1)]
+        "
+      />
+    </motion.div>
+
+    {/* TECHNOLOGY GRID */}
+    <div
+      className="
+        relative
+        z-10
+
+        grid
+
+        grid-cols-6
+        sm:grid-cols-4
+        md:grid-cols-6
+        lg:grid-cols-7
+
+        gap-x-1
+        sm:gap-x-5
+        md:gap-x-8
+
+        gap-y-5
+        sm:gap-y-8
+        md:gap-y-12
+
+        w-full
+        max-w-[1000px]
+
+        items-center
+        justify-items-center
+
+        [&_p]:!text-white
+        [&_span]:!text-white
+        [&_h1]:!text-white
+        [&_h2]:!text-white
+        [&_h3]:!text-white
+        [&_h4]:!text-white
+        [&_h5]:!text-white
+        [&_h6]:!text-white
+        [&_label]:!text-white
+        [&_small]:!text-white
+        [&_a]:!text-white
+      "
+    >
+      {STACK.map((tech, index) => (
+        <div
+          key={tech.name}
           className="
             w-full
-            max-w-[1440px]
 
-            px-3
-            sm:px-6
-            md:px-20
+            flex
+            justify-center
 
-            mt-14
-            sm:mt-20
+            scale-[0.68]
+            sm:scale-90
+            md:scale-100
+
+            origin-center
+
+            [&_p]:!text-white
+            [&_span]:!text-white
+            [&_h1]:!text-white
+            [&_h2]:!text-white
+            [&_h3]:!text-white
+            [&_h4]:!text-white
+            [&_h5]:!text-white
+            [&_h6]:!text-white
+            [&_label]:!text-white
+            [&_small]:!text-white
+            [&_a]:!text-white
           "
         >
-          <motion.div
-            initial={{
-              opacity: 0,
-              y: 60,
-            }}
-            whileInView={{
-              opacity: 1,
-              y: 0,
-            }}
-            viewport={{
-              once: true,
-              amount: 0.15,
-            }}
-            transition={{
-              duration: 0.9,
-              ease: [0.16, 1, 0.3, 1],
-            }}
-            className="
-              relative
-              overflow-hidden
-
-              rounded-2xl
-              sm:rounded-3xl
-
-              bg-gradient-to-b
-              from-emerald-100
-              to-white
-
-              shadow-[0px_40px_80px_0px_rgba(19,20,15,0.02)]
-
-              px-3
-              sm:px-6
-              md:px-20
-
-              py-8
-              sm:py-12
-              md:py-24
-
-              flex
-              flex-col
-
-              gap-7
-              sm:gap-10
-              md:gap-12
-
-              items-center
-            "
-          >
-
-            {/* TOP GLOW */}
-
-            <div
-              className="
-                pointer-events-none
-                absolute
-
-                -top-14
-                -right-14
-
-                w-36
-                h-36
-
-                sm:-top-24
-                sm:-right-24
-
-                sm:w-64
-                sm:h-64
-
-                rounded-full
-
-                bg-emerald-800/10
-
-                blur-[55px]
-                sm:blur-[90px]
-
-                animate-pulse
-              "
-            />
-
-            {/* BOTTOM GLOW */}
-
-            <div
-              className="
-                pointer-events-none
-                absolute
-
-                -bottom-16
-                -left-14
-
-                w-40
-                h-40
-
-                sm:-bottom-32
-                sm:-left-24
-
-                sm:w-72
-                sm:h-72
-
-                rounded-full
-
-                bg-emerald-700/10
-
-                blur-[65px]
-                sm:blur-[100px]
-
-                animate-pulse
-              "
-            />
-
-            {/* HEADING */}
-
-            <motion.div
-              initial={{
-                opacity: 0,
-                y: 30,
-              }}
-              whileInView={{
-                opacity: 1,
-                y: 0,
-              }}
-              viewport={{
-                once: true,
-              }}
-              transition={{
-                duration: 0.7,
-              }}
-              className="
-                relative
-
-                flex
-                flex-col
-
-                gap-2
-                sm:gap-4
-
-                items-center
-
-                text-center
-              "
-            >
-              <p
-                className="
-                  font-body
-                  text-emerald-800
-
-                  text-[8px]
-                  sm:text-xs
-
-                  tracking-[1px]
-                  sm:tracking-[1.2px]
-
-                  uppercase
-                "
-              >
-                The Foundation
-              </p>
-
-              <h2
-                className="
-                  font-display
-                  font-bold
-                  text-ink
-
-                  text-[27px]
-                  sm:text-4xl
-                  md:text-6xl
-                  lg:text-[80px]
-
-                  leading-none
-
-                  tracking-[-1.5px]
-                  sm:tracking-[-2px]
-                  lg:tracking-[-4px]
-                "
-              >
-                Technology Stack
-              </h2>
-
-              <motion.div
-                initial={{
-                  width: 0,
-                }}
-                whileInView={{
-                  width: 50,
-                }}
-                viewport={{
-                  once: true,
-                }}
-                transition={{
-                  duration: 0.7,
-                  delay: 0.2,
-                }}
-                className="
-                  h-[2px]
-
-                  rounded-full
-
-                  bg-emerald-800
-
-                  sm:w-[70px]
-                "
-              />
-            </motion.div>
-
-            {/* TECHNOLOGY GRID */}
-
-            <div
-              className="
-                relative
-                z-10
-
-                grid
-
-                grid-cols-6
-
-                lg:grid-cols-7
-
-                gap-x-0
-                sm:gap-x-5
-                md:gap-x-8
-
-                gap-y-6
-                sm:gap-y-8
-                md:gap-y-12
-
-                w-full
-                max-w-[1000px]
-
-                items-center
-                justify-items-center
-              "
-            >
-              {STACK.map((tech, index) => (
-                <div
-                  key={tech.name}
-                  className="
-                    w-full
-
-                    flex
-                    justify-center
-
-                    scale-[0.88]
-                    sm:scale-90
-                    md:scale-100
-
-                    origin-center
-                  "
-                >
-                  <TechnologyCard
-                    tech={tech}
-                    index={index}
-                  />
-                </div>
-              ))}
-            </div>
-          </motion.div>
-        </section>
-
+          <TechnologyCard
+            tech={tech}
+            index={index}
+          />
+        </div>
+      ))}
+    </div>
+  </motion.div>
+</section>
         {/* =====================================================
             CTA
         ===================================================== */}
 
         <section
-          className="
-            w-full
-            max-w-[1120px]
-
-            px-3
-            sm:px-6
-            md:px-0
-
-            mt-14
-            sm:mt-20
-          "
-        >
-          <motion.div
-            initial={{
-              opacity: 0,
-              y: 60,
-            }}
-            whileInView={{
-              opacity: 1,
-              y: 0,
-            }}
-            viewport={{
-              once: true,
-              amount: 0.2,
-            }}
-            transition={{
-              duration: 0.8,
-              ease: [0.16, 1, 0.3, 1],
-            }}
-            className="
-              relative
-              w-full
-              overflow-hidden
-
-              rounded-2xl
-              sm:rounded-3xl
+  className="
+    w-full
+    max-w-[1120px]
+
+    px-3
+    sm:px-6
+    md:px-0
+
+    mt-14
+    sm:mt-20
+  "
+>
+  <motion.div
+    initial={{
+      opacity: 0,
+      y: 60,
+    }}
+    whileInView={{
+      opacity: 1,
+      y: 0,
+    }}
+    viewport={{
+      once: true,
+      amount: 0.2,
+    }}
+    transition={{
+      duration: 0.8,
+      ease: [0.16, 1, 0.3, 1],
+    }}
+    className="
+      relative
+      w-full
+      overflow-hidden
+
+      rounded-2xl
+      sm:rounded-3xl
+
+      backdrop-blur-[12px]
+
+      bg-white/60
+
+      border
+      border-lime-300/70
+
+      shadow-[0px_20px_50px_0px_rgba(101,163,13,0.12)]
+      sm:shadow-[0px_25px_60px_0px_rgba(101,163,13,0.15)]
+
+      px-5
+      sm:px-8
+      md:px-16
+      lg:px-24
+
+      py-10
+      sm:py-14
+      md:py-20
+      lg:py-24
+
+      flex
+      flex-col
+
+      items-center
+
+      gap-5
+      sm:gap-6
+      md:gap-8
+
+      text-center
+    "
+  >
+    {/* BACKGROUND GREEN-YELLOW GRADIENT */}
+    <div
+      className="
+        pointer-events-none
+        absolute
+        inset-0
+
+        bg-gradient-to-br
+
+        from-lime-300/40
+        via-yellow-100/65
+        to-emerald-100/30
+
+        sm:from-lime-300/50
+        sm:via-yellow-100/75
+        sm:to-emerald-100/40
+      "
+    />
+
+    {/* TOP LIME GLOW */}
+    <div
+      className="
+        pointer-events-none
+        absolute
+
+        -top-20
+        -right-16
+
+        w-40
+        h-40
+
+        sm:-top-24
+        sm:right-10
+        sm:w-64
+        sm:h-64
 
-              backdrop-blur-[12px]
+        rounded-full
 
-              bg-white/55
+        bg-lime-400/30
 
-              border
-              border-white
+        blur-[55px]
+        sm:blur-[90px]
 
-              shadow-[0px_20px_50px_0px_rgba(19,20,15,0.05)]
-              sm:shadow-[0px_25px_60px_0px_rgba(19,20,15,0.04)]
+        animate-pulse
+      "
+    />
 
-              px-5
-              sm:px-8
-              md:px-16
-              lg:px-24
+    {/* BOTTOM YELLOW GLOW */}
+    <div
+      className="
+        pointer-events-none
+        absolute
 
-              py-10
-              sm:py-14
-              md:py-20
-              lg:py-24
+        -bottom-20
+        -left-16
 
-              flex
-              flex-col
+        w-32
+        h-32
 
-              items-center
+        sm:w-52
+        sm:h-52
 
-              gap-5
-              sm:gap-6
-              md:gap-8
+        rounded-full
 
-              text-center
-            "
-          >
+        bg-yellow-300/35
 
-            {/* BACKGROUND GRADIENT */}
+        blur-[50px]
+        sm:blur-[75px]
+      "
+    />
 
-            <div
-              className="
-                pointer-events-none
-                absolute
-                inset-0
+    {/* CENTER GREEN GLOW */}
+    <div
+      className="
+        pointer-events-none
+        absolute
+        top-1/2
+        left-1/2
 
-                bg-gradient-to-br
+        -translate-x-1/2
+        -translate-y-1/2
 
-                from-emerald-400/20
-                via-white/40
-                to-transparent
+        w-44
+        h-44
 
-                sm:from-emerald-400/30
-              "
-            />
+        sm:w-72
+        sm:h-72
 
-            {/* TOP GLOW */}
+        rounded-full
 
-            <div
-              className="
-                pointer-events-none
-                absolute
+        bg-emerald-300/20
 
-                -top-20
-                -right-16
+        blur-[70px]
+        sm:blur-[110px]
+      "
+    />
 
-                w-40
-                h-40
+    {/* TOP NEON LINE */}
+    <div
+      className="
+        pointer-events-none
+        absolute
+        top-0
+        left-1/2
 
-                sm:-top-24
-                sm:right-10
-                sm:w-64
-                sm:h-64
+        -translate-x-1/2
 
-                rounded-full
+        w-2/3
+        h-[2px]
 
-                bg-emerald-500/10
+        bg-gradient-to-r
+        from-transparent
+        via-lime-500
+        to-transparent
 
-                blur-[55px]
-                sm:blur-[90px]
+        opacity-90
+      "
+    />
 
-                animate-pulse
-              "
-            />
+    {/* BOTTOM NEON LINE */}
+    <div
+      className="
+        pointer-events-none
+        absolute
+        bottom-0
+        left-1/2
 
-            {/* BOTTOM GLOW */}
+        -translate-x-1/2
 
-            <div
-              className="
-                pointer-events-none
-                absolute
+        w-2/3
+        h-[2px]
 
-                -bottom-20
-                -left-16
+        bg-gradient-to-r
+        from-transparent
+        via-yellow-500
+        to-transparent
 
-                w-32
-                h-32
+        opacity-90
+      "
+    />
 
-                sm:w-52
-                sm:h-52
+    {/* HEADING */}
+    <h2
+      className="
+        relative
+        z-10
 
-                rounded-full
+        font-display
+        font-bold
 
-                bg-emerald-300/10
+        text-[#183B1D]
 
-                blur-[50px]
-                sm:blur-[75px]
-              "
-            />
+        text-[36px]
+        leading-[0.95]
 
-            {/* HEADING */}
+        sm:text-5xl
+        sm:leading-none
 
-            <h2
-              className="
-                relative
-                z-10
+        md:text-6xl
 
-                font-display
-                font-bold
-                text-ink
+        lg:text-[80px]
 
-                text-[36px]
-                leading-[0.95]
+        tracking-[-1.8px]
+        sm:tracking-[-2.5px]
+        lg:tracking-[-4px]
 
-                sm:text-5xl
-                sm:leading-none
+        max-w-full
 
-                md:text-6xl
+        drop-shadow-[0_2px_0_rgba(255,255,255,0.7)]
+        drop-shadow-[0_0_14px_rgba(132,204,22,0.35)]
+      "
+    >
+      Ready to build?
+    </h2>
 
-                lg:text-[80px]
+    {/* DESCRIPTION */}
+    <p
+      className="
+        relative
+        z-10
 
-                tracking-[-1.8px]
-                sm:tracking-[-2.5px]
-                lg:tracking-[-4px]
+        font-body
+        font-medium
 
-                max-w-full
-              "
-            >
-              Ready to build?
-            </h2>
+        text-[#365314]
 
-            {/* DESCRIPTION */}
+        text-[13px]
+        leading-[1.65]
 
-            <p
-              className="
-                relative
-                z-10
+        sm:text-base
+        sm:leading-relaxed
 
-                font-body
-                text-clay
+        md:text-xl
 
-                text-[13px]
-                leading-[1.65]
+        max-w-[560px]
+        md:max-w-[620px]
 
-                sm:text-base
-                sm:leading-relaxed
+        px-1
+        sm:px-0
 
-                md:text-xl
+        drop-shadow-[0_1px_0_rgba(255,255,255,0.8)]
+      "
+    >
+      Let&rsquo;s discuss how our engineering and design teams can
+      accelerate your next project.
+    </p>
 
-                max-w-[560px]
-                md:max-w-[620px]
+    {/* CTA */}
+    <motion.a
+      href="/contact#contact-form"
+      whileHover={{
+        scale: 1.05,
+        y: -4,
+      }}
+      whileTap={{
+        scale: 0.97,
+      }}
+      className="
+        relative
+        z-10
 
-                px-1
-                sm:px-0
-              "
-            >
-              Let&rsquo;s discuss how our engineering and design teams can
-              accelerate your next project.
-            </p>
+        inline-flex
+        items-center
+        justify-center
 
-            {/* CTA */}
+        gap-2
 
-            <motion.a
-              href="/contact"
-              whileHover={{
-                scale: 1.05,
-                y: -4,
-              }}
-              whileTap={{
-                scale: 0.97,
-              }}
-              className="
-                relative
-                z-10
+        bg-gradient-to-r
+        from-lime-600
+        via-green-600
+        to-emerald-700
 
-                inline-flex
-                items-center
-                justify-center
+        hover:from-lime-700
+        hover:via-green-700
+        hover:to-emerald-800
 
-                gap-2
+        transition-all
+        duration-300
 
-                bg-emerald-800
-                hover:bg-emerald-900
+        hover:shadow-[0px_15px_35px_rgba(77,124,15,0.35)]
 
-                transition-all
-                duration-300
+        text-white
 
-                hover:shadow-[0px_15px_35px_rgba(6,78,59,0.25)]
+        font-body
+        font-bold
 
-                text-white
+        text-[10px]
+        sm:text-sm
 
-                font-body
-                font-medium
+        tracking-[1px]
+        sm:tracking-[1.3px]
 
-                text-[10px]
-                sm:text-sm
+        uppercase
 
-                tracking-[1px]
-                sm:tracking-[1.3px]
+        rounded-full
 
-                uppercase
+        px-5
+        py-3
 
-                rounded-full
+        sm:px-7
+        sm:py-3.5
 
-                px-5
-                py-3
+        md:px-9
+        md:py-4.5
 
-                sm:px-7
-                sm:py-3.5
+        border
+        border-lime-300/60
 
-                md:px-9
-                md:py-4.5
-              "
-            >
-              <span>Start a Conversation</span>
+        shadow-[0_0_18px_rgba(132,204,22,0.35)]
+      "
+    >
+      <span>Start a Conversation</span>
 
-              <ArrowUpRight
-                size={15}
-                className="
-                  shrink-0
+      <ArrowUpRight
+        size={15}
+        className="
+          shrink-0
 
-                  sm:w-[18px]
-                  sm:h-[18px]
-                "
-              />
-            </motion.a>
-          </motion.div>
-        </section>
+          sm:w-[18px]
+          sm:h-[18px]
+        "
+      />
+    </motion.a>
+  </motion.div>
+</section>
       </main>
 
       {/* =====================================================

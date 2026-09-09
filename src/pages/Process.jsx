@@ -574,10 +574,7 @@ export default function Process() {
     overflow-hidden
   "
 >
-  {/* =========================================
-      BACKGROUND VIDEO
-  ========================================== */}
-
+  {/* BACKGROUND VIDEO */}
   <video
     autoPlay
     loop
@@ -605,27 +602,21 @@ export default function Process() {
     />
   </video>
 
-  {/* =========================================
-      DARK EMERALD VIDEO OVERLAY
-  ========================================== */}
-
+  {/* DARK BLUE-PURPLE VIDEO OVERLAY */}
   <div
     className="
       absolute
       inset-0
 
-      bg-emerald-950/35
-      sm:bg-emerald-950/30
-      md:bg-emerald-950/25
+      bg-[#050816]/55
+      sm:bg-[#050816]/50
+      md:bg-[#050816]/45
 
       pointer-events-none
     "
   />
 
-  {/* =========================================
-      SOFT EMERALD AMBIENT GLOW
-  ========================================== */}
-
+  {/* TOP MAGENTA AMBIENT GLOW */}
   <div
     className="
       absolute
@@ -644,15 +635,16 @@ export default function Process() {
 
       rounded-full
 
-      bg-emerald-300/[0.10]
+      bg-fuchsia-500/[0.14]
 
       blur-[100px]
-    
 
       pointer-events-none
+      animate-pulse
     "
   />
 
+  {/* BOTTOM CYAN AMBIENT GLOW */}
   <div
     className="
       absolute
@@ -671,18 +663,42 @@ export default function Process() {
 
       rounded-full
 
-      bg-emerald-400/[0.08]
+      bg-cyan-400/[0.12]
 
       blur-[110px]
+
+      pointer-events-none
+      animate-pulse
+    "
+  />
+
+  {/* CENTER VIOLET GLOW */}
+  <div
+    className="
+      absolute
+      top-1/2
+      left-1/2
+
+      -translate-x-1/2
+      -translate-y-1/2
+
+      w-[280px]
+      h-[280px]
+
+      sm:w-[520px]
+      sm:h-[520px]
+
+      rounded-full
+
+      bg-violet-600/[0.10]
+
+      blur-[130px]
 
       pointer-events-none
     "
   />
 
-  {/* =========================================
-      HERO CONTENT
-  ========================================== */}
-
+  {/* HERO CONTENT */}
   <div
     className="
       relative
@@ -710,12 +726,17 @@ export default function Process() {
     "
   >
     {/* LABEL */}
-
     <p
       className="
         font-body
+        font-bold
 
-        text-emerald-100
+        text-transparent
+        bg-clip-text
+        bg-gradient-to-r
+        from-cyan-300
+        via-fuchsia-300
+        to-yellow-200
 
         text-[9px]
         sm:text-xs
@@ -724,19 +745,25 @@ export default function Process() {
         sm:tracking-[1.2px]
 
         uppercase
+
+        drop-shadow-[0_0_10px_rgba(34,211,238,0.9)]
       "
     >
       Our Methodology
     </p>
 
     {/* HEADING */}
-
     <h1
       className="
         font-display
         font-bold
 
-        text-white
+        text-transparent
+        bg-clip-text
+        bg-gradient-to-r
+        from-cyan-200
+        via-violet-300
+        to-fuchsia-300
 
         text-[38px]
         sm:text-7xl
@@ -749,18 +776,28 @@ export default function Process() {
         lg:tracking-[-4.8px]
 
         max-w-[1050px]
+
+        drop-shadow-[0_0_8px_rgba(255,255,255,0.65)]
+        drop-shadow-[0_0_28px_rgba(139,92,246,0.75)]
+
+        animate-gradient-text
       "
     >
       The Architecture of Creation.
     </h1>
 
     {/* DESCRIPTION */}
-
     <p
       className="
         font-body
+        font-medium
 
-        text-white/85
+        text-transparent
+        bg-clip-text
+        bg-gradient-to-r
+        from-white
+        via-cyan-100
+        to-violet-200
 
         text-[13px]
         sm:text-lg
@@ -772,6 +809,8 @@ export default function Process() {
         sm:pt-2
 
         leading-relaxed
+
+        drop-shadow-[0_0_8px_rgba(34,211,238,0.45)]
       "
     >
       We don&rsquo;t just build products; we compose experiences.
@@ -779,6 +818,30 @@ export default function Process() {
       absolute precision, treating empty space as a luxury material.
     </p>
   </div>
+
+  {/* GRADIENT TEXT ANIMATION */}
+  <style>
+    {`
+      @keyframes gradientTextMove {
+        0% {
+          background-position: 0% 50%;
+        }
+
+        50% {
+          background-position: 100% 50%;
+        }
+
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      .animate-gradient-text {
+        background-size: 220% 220%;
+        animation: gradientTextMove 6s ease-in-out infinite;
+      }
+    `}
+  </style>
 </section>
 
         {/* =================================================

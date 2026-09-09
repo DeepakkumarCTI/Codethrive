@@ -1874,267 +1874,271 @@ export default function Home() {
             HERO SECTION
         ================================================= */}
 
-        <section
-          className="
-            relative
-            w-full
-            max-w-none
-            mx-0
-            min-h-[300px]
-            sm:min-h-[500px]
-            lg:min-h-[600px]
-            overflow-hidden
-            rounded-none
-            mt-0
-            mb-0
-            p-0
-          "
-        >
-          {/* BACKGROUND VIDEO */}
+       <section
+  className="
+    relative
+    mx-0
+    mt-0
+    mb-0
+    min-h-[300px]
+    w-full
+    max-w-none
+    overflow-hidden
+    rounded-none
+    p-0
+    sm:min-h-[500px]
+    lg:min-h-[600px]
+  "
+>
+  {/* BACKGROUND VIDEO */}
+  <video
+    autoPlay
+    muted
+    loop
+    playsInline
+    preload="auto"
+    className="
+      absolute
+      inset-0
+      h-full
+      w-full
+      object-cover
+    "
+  >
+    <source src="/videos/services.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
 
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="auto"
-            className="
-              absolute
-              inset-0
-              w-full
-              h-full
-              object-cover
-            "
-          >
-            <source
-              src="/videos/services.mp4"
-              type="video/mp4"
-            />
+  {/* SOFT BASE COLOR */}
+  <div className="absolute inset-0 bg-indigo-950/25" />
 
-            Your browser does not support the video tag.
-          </video>
+  {/* PURPLE-CYAN GRADIENT OVERLAY */}
+  <div
+    className="
+      pointer-events-none
+      absolute
+      inset-0
+      bg-gradient-to-r
+      from-[#171044]/95
+      via-[#312E81]/65
+      via-[#6D28D9]/35
+      to-[#0891B2]/10
+      sm:from-[#171044]/90
+      sm:via-[#312E81]/55
+      sm:via-[#6D28D9]/25
+      sm:to-[#0891B2]/5
+    "
+  />
 
-          {/* SOFT BASE COLOR */}
+  {/* SECONDARY BLUE DEPTH */}
+  <div
+    className="
+      pointer-events-none
+      absolute
+      inset-0
+      bg-gradient-to-t
+      from-[#0F172A]/60
+      via-transparent
+      to-[#1E1B4B]/25
+    "
+  />
 
-          <div
-            className="
-              absolute
-              inset-0
-              bg-emerald-950/20
-            "
-          />
+  {/* HERO CONTENT */}
+  <div
+    className="
+      relative
+      z-10
+      flex
+      min-h-[300px]
+      w-full
+      items-center
+      px-4
+      sm:min-h-[500px]
+      sm:px-8
+      md:px-12
+      lg:min-h-[600px]
+      lg:px-20
+    "
+  >
+    {/* PURPLE GLOW */}
+    <motion.div
+      animate={{
+        scale: [1, 1.2, 1],
+        opacity: [0.15, 0.35, 0.15],
+      }}
+      transition={{
+        duration: 5,
+        repeat: Infinity,
+        ease: "easeInOut",
+      }}
+      className="
+        pointer-events-none
+        absolute
+        -left-8
+        top-1/3
+        h-24
+        w-24
+        rounded-full
+        bg-fuchsia-300/25
+        blur-[60px]
+        sm:-left-10
+        sm:h-48
+        sm:w-48
+        sm:blur-[100px]
+      "
+    />
 
-          {/* EMERALD GRADIENT OVERLAY */}
+    {/* CYAN GLOW */}
+    <motion.div
+      animate={{
+        x: [0, 30, 0],
+        scale: [1, 1.15, 1],
+        opacity: [0.1, 0.25, 0.1],
+      }}
+      transition={{
+        duration: 7,
+        repeat: Infinity,
+        ease: "easeInOut",
+      }}
+      className="
+        pointer-events-none
+        absolute
+        right-[-80px]
+        top-1/4
+        h-40
+        w-40
+        rounded-full
+        bg-cyan-300/20
+        blur-[80px]
+        sm:h-72
+        sm:w-72
+        sm:blur-[120px]
+      "
+    />
 
-          <div
+    {/* CONTENT */}
+    <div className="w-full lg:w-10/12">
+      <p
+        className="
+          relative
+          font-display
+          text-[25px]
+          font-bold
+          leading-[1.02]
+          tracking-[-1px]
+          text-white
+          drop-shadow-[0_5px_18px_rgba(0,0,0,0.30)]
+          sm:text-[64px]
+          sm:tracking-[-2px]
+          lg:text-[96px]
+          lg:tracking-[-4.8px]
+        "
+      >
+        WE BUILD{" "}
+
+        <span className="group relative inline-block cursor-default">
+          {/* Gradient Glow */}
+          <span
             className="
               absolute
               inset-0
               bg-gradient-to-r
-              from-emerald-950/95
-              via-emerald-900/65
-              via-emerald-800/35
-              to-emerald-950/10
-              sm:from-emerald-950/90
-              sm:via-emerald-900/55
-              sm:via-emerald-800/25
-              sm:to-emerald-950/5
-              pointer-events-none
-            "
-          />
-
-          {/* SECONDARY DARK GREEN DEPTH */}
-
-          <div
-            className="
-              absolute
-              inset-0
-              bg-gradient-to-t
-              from-emerald-950/45
-              via-transparent
-              to-emerald-950/20
-              pointer-events-none
-            "
-          />
-
-          {/* HERO CONTENT */}
-
-          <div
-            className="
-              relative
-              z-10
-              flex
-              items-center
-              w-full
-              min-h-[300px]
-              sm:min-h-[500px]
-              lg:min-h-[600px]
-              px-4
-              sm:px-8
-              md:px-12
-              lg:px-20
+              from-fuchsia-300
+              via-purple-300
+              to-cyan-300
+              bg-clip-text
+              text-transparent
+              opacity-70
+              blur-[7px]
+              transition-all
+              duration-500
+              group-hover:blur-[20px]
+              group-hover:opacity-100
+              sm:blur-[13px]
             "
           >
-            {/* EMERALD GLOW */}
+            DIGITAL EXPERIENCES
+          </span>
 
-            <motion.div
-              animate={{
-                scale: [1, 1.2, 1],
-                opacity: [0.15, 0.35, 0.15],
-              }}
-              transition={{
-                duration: 5,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-              className="
-                pointer-events-none
-                absolute
-                -left-8
-                top-1/3
-                h-24
-                w-24
-                sm:-left-10
-                sm:h-48
-                sm:w-48
-                rounded-full
-                bg-emerald-300/30
-                blur-[60px]
-                sm:blur-[100px]
-              "
-            />
+          {/* Gradient Text */}
+          <span
+            className="
+              relative
+              bg-gradient-to-r
+              from-fuchsia-300
+              via-purple-300
+              to-cyan-300
+              bg-clip-text
+              text-transparent
+              drop-shadow-[0_4px_16px_rgba(0,0,0,0.35)]
+              transition-all
+              duration-500
+              group-hover:from-fuchsia-200
+              group-hover:via-purple-200
+              group-hover:to-cyan-200
+            "
+          >
+            DIGITAL EXPERIENCES
+          </span>
+        </span>{" "}
 
-            {/* CONTENT */}
-
-            <div
-              className="
-                w-full
-                lg:w-10/12
-              "
-            >
-              <p
-                className="
-                  relative
-                  font-display
-                  font-bold
-                  text-white
-                  text-[25px]
-                  sm:text-[64px]
-                  lg:text-[96px]
-                  leading-[1.02]
-                  tracking-[-1px]
-                  sm:tracking-[-2px]
-                  lg:tracking-[-4.8px]
-                  drop-shadow-[0_5px_18px_rgba(0,0,0,0.30)]
-                "
-              >
-                WE BUILD{" "}
-
-                <span
-                  className="
-                    relative
-                    inline-block
-                    group
-                    cursor-default
-                  "
-                >
-                  <span
-                    className="
-                      absolute
-                      inset-0
-                      text-emerald-300/70
-                      blur-[7px]
-                      sm:blur-[13px]
-                      opacity-70
-                      transition-all
-                      duration-500
-                      group-hover:text-emerald-200
-                      group-hover:blur-[20px]
-                      group-hover:opacity-100
-                    "
-                  >
-                    DIGITAL EXPERIENCES
-                  </span>
-
-                  <span
-                    className="
-                      relative
-                      text-emerald-300
-                      drop-shadow-[0_4px_16px_rgba(0,0,0,0.35)]
-                      transition-all
-                      duration-500
-                      group-hover:text-emerald-200
-                    "
-                  >
-                    DIGITAL EXPERIENCES
-                  </span>
-                </span>{" "}
-
-                <span
-                  className="
-                    text-white
-                    drop-shadow-[0_5px_18px_rgba(0,0,0,0.30)]
-                  "
-                >
-                  THAT MOVE BUSINESS FORWARD.
-                </span>
-              </p>
-            </div>
-          </div>
-        </section>
+        <span
+          className="
+            text-white
+            drop-shadow-[0_5px_18px_rgba(0,0,0,0.30)]
+          "
+        >
+          THAT MOVE BUSINESS FORWARD.
+        </span>
+      </p>
+    </div>
+  </div>
+</section>
 
         {/* =================================================
             STATS SECTION
         ================================================= */}
 
-      <section
+     <section
   className="
     relative
-
-    w-[calc(100%-24px)]
-    sm:w-full
-
-    max-w-[1120px]
-
     mx-auto
-
-    px-4
-    sm:px-6
-    md:px-8
-
-    py-10
-    sm:py-14
-    md:py-16
-
-    overflow-hidden
-
     mt-10
     mb-10
-
-    bg-gradient-to-br
-    from-[#06251d]
-    via-[#07382b]
-    to-[#021a14]
-
+    min-h-[300px]
+    w-[calc(100%-24px)]
+    max-w-[1120px]
+    overflow-hidden
     rounded-2xl
+    bg-gradient-to-br
+    from-[#120B2E]
+    via-[#24104F]
+    to-[#071A3D]
+    px-4
+    py-10
+    sm:w-full
     sm:rounded-3xl
+    sm:px-6
+    sm:py-14
+    md:px-8
+    md:py-16
   "
 >
-  {/* BACKGROUND GLOW 1 */}
+  {/* BACKGROUND GLOW - PURPLE */}
 
   <motion.div
     className="
-      absolute
-      -top-32
-      -left-32
-      w-[350px]
-      h-[350px]
-      sm:w-[500px]
-      sm:h-[500px]
-      rounded-full
-      bg-emerald-400/20
-      blur-[100px]
       pointer-events-none
+      absolute
+      -left-32
+      -top-32
+      h-[350px]
+      w-[350px]
+      rounded-full
+      bg-fuchsia-500/20
+      blur-[100px]
+      sm:h-[500px]
+      sm:w-[500px]
     "
     animate={{
       x: [0, 120, 40, 0],
@@ -2148,21 +2152,21 @@ export default function Home() {
     }}
   />
 
-  {/* BACKGROUND GLOW 2 */}
+  {/* BACKGROUND GLOW - BLUE */}
 
   <motion.div
     className="
+      pointer-events-none
       absolute
       -bottom-40
       -right-40
-      w-[400px]
       h-[400px]
-      sm:w-[550px]
-      sm:h-[550px]
+      w-[400px]
       rounded-full
-      bg-teal-300/15
+      bg-cyan-400/20
       blur-[120px]
-      pointer-events-none
+      sm:h-[550px]
+      sm:w-[550px]
     "
     animate={{
       x: [0, -100, -30, 0],
@@ -2176,21 +2180,21 @@ export default function Home() {
     }}
   />
 
-  {/* CENTER GLOW */}
+  {/* CENTER GLOW - PINK */}
 
   <motion.div
     className="
-      absolute
-      top-[35%]
-      left-[45%]
-      w-[180px]
-      h-[180px]
-      sm:w-[280px]
-      sm:h-[280px]
-      rounded-full
-      bg-emerald-300/10
-      blur-[90px]
       pointer-events-none
+      absolute
+      left-[45%]
+      top-[35%]
+      h-[180px]
+      w-[180px]
+      rounded-full
+      bg-pink-400/15
+      blur-[90px]
+      sm:h-[280px]
+      sm:w-[280px]
     "
     animate={{
       x: [-50, 80, -20, -50],
@@ -2208,17 +2212,17 @@ export default function Home() {
 
   <motion.div
     className="
-      absolute
-      top-0
-      left-[-40%]
-      w-[35%]
-      h-full
       pointer-events-none
+      absolute
+      left-[-40%]
+      top-0
+      h-full
+      w-[35%]
+      skew-x-[-20deg]
       bg-gradient-to-r
       from-transparent
-      via-emerald-300/10
+      via-cyan-300/10
       to-transparent
-      skew-x-[-20deg]
       blur-[20px]
     "
     animate={{
@@ -2235,26 +2239,26 @@ export default function Home() {
 
   <div
     className="
+      pointer-events-none
       absolute
       inset-0
-      pointer-events-none
-      opacity-[0.08]
       bg-[radial-gradient(circle_at_1px_1px,rgba(255,255,255,0.8)_1px,transparent_0)]
       [background-size:24px_24px]
+      opacity-[0.08]
     "
   />
 
-  {/* OVERLAY */}
+  {/* DARK DEPTH OVERLAY */}
 
   <div
     className="
+      pointer-events-none
       absolute
       inset-0
-      pointer-events-none
       bg-gradient-to-b
-      from-black/5
+      from-black/10
       via-transparent
-      to-black/20
+      to-black/25
     "
   />
 
@@ -2278,26 +2282,21 @@ export default function Home() {
         duration: 0.7,
         ease: [0.16, 1, 0.3, 1],
       }}
-      className="
-        text-center
-        mb-5
-        sm:mb-8
-        md:mb-10
-      "
+      className="mb-5 text-center sm:mb-8 md:mb-10"
     >
       <p
         className="
-          font-body
-          font-semibold
-          text-emerald-300
-          text-[9px]
-          sm:text-[11px]
-          md:text-xs
-          tracking-[2px]
-          sm:tracking-[3px]
-          uppercase
           mb-1.5
+          font-body
+          text-[9px]
+          font-semibold
+          uppercase
+          tracking-[2px]
+          text-cyan-300
           sm:mb-2
+          sm:text-[11px]
+          sm:tracking-[3px]
+          md:text-xs
         "
       >
         Our Track Record
@@ -2306,890 +2305,67 @@ export default function Home() {
       <h2
         className="
           font-display
-          font-bold
-          text-white
           text-[22px]
-          sm:text-3xl
-          md:text-4xl
-          tracking-[-0.5px]
-          sm:tracking-[-1px]
+          font-bold
           leading-tight
+          tracking-[-0.5px]
+          text-white
+          sm:text-3xl
+          sm:tracking-[-1px]
+          md:text-4xl
         "
       >
         Built on Experience.{" "}
-        <span className="text-emerald-300">
+        <span
+          className="
+            bg-gradient-to-r
+            from-fuchsia-300
+            via-purple-300
+            to-cyan-300
+            bg-clip-text
+            text-transparent
+          "
+        >
           Driven by Results.
         </span>
       </h2>
     </motion.div>
 
-    <div
-      className="
-        w-full
-        h-px
-        bg-white/10
-        mb-3
-        sm:mb-8
-      "
-    />
+    <div className="mb-3 h-px w-full bg-white/15 sm:mb-8" />
 
     {/* STATS */}
 
-    <div
-      className="
-        grid
-        grid-cols-3
-        w-full
-        gap-2
-        sm:gap-4
-        md:gap-5
-      "
-    >
-      {STATS.map((stat, index) => (
-        <motion.div
-          key={stat.label}
-          initial={{
-            opacity: 0,
-            y: 30,
-          }}
-          whileInView={{
-            opacity: 1,
-            y: 0,
-          }}
-          viewport={{
-            once: true,
-            amount: 0.3,
-          }}
-          transition={{
-            duration: 0.7,
-            delay: index * 0.15,
-            ease: [0.16, 1, 0.3, 1],
-          }}
-          className="min-w-0 w-full"
-        >
+    <div className="grid w-full grid-cols-3 gap-2 sm:gap-4 md:gap-5">
+      {STATS.map((stat, index) => {
+        const boxColors = [
+          {
+            value: "text-fuchsia-300",
+            border: "group-hover:border-fuchsia-300/60",
+            glow: "group-hover:bg-fuchsia-400/10",
+            accent: "from-fuchsia-400/20",
+          },
+          {
+            value: "text-cyan-300",
+            border: "group-hover:border-cyan-300/60",
+            glow: "group-hover:bg-cyan-400/10",
+            accent: "from-cyan-400/20",
+          },
+          {
+            value: "text-amber-300",
+            border: "group-hover:border-amber-300/60",
+            glow: "group-hover:bg-amber-400/10",
+            accent: "from-amber-400/20",
+          },
+        ];
+
+        const color = boxColors[index % boxColors.length];
+
+        return (
           <motion.div
-            whileHover={{
-              y: -8,
-              scale: 1.02,
-            }}
-            transition={{
-              duration: 0.35,
-            }}
-            className="
-              group
-              relative
-              overflow-hidden
-              w-full
-              rounded-lg
-              sm:rounded-2xl
-              p-[1px]
-              cursor-default
-            "
-          >
-            <div
-              className="
-                absolute
-                inset-0
-                rounded-lg
-                sm:rounded-2xl
-                border
-                border-white/10
-                group-hover:border-emerald-300/50
-                transition-colors
-                duration-500
-              "
-            />
-
-            <div
-              className="
-                absolute
-                inset-0
-                rounded-lg
-                sm:rounded-2xl
-                bg-emerald-400/0
-                group-hover:bg-emerald-400/10
-                blur-xl
-                transition-all
-                duration-500
-              "
-            />
-
-            <div
-              className="
-                relative
-                z-[1]
-                w-full
-                h-full
-                overflow-hidden
-                rounded-[7px]
-                sm:rounded-[15px]
-                px-1.5
-                py-4
-                sm:px-5
-                sm:py-7
-                md:px-6
-                md:py-8
-                bg-white/[0.04]
-                backdrop-blur-[4px]
-                group-hover:bg-white/[0.08]
-                transition-all
-                duration-500
-              "
-            >
-              <p
-                className="
-                  relative
-                  z-10
-                  font-display
-                  font-bold
-                  text-emerald-300
-                  text-[25px]
-                  sm:text-5xl
-                  md:text-6xl
-                  lg:text-7xl
-                  tracking-[-1px]
-                  sm:tracking-[-2px]
-                  md:tracking-[-3px]
-                  leading-none
-                  whitespace-nowrap
-                  transition-transform
-                  duration-500
-                  group-hover:scale-[1.04]
-                  origin-left
-                "
-              >
-                {stat.value}
-              </p>
-
-              <p
-                className="
-                  relative
-                  z-10
-                  mt-1
-                  sm:mt-3
-                  md:mt-4
-                  font-display
-                  font-bold
-                  text-white/60
-                  text-[6px]
-                  sm:text-[10px]
-                  md:text-xs
-                  tracking-[0.3px]
-                  sm:tracking-[1px]
-                  md:tracking-[1.8px]
-                  uppercase
-                  whitespace-nowrap
-                  group-hover:text-white
-                  transition-colors
-                  duration-300
-                "
-              >
-                {stat.label}
-              </p>
-            </div>
-          </motion.div>
-        </motion.div>
-      ))}
-    </div>
-  </div>
-</section>
-
-        {/* =================================================
-            SELECTED WORKS
-        ================================================= */}
-
-        <section
-          className="
-            relative
-            w-full
-            max-w-none
-            mx-0
-            overflow-hidden
-            px-4
-            sm:px-6
-            md:px-12
-            lg:px-16
-            xl:px-20
-            py-12
-            sm:py-16
-            md:py-20
-            lg:py-24
-            bg-[#031a14]
-          "
-        >
-          {/* =================================================
-              CONTINUOUS BACKGROUND
-          ================================================= */}
-
-          <motion.div
-            className="
-              absolute
-              inset-0
-              pointer-events-none
-              bg-[radial-gradient(circle_at_20%_20%,rgba(16,185,129,0.22),transparent_32%),radial-gradient(circle_at_80%_70%,rgba(20,184,166,0.18),transparent_35%),radial-gradient(circle_at_50%_100%,rgba(5,150,105,0.15),transparent_40%)]
-            "
-            animate={{
-              backgroundPosition: [
-                "0% 0%, 100% 100%, 50% 100%",
-                "30% 20%, 70% 80%, 30% 70%",
-                "60% 0%, 20% 50%, 70% 80%",
-                "0% 0%, 100% 100%, 50% 100%",
-              ],
-            }}
-            transition={{
-              duration: 18,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-
-          {/* LEFT AURORA */}
-
-          <motion.div
-            className="
-              absolute
-              top-[-20%]
-              left-[-15%]
-              w-[500px]
-              h-[500px]
-              sm:w-[700px]
-              sm:h-[700px]
-              lg:w-[900px]
-              lg:h-[900px]
-              rounded-full
-              bg-emerald-500/20
-              blur-[120px]
-              pointer-events-none
-            "
-            animate={{
-              x: [0, 180, 80, -40, 0],
-              y: [0, 120, 220, 80, 0],
-              scale: [1, 1.2, 0.9, 1.15, 1],
-              opacity: [0.25, 0.45, 0.3, 0.4, 0.25],
-            }}
-            transition={{
-              duration: 20,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-
-          {/* RIGHT AURORA */}
-
-          <motion.div
-            className="
-              absolute
-              top-[15%]
-              right-[-20%]
-              w-[450px]
-              h-[450px]
-              sm:w-[650px]
-              sm:h-[650px]
-              lg:w-[850px]
-              lg:h-[850px]
-              rounded-full
-              bg-teal-400/20
-              blur-[130px]
-              pointer-events-none
-            "
-            animate={{
-              x: [0, -180, -80, 100, 0],
-              y: [0, 160, -80, 100, 0],
-              scale: [1, 0.85, 1.2, 0.95, 1],
-              opacity: [0.2, 0.4, 0.25, 0.45, 0.2],
-            }}
-            transition={{
-              duration: 23,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-
-          {/* CENTER LIGHT */}
-
-          <motion.div
-            className="
-              absolute
-              top-[35%]
-              left-[35%]
-              w-[300px]
-              h-[300px]
-              sm:w-[450px]
-              sm:h-[450px]
-              rounded-full
-              bg-emerald-300/10
-              blur-[100px]
-              pointer-events-none
-            "
-            animate={{
-              x: [-100, 120, -50, 80, -100],
-              y: [50, -80, 120, -40, 50],
-              scale: [1, 1.25, 0.8, 1.15, 1],
-              opacity: [0.15, 0.35, 0.15, 0.3, 0.15],
-            }}
-            transition={{
-              duration: 16,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-
-          {/* LIGHT BEAM */}
-
-          <motion.div
-            className="
-              absolute
-              top-[-50%]
-              left-[-20%]
-              w-[35%]
-              h-[200%]
-              pointer-events-none
-              bg-gradient-to-r
-              from-transparent
-              via-emerald-300/[0.07]
-              to-transparent
-              blur-[25px]
-              rotate-[20deg]
-            "
-            animate={{
-              x: ["0%", "350%"],
-            }}
-            transition={{
-              duration: 14,
-              repeat: Infinity,
-              ease: "linear",
-            }}
-          />
-
-          {/* SECOND BEAM */}
-
-          <motion.div
-            className="
-              absolute
-              top-[-50%]
-              left-[-30%]
-              w-[20%]
-              h-[200%]
-              pointer-events-none
-              bg-gradient-to-r
-              from-transparent
-              via-teal-200/[0.05]
-              to-transparent
-              blur-[30px]
-              rotate-[-18deg]
-            "
-            animate={{
-              x: ["0%", "500%"],
-            }}
-            transition={{
-              duration: 22,
-              repeat: Infinity,
-              ease: "linear",
-              delay: 5,
-            }}
-          />
-
-          {/* DOT FIELD */}
-
-          <motion.div
-            className="
-              absolute
-              inset-0
-              pointer-events-none
-              opacity-[0.12]
-              bg-[radial-gradient(circle_at_1px_1px,rgba(110,231,183,0.5)_1px,transparent_0)]
-              [background-size:32px_32px]
-            "
-            animate={{
-              backgroundPosition: [
-                "0px 0px",
-                "32px 32px",
-                "0px 64px",
-                "32px 96px",
-                "0px 0px",
-              ],
-            }}
-            transition={{
-              duration: 18,
-              repeat: Infinity,
-              ease: "linear",
-            }}
-          />
-
-          {/* VIGNETTE */}
-
-          <div
-            className="
-              absolute
-              inset-0
-              pointer-events-none
-              bg-gradient-to-b
-              from-black/10
-              via-transparent
-              to-black/30
-            "
-          />
-
-          {/* CONTENT */}
-
-          <div className="relative z-10">
-            {/* HEADING */}
-
-            <motion.div
-              initial={{
-                opacity: 0,
-                y: 60,
-              }}
-              whileInView={{
-                opacity: 1,
-                y: 0,
-              }}
-              viewport={{
-                once: true,
-                amount: 0.3,
-              }}
-              transition={{
-                duration: 0.9,
-                ease: [0.16, 1, 0.3, 1],
-              }}
-              className="
-                mb-10
-                sm:mb-14
-                md:mb-16
-                lg:mb-20
-              "
-            >
-              <motion.p
-                animate={{
-                  opacity: [0.65, 1, 0.65],
-                  textShadow: [
-                    "0 0 0px rgba(52,211,153,0)",
-                    "0 0 15px rgba(52,211,153,0.6)",
-                    "0 0 0px rgba(52,211,153,0)",
-                  ],
-                }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                className="
-                  font-body
-                  font-semibold
-                  text-emerald-300
-                  text-[9px]
-                  sm:text-xs
-                  tracking-[2px]
-                  sm:tracking-[3px]
-                  uppercase
-                  mb-2
-                  sm:mb-3
-                "
-              >
-                Our Portfolio
-              </motion.p>
-
-              <motion.h2
-                animate={{
-                  textShadow: [
-                    "0 0 0px rgba(52,211,153,0)",
-                    "0 0 20px rgba(52,211,153,0.08)",
-                    "0 0 0px rgba(52,211,153,0)",
-                  ],
-                }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                className="
-                  font-display
-                  font-bold
-                  text-white
-                  text-[34px]
-                  sm:text-5xl
-                  md:text-6xl
-                  lg:text-[80px]
-                  tracking-[-1.5px]
-                  sm:tracking-[-2px]
-                  lg:tracking-[-2.4px]
-                  leading-[0.95]
-                "
-              >
-                Selected{" "}
-
-                <motion.span
-                  animate={{
-                    textShadow: [
-                      "0 0 0px rgba(52,211,153,0)",
-                      "0 0 10px rgba(52,211,153,0.35)",
-                      "0 0 25px rgba(52,211,153,0.65)",
-                      "0 0 10px rgba(52,211,153,0.35)",
-                      "0 0 0px rgba(52,211,153,0)",
-                    ],
-                  }}
-                  transition={{
-                    duration: 3,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
-                  className="
-                    text-emerald-300
-                    inline-block
-                  "
-                >
-                  Works
-                </motion.span>
-              </motion.h2>
-
-              <motion.div
-                initial={{
-                  width: 0,
-                  opacity: 0,
-                }}
-                whileInView={{
-                  width: 60,
-                  opacity: 1,
-                }}
-                viewport={{
-                  once: true,
-                }}
-                transition={{
-                  duration: 0.8,
-                  delay: 0.3,
-                  ease: "easeOut",
-                }}
-                className="
-                  mt-4
-                  sm:mt-6
-                  h-[2px]
-                  bg-emerald-400
-                  rounded-full
-                  shadow-[0_0_12px_rgba(52,211,153,0.5)]
-                "
-              />
-            </motion.div>
-
-            {/* =================================================
-                PROJECTS
-            ================================================= */}
-
-            <div
-              className="
-                flex
-                flex-col
-                gap-12
-                sm:gap-16
-                md:gap-20
-                lg:gap-28
-              "
-            >
-              {WORKS.map((work, index) => (
-                <motion.div
-                  key={work.id}
-                  initial={{
-                    opacity: 0,
-                    y: 70,
-                    scale: 0.97,
-                  }}
-                  whileInView={{
-                    opacity: 1,
-                    y: 0,
-                    scale: 1,
-                  }}
-                  viewport={{
-                    once: true,
-                    amount: 0.15,
-                  }}
-                  transition={{
-                    duration: 0.8,
-                    delay: index * 0.1,
-                    ease: [0.16, 1, 0.3, 1],
-                  }}
-                  className="
-                    relative
-                    w-full
-                  "
-                >
-                  {/* PROJECT NUMBER */}
-
-                  <motion.div
-                    initial={{
-                      opacity: 0,
-                      x: -20,
-                      scale: 0.8,
-                    }}
-                    whileInView={{
-                      opacity: 1,
-                      x: 0,
-                      scale: 1,
-                    }}
-                    viewport={{
-                      once: true,
-                    }}
-                    transition={{
-                      duration: 0.6,
-                      delay: index * 0.1 + 0.2,
-                      ease: [0.16, 1, 0.3, 1],
-                    }}
-                    className="
-                      absolute
-                      left-1
-                      sm:left-0
-                      -top-6
-                      sm:-top-9
-                      md:-top-11
-                      lg:-top-14
-                      font-display
-                      font-bold
-                      text-emerald-300
-                      text-[15px]
-                      sm:text-xl
-                      md:text-3xl
-                      lg:text-4xl
-                      tracking-[-0.5px]
-                      sm:tracking-[-1px]
-                      leading-none
-                      select-none
-                      z-30
-                    "
-                  >
-                    <motion.span
-                      animate={{
-                        opacity: [0.6, 1, 0.6],
-                        textShadow: [
-                          "0 0 0px rgba(52,211,153,0)",
-                          "0 0 10px rgba(52,211,153,0.45)",
-                          "0 0 20px rgba(52,211,153,0.7)",
-                          "0 0 10px rgba(52,211,153,0.45)",
-                          "0 0 0px rgba(52,211,153,0)",
-                        ],
-                      }}
-                      transition={{
-                        duration: 3,
-                        repeat: Infinity,
-                        ease: "easeInOut",
-                      }}
-                    >
-                      0{index + 1}
-                    </motion.span>
-                  </motion.div>
-
-                  {/* PROJECT BORDER */}
-
-                  <motion.div
-                    className="
-                      relative
-                      w-full
-                      rounded-[15px]
-                      sm:rounded-[19px]
-                      md:rounded-[21px]
-                      p-[1px]
-                      sm:p-[1.5px]
-                      overflow-hidden
-                      bg-[conic-gradient(from_0deg,transparent_0deg,#10B981_70deg,#34D399_110deg,transparent_170deg,transparent_245deg,#059669_300deg,#34D399_330deg,transparent_360deg)]
-                    "
-                  >
-                    {/* ROTATING BORDER */}
-
-                    <motion.div
-                      className="
-                        absolute
-                        inset-[-40%]
-                        pointer-events-none
-                        bg-[conic-gradient(from_0deg,transparent_0deg,rgba(16,185,129,0.8)_35deg,transparent_75deg,transparent_180deg,rgba(52,211,153,0.6)_220deg,transparent_260deg,transparent_360deg)]
-                        blur-[2px]
-                      "
-                      animate={{
-                        rotate: [0, 360],
-                      }}
-                      transition={{
-                        duration: 5 + index * 1.5,
-                        repeat: Infinity,
-                        ease: "linear",
-                        delay: index * 0.4,
-                      }}
-                    />
-
-                    {/* PROJECT CARD */}
-
-                    <motion.div
-                      className="
-                        relative
-                        z-10
-                        w-full
-                        rounded-[14px]
-                        sm:rounded-[18px]
-                        md:rounded-[20px]
-                        overflow-hidden
-                        bg-white
-                        transition-all
-                        duration-500
-                        shadow-[0_10px_35px_rgba(15,92,77,0.12)]
-                        hover:shadow-[0_0_60px_rgba(16,185,129,0.30)]
-                      "
-                    >
-                      {/* CARD GLOW BORDER */}
-
-                      <motion.div
-                        className="
-                          absolute
-                          inset-0
-                          rounded-[14px]
-                          sm:rounded-[18px]
-                          md:rounded-[20px]
-                          pointer-events-none
-                          border
-                          border-emerald-400/20
-                          z-20
-                        "
-                        animate={{
-                          opacity: [0.25, 0.8, 0.25],
-                        }}
-                        transition={{
-                          duration: 3.5 + index * 0.5,
-                          repeat: Infinity,
-                          ease: "easeInOut",
-                          delay: index * 0.3,
-                        }}
-                      />
-
-                      {/* CARD INNER GLOW */}
-
-                      <motion.div
-                        className="
-                          absolute
-                          inset-0
-                          pointer-events-none
-                          z-[2]
-                          bg-[radial-gradient(circle_at_50%_50%,rgba(16,185,129,0.08),transparent_55%)]
-                        "
-                        animate={{
-                          scale: [0.9, 1.1, 0.9],
-                          opacity: [0.3, 0.7, 0.3],
-                        }}
-                        transition={{
-                          duration: 7 + index,
-                          repeat: Infinity,
-                          ease: "easeInOut",
-                        }}
-                      />
-
-                      <WorkCard
-                        work={work}
-                        index={index}
-                        onViewProject={openProject}
-                      />
-                    </motion.div>
-                  </motion.div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* =================================================
-            CTA
-        ================================================= */}
-
-        <section
-          className="
-            mt-10
-            w-full
-            max-w-[1120px]
-            mx-auto
-            relative
-            overflow-hidden
-            rounded-xl
-            sm:rounded-2xl
-            shadow-[0px_40px_80px_0px_rgba(19,20,15,0.04)]
-            bg-gradient-to-br
-            from-emerald-50
-            to-emerald-100
-            px-4
-            py-8
-            sm:px-8
-            sm:py-12
-            md:px-20
-            md:py-20
-            lg:px-44
-            flex
-            flex-col
-            items-center
-            text-center
-            gap-3
-            sm:gap-5
-            md:gap-6
-          "
-        >
-          {/* GLOW 1 */}
-
-          <motion.div
-            animate={{
-              x: [0, 30, 0],
-              y: [0, 20, 0],
-              scale: [1, 1.15, 1],
-            }}
-            transition={{
-              duration: 8,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-            className="
-              pointer-events-none
-              absolute
-              -top-16
-              -right-16
-              w-40
-              h-40
-              sm:-top-24
-              sm:right-[-80px]
-              sm:w-64
-              sm:h-64
-              rounded-full
-              bg-emerald-800/10
-              blur-[70px]
-              sm:blur-[90px]
-            "
-          />
-
-          {/* GLOW 2 */}
-
-          <motion.div
-            animate={{
-              x: [0, -30, 0],
-              y: [0, -20, 0],
-              scale: [1, 1.15, 1],
-            }}
-            transition={{
-              duration: 9,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-            className="
-              pointer-events-none
-              absolute
-              -bottom-16
-              -left-16
-              w-40
-              h-40
-              sm:-bottom-24
-              sm:left-[-80px]
-              sm:w-64
-              sm:h-64
-              rounded-full
-              bg-emerald-700/10
-              blur-[70px]
-              sm:blur-[90px]
-            "
-          />
-
-          {/* HEADING */}
-
-          <motion.h2
+            key={stat.label}
             initial={{
               opacity: 0,
-              y: 40,
+              y: 30,
             }}
             whileInView={{
               opacity: 1,
@@ -3200,90 +2376,1081 @@ export default function Home() {
               amount: 0.3,
             }}
             transition={{
-              duration: 0.8,
+              duration: 0.7,
+              delay: index * 0.15,
               ease: [0.16, 1, 0.3, 1],
             }}
-            className="
-              relative
-              z-10
-              font-display
-              font-bold
-              text-ink
-              text-[25px]
-              sm:text-4xl
-              md:text-6xl
-              lg:text-[80px]
-              leading-[1.05]
-              tracking-[-1px]
-              sm:tracking-[-1.5px]
-              md:tracking-[-2.4px]
-            "
+            className="min-w-0 w-full"
           >
-            Ready to elevate your digital presence?
-          </motion.h2>
+            <motion.div
+              whileHover={{
+                y: -8,
+                scale: 1.02,
+              }}
+              transition={{
+                duration: 0.35,
+              }}
+              className="group relative w-full cursor-default overflow-hidden rounded-lg p-[1px] sm:rounded-2xl"
+            >
+              {/* Colored Border */}
+              <div
+                className={`
+                  absolute
+                  inset-0
+                  rounded-lg
+                  border
+                  border-white/10
+                  transition-colors
+                  duration-500
+                  sm:rounded-2xl
+                  ${color.border}
+                `}
+              />
 
-          {/* DESCRIPTION */}
+              {/* Colored Hover Glow */}
+              <div
+                className={`
+                  absolute
+                  inset-0
+                  rounded-lg
+                  bg-transparent
+                  blur-xl
+                  transition-all
+                  duration-500
+                  sm:rounded-2xl
+                  ${color.glow}
+                `}
+              />
 
-          <p
-            className="
-              relative
-              z-10
-              font-body
-              text-clay
-              text-[11px]
-              sm:text-base
-              md:text-xl
-              leading-relaxed
-              max-w-[520px]
-              sm:max-w-[650px]
-            "
-          >
-            Partner with us to create experiences that resonate and perform.
-          </p>
+              {/* Box Content */}
+              <div
+                className="
+                  relative
+                  z-[1]
+                  h-full
+                  w-full
+                  overflow-hidden
+                  rounded-[7px]
+                  bg-white/[0.06]
+                  px-1.5
+                  py-4
+                  backdrop-blur-[6px]
+                  transition-all
+                  duration-500
+                  group-hover:bg-white/[0.10]
+                  sm:rounded-[15px]
+                  sm:px-5
+                  sm:py-7
+                  md:px-6
+                  md:py-8
+                "
+              >
+                {/* Top Accent */}
+                <div
+                  className={`
+                    absolute
+                    left-0
+                    right-0
+                    top-0
+                    h-[2px]
+                    bg-gradient-to-r
+                    ${color.accent}
+                    via-transparent
+                    to-transparent
+                    opacity-80
+                  `}
+                />
 
-          {/* BUTTON */}
+                <p
+                  className={`
+                    relative
+                    z-10
+                    origin-left
+                    whitespace-nowrap
+                    font-display
+                    text-[25px]
+                    font-bold
+                    leading-none
+                    tracking-[-1px]
+                    transition-transform
+                    duration-500
+                    group-hover:scale-[1.04]
+                    sm:text-5xl
+                    sm:tracking-[-2px]
+                    md:text-6xl
+                    md:tracking-[-3px]
+                    lg:text-7xl
+                    ${color.value}
+                  `}
+                >
+                  {stat.value}
+                </p>
 
-          <motion.a
-            href="#"
-            whileHover={{
-              y: -4,
-              scale: 1.03,
-            }}
-            whileTap={{
+                <p
+                  className="
+                    relative
+                    z-10
+                    mt-1
+                    whitespace-nowrap
+                    font-display
+                    text-[6px]
+                    font-bold
+                    uppercase
+                    tracking-[0.3px]
+                    text-white/60
+                    transition-colors
+                    duration-300
+                    group-hover:text-white
+                    sm:mt-3
+                    sm:text-[10px]
+                    sm:tracking-[1px]
+                    md:mt-4
+                    md:text-xs
+                    md:tracking-[1.8px]
+                  "
+                >
+                  {stat.label}
+                </p>
+              </div>
+            </motion.div>
+          </motion.div>
+        );
+      })}
+    </div>
+  </div>
+</section>
+
+        {/* =================================================
+            SELECTED WORKS
+        ================================================= */}
+
+       <section
+  className="
+    relative
+    mx-0
+    w-full
+    max-w-none
+    overflow-hidden
+    bg-gradient-to-br
+    from-[#090B2A]
+    via-[#21104D]
+    to-[#062C4F]
+    px-4
+    py-12
+    sm:px-6
+    sm:py-16
+    md:px-12
+    md:py-20
+    lg:px-16
+    lg:py-24
+    xl:px-20
+  "
+>
+  {/* =================================================
+      CONTINUOUS MULTI-COLOR BACKGROUND
+  ================================================= */}
+
+  <motion.div
+    className="
+      pointer-events-none
+      absolute
+      inset-0
+      bg-[radial-gradient(circle_at_20%_20%,rgba(217,70,239,0.22),transparent_32%),radial-gradient(circle_at_80%_70%,rgba(6,182,212,0.20),transparent_35%),radial-gradient(circle_at_50%_100%,rgba(99,102,241,0.18),transparent_40%)]
+    "
+    animate={{
+      backgroundPosition: [
+        "0% 0%, 100% 100%, 50% 100%",
+        "30% 20%, 70% 80%, 30% 70%",
+        "60% 0%, 20% 50%, 70% 80%",
+        "0% 0%, 100% 100%, 50% 100%",
+      ],
+    }}
+    transition={{
+      duration: 18,
+      repeat: Infinity,
+      ease: "easeInOut",
+    }}
+  />
+
+  {/* LEFT PINK AURORA */}
+
+  <motion.div
+    className="
+      pointer-events-none
+      absolute
+      left-[-15%]
+      top-[-20%]
+      h-[500px]
+      w-[500px]
+      rounded-full
+      bg-fuchsia-500/20
+      blur-[120px]
+      sm:h-[700px]
+      sm:w-[700px]
+      lg:h-[900px]
+      lg:w-[900px]
+    "
+    animate={{
+      x: [0, 180, 80, -40, 0],
+      y: [0, 120, 220, 80, 0],
+      scale: [1, 1.2, 0.9, 1.15, 1],
+      opacity: [0.25, 0.45, 0.3, 0.4, 0.25],
+    }}
+    transition={{
+      duration: 20,
+      repeat: Infinity,
+      ease: "easeInOut",
+    }}
+  />
+
+  {/* RIGHT CYAN AURORA */}
+
+  <motion.div
+    className="
+      pointer-events-none
+      absolute
+      right-[-20%]
+      top-[15%]
+      h-[450px]
+      w-[450px]
+      rounded-full
+      bg-cyan-400/20
+      blur-[130px]
+      sm:h-[650px]
+      sm:w-[650px]
+      lg:h-[850px]
+      lg:w-[850px]
+    "
+    animate={{
+      x: [0, -180, -80, 100, 0],
+      y: [0, 160, -80, 100, 0],
+      scale: [1, 0.85, 1.2, 0.95, 1],
+      opacity: [0.2, 0.4, 0.25, 0.45, 0.2],
+    }}
+    transition={{
+      duration: 23,
+      repeat: Infinity,
+      ease: "easeInOut",
+    }}
+  />
+
+  {/* CENTER PURPLE LIGHT */}
+
+  <motion.div
+    className="
+      pointer-events-none
+      absolute
+      left-[35%]
+      top-[35%]
+      h-[300px]
+      w-[300px]
+      rounded-full
+      bg-violet-400/15
+      blur-[100px]
+      sm:h-[450px]
+      sm:w-[450px]
+    "
+    animate={{
+      x: [-100, 120, -50, 80, -100],
+      y: [50, -80, 120, -40, 50],
+      scale: [1, 1.25, 0.8, 1.15, 1],
+      opacity: [0.15, 0.35, 0.15, 0.3, 0.15],
+    }}
+    transition={{
+      duration: 16,
+      repeat: Infinity,
+      ease: "easeInOut",
+    }}
+  />
+
+  {/* LIGHT BEAM */}
+
+  <motion.div
+    className="
+      pointer-events-none
+      absolute
+      left-[-20%]
+      top-[-50%]
+      h-[200%]
+      w-[35%]
+      rotate-[20deg]
+      bg-gradient-to-r
+      from-transparent
+      via-fuchsia-300/[0.07]
+      to-transparent
+      blur-[25px]
+    "
+    animate={{
+      x: ["0%", "350%"],
+    }}
+    transition={{
+      duration: 14,
+      repeat: Infinity,
+      ease: "linear",
+    }}
+  />
+
+  {/* SECOND LIGHT BEAM */}
+
+  <motion.div
+    className="
+      pointer-events-none
+      absolute
+      left-[-30%]
+      top-[-50%]
+      h-[200%]
+      w-[20%]
+      rotate-[-18deg]
+      bg-gradient-to-r
+      from-transparent
+      via-cyan-200/[0.06]
+      to-transparent
+      blur-[30px]
+    "
+    animate={{
+      x: ["0%", "500%"],
+    }}
+    transition={{
+      duration: 22,
+      repeat: Infinity,
+      ease: "linear",
+      delay: 5,
+    }}
+  />
+
+  {/* DOT FIELD */}
+
+  <motion.div
+    className="
+      pointer-events-none
+      absolute
+      inset-0
+      bg-[radial-gradient(circle_at_1px_1px,rgba(165,180,252,0.55)_1px,transparent_0)]
+      [background-size:32px_32px]
+      opacity-[0.12]
+    "
+    animate={{
+      backgroundPosition: [
+        "0px 0px",
+        "32px 32px",
+        "0px 64px",
+        "32px 96px",
+        "0px 0px",
+      ],
+    }}
+    transition={{
+      duration: 18,
+      repeat: Infinity,
+      ease: "linear",
+    }}
+  />
+
+  {/* VIGNETTE */}
+
+  <div
+    className="
+      pointer-events-none
+      absolute
+      inset-0
+      bg-gradient-to-b
+      from-black/10
+      via-transparent
+      to-black/35
+    "
+  />
+
+  {/* CONTENT */}
+
+  <div className="relative z-10">
+    {/* HEADING */}
+
+    <motion.div
+      initial={{
+        opacity: 0,
+        y: 60,
+      }}
+      whileInView={{
+        opacity: 1,
+        y: 0,
+      }}
+      viewport={{
+        once: true,
+        amount: 0.3,
+      }}
+      transition={{
+        duration: 0.9,
+        ease: [0.16, 1, 0.3, 1],
+      }}
+      className="mb-10 sm:mb-14 md:mb-16 lg:mb-20"
+    >
+      <motion.p
+        animate={{
+          opacity: [0.65, 1, 0.65],
+          textShadow: [
+            "0 0 0px rgba(34,211,238,0)",
+            "0 0 15px rgba(34,211,238,0.6)",
+            "0 0 0px rgba(34,211,238,0)",
+          ],
+        }}
+        transition={{
+          duration: 3,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+        className="
+          mb-2
+          font-body
+          text-[9px]
+          font-semibold
+          uppercase
+          tracking-[2px]
+          text-cyan-300
+          sm:mb-3
+          sm:text-xs
+          sm:tracking-[3px]
+        "
+      >
+        Our Portfolio
+      </motion.p>
+
+      <motion.h2
+        animate={{
+          textShadow: [
+            "0 0 0px rgba(217,70,239,0)",
+            "0 0 20px rgba(217,70,239,0.12)",
+            "0 0 0px rgba(217,70,239,0)",
+          ],
+        }}
+        transition={{
+          duration: 4,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+        className="
+          font-display
+          text-[34px]
+          font-bold
+          leading-[0.95]
+          tracking-[-1.5px]
+          text-white
+          sm:text-5xl
+          sm:tracking-[-2px]
+          md:text-6xl
+          lg:text-[80px]
+          lg:tracking-[-2.4px]
+        "
+      >
+        Selected{" "}
+
+        <motion.span
+          animate={{
+            textShadow: [
+              "0 0 0px rgba(34,211,238,0)",
+              "0 0 10px rgba(34,211,238,0.35)",
+              "0 0 25px rgba(34,211,238,0.65)",
+              "0 0 10px rgba(34,211,238,0.35)",
+              "0 0 0px rgba(34,211,238,0)",
+            ],
+          }}
+          transition={{
+            duration: 3,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="
+            inline-block
+            bg-gradient-to-r
+            from-fuchsia-300
+            via-purple-300
+            to-cyan-300
+            bg-clip-text
+            text-transparent
+          "
+        >
+          Works
+        </motion.span>
+      </motion.h2>
+
+      <motion.div
+        initial={{
+          width: 0,
+          opacity: 0,
+        }}
+        whileInView={{
+          width: 60,
+          opacity: 1,
+        }}
+        viewport={{
+          once: true,
+        }}
+        transition={{
+          duration: 0.8,
+          delay: 0.3,
+          ease: "easeOut",
+        }}
+        className="
+          mt-4
+          h-[2px]
+          rounded-full
+          bg-gradient-to-r
+          from-fuchsia-400
+          via-purple-400
+          to-cyan-400
+          shadow-[0_0_15px_rgba(168,85,247,0.65)]
+          sm:mt-6
+        "
+      />
+    </motion.div>
+
+    {/* PROJECTS */}
+
+    <div className="flex flex-col gap-12 sm:gap-16 md:gap-20 lg:gap-28">
+      {WORKS.map((work, index) => {
+        const projectColors = [
+          {
+            border:
+              "bg-[conic-gradient(from_0deg,transparent_0deg,#D946EF_70deg,#A855F7_110deg,transparent_170deg,transparent_245deg,#7C3AED_300deg,#C084FC_330deg,transparent_360deg)]",
+            rotating:
+              "bg-[conic-gradient(from_0deg,transparent_0deg,rgba(217,70,239,0.8)_35deg,transparent_75deg,transparent_180deg,rgba(168,85,247,0.7)_220deg,transparent_260deg,transparent_360deg)]",
+            glow: "hover:shadow-[0_0_60px_rgba(217,70,239,0.28)]",
+            inner: "bg-fuchsia-400/[0.07]",
+          },
+          {
+            border:
+              "bg-[conic-gradient(from_0deg,transparent_0deg,#22D3EE_70deg,#06B6D4_110deg,transparent_170deg,transparent_245deg,#0891B2_300deg,#67E8F9_330deg,transparent_360deg)]",
+            rotating:
+              "bg-[conic-gradient(from_0deg,transparent_0deg,rgba(34,211,238,0.8)_35deg,transparent_75deg,transparent_180deg,rgba(6,182,212,0.7)_220deg,transparent_260deg,transparent_360deg)]",
+            glow: "hover:shadow-[0_0_60px_rgba(34,211,238,0.28)]",
+            inner: "bg-cyan-400/[0.07]",
+          },
+          {
+            border:
+              "bg-[conic-gradient(from_0deg,transparent_0deg,#FBBF24_70deg,#F59E0B_110deg,transparent_170deg,transparent_245deg,#D97706_300deg,#FDE68A_330deg,transparent_360deg)]",
+            rotating:
+              "bg-[conic-gradient(from_0deg,transparent_0deg,rgba(251,191,36,0.8)_35deg,transparent_75deg,transparent_180deg,rgba(245,158,11,0.7)_220deg,transparent_260deg,transparent_360deg)]",
+            glow: "hover:shadow-[0_0_60px_rgba(251,191,36,0.25)]",
+            inner: "bg-amber-400/[0.07]",
+          },
+        ];
+
+        const color = projectColors[index % projectColors.length];
+
+        return (
+          <motion.div
+            key={work.id}
+            initial={{
+              opacity: 0,
+              y: 70,
               scale: 0.97,
             }}
-            className="
-              relative
-              z-10
-              inline-flex
-              items-center
-              justify-center
-              bg-emerald-800
-              hover:bg-emerald-900
-              transition-all
-              duration-300
-              text-white
-              font-display
-              font-bold
-              text-[11px]
-              sm:text-base
-              md:text-xl
-              tracking-[-0.3px]
-              sm:tracking-[-0.5px]
-              rounded-full
-              px-4
-              py-2.5
-              sm:px-7
-              sm:py-3.5
-              md:px-8
-              md:py-4
-              shadow-[0px_10px_30px_rgba(6,95,70,0.22)]
-              hover:shadow-[0px_15px_35px_rgba(6,95,70,0.30)]
-            "
+            whileInView={{
+              opacity: 1,
+              y: 0,
+              scale: 1,
+            }}
+            viewport={{
+              once: true,
+              amount: 0.15,
+            }}
+            transition={{
+              duration: 0.8,
+              delay: index * 0.1,
+              ease: [0.16, 1, 0.3, 1],
+            }}
+            className="relative w-full"
           >
-            Start a Conversation
-          </motion.a>
-        </section>
+            {/* PROJECT NUMBER */}
+
+            <motion.div
+              initial={{
+                opacity: 0,
+                x: -20,
+                scale: 0.8,
+              }}
+              whileInView={{
+                opacity: 1,
+                x: 0,
+                scale: 1,
+              }}
+              viewport={{
+                once: true,
+              }}
+              transition={{
+                duration: 0.6,
+                delay: index * 0.1 + 0.2,
+                ease: [0.16, 1, 0.3, 1],
+              }}
+              className={`
+                absolute
+                left-1
+                top-[-24px]
+                z-30
+                select-none
+                font-display
+                text-[15px]
+                font-bold
+                leading-none
+                tracking-[-0.5px]
+                sm:left-0
+                sm:top-[-36px]
+                sm:text-xl
+                sm:tracking-[-1px]
+                md:top-[-44px]
+                md:text-3xl
+                lg:top-[-56px]
+                lg:text-4xl
+                ${
+                  index % 3 === 0
+                    ? "text-fuchsia-300"
+                    : index % 3 === 1
+                      ? "text-cyan-300"
+                      : "text-amber-300"
+                }
+              `}
+            >
+              <motion.span
+                animate={{
+                  opacity: [0.6, 1, 0.6],
+                  textShadow: [
+                    "0 0 0px rgba(255,255,255,0)",
+                    "0 0 10px rgba(255,255,255,0.45)",
+                    "0 0 20px rgba(255,255,255,0.7)",
+                    "0 0 10px rgba(255,255,255,0.45)",
+                    "0 0 0px rgba(255,255,255,0)",
+                  ],
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+              >
+                0{index + 1}
+              </motion.span>
+            </motion.div>
+
+            {/* PROJECT BORDER */}
+
+            <motion.div
+              className={`
+                relative
+                w-full
+                overflow-hidden
+                rounded-[15px]
+                p-[1px]
+                sm:rounded-[19px]
+                sm:p-[1.5px]
+                md:rounded-[21px]
+                ${color.border}
+              `}
+            >
+              {/* ROTATING BORDER */}
+
+              <motion.div
+                className={`
+                  pointer-events-none
+                  absolute
+                  inset-[-40%]
+                  blur-[2px]
+                  ${color.rotating}
+                `}
+                animate={{
+                  rotate: [0, 360],
+                }}
+                transition={{
+                  duration: 5 + index * 1.5,
+                  repeat: Infinity,
+                  ease: "linear",
+                  delay: index * 0.4,
+                }}
+              />
+
+              {/* PROJECT CARD */}
+
+              <motion.div
+                className={`
+                  relative
+                  z-10
+                  w-full
+                  overflow-hidden
+                  rounded-[14px]
+                  bg-slate-950/95
+                  shadow-[0_10px_35px_rgba(15,23,42,0.25)]
+                  transition-all
+                  duration-500
+                  sm:rounded-[18px]
+                  md:rounded-[20px]
+                  ${color.glow}
+                `}
+              >
+                {/* CARD GLOW BORDER */}
+
+                <motion.div
+                  className="
+                    pointer-events-none
+                    absolute
+                    inset-0
+                    z-20
+                    rounded-[14px]
+                    border
+                    border-white/15
+                    sm:rounded-[18px]
+                    md:rounded-[20px]
+                  "
+                  animate={{
+                    opacity: [0.25, 0.8, 0.25],
+                  }}
+                  transition={{
+                    duration: 3.5 + index * 0.5,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: index * 0.3,
+                  }}
+                />
+
+                {/* CARD INNER GLOW */}
+
+                <motion.div
+                  className={`
+                    pointer-events-none
+                    absolute
+                    inset-0
+                    z-[2]
+                    bg-[radial-gradient(circle_at_50%_50%,rgba(168,85,247,0.10),transparent_55%)]
+                    ${color.inner}
+                  `}
+                  animate={{
+                    scale: [0.9, 1.1, 0.9],
+                    opacity: [0.3, 0.7, 0.3],
+                  }}
+                  transition={{
+                    duration: 7 + index,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                />
+
+                <WorkCard
+                  work={work}
+                  index={index}
+                  onViewProject={openProject}
+                />
+              </motion.div>
+            </motion.div>
+          </motion.div>
+        );
+      })}
+    </div>
+  </div>
+</section>
+
+        {/* =================================================
+            CTA
+        ================================================= */}
+
+        <section
+  className="
+    mt-10
+    w-full
+    max-w-[1120px]
+    mx-auto
+    relative
+    overflow-hidden
+    rounded-xl
+    sm:rounded-2xl
+    shadow-[0px_40px_100px_0px_rgba(91,33,182,0.18)]
+    bg-gradient-to-br
+    from-[#10002B]
+    via-[#240046]
+    to-[#003566]
+    px-4
+    py-8
+    sm:px-8
+    sm:py-12
+    md:px-20
+    md:py-20
+    lg:px-44
+    flex
+    flex-col
+    items-center
+    text-center
+    gap-3
+    sm:gap-5
+    md:gap-6
+    border
+    border-fuchsia-400/20
+  "
+>
+  {/* TOP NEON GLOW */}
+
+  <motion.div
+    animate={{
+      x: [0, 35, 0],
+      y: [0, 25, 0],
+      scale: [1, 1.2, 1],
+      opacity: [0.45, 0.8, 0.45],
+    }}
+    transition={{
+      duration: 8,
+      repeat: Infinity,
+      ease: "easeInOut",
+    }}
+    className="
+      pointer-events-none
+      absolute
+      -top-20
+      -right-20
+      w-48
+      h-48
+      sm:-top-28
+      sm:right-[-90px]
+      sm:w-72
+      sm:h-72
+      rounded-full
+      bg-fuchsia-500/30
+      blur-[75px]
+      sm:blur-[110px]
+    "
+  />
+
+  {/* BOTTOM NEON GLOW */}
+
+  <motion.div
+    animate={{
+      x: [0, -35, 0],
+      y: [0, -25, 0],
+      scale: [1, 1.2, 1],
+      opacity: [0.4, 0.75, 0.4],
+    }}
+    transition={{
+      duration: 9,
+      repeat: Infinity,
+      ease: "easeInOut",
+    }}
+    className="
+      pointer-events-none
+      absolute
+      -bottom-20
+      -left-20
+      w-48
+      h-48
+      sm:-bottom-28
+      sm:left-[-90px]
+      sm:w-72
+      sm:h-72
+      rounded-full
+      bg-cyan-400/30
+      blur-[75px]
+      sm:blur-[110px]
+    "
+  />
+
+  {/* CENTER NEON LIGHT */}
+
+  <motion.div
+    animate={{
+      scale: [1, 1.15, 1],
+      opacity: [0.2, 0.45, 0.2],
+    }}
+    transition={{
+      duration: 7,
+      repeat: Infinity,
+      ease: "easeInOut",
+    }}
+    className="
+      pointer-events-none
+      absolute
+      top-1/2
+      left-1/2
+      -translate-x-1/2
+      -translate-y-1/2
+      w-72
+      h-72
+      sm:w-[420px]
+      sm:h-[420px]
+      rounded-full
+      bg-violet-500/20
+      blur-[100px]
+      sm:blur-[140px]
+    "
+  />
+
+  {/* NEON ORB 1 */}
+
+  <motion.div
+    animate={{
+      y: [0, -18, 0],
+      rotate: [0, 180, 360],
+    }}
+    transition={{
+      duration: 12,
+      repeat: Infinity,
+      ease: "linear",
+    }}
+    className="
+      pointer-events-none
+      absolute
+      top-10
+      left-[12%]
+      w-3
+      h-3
+      sm:w-5
+      sm:h-5
+      rounded-full
+      bg-fuchsia-400
+      shadow-[0_0_20px_6px_rgba(232,121,249,0.75)]
+    "
+  />
+
+  {/* NEON ORB 2 */}
+
+  <motion.div
+    animate={{
+      y: [0, 20, 0],
+      rotate: [360, 180, 0],
+    }}
+    transition={{
+      duration: 10,
+      repeat: Infinity,
+      ease: "linear",
+    }}
+    className="
+      pointer-events-none
+      absolute
+      bottom-12
+      right-[15%]
+      w-3
+      h-3
+      sm:w-5
+      sm:h-5
+      rounded-full
+      bg-cyan-300
+      shadow-[0_0_20px_6px_rgba(103,232,249,0.75)]
+    "
+  />
+
+  {/* HEADING */}
+
+  <motion.h2
+    initial={{
+      opacity: 0,
+      y: 40,
+    }}
+    whileInView={{
+      opacity: 1,
+      y: 0,
+    }}
+    viewport={{
+      once: true,
+      amount: 0.3,
+    }}
+    transition={{
+      duration: 0.8,
+      ease: [0.16, 1, 0.3, 1],
+    }}
+    className="
+      relative
+      z-10
+      font-display
+      font-bold
+      text-white
+      text-[25px]
+      sm:text-4xl
+      md:text-6xl
+      lg:text-[80px]
+      leading-[1.05]
+      tracking-[-1px]
+      sm:tracking-[-1.5px]
+      md:tracking-[-2.4px]
+      drop-shadow-[0_0_18px_rgba(217,70,239,0.28)]
+    "
+  >
+    Ready to{" "}
+    <span
+      className="
+        bg-gradient-to-r
+        from-fuchsia-400
+        via-violet-400
+        to-cyan-300
+        bg-clip-text
+        text-transparent
+        drop-shadow-[0_0_25px_rgba(34,211,238,0.2)]
+      "
+    >
+      elevate
+    </span>{" "}
+    your digital presence?
+  </motion.h2>
+
+  {/* DESCRIPTION */}
+
+  <p
+    className="
+      relative
+      z-10
+      font-body
+      text-slate-200
+      text-[11px]
+      sm:text-base
+      md:text-xl
+      leading-relaxed
+      max-w-[520px]
+      sm:max-w-[650px]
+    "
+  >
+    Partner with us to create experiences that resonate and perform.
+  </p>
+
+  {/* BUTTON */}
+
+  <motion.a
+    href="/contact#contact-form"
+    whileHover={{
+      y: -4,
+      scale: 1.04,
+    }}
+    whileTap={{
+      scale: 0.97,
+    }}
+    className="
+      relative
+      z-10
+      inline-flex
+      items-center
+      justify-center
+      bg-gradient-to-r
+      from-fuchsia-500
+      via-violet-500
+      to-cyan-400
+      hover:from-fuchsia-400
+      hover:via-violet-400
+      hover:to-cyan-300
+      transition-all
+      duration-300
+      text-white
+      font-display
+      font-bold
+      text-[11px]
+      sm:text-base
+      md:text-xl
+      tracking-[-0.3px]
+      sm:tracking-[-0.5px]
+      rounded-full
+      px-4
+      py-2.5
+      sm:px-7
+      sm:py-3.5
+      md:px-8
+      md:py-4
+      border
+      border-white/20
+      shadow-[0_0_25px_rgba(217,70,239,0.35),0_0_45px_rgba(34,211,238,0.2)]
+      hover:shadow-[0_0_35px_rgba(217,70,239,0.55),0_0_65px_rgba(34,211,238,0.35)]
+    "
+  >
+    Start a Conversation
+  </motion.a>
+</section>
 
         {/* BOTTOM SPACING */}
 
