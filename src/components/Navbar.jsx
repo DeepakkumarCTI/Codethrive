@@ -207,29 +207,31 @@ export default function Navbar() {
                 CodeThrive Infotech
               </span>
 
+              {/* UPDATED: TAGLINE VISIBLE ON MOBILE + DESKTOP */}
               <div
                 className="
-                  hidden
-                  sm:flex
+                  flex
                   items-center
                   gap-1.5
                   mt-1.5
                 "
               >
-                
-                  <span
+                <span
                   className="
                     font-body
-                    text-[8px]
+                    text-[7px]
+                    xs:text-[8px]
+                    sm:text-[8px]
                     lg:text-[9px]
-                    tracking-[1.5px]
+                    tracking-[0.8px]
+                    sm:tracking-[1.5px]
                     uppercase
                     text-[#BFDBFE]
+                    whitespace-nowrap
                   "
                 >
                   Progress | Cultivate | Innovate
                 </span>
-                
               </div>
             </div>
           </Link>

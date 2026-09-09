@@ -37,7 +37,7 @@ const CONTACT_INFO = [
   {
     icon: MapPin,
     label: "Location",
-    value: "1 Srihari Nivas,Sungam, Coimbatore,641045, India ",
+    value: "No 1 Srihari Nivas,Indira Nagar,Sungam, Coimbatore, 641045 ",
     href: "#",
   },
 ];

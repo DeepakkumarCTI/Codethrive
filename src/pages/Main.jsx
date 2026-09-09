@@ -180,21 +180,21 @@ const REVIEWS = [
     name: "Arun Kumar",
     role: "Business Owner",
     quote:
-      "CodeThrive transformed our online presence and helped our business look more professional.",
+      "Honestly, I’m really happy with how the website turned out. They understood what I wanted and made the whole process easy.",
     photo: arun,
   },
   {
     name: "Priya Sharma",
     role: "Founder",
     quote:
-      "Professional, creative and very easy to work with. The entire process was smooth.",
+      "Really good experience working with them. They were patient with my changes and the final result came out better than I expected.",
     photo: priya,
   },
   {
     name: "Rahul",
     role: "Entrepreneur",
     quote:
-      "They understood exactly what we needed and delivered a beautiful digital experience.",
+      "I had a rough idea of what I wanted, and they helped turn it into something that actually looks great. Would definitely recommend them.",
     photo: rahul,
   },
 ];

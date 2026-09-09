@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowDown, Plus, Minus, Code2 } from "lucide-react";
 import { TypeAnimation } from "react-type-animation";
+import { Target, Eye } from "lucide-react";
 
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -409,266 +410,318 @@ export default function About() {
         {/* ================================================= */}
 
         <motion.section
-          initial="hidden"
-          whileInView="visible"
-          viewport={{
-            once: true,
-            amount: 0.15,
-          }}
-          variants={staggerContainer}
-          className="relative isolate w-full overflow-hidden"
-        >
-          {/* Background Video */}
-          <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-            <video
-              autoPlay
-              loop
-              muted
-              playsInline
-              preload="auto"
-              className="h-full w-full scale-105 object-cover object-center"
-            >
-              <source src="/videos/About.mp4" type="video/mp4" />
-            </video>
-          </div>
+  initial="hidden"
+  whileInView="visible"
+  viewport={{
+    once: true,
+    amount: 0.15,
+  }}
+  variants={staggerContainer}
+  className="relative isolate w-full overflow-hidden"
+>
+  {/* Background Video */}
+  <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
+    <video
+      autoPlay
+      loop
+      muted
+      playsInline
+      preload="auto"
+      className="h-full w-full scale-105 object-cover object-center"
+    >
+      <source src="/videos/About.mp4" type="video/mp4" />
+    </video>
+  </div>
 
-          {/* Dark Overlay */}
-          <div className="absolute inset-0 z-[1] bg-slate-950/60 pointer-events-none" />
+  {/* Dark Overlay */}
+  <div className="pointer-events-none absolute inset-0 z-[1] bg-slate-950/60" />
 
-          {/* Premium Gradient */}
-          <div className="absolute inset-0 z-[2] bg-gradient-to-r from-slate-950/95 via-indigo-950/75 to-transparent pointer-events-none" />
+  {/* Premium Gradient */}
+  <div className="pointer-events-none absolute inset-0 z-[2] bg-gradient-to-r from-slate-950/95 via-indigo-950/75 to-transparent" />
 
-          {/* Color Gradient */}
-          <div className="absolute inset-0 z-[2] bg-gradient-to-br from-violet-600/25 via-transparent to-cyan-500/25 pointer-events-none" />
+  {/* Color Gradient */}
+  <div className="pointer-events-none absolute inset-0 z-[2] bg-gradient-to-br from-violet-600/25 via-transparent to-cyan-500/25" />
 
-          {/* Left Readability Overlay */}
-          <div className="absolute inset-y-0 left-0 z-[3] w-[78%] bg-gradient-to-r from-slate-950/90 via-indigo-950/50 to-transparent pointer-events-none" />
+  {/* Left Readability Overlay */}
+  <div className="pointer-events-none absolute inset-y-0 left-0 z-[3] w-[78%] bg-gradient-to-r from-slate-950/90 via-indigo-950/50 to-transparent" />
 
-          {/* Bottom Gradient */}
-          <div className="absolute inset-x-0 bottom-0 z-[3] h-1/2 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent pointer-events-none" />
+  {/* Bottom Gradient */}
+  <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[3] h-1/2 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent" />
 
-          {/* Violet Glow */}
-          <motion.div
-            animate={{
-              scale: [1, 1.15, 1],
-              opacity: [0.15, 0.35, 0.15],
-            }}
-            transition={{
-              duration: 7,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-            className="absolute -left-24 -top-32 z-[4] h-64 w-64 rounded-full bg-violet-500/30 blur-3xl pointer-events-none sm:h-96 sm:w-96"
-          />
+  {/* Violet Glow */}
+  <motion.div
+    animate={{
+      scale: [1, 1.15, 1],
+      opacity: [0.15, 0.35, 0.15],
+    }}
+    transition={{
+      duration: 7,
+      repeat: Infinity,
+      ease: "easeInOut",
+    }}
+    className="pointer-events-none absolute -left-24 -top-32 z-[4] h-64 w-64 rounded-full bg-violet-500/30 blur-3xl sm:h-96 sm:w-96"
+  />
 
-          {/* Cyan Glow */}
-          <motion.div
-            animate={{
-              scale: [1, 1.12, 1],
-              opacity: [0.08, 0.25, 0.08],
-            }}
-            transition={{
-              duration: 8,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-            className="absolute -bottom-32 right-0 z-[4] h-64 w-64 rounded-full bg-cyan-400/25 blur-3xl pointer-events-none sm:h-[28rem] sm:w-[28rem]"
-          />
+  {/* Cyan Glow */}
+  <motion.div
+    animate={{
+      scale: [1, 1.12, 1],
+      opacity: [0.08, 0.25, 0.08],
+    }}
+    transition={{
+      duration: 8,
+      repeat: Infinity,
+      ease: "easeInOut",
+    }}
+    className="pointer-events-none absolute -bottom-32 right-0 z-[4] h-64 w-64 rounded-full bg-cyan-400/25 blur-3xl sm:h-[28rem] sm:w-[28rem]"
+  />
 
-          {/* Hero Container */}
-          <div className="relative z-10 mx-auto grid w-full max-w-[1440px] grid-cols-2 items-center gap-3 px-3 pb-8 pt-20 sm:gap-6 sm:px-6 sm:pb-12 sm:pt-24 md:px-10 md:pb-14 md:pt-28 lg:grid-cols-12 lg:gap-8 lg:px-14 lg:pb-16 lg:pt-10 xl:px-16">
-            {/* Hero Text */}
-            <motion.div
-              variants={fadeUp}
-              className="relative col-span-1 flex min-w-0 flex-col justify-center gap-3 sm:gap-5 lg:col-span-8 lg:gap-6"
-            >
-              {/* Heading Glow */}
-              <div className="absolute -left-10 top-[25%] h-[220px] w-[220px] rounded-full bg-violet-500/20 blur-[90px] opacity-80 pointer-events-none sm:h-[320px] sm:w-[320px] lg:h-[420px] lg:w-[420px]" />
+  {/* Hero Container */}
+  <div className="relative z-10 mx-auto grid w-full max-w-[1440px] grid-cols-2 items-center gap-3 px-3 pb-8 pt-20 sm:gap-6 sm:px-6 sm:pb-12 sm:pt-24 md:px-10 md:pb-14 md:pt-28 lg:grid-cols-12 lg:items-start lg:gap-8 lg:px-14 lg:pb-16 lg:pt-0 xl:px-16">
+    {/* Hero Text */}
+    <motion.div
+      variants={fadeUp}
+      className="relative col-span-1 flex min-w-0 flex-col justify-center gap-3 sm:gap-5 lg:col-span-8 lg:gap-6 lg:pt-24"
+    >
+      {/* Heading Glow */}
+      <div className="pointer-events-none absolute -left-10 top-[25%] h-[220px] w-[220px] rounded-full bg-violet-500/20 blur-[90px] opacity-80 sm:h-[320px] sm:w-[320px] lg:h-[420px] lg:w-[420px]" />
 
-              {/* Heading */}
-              <h1 className="relative z-10 max-w-[900px] break-words font-display text-[24px] font-bold leading-[0.98] tracking-[-1px] text-white drop-shadow-[0_8px_25px_rgba(0,0,0,0.35)] sm:text-[46px] sm:tracking-[-2px] md:text-[68px] lg:text-[82px] lg:tracking-[-3px] xl:text-[92px]">
-                <span>Designing the </span>
+      {/* Heading */}
+      <h1 className="relative z-10 max-w-[900px] break-words font-display text-[24px] font-bold leading-[0.98] tracking-[-1px] text-white drop-shadow-[0_8px_25px_rgba(0,0,0,0.35)] sm:text-[46px] sm:tracking-[-2px] md:text-[68px] lg:text-[82px] lg:tracking-[-3px] xl:text-[92px]">
+        <span>Designing the </span>
 
-                <span className="bg-gradient-to-r from-cyan-300 via-violet-300 to-pink-300 bg-clip-text text-transparent drop-shadow-[0_0_22px_rgba(167,139,250,0.4)]">
-                  Architecture
-                </span>
+        <span className="bg-gradient-to-r from-cyan-300 via-violet-300 to-pink-300 bg-clip-text text-transparent drop-shadow-[0_0_22px_rgba(167,139,250,0.4)]">
+          Architecture
+        </span>
 
-                <span> of tomorrow.</span>
-              </h1>
+        <span> of tomorrow.</span>
+      </h1>
 
-              {/* Description */}
-              <p className="relative z-10 max-w-[650px] font-body text-[9px] leading-[1.5] text-white/80 drop-shadow-[0_4px_16px_rgba(0,0,0,0.35)] sm:text-base sm:leading-relaxed md:text-lg lg:text-xl">
-                We don&rsquo;t just build software; we craft digital spaces.
-                Our approach treats every interface as a living environment,
-                combining the stark precision of modern technology with the
-                warmth of human intuition. Welcome to the{" "}
-                <span className="font-medium text-cyan-300 drop-shadow-[0_0_10px_rgba(103,232,249,0.35)]">
-                  new standard of digital elegance.
-                </span>
-              </p>
+      {/* Description */}
+      <p className="relative z-10 max-w-[650px] font-body text-[9px] leading-[1.5] text-white/80 drop-shadow-[0_4px_16px_rgba(0,0,0,0.35)] sm:text-base sm:leading-relaxed md:text-lg lg:text-xl">
+        We don&rsquo;t just build software; we craft digital spaces. Our
+        approach treats every interface as a living environment, combining
+        the stark precision of modern technology with the warmth of human
+        intuition. Welcome to{" "}
+        <span className="font-medium text-cyan-300 drop-shadow-[0_0_10px_rgba(103,232,249,0.35)]">
+          the new standard of digital elegance.
+        </span>
+      </p>
 
-              {/* Accent Line */}
-              <motion.div
-                initial={{
-                  width: 0,
-                  opacity: 0,
-                }}
-                whileInView={{
-                  width: "90px",
-                  opacity: 1,
-                }}
-                viewport={{
-                  once: true,
-                }}
-                transition={{
-                  duration: 0.8,
-                  delay: 0.2,
-                }}
-                className="relative z-10 h-[2px] bg-gradient-to-r from-cyan-400 via-violet-400 to-pink-400 shadow-[0_0_16px_rgba(103,232,249,0.7)]"
-              />
-            </motion.div>
+      {/* Accent Line */}
+      <motion.div
+        initial={{
+          width: 0,
+          opacity: 0,
+        }}
+        whileInView={{
+          width: "90px",
+          opacity: 1,
+        }}
+        viewport={{
+          once: true,
+        }}
+        transition={{
+          duration: 0.8,
+          delay: 0.2,
+        }}
+        className="relative z-10 h-[2px] bg-gradient-to-r from-cyan-400 via-violet-400 to-pink-400 shadow-[0_0_16px_rgba(103,232,249,0.7)]"
+      />
+    </motion.div>
 
-            {/* Hero Image */}
-            <motion.div
-              variants={fadeUp}
-              className="relative col-span-1 flex min-w-0 items-center justify-center lg:col-span-4"
-            >
-              {/* Image Glow */}
-              <motion.div
-                animate={{
-                  scale: [1, 1.08, 1],
-                  opacity: [0.2, 0.45, 0.2],
-                }}
-                transition={{
-                  duration: 5,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                className="absolute -bottom-8 -left-8 h-32 w-32 rounded-full bg-cyan-400/30 blur-3xl pointer-events-none sm:-bottom-12 sm:-left-12 sm:h-56 sm:w-56"
-              />
+    {/* Hero Image */}
+    <motion.div
+      variants={fadeUp}
+      className="relative col-span-1 flex min-w-0 items-start justify-center lg:col-span-4"
+    >
+      {/* Image Glow */}
+      <motion.div
+        animate={{
+          scale: [1, 1.08, 1],
+          opacity: [0.2, 0.45, 0.2],
+        }}
+        transition={{
+          duration: 5,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+        className="pointer-events-none absolute -bottom-8 -left-8 h-32 w-32 rounded-full bg-cyan-400/30 blur-3xl sm:-bottom-12 sm:-left-12 sm:h-56 sm:w-56"
+      />
 
-              {/* Image Container */}
-              <motion.div
-                whileHover={{
-                  y: -8,
-                  scale: 1.015,
-                }}
-                transition={{
-                  duration: 0.4,
-                }}
-                className="relative z-10 w-full overflow-hidden rounded-tl-[1.5rem] rounded-tr-[2.5rem] rounded-bl-[2rem] rounded-br-[2.5rem] border border-cyan-300/30 bg-white/10 pt-5 shadow-[0_25px_70px_rgba(0,0,0,0.45)] backdrop-blur-sm sm:rounded-tl-[3rem] sm:rounded-tr-[6rem] sm:rounded-bl-[5rem] sm:rounded-br-[6.5rem]"
-              >
-                <img
-                  src={aboutHero}
-                  alt="Studio Tech architecture inspiration"
-                  className="h-[180px] w-full object-cover object-center sm:h-[300px] md:h-[450px] lg:h-[500px]"
-                />
+      {/* Image Container */}
+      <motion.div
+        whileHover={{
+          y: -8,
+          scale: 1.015,
+        }}
+        transition={{
+          duration: 0.4,
+        }}
+        className="relative z-10 w-full overflow-hidden rounded-tl-[1.5rem] rounded-tr-[2.5rem] rounded-bl-[2rem] rounded-br-[2.5rem] border border-cyan-300/30 bg-white/10 pt-5 shadow-[0_25px_70px_rgba(0,0,0,0.45)] backdrop-blur-sm lg:pt-0 sm:rounded-tl-[3rem] sm:rounded-tr-[6rem] sm:rounded-bl-[5rem] sm:rounded-br-[6.5rem] pt-5"
+      >
+        <img
+          src={aboutHero}
+          alt="Studio Tech architecture inspiration"
+          className="h-[150px] w-full object-cover object-center sm:h-[300px] md:h-[450px] lg:h-[500px] mt-10"
+        />
 
-                <div className="absolute inset-0 bg-gradient-to-tr from-violet-500/30 via-transparent to-cyan-400/20 pointer-events-none" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-violet-500/30 via-transparent to-cyan-400/20" />
 
-                <div className="absolute inset-0 rounded-tl-[1.5rem] rounded-tr-[2.5rem] rounded-bl-[2rem] rounded-br-[2.5rem] shadow-[inset_0_0_45px_rgba(103,232,249,0.18)] pointer-events-none sm:rounded-tl-[3rem] sm:rounded-tr-[6rem] sm:rounded-bl-[5rem] sm:rounded-br-[6.5rem]" />
-              </motion.div>
-            </motion.div>
-          </div>
-        </motion.section>
+        <div className="pointer-events-none absolute inset-0 rounded-tl-[1.5rem] rounded-tr-[2.5rem] rounded-bl-[2rem] rounded-br-[2.5rem] shadow-[inset_0_0_45px_rgba(103,232,249,0.18)] sm:rounded-tl-[3rem] sm:rounded-tr-[6rem] sm:rounded-bl-[5rem] sm:rounded-br-[6.5rem]" />
+      </motion.div>
+    </motion.div>
+  </div>
+</motion.section>
 
         {/* ================================================= */}
         {/* MISSION */}
         {/* ================================================= */}
 
-        <motion.section
-          initial="hidden"
-          whileInView="visible"
-          viewport={{
-            once: true,
-            amount: 0.2,
-          }}
-          variants={fadeUp}
-          className="relative w-full max-w-[1440px] px-3 sm:px-6 md:px-10 lg:px-14"
-        >
-          <div className="grid grid-cols-2 items-center gap-4 sm:gap-6 lg:grid-cols-12 lg:gap-10">
-            {/* Mission Image */}
-            <div className="col-span-1 flex justify-center lg:col-span-4">
-              <motion.div
-                initial={{
-                  opacity: 0,
-                  scale: 0.94,
-                  y: 20,
-                }}
-                whileInView={{
-                  opacity: 1,
-                  scale: 1,
-                  y: 0,
-                }}
-                viewport={{
-                  once: true,
-                }}
-                transition={{
-                  duration: 0.8,
-                }}
-                whileHover={{
-                  y: -6,
-                }}
-                className="group relative aspect-square w-full max-w-[170px] overflow-hidden rounded-[1.25rem] border border-white/80 bg-white/80 shadow-[0_20px_50px_rgba(124,58,237,0.12)] sm:max-w-[250px] sm:rounded-[2rem] md:max-w-[330px] md:rounded-[2.5rem] lg:max-w-[350px]"
-              >
-                <img
-                  src="/images/mission.jpg"
-                  alt="CodeThrive mission"
-                  className="h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
-                />
+        {/* =========================================================
+    MISSION & VISION
+========================================================= */}
+<motion.section
+  initial="hidden"
+  whileInView="visible"
+  viewport={{
+    once: true,
+    amount: 0.2,
+  }}
+  variants={fadeUp}
+  className="relative w-full max-w-[1180px] overflow-hidden rounded-2xl border border-slate-200/80 bg-gradient-to-br from-violet-50/70 via-white to-cyan-50/70 px-3 py-8 shadow-[0_15px_45px_rgba(15,23,42,0.05)] sm:rounded-3xl sm:px-6 sm:py-10 lg:px-10 lg:py-12"
+>
+  {/* Soft Background Decoration */}
+  <div className="pointer-events-none absolute -left-24 top-0 h-48 w-48 rounded-full bg-violet-300/10 blur-[80px]" />
+  <div className="pointer-events-none absolute -right-24 bottom-0 h-48 w-48 rounded-full bg-cyan-300/10 blur-[80px]" />
 
-                <div className="absolute inset-0 bg-gradient-to-t from-violet-950/45 via-transparent to-cyan-300/10" />
+  <div className="relative z-10">
+    {/* SECTION HEADING */}
+    <div className="mb-7 text-center sm:mb-9 lg:mb-10">
+      <p className="font-body text-[8px] font-semibold uppercase tracking-[1.8px] text-violet-700 sm:text-[10px]">
+        What Drives Us
+      </p>
 
-                <div className="absolute bottom-2 left-2 right-2 flex items-center justify-between sm:bottom-4 sm:left-4 sm:right-4">
-                  <span className="font-body text-[7px] uppercase tracking-[0.8px] text-white/90 sm:text-[10px]">
-                    Our Mission
-                  </span>
+      <h2 className="mt-1.5 font-display text-xl font-semibold leading-tight tracking-[-0.5px] text-slate-900 sm:text-3xl md:text-4xl lg:text-[42px]">
+        Mission & Vision
+      </h2>
 
-                  <span className="h-4 w-4 rounded-full border border-white/40 bg-white/20 backdrop-blur-sm sm:h-7 sm:w-7" />
-                </div>
-              </motion.div>
-            </div>
+      <p className="mx-auto mt-2 max-w-[500px] font-body text-[10px] leading-relaxed text-slate-600 sm:text-xs md:text-sm">
+        Building meaningful digital experiences with purpose, creativity,
+        and a clear vision for the future.
+      </p>
+    </div>
 
-            {/* Mission Content */}
-            <div className="relative col-span-1 flex flex-col gap-2 sm:gap-4 lg:col-span-8 lg:gap-5 lg:pl-4">
-              <div className="absolute -left-8 top-1/2 h-[180px] w-[180px] -translate-y-1/2 rounded-full bg-violet-400/15 blur-[80px] pointer-events-none sm:h-[240px] sm:w-[240px] lg:h-[320px] lg:w-[320px]" />
+    {/* TWO COMPACT BOXES */}
+    <div className="grid grid-cols-2 gap-2.5 sm:gap-5 lg:gap-7">
+      {/* =====================================================
+          MISSION BOX
+      ===================================================== */}
+      <motion.div
+        initial={{
+          opacity: 0,
+          y: 20,
+        }}
+        whileInView={{
+          opacity: 1,
+          y: 0,
+        }}
+        viewport={{
+          once: true,
+        }}
+        transition={{
+          duration: 0.7,
+        }}
+        whileHover={{
+          y: -4,
+        }}
+        className="group relative overflow-hidden rounded-xl border border-violet-200/70 bg-white/70 p-3 shadow-[0_12px_30px_rgba(124,58,237,0.06)] backdrop-blur-sm sm:rounded-2xl sm:p-5 lg:p-6"
+      >
+        {/* Box Background */}
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-violet-100/60 via-white/60 to-pink-50/60" />
 
-              <p className="relative z-10 font-body text-[8px] font-medium uppercase tracking-[1.2px] text-violet-700 sm:text-xs md:text-sm">
-                Our Mission
-              </p>
+        {/* Decorative Shape */}
+        <div className="pointer-events-none absolute -right-8 -top-8 h-24 w-24 rounded-full border border-violet-200/50 bg-violet-200/20 sm:h-32 sm:w-32" />
 
-              <div className="relative z-10">
-                <div className="absolute inset-0 -z-10 rounded-full bg-violet-400/15 blur-[45px]" />
-
-                <h2 className="font-display text-[16px] font-semibold leading-[1.12] tracking-[-0.5px] text-slate-900 sm:text-2xl md:text-4xl lg:text-[42px] lg:tracking-[-1.2px] xl:text-[48px]">
-                  <TypingText speed={30}>
-                    To blur the lines between physical reality and digital
-                    capability, creating tools that feel like extensions of
-                    thought.
-                  </TypingText>
-                </h2>
-              </div>
-
-              <motion.div
-                initial={{
-                  width: 0,
-                  opacity: 0,
-                }}
-                whileInView={{
-                  width: "65px",
-                  opacity: 1,
-                }}
-                viewport={{
-                  once: true,
-                }}
-                transition={{
-                  duration: 0.7,
-                }}
-                className="relative z-10 mt-1 h-[2px] bg-gradient-to-r from-violet-600 via-pink-400 to-transparent shadow-[0_0_14px_rgba(139,92,246,0.35)] sm:mt-2"
-              />
-            </div>
+        <div className="relative z-10">
+          {/* Icon */}
+          <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-lg bg-violet-100 text-violet-600 sm:mb-4 sm:h-12 sm:w-12 sm:rounded-xl">
+            <Target
+              size={20}
+              strokeWidth={1.7}
+              className="sm:h-6 sm:w-6"
+            />
           </div>
-        </motion.section>
+
+          {/* Label */}
+          <p className="font-body text-[8px] font-semibold uppercase tracking-[1px] text-violet-700 sm:text-[10px]">
+            Our Mission
+          </p>
+
+          {/* Content */}
+          <h3 className="mt-2 font-display text-[13px] font-semibold leading-[1.35] tracking-[-0.25px] text-slate-900 sm:text-lg md:text-xl lg:text-2xl">
+We create reliable, scalable software that transforms complex challenges into innovative digital solutions, empowering businesses to achieve lasting success.          </h3>
+
+          {/* Bottom Line */}
+          <div className="mt-4 h-[2px] w-10 bg-gradient-to-r from-violet-600 to-pink-400 sm:mt-5 sm:w-14" />
+        </div>
+      </motion.div>
+
+      {/* =====================================================
+          VISION BOX
+      ===================================================== */}
+      <motion.div
+        initial={{
+          opacity: 0,
+          y: 20,
+        }}
+        whileInView={{
+          opacity: 1,
+          y: 0,
+        }}
+        viewport={{
+          once: true,
+        }}
+        transition={{
+          duration: 0.7,
+          delay: 0.12,
+        }}
+        whileHover={{
+          y: -4,
+        }}
+        className="group relative overflow-hidden rounded-xl border border-cyan-200/70 bg-white/70 p-3 shadow-[0_12px_30px_rgba(6,182,212,0.06)] backdrop-blur-sm sm:rounded-2xl sm:p-5 lg:p-6"
+      >
+        {/* Box Background */}
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-cyan-100/60 via-white/60 to-blue-50/60" />
+
+        {/* Decorative Shape */}
+        <div className="pointer-events-none absolute -left-8 -top-8 h-24 w-24 rounded-full border border-cyan-200/50 bg-cyan-200/20 sm:h-32 sm:w-32" />
+
+        <div className="relative z-10">
+          {/* Icon */}
+          <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-lg bg-cyan-100 text-cyan-600 sm:mb-4 sm:h-12 sm:w-12 sm:rounded-xl">
+            <Eye
+              size={20}
+              strokeWidth={1.7}
+              className="sm:h-6 sm:w-6"
+            />
+          </div>
+
+          {/* Label */}
+          <p className="font-body text-[8px] font-semibold uppercase tracking-[1px] text-cyan-700 sm:text-[10px]">
+            Our Vision
+          </p>
+
+          {/* Content */}
+          <h3 className="mt-2 font-display text-[13px] font-semibold leading-[1.35] tracking-[-0.25px] text-slate-900 sm:text-lg md:text-xl lg:text-2xl">
+            We aim to be a trusted global technology partner, driving innovation, quality, efficiency, and lasting success through intelligent digital solutions.          </h3>
+
+          {/* Bottom Line */}
+          <div className="mt-4 h-[2px] w-10 bg-gradient-to-r from-cyan-600 to-blue-400 sm:mt-5 sm:w-14" />
+        </div>
+      </motion.div>
+    </div>
+  </div>
+</motion.section>
 
         {/* ================================================= */}
         {/* THE MINDS BEHIND */}

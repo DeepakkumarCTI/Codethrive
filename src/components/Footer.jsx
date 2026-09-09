@@ -112,8 +112,8 @@ const NAVIGATION = [
 
 const LEGAL = [
   "Privacy Policy",
-  "Terms of Service",
-  "Cookie Policy",
+  // "Terms of Service",
+  // "Cookie Policy",
 ];
 
 export default function Footer({ tagline }) {
@@ -518,7 +518,7 @@ export default function Footer({ tagline }) {
                       sm:leading-5
                     "
                   >
-                    1, Srihari Nivas, Sungam, Indira Nagar,
+                    No 1, Srihari Nivas, Sungam, Indira Nagar,
                     <br />
                     Coimbatore, Tamil Nadu – 641045,
                     <br />
